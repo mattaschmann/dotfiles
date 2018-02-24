@@ -28,6 +28,11 @@ call plug#end()
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
+" Like command palette
+if exists(':FZF')
+  nnoremap <Leader><C-p> :Commands<CR>
+endif
+
 " Edit vim-airline
 " let g:airline_section_y = '%{&g:airline_section_y} %{&shiftwidth}'
 function! AirlineInit()
