@@ -26,6 +26,14 @@ call plug#end()
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
+" Edit vim-airline
+" let g:airline_section_y = '%{&g:airline_section_y} %{&shiftwidth}'
+function! AirlineInit()
+  call airline#parts#define_raw('shiftwidth', 'sw: %{&shiftwidth}')
+  let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
 " For true color support
 if has('nvim') || has('termguicolors')
   set termguicolors
