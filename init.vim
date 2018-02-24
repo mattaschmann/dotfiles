@@ -2,6 +2,8 @@
 let mapleader=" "
 
 set hidden
+
+" tab stuff
 set tabstop=4
 
 call plug#begin()
