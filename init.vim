@@ -2,6 +2,7 @@
 let mapleader=" "
 
 set hidden
+set tabstop=4
 
 call plug#begin()
 
@@ -31,7 +32,7 @@ if has('nvim') || has('termguicolors')
 endif
 
 "This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :noh<CR><CR>
+nnoremap <Leader>n :noh<CR><CR>
 
 " colorscheme
 colorscheme challenger_deep
@@ -44,7 +45,7 @@ set cursorline
 
 " whitespace
 set list
-set listchars=tab:»»,trail:•,nbsp:•
+set listchars=tab:▸\ ,trail:•,nbsp:•
 
 " FZF stuff
 " Customize fzf colors to match your color scheme
