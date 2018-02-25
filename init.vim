@@ -1,11 +1,4 @@
-" Map leader to space
-let mapleader=" "
-
-set hidden
-
-" tab stuff
-set tabstop=4
-
+" my plugins: see https://github.com/junegunn/vim-plug
 call plug#begin()
 
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
@@ -41,16 +34,25 @@ function! AirlineInit()
 endfunction
 autocmd VimEnter * call AirlineInit()
 
+"This unsets the "last search pattern" register by hitting return
+nnoremap <Leader>n :noh<CR>
+
+" colorscheme
+colorscheme challenger_deep
+
+" Map leader to space
+let mapleader=" "
+
+" make buffers hide automatically instead of needing to be asked
+set hidden
+
+" tab stuff
+set tabstop=4
+
 " For true color support
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
-
-"This unsets the "last search pattern" register by hitting return
-nnoremap <Leader>n :noh<CR><CR>
-
-" colorscheme
-colorscheme challenger_deep
 
 " lines
 set number
@@ -81,3 +83,6 @@ let g:fzf_colors =
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
+
+" enable mouse
+set mouse=a
