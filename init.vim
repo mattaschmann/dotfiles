@@ -92,5 +92,5 @@ set mouse=a
 
 " NERDTree mappings
 nnoremap <C-\> :NERDTreeToggle<CR>
-nnoremap <C-0> :NERDTreeFind<CR>
+nnoremap <Leader>0 :NERDTreeFind<CR>
 
