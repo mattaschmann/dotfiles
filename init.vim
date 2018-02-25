@@ -29,7 +29,7 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 " Like command palette
-if exists(':FZF')
+if exists(':FZF') == 2
   nnoremap <Leader><C-p> :Commands<CR>
 endif
 
