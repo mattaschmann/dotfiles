@@ -86,3 +86,6 @@ set wildignore+=node_modules/**,target/**
 
 " enable mouse
 set mouse=a
+
+" spelling
+setlocal spell spelllang=en_us
