@@ -88,4 +88,9 @@ set wildignore+=node_modules/**,target/**
 set mouse=a
 
 " spelling
-setlocal spell spelllang=en_us
+" setlocal spell spelllang=en_us
+
+" NERDTree mappings
+nnoremap <C-\> :NERDTreeToggle<CR>
+nnoremap <C-0> :NERDTreeFind<CR>
+
