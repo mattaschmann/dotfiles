@@ -1,22 +1,39 @@
 " my plugins: see https://github.com/junegunn/vim-plug
 call plug#begin()
 
+" theme
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
+" easily move around
 Plug 'easymotion/vim-easymotion'
+" show the yank
 Plug 'haya14busa/vim-operator-flashy'
+" dep for flash
+Plug 'kana/vim-operator-user'
+" fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'kana/vim-operator-user'
+" git integration
 Plug 'tpope/vim-fugitive'
+" smart set shiftwidth
 Plug 'tpope/vim-sleuth'
+" make changing surrounds easier
 Plug 'tpope/vim-surround'
+" make comments easier
 Plug 'tpope/vim-commentary'
+" bottom status bar
 Plug 'vim-airline/vim-airline'
+" filetree
 Plug 'scrooloose/nerdtree'
+" auto make close pairs
 Plug 'jiangmiao/auto-pairs'
+" linting
 Plug 'vim-syntastic/syntastic'
+" rust lang for syntastic
 Plug 'rust-lang/rust.vim'
+" exchange two things
 Plug 'tommcdo/vim-exchange'
+" intellisense
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
