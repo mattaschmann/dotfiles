@@ -106,6 +106,9 @@ let g:syntastic_enable_signs = 0
 " Syntastic checker stuff
 let g:syntastic_rust_checkers = ['cargo']
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
 
@@ -128,3 +131,7 @@ nmap Y <Plug>(operator-flashy)$
 " location window mappins
 nmap <Leader>. :lne<CR>
 nmap <Leader>, :lpr<CR>
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
