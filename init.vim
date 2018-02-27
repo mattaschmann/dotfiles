@@ -33,17 +33,17 @@ Plug 'rust-lang/rust.vim'
 " exchange two things
 Plug 'tommcdo/vim-exchange'
 " intellisense
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
 " Edit vim-airline
-" let g:airline_section_y = '%{&g:airline_section_y} %{&shiftwidth}'
 function! AirlineInit()
   call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
   let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
 endfunction
 autocmd VimEnter * call AirlineInit()
+let g:airline#extensions#tabline#enabled = 1
 
 " colorscheme
 colorscheme challenger_deep
@@ -107,7 +107,7 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_rust_checkers = ['cargo']
 
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
