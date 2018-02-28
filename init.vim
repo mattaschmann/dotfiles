@@ -126,7 +126,7 @@ nnoremap <Leader>0 :NERDTreeFind<CR>
 
 " Like command palette
 if exists(':FZF') == 2
-  nnoremap <Leader><C-p> :Commands<CR>
+  nnoremap <Leader>p :Commands<CR>
 endif
 
 "This unsets the "last search pattern" register by hitting return
