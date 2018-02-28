@@ -55,6 +55,9 @@ set hidden
 " tab stuff
 set tabstop=4
 
+" wrap and linebreak
+set linebreak
+
 " For true color support
 if has('nvim') || has('termguicolors')
   set termguicolors
