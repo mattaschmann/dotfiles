@@ -33,7 +33,7 @@ Plug 'rust-lang/rust.vim'
 " exchange two things
 Plug 'tommcdo/vim-exchange'
 " intellisense
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -107,7 +107,7 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_rust_checkers = ['cargo']
 
 " Use deoplete.
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
