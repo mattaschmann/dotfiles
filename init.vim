@@ -86,6 +86,10 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+" have fzf ignore .gitignore files
+" NOTE: This requires the_silver_searcher to be installed
+" see: https://github.com/ggreer/the_silver_searcher
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
