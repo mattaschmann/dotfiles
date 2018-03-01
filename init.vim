@@ -50,6 +50,34 @@ autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
 " colorscheme
 colorscheme challenger_deep
 
@@ -126,25 +154,36 @@ let g:deoplete#enable_at_startup = 1
 let mapleader=" "
 
 " NERDTree mappings
-nnoremap <C-\> :NERDTreeToggle<CR>
-nnoremap <Leader>0 :NERDTreeFind<CR>
+nnoremap <silent> <C-\> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
-" Like command palette
-if exists(':FZF') == 2
-  nnoremap <Leader>p :Commands<CR>
-endif
+" Fuzzy search commands
+nnoremap <Leader>p :Commands<CR>
+" Fuzzy search files in project, ignoring .gitignore files
+nnoremap <Leader>e :Files<CR>
+" Fuzzy search in files
+nnoremap <Leader>f :Ag<CR>
 
 "This unsets the "last search pattern" register by hitting return
-nnoremap <Leader>n :noh<CR>
+nnoremap <silent> <Leader>n :noh<CR>
 
 " For the flashy plugin
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 " location window mappins
-nmap <Leader>. :lne<CR>
-nmap <Leader>, :lpr<CR>
+nmap <Leader>] :lne<CR>
+nmap <Leader>[ :lpr<CR>
+
+" show settings file
+nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
+
+" close window
+nmap <silent> <Leader>w :bd<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" useful things
+" Use this command to write things as sudo: `:w !sudo tee %`
+" use `par` for better formatting: `:set formatprg=par`
