@@ -122,16 +122,14 @@ let g:deoplete#enable_at_startup = 1
 let mapleader=" "
 
 " NERDTree mappings
-nnoremap <C-\> :NERDTreeToggle<CR>
-nnoremap <Leader>0 :NERDTreeFind<CR>
+nnoremap <silent> <C-\> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " Like command palette
-if exists(':FZF') == 2
-  nnoremap <Leader>p :Commands<CR>
-endif
+nnoremap <Leader>p :Commands<CR>
 
 "This unsets the "last search pattern" register by hitting return
-nnoremap <Leader>n :noh<CR>
+nnoremap <silent> <Leader>n :noh<CR>
 
 " For the flashy plugin
 map y <Plug>(operator-flashy)
@@ -146,3 +144,4 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " useful things
 " Use this command to write things as sudo: `:w !sudo tee %`
+" use `par` for better formatting: `:set formatprg=par`
