@@ -1,3 +1,7 @@
+" Windows specific shell stuff
+set shell=powershell
+" set shellcmdflag=-command
+
 " my plugins: see https://github.com/junegunn/vim-plug
 call plug#begin()
 
