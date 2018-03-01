@@ -125,8 +125,12 @@ let mapleader=" "
 nnoremap <silent> <C-\> :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
-" Like command palette
+" Fuzzy search commands
 nnoremap <Leader>p :Commands<CR>
+" Fuzzy search files in project, ignoring .gitignore files
+nnoremap <Leader>e :Files<CR>
+" Fuzzy search in files
+nnoremap <Leader>f :Ag<CR>
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <silent> <Leader>n :noh<CR>
@@ -136,8 +140,14 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 " location window mappins
-nmap <Leader>. :lne<CR>
-nmap <Leader>, :lpr<CR>
+nmap <Leader>] :lne<CR>
+nmap <Leader>[ :lpr<CR>
+
+" show settings file
+nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
+
+" close window
+nmap <silent> <Leader>w :bd<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
