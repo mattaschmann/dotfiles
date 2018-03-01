@@ -144,3 +144,5 @@ nmap <Leader>, :lpr<CR>
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" useful things
+" Use this command to write things as sudo: `:w !sudo tee %`
