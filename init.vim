@@ -38,6 +38,8 @@ Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
 " typescript syntax
 Plug 'leafgarland/typescript-vim'
+" tserver
+Plug 'maralla/completor-typescript'
 
 call plug#end()
 
@@ -139,6 +141,7 @@ set mouse=a
 
 " completor stuff
 let g:completor_racer_binary = '/Users/Matt/.cargo/bin/racer'
+let g:completor_tsserver_binary = 'C:\Users\maschmann\AppData\Roaming\npm\tsserver.cmd'
 
 " spelling
 " setlocal spell spelllang=en_us
