@@ -1,1 +1,1 @@
-Guifont Source Code Pro:h11
+Guifont Hasklig Semibold:h11
