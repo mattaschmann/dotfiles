@@ -26,14 +26,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
-" linting
-Plug 'vim-syntastic/syntastic'
-" rust lang for syntastic
-Plug 'rust-lang/rust.vim'
 " exchange two things
 Plug 'tommcdo/vim-exchange'
-" intellisense
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" async linting
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -132,20 +128,6 @@ set mouse=a
 " spelling
 " setlocal spell spelllang=en_us
 
-" Syntastic stuff
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_enable_signs = 0
-" let g:syntastic_error_symbol = '->'
-" Syntastic checker stuff
-let g:syntastic_rust_checkers = ['cargo']
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
 
@@ -159,6 +141,8 @@ nnoremap <Leader>p :Commands<CR>
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
 nnoremap <Leader>f :Ag<CR>
+" Fuzzy search buffers
+nnoremap <Leader>b :Buffers<CR>
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <silent> <Leader>n :noh<CR>
