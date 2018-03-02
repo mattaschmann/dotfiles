@@ -30,6 +30,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tommcdo/vim-exchange'
 " async linting
 Plug 'w0rp/ale'
+" async completion
+Plug 'maralla/completor.vim'
 
 call plug#end()
 
@@ -125,11 +127,23 @@ set wildignore+=node_modules/**,target/**
 " enable mouse
 set mouse=a
 
+" ALE stuff
+" Enable completion where available.
+" let g:ale_completion_enabled = 1
+
+" completor stuff
+let g:completor_racer_binary = '/Users/Matt/.cargo/bin/racer'
+
 " spelling
 " setlocal spell spelllang=en_us
 
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
+
+" completor mappings
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 " NERDTree mappings
 nnoremap <silent> <C-\> :NERDTreeToggle<CR>
@@ -160,9 +174,6 @@ nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 
 " close window
 nmap <silent> <Leader>w :bd<CR>
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " useful things
 " Use this command to write things as sudo: `:w !sudo tee %`
