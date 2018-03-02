@@ -36,6 +36,8 @@ Plug 'tommcdo/vim-exchange'
 Plug 'w0rp/ale'
 " async completion
 Plug 'maralla/completor.vim'
+" typescript syntax
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
