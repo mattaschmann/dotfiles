@@ -13,7 +13,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-operator-flashy'
 " dep for flash
 Plug 'kana/vim-operator-user'
-" fuzzy search
+" fuzzy search: is made better with the_silver_searcher
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " git integration
@@ -24,6 +24,10 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 " make comments easier
 Plug 'tpope/vim-commentary'
+" use repeat with plugins
+Plug 'tpope/vim-repeat'
+" some nice keyboard mappings (including bubbling)
+Plug 'tpope/vim-unimpaired'
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 " filetree
@@ -155,6 +159,12 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
 " NERDTree mappings
 nnoremap <silent> <C-\> :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
+
+" unimpaired bubble mappings
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
 
 " Fuzzy search commands
 nnoremap <Leader>p :Commands<CR>
