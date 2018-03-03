@@ -140,7 +140,6 @@ set wildignore+=node_modules/**,target/**
 
 " bracket matching
 let g:rainbow_active = 0
-nnoremap <silent> <Leader>r :RainbowToggle<CR>
 
 " enable mouse
 set mouse=a
@@ -160,6 +159,9 @@ let g:completor_tsserver_binary = '/usr/local/bin/tsserver'
 
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
+
+" RainBow
+nnoremap <silent> <Leader>r :RainbowToggle<CR>
 
 " completor mappings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
