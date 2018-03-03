@@ -44,6 +44,8 @@ Plug 'maralla/completor.vim'
 Plug 'leafgarland/typescript-vim'
 " tsserver
 Plug 'maralla/completor-typescript'
+" bracket matching
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -135,6 +137,10 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
+
+" bracket matching
+let g:rainbow_active = 0
+nnoremap <silent> <Leader>r :RainbowToggle<CR>
 
 " enable mouse
 set mouse=a
