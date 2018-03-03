@@ -167,6 +167,13 @@ nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 let g:completor_racer_binary = '/Users/Matt/.cargo/bin/racer'
 let g:completor_tsserver_binary = '/usr/local/bin/tsserver'
 
+" emmet stuff
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
 " spelling
 " setlocal spell spelllang=en_us
 
