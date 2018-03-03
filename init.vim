@@ -142,6 +142,8 @@ set mouse=a
 " ALE stuff
 " Enable completion where available.
 " let g:ale_completion_enabled = 1
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 
 " completor stuff
 let g:completor_racer_binary = '/Users/Matt/.cargo/bin/racer'
@@ -157,7 +159,7 @@ let mapleader=" "
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
 
 " NERDTree mappings
-nnoremap <silent> <C-\> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " unimpaired bubble mappings
