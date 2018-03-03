@@ -150,9 +150,7 @@ let g:completor_tsserver_binary = '/usr/local/bin/tsserver'
 let mapleader=" "
 
 " completor mappings
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
 
 " NERDTree mappings
 nnoremap <silent> <C-\> :NERDTreeToggle<CR>
