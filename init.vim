@@ -46,6 +46,14 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maralla/completor-typescript'
 " bracket matching
 Plug 'luochen1990/rainbow'
+" autoformant, i.e. beautify
+Plug 'Chiel92/vim-autoformat'
+" javascript syntax
+Plug 'pangloss/vim-javascript'
+" jsx syntax
+Plug 'mxw/vim-jsx'
+" emmet
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -133,7 +141,7 @@ let g:fzf_colors =
 " have fzf ignore .gitignore files
 " NOTE: This requires the_silver_searcher to be installed
 " see: https://github.com/ggreer/the_silver_searcher
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
@@ -146,6 +154,11 @@ set mouse=a
 
 " ALE stuff
 " Enable completion where available.
+let g:ale_fixers = {
+      \   'generic': [ 'remove_trailing_lines' ],
+      \   'javascript': [ 'eslint' ],
+      \}
+
 " let g:ale_completion_enabled = 1
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
