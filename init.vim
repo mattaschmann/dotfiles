@@ -140,8 +140,9 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 " have fzf ignore .gitignore files
 " NOTE: This requires the_silver_searcher to be installed
+" NOTE: Put a '.ignore' file in project folder to filter things out (i.e. node_modules)
 " see: https://github.com/ggreer/the_silver_searcher
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -l -g ""'
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
