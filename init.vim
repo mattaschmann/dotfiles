@@ -176,6 +176,8 @@ let g:user_emmet_settings = {
 
 " spelling
 " setlocal spell spelllang=en_us
+" NERDTree stuff
+let NERDTreeShowHidden=1
 
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
