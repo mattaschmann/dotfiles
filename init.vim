@@ -182,7 +182,10 @@ let NERDTreeShowHidden=1
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
 
-" RainBow
+" selected text search mapping
+vnoremap // y/\V<C-R>"<CR>
+
+" Rainbow
 nnoremap <silent> <Leader>r :RainbowToggle<CR>
 
 " completor mappings
@@ -203,7 +206,9 @@ nnoremap <Leader>p :Commands<CR>
 " Fuzzy search files in project, ignoring .gitignore files
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
-nnoremap <Leader>f :Ag<CR>
+nnoremap  :Ag<CR>
+vnoremap <Leader>f y:Ag <C-R>"<CR>
+
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>
 
