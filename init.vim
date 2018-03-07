@@ -113,7 +113,7 @@ set showbreak=…
 
 " undo stuff, for mundo
 set undofile
-set undodir=~/.config/nvim
+set undodir=~/.config/nvim/undo
 
 " For true color support
 if has('nvim') || has('termguicolors')

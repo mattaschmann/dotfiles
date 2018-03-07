@@ -1,6 +1,7 @@
 autoload/
 plugged/
 spell/
+undo/
 
 .netrwhist
 rplugin.vim
