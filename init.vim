@@ -56,6 +56,8 @@ Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 " markdown previewer
 Plug 'shime/vim-livedown'
+" Undo branching visualization
+Plug 'simnalamburt/vim-mundo'
 
 call plug#end()
 
@@ -108,6 +110,10 @@ set tabstop=4
 " wrap and linebreak
 set linebreak
 set showbreak=…
+
+" undo stuff, for mundo
+set undofile
+set undodir=~/.config/nvim
 
 " For true color support
 if has('nvim') || has('termguicolors')
