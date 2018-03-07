@@ -54,6 +54,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " emmet
 Plug 'mattn/emmet-vim'
+" markdown previewer
+Plug 'shime/vim-livedown'
 
 call plug#end()
 
@@ -207,7 +209,7 @@ nnoremap <Leader>p :Commands<CR>
 " Fuzzy search files in project, ignoring .gitignore files
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
-nnoremap  :Ag<CR>
+nnoremap <Leader>f :Ag<CR>
 vnoremap <Leader>f y:Ag <C-R>"<CR>
 
 " Fuzzy search buffers

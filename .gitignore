@@ -1,4 +1,6 @@
 autoload/
 plugged/
+spell/
+
 .netrwhist
 rplugin.vim
