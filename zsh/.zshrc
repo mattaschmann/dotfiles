@@ -78,7 +78,7 @@ antigen apply
 source $ZSH/oh-my-zsh.sh
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
-ZSH_AUTOSUGGEST_USE_ASYNC=true
+# ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
 
 # Example aliases
