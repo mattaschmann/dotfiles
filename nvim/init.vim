@@ -58,6 +58,10 @@ Plug 'mattn/emmet-vim'
 Plug 'shime/vim-livedown'
 " Undo branching visualization
 Plug 'simnalamburt/vim-mundo'
+" Better search highlighting
+Plug 'haya14busa/incsearch.vim'
+" Better project searching
+Plug 'wincent/ferret'
 
 call plug#end()
 
@@ -150,7 +154,13 @@ let g:fzf_colors =
 " NOTE: This requires the_silver_searcher to be installed
 " NOTE: Put a '.ignore' file in project folder to filter things out (i.e. node_modules)
 " see: https://github.com/ggreer/the_silver_searcher
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -l -g ""'
+" @Matt TODO remove this if ripgrep works
+" let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -l -g ""'
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
@@ -160,6 +170,9 @@ let g:rainbow_active = 0
 
 " enable mouse
 set mouse=a
+
+" disable python2
+let g:loaded_python_provider = 1
 
 " ALE stuff
 " Enable completion where available.
@@ -215,8 +228,8 @@ nnoremap <Leader>p :Commands<CR>
 " Fuzzy search files in project, ignoring .gitignore files
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
-nnoremap <Leader>f :Ag<CR>
-vnoremap <Leader>f y:Ag <C-R>"<CR>
+nnoremap <Leader>f :Rg<CR>
+vnoremap <Leader>f y:Rg <C-R>"<CR>
 
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>
@@ -237,6 +250,11 @@ nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 
 " close window
 nmap <silent> <Leader>w :bd<CR>
+
+" incsearch plugin mappings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " useful things
 " Use this command to write things as sudo: `:w !sudo tee %`
