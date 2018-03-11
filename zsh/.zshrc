@@ -99,8 +99,11 @@ source $ZSH/oh-my-zsh.sh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# requires ripgrep: https://github.com/BurntSush | sed s/^\./~/i/ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# requires bfs: https://github.com/tavianator/bfs
+export FZF_ALT_C_COMMAND="bfs -type d -nohidden 2> /dev/null"
 
 # home bin
 export PATH="$HOME/bin:$PATH"
