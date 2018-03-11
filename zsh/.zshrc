@@ -1,3 +1,7 @@
+# tmux stuff, has to be at the top
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_FIXTERM=true
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -6,10 +10,6 @@ KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
-# tmux stuff, has to be at the top
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_FIXTERM=true
 
 # Theme
 ZSH_THEME="sorin"
@@ -77,12 +77,9 @@ antigen apply
 
 source $ZSH/oh-my-zsh.sh
 
-# autosuggestions stuff
+# autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
-
-
-# User configuration
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
