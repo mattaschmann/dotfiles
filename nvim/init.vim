@@ -62,6 +62,8 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'haya14busa/incsearch.vim'
 " Better project searching
 Plug 'wincent/ferret'
+" Task plugin
+Plug 'irrationalistic/vim-tasks'
 
 call plug#end()
 
@@ -156,9 +158,7 @@ let g:fzf_colors =
 " see: https://github.com/ggreer/the_silver_searcher
 " @Matt TODO remove this if ripgrep works
 " let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -l -g ""'
-let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "!{.git,node_modules,vendor}/*" '
+let g:rg_command = 'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"'
 
 command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
@@ -261,3 +261,4 @@ map g/ <Plug>(incsearch-stay)
 " useful things
 " Use this command to write things as sudo: `:w !sudo tee %`
 " use `par` for better formatting: `:set formatprg=par`
+

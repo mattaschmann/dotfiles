@@ -79,13 +79,11 @@ source $ZSH/oh-my-zsh.sh
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
-ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # vi mode
 bindkey -v
 # autosuggest
 bindkey '^f' autosuggest-accept
-
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -109,4 +107,3 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
