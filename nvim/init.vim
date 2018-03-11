@@ -230,6 +230,8 @@ nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
 nnoremap <Leader>f :Rg<CR>
 vnoremap <Leader>f y:Rg <C-R>"<CR>
+" Fuzzy search in current file
+nnoremap <Leader>l :Lines<CR>
 
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>
