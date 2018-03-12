@@ -216,10 +216,6 @@ let g:ale_fixers = {
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 
-" completor stuff
-let g:completor_racer_binary = '/Users/Matt/.cargo/bin/racer'
-let g:completor_tsserver_binary = '/usr/local/bin/tsserver'
-
 " emmet stuff
 let g:user_emmet_settings = {
   \  'javascript.jsx' : {
@@ -273,6 +269,11 @@ nmap Y <Plug>(operator-flashy)$
 
 " show settings file
 nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
+" reload settings file
+nnoremap <silent> <Leader>rr :so $MYVIMRC<CR>
+
+" quit out of insert mode in an easier way
+inoremap jj <Esc>
 
 " close window
 nmap <silent> <Leader>w :bd<CR>
