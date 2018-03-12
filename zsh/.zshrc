@@ -94,6 +94,7 @@ export EDITOR=nvim
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # NOTE: requires ripgrep: https://github.com/BurntSushi/ripgrep
+# NOTE: use an .ignore file for rg, can be placed anywhere in a parent directory to work
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --ignore-case 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # NOTE: requires bfs: https://github.com/tavianator/bfs
