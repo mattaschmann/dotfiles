@@ -52,7 +52,8 @@ Plug 'pangloss/vim-javascript'
 " jsx syntax
 Plug 'mxw/vim-jsx'
 " emmet
-Plug 'mattn/emmet-vim'
+" @Matt TODO: ctrl-y bindings are getting in the way
+" Plug 'mattn/emmet-vim'
 " markdown previewer
 Plug 'shime/vim-livedown'
 " Undo branching visualization
@@ -201,6 +202,15 @@ set mouse=a
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" <CR>: close popup and save indent.
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function() abort
+"   return deoplete#close_popup() . "\<CR>"
+" endfunction
+" " deoplete mappings
+" @Matt TODO: This doesn't really work right now
+inoremap <silent><expr> <CR> pumvisible() ? "\<C-n>"."\<C-y>" : "\<CR>"
 
 " disable python2
 let g:loaded_python_provider = 1
@@ -233,9 +243,6 @@ vnoremap // y/\V<C-R>"<CR>
 
 " Rainbow
 nnoremap <silent> <Leader>r :RainbowToggle<CR>
-
-" completor mappings
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>\<C-y>" : "\<Tab>"
 
 " NERDTree mappings
 nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
