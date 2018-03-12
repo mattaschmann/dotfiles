@@ -1,3 +1,6 @@
+" Map leader to space, this should be before any <Leader> mappings
+let mapleader=" "
+
 " Windows specific shell stuff
 " set shell=powershell
 " set shellcmdflag=-command
@@ -14,7 +17,7 @@ Plug 'haya14busa/vim-operator-flashy'
 " dep for flash
 Plug 'kana/vim-operator-user'
 " fuzzy search: is made better with the_silver_searcher
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -38,12 +41,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tommcdo/vim-exchange'
 " async linting
 Plug 'w0rp/ale'
-" async completion
-Plug 'maralla/completor.vim'
 " typescript syntax
 Plug 'leafgarland/typescript-vim'
-" tsserver
-Plug 'maralla/completor-typescript'
 " bracket matching
 Plug 'luochen1990/rainbow'
 " autoformant, i.e. beautify
@@ -64,6 +63,10 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'wincent/ferret'
 " Task plugin
 Plug 'irrationalistic/vim-tasks'
+" Completions
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" rust
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -152,15 +155,40 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-" have fzf ignore .gitignore files
-" NOTE: This requires the_silver_searcher to be installed
-" NOTE: Put a '.ignore' file in project folder to filter things out (i.e. node_modules)
-" see: https://github.com/ggreer/the_silver_searcher
-" @Matt TODO remove this if ripgrep works
-" let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -l -g ""'
-let g:rg_command = 'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"'
 
-command! -bang -nargs=* Rg call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+" NOTE: This requires ripgrep to be installed
+" NOTE: Put a '.ignore' file in project folder to filter things out (i.e. node_modules)
+
+" Copied from fzf-vim help files
+" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --ignore-case --no-ignore-vcs --hidden '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" Likewise, Files command with preview window
+" Customized from helpfile to get the '?' functionality
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+    " Mapping selecting mappings
+    nmap <leader><tab> <plug>(fzf-maps-n)
+    xmap <leader><tab> <plug>(fzf-maps-x)
+    omap <leader><tab> <plug>(fzf-maps-o)
+
+    " Insert mode completion
+    imap <c-x><c-k> <plug>(fzf-complete-word)
+    imap <c-x><c-f> <plug>(fzf-complete-path)
+    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+    imap <c-x><c-l> <plug>(fzf-complete-line)
+
+    " Advanced customization using autoload functions
+    inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
@@ -170,6 +198,9 @@ let g:rainbow_active = 0
 
 " enable mouse
 set mouse=a
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " disable python2
 let g:loaded_python_provider = 1
@@ -201,9 +232,6 @@ let g:user_emmet_settings = {
 " NERDTree stuff
 let NERDTreeShowHidden=1
 
-" Map leader to space, this should be before any <Leader> mappings
-let mapleader=" "
-
 " selected text search mapping
 vnoremap // y/\V<C-R>"<CR>
 
@@ -228,7 +256,7 @@ nnoremap <Leader>p :Commands<CR>
 " Fuzzy search files in project, ignoring .gitignore files
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
-nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>f :Rg<Space>
 vnoremap <Leader>f y:Rg <C-R>"<CR>
 " Fuzzy search in current file
 nnoremap <Leader>l :Lines<CR>
@@ -242,10 +270,6 @@ nnoremap <silent> <Leader>n :noh<CR>
 " For the flashy plugin
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
-
-" location window mappins
-nmap <Leader>] :lne<CR>
-nmap <Leader>[ :lpr<CR>
 
 " show settings file
 nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
