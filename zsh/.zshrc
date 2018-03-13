@@ -1,6 +1,6 @@
 # tmux stuff, has to be at the top
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_FIXTERM=true
+# ZSH_TMUX_FIXTERM=true
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -10,9 +10,6 @@ KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
-# Theme
-ZSH_THEME="sorin"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,6 +55,8 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(tmux vi-mode fzf-zsh)
 
+source $ZSH/oh-my-zsh.sh
+
 # Let antigen manage plugins: https://github.com/zsh-users/antigen
 source ~/.antigen/antigen.zsh
 
@@ -70,15 +69,23 @@ antigen bundle vi-mode
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 
+# theme
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+
 # this one must be the last plugin
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
-source $ZSH/oh-my-zsh.sh
+# Theme
+ZSH_THEME=""
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
+
+autoload -U promptinit; promptinit
+prompt pure
 
 # vi mode
 bindkey -v
