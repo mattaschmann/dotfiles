@@ -16,7 +16,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-operator-flashy'
 " dep for flash
 Plug 'kana/vim-operator-user'
-" fuzzy search: is made better with the_silver_searcher
+" fuzzy search: is made better with ripgrep
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " git integration
@@ -66,6 +66,7 @@ Plug 'wincent/ferret'
 Plug 'irrationalistic/vim-tasks'
 " Completions
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
 " rust
 Plug 'racer-rust/vim-racer'
 
@@ -202,15 +203,6 @@ set mouse=a
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-" <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function() abort
-"   return deoplete#close_popup() . "\<CR>"
-" endfunction
-" " deoplete mappings
-" @Matt TODO: This doesn't really work right now
-inoremap <silent><expr> <CR> pumvisible() ? "\<C-n>"."\<C-y>" : "\<CR>"
 
 " disable python2
 let g:loaded_python_provider = 1
@@ -263,6 +255,8 @@ nnoremap <Leader>f :Rg<Space>
 vnoremap <Leader>f y:Rg <C-R>"<CR>
 " Fuzzy search in current file
 nnoremap <Leader>l :Lines<CR>
+" Shortcut for :only
+nnoremap <Leader>o :only<CR>
 
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>

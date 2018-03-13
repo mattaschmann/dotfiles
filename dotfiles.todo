@@ -1,16 +1,20 @@
 Dotfiles tasks:
-  ☐ Setup deoplete to use enter/tab to select and close
   ☐ Make better zsh theme, get it into dotfiles
-  ☐ Make better tmux theme
   ☐ Organize init.vim
     ☐ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
   ☐ Check out UltiSnips, use in fzf?
   ☐ Figure out a better link script, this directory based one sucks
     ☐ look at dotbot: https://github.com/anishathalye/dotbot
-  ☐ How to set default tmux session name?
   ☐ Might not need ferret?
   ☐ Setup filetype based goto definition mappings
   ☐ Add README.md
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+  ✘ How to set default tmux session name? @cancelled(2018-03-12 22:27) @project(Dotfiles tasks)
+  ✘ Make better tmux theme @cancelled(2018-03-12 22:23) @project(Dotfiles tasks)
+  ✘ Setup deoplete to use enter/tab to select and close @cancelled(2018-03-12 22:23) @project(Dotfiles tasks)
+  ✔ Remap todo plugin so it doesn't use space to mark as done @done(2018-03-11 16:57) @project(Sunday tasks)
   ✔ Add an alias for so % @done(2018-03-11 21:30) @project(Dotfiles tasks)
   ✔ Get karibener dotfiles? @done(2018-03-11 21:09) @project(Dotfiles tasks)
   ✘ Get pheonix config in dotfiles? @cancelled(2018-03-11 21:09) @project(Dotfiles tasks)
@@ -21,4 +25,3 @@ Dotfiles tasks:
   ✔ Look into fzf's vim script and see what the commands are doing @done(2018-03-11 20:11) @project(Sunday tasks)
   ✘ Try out vim todolist @cancelled(2018-03-11 16:58) @project(Sunday tasks)
   ✔ Remove async from ZSH_AUTOSUGGEST_USE_ASYNC @done(2018-03-11 16:57) @project(Sunday tasks)
-  ✔ Remap todo plugin so it doesn't use space to mark as done @done(2018-03-11 16:57) @project(Sunday tasks)
