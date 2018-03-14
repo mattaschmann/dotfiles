@@ -230,7 +230,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/workspace/dotfiles/iterm2</string>
+	<string>~/Desktop</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{868, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -271,7 +271,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>583 330 599 388 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>305 393 918 381 0 0 1440 877 </string>
+	<string>200 349 918 381 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>79 78 970 707 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -969,7 +969,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-13T03:00:53Z</date>
+	<date>2018-03-14T03:00:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
