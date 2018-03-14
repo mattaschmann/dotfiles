@@ -271,9 +271,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>583 330 599 388 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>424 268 796 473 0 0 1440 877 </string>
+	<string>305 393 918 381 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 170 970 707 0 0 1440 877 </string>
+	<string>79 78 970 707 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>264 71 970 707 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -449,9 +449,9 @@
 				<key>Blue Component</key>
 				<real>0.0</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.1491314172744751</real>
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
@@ -492,11 +492,11 @@
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.91000000000000003</real>
+				<real>0.9268307089805603</real>
 				<key>Red Component</key>
-				<real>0.65000000000000002</real>
+				<real>0.70213186740875244</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -829,13 +829,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.67800000000000005</real>
+				<real>0.73423302173614502</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.27000000000000002</real>
+				<real>0.35916060209274292</real>
 				<key>Red Component</key>
-				<real>0.023</real>
+				<real>0.0</real>
 			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
@@ -969,9 +969,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-11T21:24:11Z</date>
+	<date>2018-03-13T03:00:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>TabStyle</key>
+	<integer>1</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>

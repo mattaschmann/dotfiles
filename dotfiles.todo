@@ -1,10 +1,8 @@
 Dotfiles tasks:
-  ☐ Make better zsh theme, get it into dotfiles
-  ☐ Organize init.vim
-    ☐ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
+  ☐ look at dotbot: https://github.com/anishathalye/dotbot
+  ✔ Make better zsh theme, get it into dotfiles @done(2018-03-13 20:15) @project(Dotfiles tasks)
+  ☐ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
   ☐ Check out UltiSnips, use in fzf?
-  ☐ Figure out a better link script, this directory based one sucks
-    ☐ look at dotbot: https://github.com/anishathalye/dotbot
   ☐ Might not need ferret?
   ☐ Setup filetype based goto definition mappings
   ☐ Add README.md
