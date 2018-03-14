@@ -82,7 +82,7 @@ antigen apply
 ZSH_THEME=""
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 autoload -U promptinit; promptinit
 prompt pure

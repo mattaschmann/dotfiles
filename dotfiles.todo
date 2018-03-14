@@ -1,14 +1,16 @@
 Dotfiles tasks:
-  ☐ look at dotbot: https://github.com/anishathalye/dotbot
-  ✔ Make better zsh theme, get it into dotfiles @done(2018-03-13 20:15) @project(Dotfiles tasks)
+  ☐ Add iterm2 themes? Where do they go?
+  ☐ make git shell command to grab the brogrammer theme
   ☐ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
+  ☐ Add README.md
   ☐ Check out UltiSnips, use in fzf?
   ☐ Might not need ferret?
   ☐ Setup filetype based goto definition mappings
-  ☐ Add README.md
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ look at dotbot: https://github.com/anishathalye/dotbot @done(2018-03-13 20:45) @project(Dotfiles tasks)
+  ✔ Make better zsh theme, get it into dotfiles @done(2018-03-13 20:15) @project(Dotfiles tasks)
   ✘ How to set default tmux session name? @cancelled(2018-03-12 22:27) @project(Dotfiles tasks)
   ✘ Make better tmux theme @cancelled(2018-03-12 22:23) @project(Dotfiles tasks)
   ✘ Setup deoplete to use enter/tab to select and close @cancelled(2018-03-12 22:23) @project(Dotfiles tasks)
