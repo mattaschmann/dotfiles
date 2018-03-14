@@ -10,6 +10,7 @@
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
+    ~/.config/nvim/config: nvim/config
     ~/.ignore: rg/.ignore
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc

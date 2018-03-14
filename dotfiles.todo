@@ -1,7 +1,6 @@
 Dotfiles tasks:
-  ☐ Add iterm2 themes? Where do they go?
-  ☐ make git shell command to grab the brogrammer theme
-  ☐ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
+  ☐ Set that editing config so that I'm not auto wrapped when commenting
+  ✔ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/ @done(2018-03-13 22:41) @project(Dotfiles tasks)
   ☐ Add README.md
   ☐ Check out UltiSnips, use in fzf?
   ☐ Might not need ferret?
@@ -9,6 +8,8 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add iterm2 themes? Where do they go? @done(2018-03-13 21:38) @project(Dotfiles tasks)
+  ✔ make git shell command to grab the brogrammer theme @done(2018-03-13 21:38) @project(Dotfiles tasks)
   ✔ look at dotbot: https://github.com/anishathalye/dotbot @done(2018-03-13 20:45) @project(Dotfiles tasks)
   ✔ Make better zsh theme, get it into dotfiles @done(2018-03-13 20:15) @project(Dotfiles tasks)
   ✘ How to set default tmux session name? @cancelled(2018-03-12 22:27) @project(Dotfiles tasks)
