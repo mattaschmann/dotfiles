@@ -1,5 +1,5 @@
 # tmux stuff, has to be at the top
-ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_FIXTERM=true
 
 # If you come from bash you might have to change your $PATH.
@@ -63,7 +63,7 @@ source ~/.antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen bundle tmux
+# antigen bundle tmux
 antigen bundle vi-mode
 
 antigen bundle zsh-users/zsh-completions
@@ -95,6 +95,7 @@ bindkey '^f' autosuggest-accept
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tm="tmux -2 new -s default"
 
 export EDITOR=nvim
 
