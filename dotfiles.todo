@@ -1,12 +1,13 @@
 Dotfiles tasks:
-  ☐ Make better tab unicode character
   ☐ Add README.md
   ☐ Check out UltiSnips, use in fzf?
-  ☐ Might not need ferret?
   ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✘ Might not need ferret? @cancelled(2018-03-17 17:19) @project(Dotfiles tasks)
+  ✔ Add helptags binding @done(2018-03-17 17:14) @project(Dotfiles tasks)
+  ✔ Make better tab unicode character @done(2018-03-17 17:12) @project(Dotfiles tasks)
   ✔ Set that editing config so that I'm not auto wrapped when commenting @done(2018-03-17 12:01) @project(Dotfiles tasks)
   ✔ Relook into tmux theme @done(2018-03-17 11:11) @project(Dotfiles tasks)
   ✔ Look into base16 theme @done(2018-03-17 11:11) @project(Dotfiles tasks)

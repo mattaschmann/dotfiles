@@ -61,4 +61,5 @@ nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>o :only<CR>
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>
-
+" Fuzzy search helptags
+nnoremap <Leader>h :Helptags<CR>

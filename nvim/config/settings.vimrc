@@ -31,7 +31,7 @@ set cursorline
 
 " whitespace
 set list
-set listchars=tab:▸\ ,trail:•,nbsp:•
+set listchars=tab:»\ ,trail:•,nbsp:•
 
 " ignored directories in grep
 set wildignore+=node_modules/**,target/**
