@@ -15,7 +15,3 @@ inoremap jj <Esc>
 " close window
 nmap <silent> <Leader>w :bd<CR>
 
-" useful things
-" Use this command to write things as sudo: `:w !sudo tee %`
-" use `par` for better formatting: `:set formatprg=par`
-

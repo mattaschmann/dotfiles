@@ -15,7 +15,6 @@ Plug 'kana/vim-operator-user'
 
 " fuzzy search: is made better with ripgrep
 Plug '/usr/local/opt/fzf'
-
 Plug 'junegunn/fzf.vim'
 
 " git integration
@@ -80,11 +79,13 @@ Plug 'irrationalistic/vim-tasks'
 
 " Completions
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'ervandew/supertab'
 
 " rust
 Plug 'racer-rust/vim-racer'
+
+" Close all buffers but current/specified one
+Plug 'schickling/vim-bufonly'
 
 call plug#end()
 

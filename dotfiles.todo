@@ -1,8 +1,6 @@
 Dotfiles tasks:
-  ☐ Relook into tmux theme
-  ☐ Look into base16 theme
   ☐ Set that editing config so that I'm not auto wrapped when commenting
-  ✔ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/ @done(2018-03-13 22:41) @project(Dotfiles tasks)
+  ☐ Make better tab unicode character
   ☐ Add README.md
   ☐ Check out UltiSnips, use in fzf?
   ☐ Might not need ferret?
@@ -10,6 +8,9 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Relook into tmux theme @done(2018-03-17 11:11) @project(Dotfiles tasks)
+  ✔ Look into base16 theme @done(2018-03-17 11:11) @project(Dotfiles tasks)
+  ✔ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/ @done(2018-03-13 22:41) @project(Dotfiles tasks)
   ✔ Add iterm2 themes? Where do they go? @done(2018-03-13 21:38) @project(Dotfiles tasks)
   ✔ make git shell command to grab the brogrammer theme @done(2018-03-13 21:38) @project(Dotfiles tasks)
   ✔ look at dotbot: https://github.com/anishathalye/dotbot @done(2018-03-13 20:45) @project(Dotfiles tasks)

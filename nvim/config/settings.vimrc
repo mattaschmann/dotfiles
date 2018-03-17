@@ -39,6 +39,17 @@ set wildignore+=node_modules/**,target/**
 " enable mouse
 set mouse=a
 
+" width till wrapping
+set textwidth=80
+
+" use 'par' for better formatting, see: http://www.nicemice.net/par/
+set formatprg=par
+
+" preview window height (i.e. Gstatus window)
+set previewheight=16
+
 " disable python2
 let g:loaded_python_provider = 1
 
+" useful things
+" Use this command to write things as sudo: `:w !sudo tee %`
