@@ -1,5 +1,4 @@
 Dotfiles tasks:
-  ☐ Set that editing config so that I'm not auto wrapped when commenting
   ☐ Make better tab unicode character
   ☐ Add README.md
   ☐ Check out UltiSnips, use in fzf?
@@ -8,6 +7,7 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Set that editing config so that I'm not auto wrapped when commenting @done(2018-03-17 12:01) @project(Dotfiles tasks)
   ✔ Relook into tmux theme @done(2018-03-17 11:11) @project(Dotfiles tasks)
   ✔ Look into base16 theme @done(2018-03-17 11:11) @project(Dotfiles tasks)
   ✔ https://gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/ @done(2018-03-13 22:41) @project(Dotfiles tasks)

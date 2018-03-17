@@ -39,9 +39,6 @@ set wildignore+=node_modules/**,target/**
 " enable mouse
 set mouse=a
 
-" width till wrapping
-set textwidth=80
-
 " use 'par' for better formatting, see: http://www.nicemice.net/par/
 set formatprg=par
 
