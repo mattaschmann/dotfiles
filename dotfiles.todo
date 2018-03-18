@@ -1,10 +1,11 @@
 Dotfiles tasks:
-  ☐ Add README.md
-  ☐ Check out UltiSnips, use in fzf?
+  ☐ Why is the popup window showing up twice, especially when I hit ctrl-y
   ☐ Setup filetype based goto definition mappings
+  ☐ Check out UltiSnips, use in fzf?
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add README.md @done(2018-03-17 17:35) @project(Dotfiles tasks)
   ✘ Might not need ferret? @cancelled(2018-03-17 17:19) @project(Dotfiles tasks)
   ✔ Add helptags binding @done(2018-03-17 17:14) @project(Dotfiles tasks)
   ✔ Make better tab unicode character @done(2018-03-17 17:12) @project(Dotfiles tasks)
