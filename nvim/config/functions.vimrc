@@ -1,4 +1,3 @@
-" @Matt TODO: move to airline specific file
 " Edit vim-airline
 function! AirlineInit()
   call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
@@ -35,3 +34,23 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+" Toggle spellchecking
+command! -nargs=* ToggleSpellCheck call ToggleSpellCheck()
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+
+" Toggle relative line mode
+function! ToggleRelativeNumber()
+  set relativenumber!
+  if &spell
+    echo "Relative Number ON"
+  else
+    echo "Relative Number OFF"
+  endif
+endfunction
