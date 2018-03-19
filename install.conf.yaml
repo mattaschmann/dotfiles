@@ -17,3 +17,7 @@
 
 - shell:
     - [bash iterm2/link-iterm2.sh, Linking iTerm2]
+    # Add special terminfos so we can use italics
+    - [tic terminfo/xterm-256color.terminfo]
+    - [tic terminfo/tmux.terminfo]
+    - [tic terminfo/tmux-256color.terminfo]

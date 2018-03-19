@@ -1,9 +1,10 @@
 Dotfiles tasks:
-  ☐ Setup filetype based goto definition mappings
   ☐ Check out UltiSnips, use in fzf?
+  ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add italics @done(2018-03-18 22:20) @project(Dotfiles tasks)
   ✔ Why is the popup window showing up twice, especially when I hit ctrl-y @done(2018-03-17 20:55) @project(Dotfiles tasks)
   ✔ Try out https://github.com/terryma/vim-multiple-cursors @done(2018-03-17 20:55) @project(Dotfiles tasks)
   ✔ Add README.md @done(2018-03-17 17:35) @project(Dotfiles tasks)
