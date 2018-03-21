@@ -1,6 +1,7 @@
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><C-y> deoplete#close_popup()
+inoremap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
 
 " ALE stuff
 " Enable completion where available.

@@ -87,5 +87,8 @@ Plug 'racer-rust/vim-racer'
 " Close all buffers but current/specified one
 Plug 'schickling/vim-bufonly'
 
+" snippets
+Plug 'SirVer/ultisnips'
+
 call plug#end()
 
