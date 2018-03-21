@@ -44,13 +44,3 @@ function! ToggleSpellCheck()
     echo "Spellcheck OFF"
   endif
 endfunction
-
-" Toggle relative line mode
-function! ToggleRelativeNumber()
-  set relativenumber!
-  if &spell
-    echo "Relative Number ON"
-  else
-    echo "Relative Number OFF"
-  endif
-endfunction

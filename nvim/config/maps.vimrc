@@ -13,4 +13,4 @@ inoremap jj <Esc>
 nmap <silent> <Leader>w :bd<CR>
 
 " toggle relative numbers
-nnoremap <Leader>r :call ToggleRelativeNumber()<CR>
+nnoremap <silent> <Leader>r :set relativenumber!<CR>
