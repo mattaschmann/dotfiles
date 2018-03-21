@@ -10,9 +10,6 @@ let g:ale_fixers = {
       \   'javascript': [ 'eslint' ],
       \}
 
-nmap <silent> <Leader>j <Plug>(ale_next_wrap)
-nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
-
 " NERDTree stuff
 let NERDTreeShowHidden=1
 
