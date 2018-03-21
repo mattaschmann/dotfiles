@@ -59,6 +59,8 @@ vnoremap <Leader>f y:Rg <C-R>"<CR>
 nnoremap <Leader>l :Lines<CR>
 " Shortcut for :only
 nnoremap <Leader>o :only<CR>
+" Remove all other buffers
+nnoremap <Leader>O :Bonly<CR>
 " Fuzzy search buffers
 nnoremap <Leader>b :Buffers<CR>
 " Fuzzy search helptags

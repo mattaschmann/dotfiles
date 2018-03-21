@@ -1,6 +1,3 @@
-" selected text search mapping
-vnoremap // y/\V<C-R>"<CR>
-
 "This unsets the "last search pattern" register
 nnoremap <silent> <Leader>n :noh<CR>
 
