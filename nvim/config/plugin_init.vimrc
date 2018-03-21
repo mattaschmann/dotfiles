@@ -90,5 +90,8 @@ Plug 'schickling/vim-bufonly'
 " snippets
 Plug 'SirVer/ultisnips'
 
+" Visual star
+Plug 'bronson/vim-visual-star-search'
+
 call plug#end()
 

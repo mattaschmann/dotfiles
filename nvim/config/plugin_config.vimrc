@@ -32,3 +32,15 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" Ferret mappings
+nmap <leader>z <Plug>(FerretAcks)
+
+" Edit vim-airline
+function! AirlineInit()
+  call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
+  let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
