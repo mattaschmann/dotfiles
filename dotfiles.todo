@@ -1,9 +1,10 @@
 Dotfiles tasks:
-  ☐ Try and make an UltiSnips command
   ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Get neosnippets working @done(2018-03-23 16:59) @project(Dotfiles tasks)
+  ✘ Try and make an UltiSnips command @cancelled(2018-03-23 16:59) @project(Dotfiles tasks)
   ✘ Make diff colors more apparent @cancelled(2018-03-23 14:58) @project(Dotfiles tasks)
   ✘ Make tmux use current directories name as session name? @cancelled(2018-03-23 14:58) @project(Dotfiles tasks)
   ✔ Go over mappings and use LocalLeader for some @done(2018-03-23 14:30) @project(Dotfiles tasks)

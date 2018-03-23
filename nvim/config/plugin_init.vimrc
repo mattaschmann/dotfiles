@@ -79,16 +79,17 @@ Plug 'irrationalistic/vim-tasks'
 
 " Completions
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
+
+" neosnippets
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " rust
 Plug 'racer-rust/vim-racer'
 
 " Close all buffers but current/specified one
 Plug 'schickling/vim-bufonly'
-
-" snippets
-Plug 'SirVer/ultisnips'
 
 " Visual star
 Plug 'bronson/vim-visual-star-search'

@@ -1,7 +1,7 @@
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><C-y> deoplete#close_popup()
-inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
+" inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
 
 " ALE stuff
 " Enable completion where available.
@@ -46,3 +46,14 @@ autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" neosnippets config
+let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
+imap <expr><TAB>
+  \ neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" :
+  \ pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" For conceal markers.
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
