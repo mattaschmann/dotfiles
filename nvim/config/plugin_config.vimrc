@@ -18,10 +18,10 @@ nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " unimpaired bubble mappings
-nmap <C-K> [e
-nmap <C-J> ]e
-vmap <C-K> [egv
-vmap <C-J> ]egv
+nmap <Leader>k [e
+nmap <Leader>j ]e
+vmap <Leader>k [egv
+vmap <Leader>j ]egv
 
 " For the flashy plugin
 map y <Plug>(operator-flashy)
