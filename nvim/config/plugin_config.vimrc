@@ -1,10 +1,11 @@
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><C-y> deoplete#close_popup()
-inoremap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
 
 " ALE stuff
 " Enable completion where available.
+nnoremap <LocalLeader>f :ALEFix<CR>
 let g:ale_fixers = {
       \   'generic': [ 'remove_trailing_lines' ],
       \   'javascript': [ 'eslint' ],
@@ -33,7 +34,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Ferret mappings
-nmap <leader>z <Plug>(FerretAcks)
+nmap <LocalLeader>a <Plug>(FerretAck)
+nmap <LocalLeader>r <Plug>(FerretAcks)
 
 " Edit vim-airline
 function! AirlineInit()

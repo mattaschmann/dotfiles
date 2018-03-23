@@ -1,10 +1,13 @@
 Dotfiles tasks:
-  ☐ Better tig navigation
   ☐ Try and make an UltiSnips command
   ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✘ Make diff colors more apparent @cancelled(2018-03-23 14:58) @project(Dotfiles tasks)
+  ✘ Make tmux use current directories name as session name? @cancelled(2018-03-23 14:58) @project(Dotfiles tasks)
+  ✔ Go over mappings and use LocalLeader for some @done(2018-03-23 14:30) @project(Dotfiles tasks)
+  ✔ Better tig navigation @done(2018-03-22 20:51) @project(Dotfiles tasks)
   ✔ Learn how to use tmux's copy mode like vim @done(2018-03-22 20:10) @project(Dotfiles tasks)
   ✘ User ferret to do <leader>* searching @cancelled(2018-03-22 19:55) @project(Dotfiles tasks)
   ✔ Add italics @done(2018-03-18 22:20) @project(Dotfiles tasks)

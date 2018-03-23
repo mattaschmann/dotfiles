@@ -1,5 +1,6 @@
 " Map leader to space, this should be before any <Leader> mappings
 let mapleader=" "
+let maplocalleader="\\"
 
 " colorscheme
 colorscheme challenger_deep
