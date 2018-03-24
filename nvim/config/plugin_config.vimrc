@@ -12,7 +12,7 @@ imap <expr><TAB>
 
 " ALE stuff
 " Enable completion where available.
-nnoremap <LocalLeader>f :ALEFix<CR>
+nnoremap <silent> <LocalLeader>f :ALEFix<CR>
 let g:ale_fixers = {
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
