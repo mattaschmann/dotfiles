@@ -1,5 +1,6 @@
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
 
@@ -52,3 +53,8 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" Emmet stuff
+let g:user_emmet_leader_key='<C-;>'
+autocmd FileType html,markdown,css,javascript.jsx,vim setlocal omnifunc=emmet#completeTag
+
