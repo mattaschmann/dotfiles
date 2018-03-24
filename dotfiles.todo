@@ -3,6 +3,8 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Re-add emmet @done(2018-03-23 21:02) @project(Dotfiles tasks)
+  ✘ Re-add supertab? @cancelled(2018-03-23 20:56) @project(Dotfiles tasks)
   ✔ Get neosnippets working @done(2018-03-23 16:59) @project(Dotfiles tasks)
   ✘ Try and make an UltiSnips command @cancelled(2018-03-23 16:59) @project(Dotfiles tasks)
   ✘ Make diff colors more apparent @cancelled(2018-03-23 14:58) @project(Dotfiles tasks)

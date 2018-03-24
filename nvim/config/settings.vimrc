@@ -49,5 +49,11 @@ set previewheight=16
 " disable python2
 let g:loaded_python_provider = 1
 
+" For conceal markers.
+if has('conceal')
+  set conceallevel=1 concealcursor=niv
+endif
+
 " useful things
 " Use this command to write things as sudo: `:w !sudo tee %`
+

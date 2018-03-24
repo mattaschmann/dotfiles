@@ -4,7 +4,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 " show settings file
 nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 " reload settings file
-nnoremap <silent> <LocalLeader>R :so $MYVIMRC<CR>
+nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 
 " quit out of insert mode in an easier way
 inoremap jj <Esc>
@@ -22,7 +22,7 @@ nnoremap <Leader>x :xit<CR>
 nnoremap <Leader>q :quit<CR>
 
 " toggle relative numbers
-nnoremap <silent> <LocalLeader>r :set relativenumber!<CR>
+nnoremap <silent> <Leader>r :set relativenumber!<CR>
 
 " easier window movement
 nnoremap <C-h> <C-w>h

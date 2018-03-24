@@ -84,6 +84,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " neosnippets
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/context_filetype.vim'
 
 " rust
 Plug 'racer-rust/vim-racer'
@@ -93,6 +94,9 @@ Plug 'schickling/vim-bufonly'
 
 " Visual star
 Plug 'bronson/vim-visual-star-search'
+
+" emmet
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 

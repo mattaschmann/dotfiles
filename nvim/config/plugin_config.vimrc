@@ -1,14 +1,21 @@
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><C-y> deoplete#close_popup()
-" inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
+
+" neosnippets config
+let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
+imap <expr><TAB>
+  \ neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" :
+  \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " ALE stuff
 " Enable completion where available.
 nnoremap <LocalLeader>f :ALEFix<CR>
 let g:ale_fixers = {
-      \   'generic': [ 'remove_trailing_lines' ],
-      \   'javascript': [ 'eslint' ],
+      \   'javascript': [ 'eslint', 'trim_whitespace' ],
+      \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
       \}
 
 " NERDTree stuff
@@ -45,15 +52,3 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" neosnippets config
-let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
-imap <expr><TAB>
-  \ neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" :
-  \ pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
