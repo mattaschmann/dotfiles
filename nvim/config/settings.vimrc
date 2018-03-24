@@ -54,9 +54,6 @@ if has('conceal')
   set conceallevel=1 concealcursor=niv
 endif
 
-" Don't add the comment prefix when I hit enter or o/O on a comment line.
-set formatoptions-=or
-
-" useful things
-" Use this command to write things as sudo: `:w !sudo tee %`
+" Don't add the comment prefix automatically in certain files
+au FileType vim setlocal fo-=r fo-=o
 

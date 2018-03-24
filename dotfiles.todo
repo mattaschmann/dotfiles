@@ -1,8 +1,10 @@
 Dotfiles tasks:
+  ☐ fix emmet leader
   ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Figure out why formatoptions not working @done(2018-03-23 21:52) @project(Dotfiles tasks)
   ✔ Re-add emmet @done(2018-03-23 21:02) @project(Dotfiles tasks)
   ✘ Re-add supertab? @cancelled(2018-03-23 20:56) @project(Dotfiles tasks)
   ✔ Get neosnippets working @done(2018-03-23 16:59) @project(Dotfiles tasks)
