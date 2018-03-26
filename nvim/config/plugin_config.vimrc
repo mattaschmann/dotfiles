@@ -16,7 +16,7 @@ imap <expr><TAB>
 nnoremap <silent> <LocalLeader>f :ALEFix<CR>
 let g:ale_fixers = {
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
-      \   'markdown': [ 'proselint', 'vale' ],
+      \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
       \}
 
