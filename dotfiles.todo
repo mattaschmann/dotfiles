@@ -1,5 +1,6 @@
 Dotfiles tasks:
-  ☐ move to dein: https://github.com/Shougo/dein.vim
+  ☐ Try out dein: https://github.com/Shougo/dein.vim
+    ☐ If this works, move plugin based config inside if dein#tap blocks
   ☐ Setup filetype based goto definition mappings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
