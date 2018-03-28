@@ -57,3 +57,5 @@ endif
 " Don't add the comment prefix automatically in certain files
 au FileType vim setlocal fo-=r fo-=o
 
+" Update time, default is 4secs (4000)
+set updatetime=100
