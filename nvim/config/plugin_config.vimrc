@@ -14,6 +14,9 @@ imap <expr><TAB>
 " ALE stuff
 " Enable completion where available.
 nnoremap <silent> <LocalLeader>f :ALEFix<CR>
+let g:ale_linters = {
+      \   'text': [ 'vale', 'proselint', 'write good' ]
+      \}
 let g:ale_fixers = {
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],

@@ -98,5 +98,8 @@ Plug 'bronson/vim-visual-star-search'
 " emmet
 Plug 'mattn/emmet-vim'
 
+" for prose
+Plug 'junegunn/goyo.vim'
+
 call plug#end()
 
