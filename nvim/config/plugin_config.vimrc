@@ -67,3 +67,8 @@ nnoremap <silent> <LocalLeader>g :Goyo<CR>
 autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
 autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
 
+" git gutter maps
+nmap <LocalLeader>hp <Plug>GitGutterPreviewHunk
+nmap <LocalLeader>hs <Plug>GitGutterStageHunk
+nmap <LocalLeader>hu <Plug>GitGutterUndoHunk
+

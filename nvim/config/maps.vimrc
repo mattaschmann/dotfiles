@@ -32,3 +32,8 @@ nnoremap <C-l> <C-w>l
 
 " spell toggle
 nnoremap <silent> <LocalLeader>s :set spell!<CR>
+
+" Open up a split and switch to next previous buffer
+" @Matt TODO: How to preserve the split setting?
+nnoremap <Leader>L :set nosplitright<CR>:vsp +bp<CR><C-W>l
+nnoremap <Leader>H :set splitright<CR>:vsp +bp<CR><C-W>h
