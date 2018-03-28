@@ -14,9 +14,9 @@ imap <expr><TAB>
 " ALE stuff
 " Enable completion where available.
 nnoremap <silent> <LocalLeader>f :ALEFix<CR>
-let g:ale_linters = {
-      \   'text': [ 'vale', 'proselint', 'write good' ]
-      \}
+" let g:ale_linters = {
+"       \   'text': [ 'vale', 'proselint', 'write good' ]
+"       \}
 let g:ale_fixers = {
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
@@ -61,3 +61,8 @@ let g:airline_powerline_fonts = 1
 " Emmet stuff
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx,javascript,javascript.jsx EmmetInstall | map <LocalLeader>e <Plug>(emmet-expand-abbr)
+
+" Goyo/Limelight (prose) stuff
+nnoremap <silent> <LocalLeader>g :Goyo<CR>
+autocmd! User GoyoEnter Limelight | ALEDisableBuffer
+autocmd! User GoyoLeave Limelight! | ALEEnableBuffer
