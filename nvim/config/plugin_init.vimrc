@@ -102,5 +102,8 @@ Plug 'mattn/emmet-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" git gutter
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
