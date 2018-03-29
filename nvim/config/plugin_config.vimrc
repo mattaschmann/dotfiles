@@ -14,6 +14,8 @@ imap <expr><TAB>
 " ALE stuff
 " Enable completion where available.
 nnoremap <silent> <LocalLeader>f :ALEFix<CR>
+nnoremap <silent> <Leader>j :ALENextWrap<CR>
+nnoremap <silent> <Leader>k :ALEPreviousWrap<CR>
 " let g:ale_linters = {
 "       \   'text': [ 'vale', 'proselint', 'write good' ]
 "       \}
@@ -30,11 +32,11 @@ let NERDTreeShowHidden=1
 nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
-" unimpaired bubble mappings
-nmap <Leader>k [e
-nmap <Leader>j ]e
-vmap <Leader>k [egv
-vmap <Leader>j ]egv
+" " unimpaired bubble mappings
+" nmap <Leader>k [e
+" nmap <Leader>j ]e
+" vmap <Leader>k [egv
+" vmap <Leader>j ]egv
 
 " For the flashy plugin
 map y <Plug>(operator-flashy)
