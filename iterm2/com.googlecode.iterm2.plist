@@ -225,8 +225,12 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>0EA16E95-CA05-457F-A2C9-84DB57FADBF1</string>
+	<key>EnableDivisionView</key>
+	<false/>
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
+	<key>HideScrollbar</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -273,9 +277,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>583 330 599 388 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>203 238 937 512 0 0 1440 877 </string>
+	<string>203 357 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>203 67 970 707 0 0 1440 877 </string>
+	<string>470 75 906 706 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>264 71 970 707 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -959,7 +963,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/Matt/workspace/dotfiles/iterm2</string>
+	<string>/Users/Matt/.dotfiles/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -971,7 +975,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-19T02:20:06Z</date>
+	<date>2018-03-31T00:54:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
