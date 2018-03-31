@@ -35,6 +35,9 @@ Plug 'tpope/vim-repeat'
 " some nice keyboard mappings (including bubbling)
 Plug 'tpope/vim-unimpaired'
 
+" directory stuff by tpope
+Plug 'tpope/vim-eunuch'
+
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 

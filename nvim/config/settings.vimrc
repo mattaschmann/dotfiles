@@ -58,4 +58,4 @@ endif
 au FileType vim setlocal fo-=r fo-=o
 
 " Update time, default is 4secs (4000)
-set updatetime=100
+set updatetime=500

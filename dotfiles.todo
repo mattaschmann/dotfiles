@@ -5,6 +5,7 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Look into universal ctags: https://github.com/universal-ctags/homebrew-universal-ctags @done(2018-03-30 19:37) @project(Dotfiles tasks)
   ✔ fix emmet leader @done(2018-03-24 21:41) @project(Dotfiles tasks)
   ✔ Look into these dotfiles: https://github.com/rafi/vim-config/search?utf8=%E2%9C%93&q=emmet&type= @done(2018-03-24 21:41) @project(Dotfiles tasks)
   ✔ Figure out why formatoptions not working @done(2018-03-23 21:52) @project(Dotfiles tasks)
