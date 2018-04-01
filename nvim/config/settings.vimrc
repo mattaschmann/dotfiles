@@ -59,3 +59,6 @@ au FileType vim setlocal fo-=r fo-=o
 
 " Update time, default is 4secs (4000)
 set updatetime=500
+
+" always show context when scrolling
+set scrolloff=2
