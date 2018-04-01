@@ -51,7 +51,7 @@ let g:loaded_python_provider = 1
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=1 concealcursor=niv
+  set conceallevel=2 concealcursor=niv
 endif
 
 " Don't add the comment prefix automatically in certain files

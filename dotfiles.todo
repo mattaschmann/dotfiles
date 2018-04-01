@@ -1,9 +1,8 @@
 Dotfiles tasks:
-  ☐ Try out dein: https://github.com/Shougo/dein.vim
-    ☐ If this works, move plugin based config inside if dein#tap blocks
-
+  ☐ Dont hide quotes in json
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✘ Try out dein: https://github.com/Shougo/dein.vim @cancelled(2018-04-01 14:07) @project(Dotfiles tasks)
   ✔ Setup filetype based goto definition mappings @done(2018-04-01 13:24) @project(Dotfiles tasks)
   ✔ Look into universal ctags: https://github.com/universal-ctags/homebrew-universal-ctags @done(2018-03-30 19:37) @project(Dotfiles tasks)
   ✔ fix emmet leader @done(2018-03-24 21:41) @project(Dotfiles tasks)
