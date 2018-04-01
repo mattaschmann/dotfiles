@@ -16,7 +16,7 @@ cd dotfiles
 [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) is used to install a preset list of
 homebrew packages.
 ```bash
-brew bundle
+brew bundle -v
 ```
 
 ### Run the install script
