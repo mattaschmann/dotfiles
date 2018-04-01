@@ -108,5 +108,8 @@ Plug 'junegunn/limelight.vim'
 " git gutter
 Plug 'airblade/vim-gitgutter'
 
+" ctag generation
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()
 

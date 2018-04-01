@@ -65,3 +65,5 @@ nnoremap <Leader>O :Bonly<CR>
 nnoremap <Leader>b :Buffers<CR>
 " Fuzzy search helptags
 nnoremap <Leader>h :Helptags<CR>
+" Fuzzy search tags
+nnoremap <Leader>t :Tags<CR>
