@@ -1,7 +1,10 @@
 Dotfiles tasks:
-  ☐ Dont hide quotes in json
+  ☐ Save marta configs in dotfiles
+  ☐ Add nvim in terminal to list off apps that can open things
+  ☐ Why can't I see the intro message anymore
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Dont hide quotes in json? @done(2018-04-01 22:24) @project(Dotfiles tasks)
   ✔ Lazy load nerdtree @done(2018-04-01 15:18) @project(Dotfiles tasks)
   ✘ Try out dein: https://github.com/Shougo/dein.vim @cancelled(2018-04-01 14:07) @project(Dotfiles tasks)
   ✔ Setup filetype based goto definition mappings @done(2018-04-01 13:24) @project(Dotfiles tasks)

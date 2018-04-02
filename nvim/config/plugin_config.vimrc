@@ -74,3 +74,6 @@ nmap <LocalLeader>hp <Plug>GitGutterPreviewHunk
 nmap <LocalLeader>hs <Plug>GitGutterStageHunk
 nmap <LocalLeader>hu <Plug>GitGutterUndoHunk
 
+" Fugitive stuff
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
