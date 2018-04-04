@@ -37,3 +37,7 @@ nnoremap <silent> <LocalLeader>s :set spell!<CR>
 " @Matt TODO: How to preserve the split setting?
 nnoremap <Leader>L :set nosplitright<CR>:vsp +bp<CR><C-W>l
 nnoremap <Leader>H :set splitright<CR>:vsp +bp<CR><C-W>h
+
+" Make current word uppercase in insert mode, since I have caps lock remapped
+" to ctrl
+imap <C-U> <Esc>mzgUiw`za
