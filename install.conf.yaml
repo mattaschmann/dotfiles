@@ -15,6 +15,7 @@
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
+    ~/Library/Application Support/org.yanex.marta/conf.json: marta/conf.json
 
 - shell:
     - [bash iterm2/link-iterm2.sh, Linking iTerm2]
