@@ -34,9 +34,10 @@ nnoremap <C-l> <C-w>l
 nnoremap <silent> <LocalLeader>s :set spell!<CR>
 
 " Open up a split and switch to next previous buffer
-" @Matt TODO: How to preserve the split setting?
-nnoremap <Leader>L :set nosplitright<CR>:vsp +bp<CR><C-W>l
-nnoremap <Leader>H :set splitright<CR>:vsp +bp<CR><C-W>h
+nnoremap <Leader>L :call MoveBufferRightSplit()<CR>
+nnoremap <Leader>H :call MoveBufferLeftSplit()<CR>
+nnoremap <Leader>J :call MoveBufferBottomSplit()<CR>
+nnoremap <Leader>K :call MoveBufferTopSplit()<CR>
 
 " Make current word uppercase in insert mode, since I have caps lock remapped
 " to ctrl

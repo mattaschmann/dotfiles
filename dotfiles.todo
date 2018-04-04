@@ -1,8 +1,8 @@
 Dotfiles tasks:
-  ☐ How to save my applescript to dotfiles?
-  ☐ Figure out how to save the split setting, see maps line 37
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Figure out how to save the split setting, see maps line 37 @done(2018-04-03 21:48) @project(Dotfiles tasks)
+  ✘ How to save my applescript to dotfiles? @cancelled(2018-04-03 21:09) @project(Dotfiles tasks)
   ✔ Save marta configs in dotfiles @done(2018-04-03 20:58) @project(Dotfiles tasks)
   ✔ Make a mapping to go upper inner word in insert mode @done(2018-04-03 20:46) @project(Dotfiles tasks)
   ✔ Add nvim in terminal to list off apps that can open things @done(2018-04-02 22:14) @project(Dotfiles tasks)

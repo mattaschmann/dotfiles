@@ -24,3 +24,33 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+" Split helpers
+function! MoveBufferRightSplit()
+  let @s = &splitright
+  let &splitright = 0
+  vsp +bp
+  wincmd l
+  let &splitright = @s
+endfunction
+function! MoveBufferLeftSplit()
+  let @s = &splitright
+  let &splitright = 1
+  vsp +bp
+  wincmd h
+  let &splitright = @s
+endfunction
+function! MoveBufferBottomSplit()
+  let @s = &splitbelow
+  let &splitbelow = 0
+  sp +bp
+  wincmd j
+  let &splitbelow = @s
+endfunction
+function! MoveBufferTopSplit()
+  let @s = &splitbelow
+  let &splitbelow = 1
+  sp +bp
+  wincmd k
+  let &splitbelow = @s
+endfunction
