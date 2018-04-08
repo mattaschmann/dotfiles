@@ -42,3 +42,9 @@ nnoremap <Leader>K :call MoveBufferTopSplit()<CR>
 " Make current word uppercase in insert mode, since I have caps lock remapped
 " to ctrl
 imap <C-U> <Esc>mzgUiw`za
+
+" Make Y yank till end of line
+nnoremap Y y$
+
+" Copy current @0 register to @+ for use in system clipboard
+nnoremap <Leader>c :let @+ = @0<CR>
