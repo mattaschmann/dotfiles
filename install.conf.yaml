@@ -7,10 +7,11 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/config: nvim/config
+    ~/.config/nvim/ginit.vim: nvim/ginit.vim
+    ~/.config/nvim/init.vim: nvim/init.vim
     ~/.ignore: rg/.ignore
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
