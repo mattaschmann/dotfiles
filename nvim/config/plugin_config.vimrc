@@ -74,3 +74,8 @@ nmap <LocalLeader>hu <Plug>GitGutterUndoHunk
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gp :Gpush<CR>
+
+" vim highlightedyank stuff
+let g:highlightedyank_highlight_duration = 150
+let g:highlightedyank_max_lines = 1000
+highlight HighlightedyankRegion ctermbg=237 guibg=#404040

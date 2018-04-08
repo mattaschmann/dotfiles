@@ -8,7 +8,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
 Plug 'easymotion/vim-easymotion'
 
 " show the yank
-Plug 'haya14busa/vim-operator-flashy'
+Plug 'machakann/vim-highlightedyank'
 
 " dep for flash
 Plug 'kana/vim-operator-user'
