@@ -19,6 +19,8 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'jreybert/vimagit'
 
 " smart set shiftwidth
 Plug 'tpope/vim-sleuth'
