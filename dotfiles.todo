@@ -1,12 +1,12 @@
 Dotfiles tasks:
-  ☐ Try out one of the git tree view plugins
   ☐ How to auto reload files if edited outside (i.e. git commit/push)
   ☐ Setup a mapping so that gx goes to github page when in plugin_init
-  ☐ Add nerdtree git plugin?
   ☐ Try out gtk nvim: https://github.com/daa84/neovim-gtk
   ☐ Try and get ligatures in alacrity
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Try out one of the git tree view plugins @done(2018-04-07 22:12) @project(Dotfiles tasks)
+  ✘ Add nerdtree git plugin? @cancelled(2018-04-07 22:12) @project(Dotfiles tasks)
   ✔ Set mapping to yank to end only on Y @done(2018-04-07 21:54) @project(Dotfiles tasks)
   ✔ Add mapping to copy current @0 to @+ @done(2018-04-07 21:57) @project(Dotfiles tasks)
   ✔ Retry machakann/vim-highlightedyank, as it doesn't remap @done(2018-04-07 21:46) @project(Dotfiles tasks)

@@ -66,3 +66,6 @@ set scrolloff=2
 
 " show live preview of substitute
 set inccommand=split
+
+" Set textwidth automatically for certain files
+au FileType markdown,text setlocal textwidth=80
