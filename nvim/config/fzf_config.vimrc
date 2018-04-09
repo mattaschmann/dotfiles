@@ -67,3 +67,5 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :Helptags<CR>
 " Fuzzy search tags
 nnoremap <Leader>t :Tags<CR>
+" Show maps
+nnoremap <Leader>? :Maps<CR>

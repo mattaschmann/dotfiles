@@ -1,7 +1,9 @@
 Dotfiles tasks:
+  ☐ Figure out what is slowing nvim down
   ☐ How to auto reload files if edited outside (i.e. git commit/push)
   ☐ Setup a mapping so that gx goes to github page when in plugin_init
   ☐ Try out gtk nvim: https://github.com/daa84/neovim-gtk
+  ☐ Surround all nvim specific stuff with the nvim guard
   ☐ Try and get ligatures in alacrity
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
@@ -15,18 +17,3 @@ Archive:
   ✔ Change alacrity to use semibold font @done(2018-04-07 21:07) @project(Dotfiles tasks)
   ✔ Get better color theme in alacrity @done(2018-04-07 21:07) @project(Dotfiles tasks)
   ✔ Figure out how to save the split setting, see maps line 37 @done(2018-04-03 21:48) @project(Dotfiles tasks)
-  ✘ How to save my applescript to dotfiles? @cancelled(2018-04-03 21:09) @project(Dotfiles tasks)
-  ✔ Save marta configs in dotfiles @done(2018-04-03 20:58) @project(Dotfiles tasks)
-  ✔ Make a mapping to go upper inner word in insert mode @done(2018-04-03 20:46) @project(Dotfiles tasks)
-  ✔ Add nvim in terminal to list off apps that can open things @done(2018-04-02 22:14) @project(Dotfiles tasks)
-  ✘ Why can't I see the intro message anymore @cancelled(2018-04-02 21:27) @project(Dotfiles tasks)
-  ✔ Dont hide quotes in json? @done(2018-04-01 22:24) @project(Dotfiles tasks)
-  ✔ Lazy load nerdtree @done(2018-04-01 15:18) @project(Dotfiles tasks)
-  ✘ Try out dein: https://github.com/Shougo/dein.vim @cancelled(2018-04-01 14:07) @project(Dotfiles tasks)
-  ✔ Setup filetype based goto definition mappings @done(2018-04-01 13:24) @project(Dotfiles tasks)
-  ✔ Look into universal ctags: https://github.com/universal-ctags/homebrew-universal-ctags @done(2018-03-30 19:37) @project(Dotfiles tasks)
-  ✔ fix emmet leader @done(2018-03-24 21:41) @project(Dotfiles tasks)
-  ✔ Look into these dotfiles: https://github.com/rafi/vim-config/search?utf8=%E2%9C%93&q=emmet&type= @done(2018-03-24 21:41) @project(Dotfiles tasks)
-  ✔ Figure out why formatoptions not working @done(2018-03-23 21:52) @project(Dotfiles tasks)
-  ✔ Re-add emmet @done(2018-03-23 21:02) @project(Dotfiles tasks)
-  ✘ Re-add supertab? @cancelled(2018-03-23 20:56) @project(Dotfiles tasks)
