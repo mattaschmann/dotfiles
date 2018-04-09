@@ -48,6 +48,3 @@ nnoremap Y y$
 
 " Copy current @0 register to @+ for use in system clipboard
 nnoremap <Leader>c :let @+ = @0<CR>
-
-" Terminal mode escape
-tnoremap <C-[> <C-\><C-n>
