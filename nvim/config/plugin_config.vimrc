@@ -33,10 +33,10 @@ nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " " unimpaired bubble mappings
-nmap <Leader>k [e
-nmap <Leader>j ]e
-vmap <Leader>k [egv
-vmap <Leader>j ]egv
+nmap <A-k> [e
+nmap <A-j> ]e
+vmap <A-k> [egv
+vmap <A-j> ]egv
 
 " incsearch plugin mappings
 map /  <Plug>(incsearch-forward)
