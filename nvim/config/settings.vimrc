@@ -69,3 +69,6 @@ set inccommand=split
 
 " Set textwidth automatically for certain files
 au FileType markdown,text setlocal textwidth=80
+
+" Term cursor
+hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
