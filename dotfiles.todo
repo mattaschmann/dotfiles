@@ -1,4 +1,6 @@
 Dotfiles tasks:
+  ☐ Try out gtk nvim: https://github.com/daa84/neovim-gtk
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
   ✘ Try and get ligatures in alacrity @cancelled(2018-04-08 21:37) @project(Dotfiles tasks)
@@ -6,7 +8,6 @@ Archive:
   ✘ Figure out what is slowing nvim down @cancelled(2018-04-08 21:16) @project(Dotfiles tasks)
   ✘ How to auto reload files if edited outside (i.e. git commit/push) @cancelled(2018-04-08 21:18) @project(Dotfiles tasks)
   ✘ Setup a mapping so that gx goes to github page when in plugin_init @cancelled(2018-04-08 21:22) @project(Dotfiles tasks)
-  ✘ Try out gtk nvim: https://github.com/daa84/neovim-gtk @cancelled(2018-04-08 21:32) @project(Dotfiles tasks)
   ✔ Try out one of the git tree view plugins @done(2018-04-07 22:12) @project(Dotfiles tasks)
   ✘ Add nerdtree git plugin? @cancelled(2018-04-07 22:12) @project(Dotfiles tasks)
   ✔ Set mapping to yank to end only on Y @done(2018-04-07 21:54) @project(Dotfiles tasks)
