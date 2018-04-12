@@ -74,4 +74,9 @@ au FileType markdown,text setlocal textwidth=80
 " Term cursor
 hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
 
-
+" Remove comment leader when joining comment lines
+set formatoptions+=j
+" Insert the comment leader after hitting <Enter> in insert mode
+set formatoptions+=r
+" Smart format inside of numbered lists
+set formatoptions+=n
