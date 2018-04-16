@@ -64,6 +64,7 @@ set updatetime=500
 
 " always show context when scrolling
 set scrolloff=2
+set sidescrolloff=2
 
 " show live preview of substitute
 set inccommand=split
