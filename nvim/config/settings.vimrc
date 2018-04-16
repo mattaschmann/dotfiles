@@ -91,3 +91,6 @@ set shortmess+=I        " Don't show the intro message, as it disappears anyway
 
 " Open links in currently open buffers
 set switchbuf=usetab
+
+" Allow unconstrained movement in visual block mode
+set virtualedit=block
