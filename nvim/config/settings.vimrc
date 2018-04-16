@@ -81,3 +81,6 @@ set formatoptions+=j
 set formatoptions+=r
 " Smart format inside of numbered lists
 set formatoptions+=n
+
+" Catch focus events and refresh file
+autocmd BufEnter,FocusGained * checktime

@@ -3,6 +3,7 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Figure out checktime: https://github.com/jwilm/alacritty/issues/572 @done(2018-04-15 21:09) @project(Dotfiles tasks)
   ✘ Try and get ligatures in alacrity @cancelled(2018-04-08 21:37) @project(Dotfiles tasks)
   ✘ Surround all nvim specific stuff with the nvim guard @cancelled(2018-04-08 21:37) @project(Dotfiles tasks)
   ✘ Figure out what is slowing nvim down @cancelled(2018-04-08 21:16) @project(Dotfiles tasks)
