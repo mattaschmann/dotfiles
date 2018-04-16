@@ -84,3 +84,8 @@ set formatoptions+=n
 
 " Catch focus events and refresh file
 autocmd BufEnter,FocusGained * checktime
+
+" Edit some of the short message settings
+set shortmess+=A        " Dont show the ATTENTION message
+set shortmess+=I        " Don't show the intro message, as it disappears anyway
+
