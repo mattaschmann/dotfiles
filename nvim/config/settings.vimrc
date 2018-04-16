@@ -89,3 +89,5 @@ autocmd BufEnter,FocusGained * checktime
 set shortmess+=A        " Dont show the ATTENTION message
 set shortmess+=I        " Don't show the intro message, as it disappears anyway
 
+" Open links in currently open buffers
+set switchbuf=usetab
