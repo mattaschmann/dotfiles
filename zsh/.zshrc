@@ -96,6 +96,7 @@ bindkey '^f' autosuggest-accept
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tm="tmux -2 new -s default"
+alias ta="tmux attach"
 
 export EDITOR=nvim
 
