@@ -19,6 +19,9 @@
     ~/Library/Application Support/org.yanex.marta/conf.json: marta/conf.json
 
 - shell:
+    # Install antigen for zsh
+    - [curl -L --create-dirs git.io/antigen > ~/.antigen/antigen.zsh]
+    # Iterm 2 stuff
     - [bash iterm2/link-iterm2.sh, Linking iTerm2]
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
