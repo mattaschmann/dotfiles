@@ -1,4 +1,5 @@
 Dotfiles tasks:
+  ☐ Is there a way to differentiate between linux and mac builds?
   ☐ Figure out how to reload files after commit so the gitgutter updates
   ☐ Try out gtk nvim: https://github.com/daa84/neovim-gtk
 

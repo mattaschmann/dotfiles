@@ -8,7 +8,6 @@
 - link:
     ~/.dotfiles: ''
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
-    ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
@@ -16,12 +15,14 @@
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
+    # These should be mac only
     ~/Library/Application Support/org.yanex.marta/conf.json: marta/conf.json
+    ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
 
 - shell:
     # Install antigen for zsh
     - [curl -L --create-dirs git.io/antigen > ~/.antigen/antigen.zsh]
-    # Iterm 2 stuff
+    # Iterm 2 stuff (mac only)
     - [bash iterm2/link-iterm2.sh, Linking iTerm2]
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
