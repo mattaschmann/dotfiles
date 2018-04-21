@@ -1,10 +1,11 @@
 Dotfiles tasks:
   ☐ Is there a way to differentiate between linux and mac builds?
   ☐ Figure out how to reload files after commit so the gitgutter updates
-  ☐ Try out gtk nvim: https://github.com/daa84/neovim-gtk
+  ☐ Need to add all of the packages that are needed
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Try out gtk nvim: https://github.com/daa84/neovim-gtk @done(2018-04-20 22:02) @project(Dotfiles tasks)
   ✔ Figure out checktime: https://github.com/jwilm/alacritty/issues/572 @done(2018-04-15 21:09) @project(Dotfiles tasks)
   ✘ Try and get ligatures in alacrity @cancelled(2018-04-08 21:37) @project(Dotfiles tasks)
   ✘ Surround all nvim specific stuff with the nvim guard @cancelled(2018-04-08 21:37) @project(Dotfiles tasks)
