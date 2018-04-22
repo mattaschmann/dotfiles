@@ -69,7 +69,7 @@ autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_au
 nmap <LocalLeader>hp <Plug>GitGutterPreviewHunk
 nmap <LocalLeader>hs <Plug>GitGutterStageHunk
 nmap <LocalLeader>hu <Plug>GitGutterUndoHunk
-autocmd BufEnter,FocusGained * :GitGutter " reload gitgutter on focus
+autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
