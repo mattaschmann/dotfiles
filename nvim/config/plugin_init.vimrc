@@ -14,7 +14,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'kana/vim-operator-user'
 
 " fuzzy search: is made better with ripgrep
-Plug '~/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " git integration
