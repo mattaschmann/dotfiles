@@ -16,14 +16,21 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
     # These should be mac only
-    ~/Library/Application Support/org.yanex.marta/conf.json: marta/conf.json
-    ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
+    ~/Library/Application Support/org.yanex.marta/conf.json:
+        path: marta/conf.json
+        if: '[ -d "/Applications/Marta.app" ]'
+    ~/.config/karabiner/karabiner.json:
+        path: karabiner/karabiner.json
+        if: '[ -d "/Applications/Karabiner-Elements.app" ]'
 
 - shell:
     # Install antigen for zsh
     - [curl -L --create-dirs git.io/antigen > ~/.antigen/antigen.zsh]
     # Iterm 2 stuff (mac only)
-    - [bash iterm2/link-iterm2.sh, Linking iTerm2]
+    -
+      command: bash iterm2/link-iterm2.sh
+      description: Linking iTerm2
+      if: '[ -d "/Applications/iTerm.app" ]'
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
     - [tic terminfo/tmux.terminfo]
