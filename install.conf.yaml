@@ -25,7 +25,8 @@
 
 - shell:
     # Install antigen for zsh
-    - [curl -L --create-dirs git.io/antigen > ~/.antigen/antigen.zsh]
+    - [mkdir -p ~/.antigen]
+    - [curl -L git.io/antigen > ~/.antigen/antigen.zsh]
     # Iterm 2 stuff (mac only)
     -
       command: bash iterm2/link-iterm2.sh
