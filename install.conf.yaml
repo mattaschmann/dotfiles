@@ -12,6 +12,7 @@
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.ignore: rg/.ignore
+    ~/.phoenix.js: phoenix/.phoenix.js
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
