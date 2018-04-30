@@ -10,46 +10,46 @@ var e = Event;
 
 var INCREMENT = 50;
 var PADDING = 0;
-var MOD = ["ctrl", "shift", "cmd"];
-var ALTMOD = ["ctrl", "alt", "shift"];
+var MOD = ['ctrl', 'shift', 'cmd'];
+var ALTMOD = ['ctrl', 'alt', 'shift'];
 
-var HINT_APPEARANCE = "dark";
-var HINT_BUTTON = "space";
-var HINT_CANCEL = "escape";
-var HINT_CHARS = "FJDKSLAGHRUEIWOVNCM";
+var HINT_APPEARANCE = 'dark';
+var HINT_BUTTON = 'space';
+var HINT_CANCEL = 'escape';
+var HINT_CHARS = 'FJDKSLAGHRUEIWOVNCM';
 
 // DIRECTIONS
-var F  = "fill";
-var N  = "north";
-var S  = "south";
-var W  = "west";
-var E  = "east";
-var NW = "nw";
-var NE = "ne";
-var SW = "sw";
-var SE = "se";
+var F  = 'fill';
+var N  = 'north';
+var S  = 'south';
+var W  = 'west';
+var E  = 'east';
+var NW = 'nw';
+var NE = 'ne';
+var SW = 'sw';
+var SE = 'se';
 
 // KEYS + DIRECTION MAPPINGS
 var snap_dirs = {
-  "up":    F,
-  "left":  W,
-  "right": E,
-  "a":     NW,
-  "'":     NE,
-  "z":     SW,
-  "/":     SE
+  'up':    F,
+  'left':  W,
+  'right': E,
+  'a':     NW,
+  '\'':     NE,
+  'z':     SW,
+  '/':     SE
 };
 
 var size_dirs = {
-  "h": W,
-  "j": S,
-  "k": N,
-  "l": E
+  'h': W,
+  'j': S,
+  'k': N,
+  'l': E
 };
 
 var space_dirs = {
-  ",": W,
-  ".": E
+  ',': W,
+  '.': E
 };
 
 // +---------+
@@ -65,7 +65,7 @@ function onif (cond_f, key, modifiers, cb) {
     if (!cond_f()) return;
     cb();
   });
-};
+}
 
 // Screen prototype extension -- subtract padding
 s.prototype.width = function () {
@@ -85,14 +85,14 @@ s.prototype.origin = function () {
 
 function opposite (dir) {
   switch (dir) {
-    case N: return S;
-    case S: return N;
-    case E: return W;
-    case W: return E;
-    case NW: return SE;
-    case NE: return SW;
-    case SW: return NE;
-    case SE: return NW;
+  case N: return S;
+  case S: return N;
+  case E: return W;
+  case W: return E;
+  case NW: return SE;
+  case NE: return SW;
+  case SW: return NE;
+  case SE: return NW;
   }
 }
 
@@ -170,7 +170,7 @@ var bsbind = null;
 function cancelHints () {
   for (var activator in hints) {
     hints[activator].modal.close();
-  };
+  }
   k.off(escbind);
   k.off(bsbind);
   hintkeys.map(k.off);
@@ -180,7 +180,7 @@ function cancelHints () {
 }
 
 function showHints (windows, prefix) {
-  prefix = prefix || "";
+  prefix = prefix || '';
 
   if (windows.length > HINT_CHARS.length) {
     var partitionSize = Math.floor(windows.length / HINT_CHARS.length);
@@ -194,10 +194,10 @@ function showHints (windows, prefix) {
   }
 
   windows.forEach(function (win, i) {
-    var helper = "";
+    var helper = '';
     if (win.app().windows().length > 1) {
       var maxLen = 60;
-      helper += "  |  " + win.title().substr(0, maxLen) + (win.title().length > maxLen ? "…" : "");
+      helper += '  |  ' + win.title().substr(0, maxLen) + (win.title().length > maxLen ? '…' : '');
     }
     var hint = buildhint(prefix + HINT_CHARS[i] + helper, win);
 
@@ -229,15 +229,15 @@ function showHints (windows, prefix) {
   hintsActive = true;
 }
 
-k.on(HINT_BUTTON, ["shift", "cmd"], function () {
+k.on(HINT_BUTTON, ['shift', 'cmd'], function () {
   if (hintsActive) {
     cancelHints();
   } else {
     showHints(w.all({
       visible: true
     }));
-    var sequence = "";
-    HINT_CHARS.split("").forEach(function (hintchar) {
+    var sequence = '';
+    HINT_CHARS.split('').forEach(function (hintchar) {
       hintkeys.push(k.on(hintchar, [], function () {
         sequence += hintchar;
         for (var activator in hints) {
@@ -261,7 +261,7 @@ k.on(HINT_BUTTON, ["shift", "cmd"], function () {
         }
       }));
     });
-    bsbind = k.on("delete", [], function () {
+    bsbind = k.on('delete', [], function () {
       if (!sequence.length) cancelHints();
       var letter = sequence[sequence.length - 1];
       sequence = sequence.substr(0, sequence.length - 1);
@@ -279,7 +279,7 @@ k.on(HINT_BUTTON, ["shift", "cmd"], function () {
   }
 });
 
-e.on("mouseDidLeftClick", cancelHints);
+e.on('mouseDidLeftClick', cancelHints);
 
 function buildhint (msg, win) {
   var wf = win.frame();
@@ -305,4 +305,4 @@ function buildhint (msg, win) {
   return modal;
 }
 
-Phoenix.notify("Configuration loaded.");
+Phoenix.notify('Configuration loaded.');
