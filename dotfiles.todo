@@ -1,10 +1,13 @@
 Dotfiles tasks:
+  ☐ Add fullscreen to phoenix config
+  ☐ Make sure that snippets are included in dotfiles
   ☐ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57
   ☐ Use vim plug to manager ~/opt utilities?
-  ☐ Need to add all of the packages that are needed
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add center window to phoenix config @done(2018-05-01 13:02) @project(Dotfiles tasks)
+  ✔ Need to add all of the packages that are needed @done(2018-05-01 12:17) @project(Dotfiles tasks)
   ✔ Is there a way to differentiate between linux and mac builds? @done(2018-04-22 12:46) @project(Dotfiles tasks)
   ✔ Figure out how to reload files after commit so the gitgutter updates @done(2018-04-22 11:30) @project(Dotfiles tasks)
   ✔ Try out gtk nvim: https://github.com/daa84/neovim-gtk @done(2018-04-20 22:02) @project(Dotfiles tasks)
