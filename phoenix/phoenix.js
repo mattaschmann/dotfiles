@@ -1,3 +1,5 @@
+/* global _ Modal Phoenix Window Screen Mouse Key Event */
+
 Phoenix.set({
   openAtLogin: true
 })
@@ -17,6 +19,8 @@ const HINT_APPEARANCE = 'dark'
 const HINT_BUTTON = 'space'
 const HINT_CANCEL = 'escape'
 const HINT_CHARS = 'FJDKSLAGHRUEIWOVNCM'
+
+const FULL_SCREEN_TOGGLE = 'space'
 
 // DIRECTIONS
 const F  = 'fill'
@@ -144,6 +148,11 @@ w.prototype.toSpace = function (dir) {
   this.focus()
 }
 
+// Toggle fullscreen
+w.prototype.toggleFullScreen = function() {
+  this.setFullScreen(!this.isFullScreen())
+}
+
 // Snap bindings
 for (var key in snap_dirs) {
   onif(curw, key, MOD, function (dir) {
@@ -152,21 +161,25 @@ for (var key in snap_dirs) {
 }
 
 // Resize bindings
-for (var key in size_dirs) {
-  onif(curw, key, MOD, function (dir) {
+for (var sdir in size_dirs) {
+  onif(curw, sdir, MOD, function (dir) {
     curw().resize(dir, INCREMENT)
-  }.bind(null, size_dirs[key]))
+  }.bind(null, size_dirs[sdir]))
 
-  onif(curw, key, ALTMOD, function (dir) {
+  onif(curw, sdir, ALTMOD, function (dir) {
     curw().resize(dir, -INCREMENT)
-  }.bind(null, opposite(size_dirs[key])))
+  }.bind(null, opposite(size_dirs[sdir])))
 }
 
-for (var key in space_dirs) {
-  onif(curw, key, MOD, function (dir) {
+// Space direction bindings
+for (var spdir in space_dirs) {
+  onif(curw, spdir, MOD, function (dir) {
     curw().toSpace(dir)
-  }.bind(null, space_dirs[key]))
+  }.bind(null, space_dirs[spdir]))
 }
+
+// Fullscreen binding
+onif(curw, FULL_SCREEN_TOGGLE, MOD, () => curw().toggleFullScreen())
 
 // Hints
 var hintsActive = false
@@ -191,7 +204,7 @@ function showHints (windows, prefix) {
   prefix = prefix || ''
 
   if (windows.length > HINT_CHARS.length) {
-    var partitionSize = Math.floor(windows.length / HINT_CHARS.length)
+    // var partitionSize = Math.floor(windows.length / HINT_CHARS.length)
     var lists = _.toArray(_.groupBy(windows, function (win, k) {
       return k % HINT_CHARS.length
     }))
