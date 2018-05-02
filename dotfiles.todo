@@ -1,11 +1,12 @@
 Dotfiles tasks:
-  ☐ Add fullscreen to phoenix config
-  ☐ Make sure that snippets are included in dotfiles
   ☐ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57
   ☐ Use vim plug to manager ~/opt utilities?
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add binding to tmux config to use all terms @done(2018-05-02 09:54) @project(Dotfiles tasks)
+  ✔ Add fullscreen to phoenix config @done(2018-05-02 09:17) @project(Dotfiles tasks)
+  ✔ Make sure that snippets are included in dotfiles @done(2018-05-02 09:17) @project(Dotfiles tasks)
   ✔ Add center window to phoenix config @done(2018-05-01 13:02) @project(Dotfiles tasks)
   ✔ Need to add all of the packages that are needed @done(2018-05-01 12:17) @project(Dotfiles tasks)
   ✔ Is there a way to differentiate between linux and mac builds? @done(2018-04-22 12:46) @project(Dotfiles tasks)
