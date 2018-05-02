@@ -63,7 +63,7 @@ Plug 'tommcdo/vim-exchange'
 " async linting
 Plug 'w0rp/ale'
 
-" typescript syntax
+" typescript
 Plug 'leafgarland/typescript-vim'
 
 " autoformant, i.e. beautify

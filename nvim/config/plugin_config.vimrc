@@ -20,9 +20,11 @@ nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
 "       \   'text': [ 'vale', 'proselint', 'write good' ]
 "       \}
 let g:ale_fixers = {
+      \   'css': [ 'trim_whitespace' ],
+      \   'html': [ 'trim_whitespace' ],
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
-      \   'typescript': [ 'tslint', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
+      \   'typescript': [ 'tslint', 'trim_whitespace' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
       \}
 
@@ -45,8 +47,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Ferret mappings
-nmap <LocalLeader>a <Plug>(FerretAck)
-nmap <LocalLeader>r <Plug>(FerretAcks)
+nmap <Leader>a <Plug>(FerretAck)
+nmap <LocalLeader>a <Plug>(FerretAcks)
 
 " Edit vim-airline
 function! AirlineInit()
