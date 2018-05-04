@@ -1,3 +1,9 @@
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+inoremap <expr><C-y> deoplete#close_popup()
+inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
+
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
 imap <expr><TAB>
@@ -53,6 +59,15 @@ autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" Emmet stuff
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key = '<A-y>'
+function! CustomEmmetInit()
+  :EmmetInstall
+  imap <C-e> <Plug>(emmet-expand-abbr)
+endfunction
+autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
+
 " Goyo/Limelight (prose) stuff
 nnoremap <silent> <LocalLeader>g :Goyo<CR>
 autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
@@ -73,9 +88,3 @@ nnoremap <Leader>gp :Gpush<CR>
 let g:highlightedyank_highlight_duration = 150
 let g:highlightedyank_max_lines = 1000
 highlight HighlightedyankRegion ctermbg=237 guibg=#404040
-
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-inoremap <expr><C-y> deoplete#close_popup()
-
