@@ -1,8 +1,8 @@
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+let g:deoplete#ignore_case = 1
 inoremap <expr><C-y> deoplete#close_popup()
-inoremap <expr><CR> pumvisible() ? "\<C-n>" : "\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
