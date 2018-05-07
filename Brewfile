@@ -28,6 +28,7 @@ brew "tavianator/tap/bfs"
 brew "tig"
 brew "tmux"
 brew "universal-ctags", args: ['HEAD']
+brew "urlview"
 brew "vale"
 brew "vim"
 brew "wget"
