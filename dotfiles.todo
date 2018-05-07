@@ -1,4 +1,6 @@
 Dotfiles tasks:
+  ☐ Deal with slow terminal startup because os zshrc stuff
+  ☐ Add a shortcut to quickly rename tmux panes to the current directory
   ☐ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57
   ☐ Use vim plug to manager ~/opt utilities?
 

@@ -99,6 +99,12 @@ alias tm="tmux -2 new -s default"
 alias ta="tmux attach"
 alias n="nvim"
 
+# github specific aliases
+alias gb="git branch"
+alias gp="git pull"
+alias gm="git checkout master"
+alias gcp="git commit -p"
+
 export EDITOR=nvim
 
 # FZF

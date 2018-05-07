@@ -26,6 +26,7 @@ let g:ale_fixers = {
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
       \   'typescript': [ 'tslint', 'trim_whitespace' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
+      \   'yaml': [ 'trim_whitespace' ],
       \}
 
 " NERDTree stuff
