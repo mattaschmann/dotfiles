@@ -7,7 +7,7 @@ nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 
 " quit out of insert mode in an easier way
-inoremap jj <Esc>
+imap jj <Esc>
 
 " close window
 nnoremap <silent> <Leader>w :bdelete<CR>
