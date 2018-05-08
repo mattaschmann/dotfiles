@@ -69,3 +69,5 @@ nnoremap <Leader>h :Helptags<CR>
 nnoremap <Leader>t :Tags<CR>
 " Show maps
 nnoremap <Leader>? :Maps<CR>
+" Show my todos
+nnoremap <Leader>m :Rg @Matt<CR>
