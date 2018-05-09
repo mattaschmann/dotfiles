@@ -1,11 +1,11 @@
 Dotfiles tasks:
   ☐ Deal with slow terminal startup because os zshrc stuff
-  ☐ Add a shortcut to quickly rename tmux panes to the current directory
-  ☐ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57
-  ☐ Use vim plug to manager ~/opt utilities?
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add a shortcut to quickly rename tmux panes to the current directory @done(2018-05-09 15:08) @project(Dotfiles tasks)
+  ✔ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57 @done(2018-05-09 15:10) @project(Dotfiles tasks)
+  ✘ Use vim plug to manager ~/opt utilities? @cancelled(2018-05-09 15:10) @project(Dotfiles tasks)
   ✔ Add binding to tmux config to use all terms @done(2018-05-02 09:54) @project(Dotfiles tasks)
   ✔ Add fullscreen to phoenix config @done(2018-05-02 09:17) @project(Dotfiles tasks)
   ✔ Make sure that snippets are included in dotfiles @done(2018-05-02 09:17) @project(Dotfiles tasks)
