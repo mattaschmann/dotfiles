@@ -121,5 +121,8 @@ Plug 'airblade/vim-gitgutter'
 " ctag generation
 Plug 'ludovicchabant/vim-gutentags'
 
+" sort motion
+Plug 'christoomey/vim-sort-motion'
+
 call plug#end()
 
