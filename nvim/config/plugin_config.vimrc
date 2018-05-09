@@ -32,7 +32,8 @@ let g:ale_fixers = {
       \}
 
 " NERDTree stuff
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=60
 
 " NERDTree mappings
 nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
