@@ -16,6 +16,7 @@
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
+    ~/.ctags.d: universal_ctags
     # These should be mac only
     ~/Library/Application Support/org.yanex.marta/conf.json:
         path: marta/conf.json

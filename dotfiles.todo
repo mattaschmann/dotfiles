@@ -3,6 +3,7 @@ Dotfiles tasks:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add ctags conf @done(2018-05-09 16:55) @project(Dotfiles tasks)
   ✔ Add a shortcut to quickly rename tmux panes to the current directory @done(2018-05-09 15:08) @project(Dotfiles tasks)
   ✔ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57 @done(2018-05-09 15:10) @project(Dotfiles tasks)
   ✘ Use vim plug to manager ~/opt utilities? @cancelled(2018-05-09 15:10) @project(Dotfiles tasks)
