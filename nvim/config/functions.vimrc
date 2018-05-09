@@ -54,3 +54,7 @@ function! MoveBufferTopSplit()
   wincmd k
   let &splitbelow = @s
 endfunction
+
+" open file and directory in code
+command! -bang -nargs=* Code
+  \ :!code . %
