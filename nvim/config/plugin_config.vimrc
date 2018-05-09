@@ -1,6 +1,7 @@
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_case = 1
+let g:deoplete#file#enable_buffer_path = 1
 inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 
@@ -24,6 +25,7 @@ let g:ale_fixers = {
       \   'html': [ 'trim_whitespace' ],
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
+      \   'scss': [ 'trim_whitespace' ],
       \   'typescript': [ 'tslint', 'trim_whitespace' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
       \   'yaml': [ 'trim_whitespace' ],
