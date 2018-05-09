@@ -48,3 +48,6 @@ nnoremap Y y$
 
 " Copy current @0 register to @+ for use in system clipboard
 nnoremap <Leader>c :let @+ = @0<CR>
+
+" Open current file in code
+nnoremap <LocalLeader>c :!code . %<CR>
