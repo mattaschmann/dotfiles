@@ -64,7 +64,8 @@ Plug 'tommcdo/vim-exchange'
 Plug 'w0rp/ale'
 
 " typescript
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript'
 
 " autoformant, i.e. beautify
 Plug 'Chiel92/vim-autoformat'
