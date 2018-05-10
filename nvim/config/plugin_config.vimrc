@@ -92,3 +92,6 @@ nnoremap <Leader>gp :Gpush<CR>
 let g:highlightedyank_highlight_duration = 150
 let g:highlightedyank_max_lines = 1000
 highlight HighlightedyankRegion ctermbg=237 guibg=#404040
+
+" match tag jump for html
+nnoremap <leader>% :MtaJumpToOtherTag<CR>

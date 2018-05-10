@@ -128,5 +128,8 @@ Plug 'christoomey/vim-sort-motion'
 " edit macros
 Plug 'dohsimpson/vim-macroeditor'
 
+" html tag matching
+Plug 'valloric/matchtagalways'
+
 call plug#end()
 
