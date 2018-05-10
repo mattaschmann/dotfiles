@@ -125,5 +125,8 @@ Plug 'ludovicchabant/vim-gutentags'
 " sort motion
 Plug 'christoomey/vim-sort-motion'
 
+" edit macros
+Plug 'dohsimpson/vim-macroeditor'
+
 call plug#end()
 

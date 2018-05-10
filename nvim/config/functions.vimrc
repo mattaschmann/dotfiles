@@ -56,5 +56,5 @@ function! MoveBufferTopSplit()
 endfunction
 
 " open file and directory in code
-command! -bang -nargs=* Code
+command! Code
   \ :!code . %
