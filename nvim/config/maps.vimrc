@@ -9,8 +9,9 @@ nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 " quit out of insert mode in an easier way
 imap jj <Esc>
 
-" close window
-nnoremap <silent> <Leader>w :bdelete<CR>
+" delete current buffer and either keep or close pane
+nnoremap <silent> <Leader>w :bp\|bd #<CR>
+nnoremap <silent> <Leader>W :bd<CR>
 
 " save file
 nnoremap <silent> <Leader>s :update<CR>
