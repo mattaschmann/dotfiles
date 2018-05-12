@@ -45,3 +45,6 @@ nnoremap Y y$
 
 " Copy current @0 register to @+ for use in system clipboard
 nnoremap <Leader>c :let @+ = @0<CR>
+
+" Add a map to more easily open the command history
+nnoremap <Leader>; q:

@@ -94,3 +94,6 @@ set switchbuf=usetab
 
 " Allow unconstrained movement in visual block mode
 set virtualedit=block
+
+" Make a permanent sign column to get rid of jumpiness
+set signcolumn=yes
