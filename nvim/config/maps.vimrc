@@ -9,10 +9,6 @@ nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 " quit out of insert mode in an easier way
 imap jj <Esc>
 
-" delete current buffer and either keep or close pane
-nnoremap <silent> <Leader>w :bp\|bd #<CR>
-nnoremap <silent> <Leader>W :bd<CR>
-
 " save file
 nnoremap <silent> <Leader>s :update<CR>
 
@@ -49,6 +45,3 @@ nnoremap Y y$
 
 " Copy current @0 register to @+ for use in system clipboard
 nnoremap <Leader>c :let @+ = @0<CR>
-
-" rebind alternate file edit command
-nnoremap <Leader>` <C-^>

@@ -95,3 +95,10 @@ highlight HighlightedyankRegion ctermbg=237 guibg=#404040
 
 " match tag jump for html
 nnoremap <leader>% :MtaJumpToOtherTag<CR>
+
+" Bufkill mappings
+" delete current buffer and either keep or close pane
+nnoremap <silent> <Leader>w :BD<CR>
+nnoremap <silent> <Leader>W :bd<CR>
+" rebind alternate file edit command
+nnoremap <silent> <Leader>` :BA<CR>

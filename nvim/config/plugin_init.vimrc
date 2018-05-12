@@ -131,5 +131,8 @@ Plug 'dohsimpson/vim-macroeditor'
 " html tag matching
 Plug 'valloric/matchtagalways'
 
+" kill buffers but keep panes
+Plug 'qpkorr/vim-bufkill'
+
 call plug#end()
 
