@@ -95,7 +95,7 @@ bindkey '^f' autosuggest-accept
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tm="tmux -2 new -s default"
+alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
 
