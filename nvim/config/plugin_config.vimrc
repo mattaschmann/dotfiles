@@ -30,6 +30,7 @@ let g:ale_fixers = {
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
       \   'yaml': [ 'trim_whitespace' ],
       \}
+let g:ale_sign_error = '->'
 
 " NERDTree stuff
 let g:NERDTreeShowHidden=1

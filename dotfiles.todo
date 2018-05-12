@@ -1,10 +1,13 @@
 Dotfiles tasks:
-  ✔ Try out permanent gutter to avoid the jumpyness @done(2018-05-11 22:31) @project(Dotfiles tasks)
   ☐ Figure out how to get all my git opt libs into dotfiles
+  ☐ Try using netrw and vim-vinegar
+  ☐ Look into starting a cheatsheet in dotfiles
   ☐ Deal with slow terminal startup because of zshrc stuff
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Try out permanent gutter to avoid the jumpyness @done(2018-05-11 22:31) @project(Dotfiles tasks)
+  ✘ Change icons for ALE sign column @cancelled(2018-05-12 14:21) @project(Dotfiles tasks)
   ✔ Add ctags conf @done(2018-05-09 16:55) @project(Dotfiles tasks)
   ✔ Add a shortcut to quickly rename tmux panes to the current directory @done(2018-05-09 15:08) @project(Dotfiles tasks)
   ✔ Watch dotbot issue to see when mr goes in: https://github.com/anishathalye/dotbot/issues/57 @done(2018-05-09 15:10) @project(Dotfiles tasks)
