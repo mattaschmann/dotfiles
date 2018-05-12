@@ -54,7 +54,7 @@ nnoremap <Leader>p :Commands<CR>
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
 nnoremap <Leader>f :Rg<Space>
-vnoremap <Leader>f y:Rg <C-R>"<CR>
+vnoremap <Leader>f y:Rg <C-R>"
 " Fuzzy search in current file
 nnoremap <Leader>l :Lines<CR>
 " Shortcut for :only
