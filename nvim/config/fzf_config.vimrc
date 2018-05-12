@@ -21,7 +21,8 @@ let g:fzf_colors =
 " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --ignore-case --no-ignore-vcs --hidden '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --no-ignore-vcs --hidden '
+  \   . <q-args>, 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
