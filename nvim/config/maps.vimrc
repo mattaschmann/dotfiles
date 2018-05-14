@@ -48,3 +48,6 @@ nnoremap <Leader>c :let @+ = @0<CR>
 
 " Add a map to more easily open the command history
 nnoremap <Leader>; q:
+
+" Explore mapping
+nnoremap <silent> <Leader>\ :Explore<CR>
