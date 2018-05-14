@@ -52,7 +52,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'vim-airline/vim-airline'
 
 " filetree
-Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+" Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
