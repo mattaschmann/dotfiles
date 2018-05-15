@@ -12,12 +12,6 @@ imap jj <Esc>
 " save file
 nnoremap <silent> <Leader>s :update<CR>
 
-" save and exit
-nnoremap <Leader>x :xit<CR>
-
-" quit
-nnoremap <Leader>q :quit<CR>
-
 " toggle relative numbers
 nnoremap <silent> <Leader>r :set relativenumber!<CR>
 
@@ -49,5 +43,5 @@ nnoremap <Leader>c :let @+ = @0<CR>
 " Add a map to more easily open the command history
 nnoremap <Leader>; q:
 
-" Explore mapping
-nnoremap <silent> <Leader>\ :Explore<CR>
+" Remap alternate file
+nnoremap <Leader>` <C-^>

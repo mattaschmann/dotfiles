@@ -52,7 +52,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'vim-airline/vim-airline'
 
 " filetree
-" Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
@@ -131,8 +131,8 @@ Plug 'dohsimpson/vim-macroeditor'
 " html tag matching
 Plug 'valloric/matchtagalways'
 
-" kill buffers but keep panes
-Plug 'qpkorr/vim-bufkill'
+" sane window removal management
+Plug 'mhinz/vim-sayonara'
 
 call plug#end()
 

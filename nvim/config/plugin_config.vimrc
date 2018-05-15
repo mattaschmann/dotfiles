@@ -32,12 +32,12 @@ let g:ale_fixers = {
       \}
 let g:ale_sign_error = '->'
 
-" " NERDTree stuff
-" let g:NERDTreeShowHidden=1
-" let g:NERDTreeWinSize=60
-" " NERDTree mappings
-" nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
-" nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
+" NERDTree stuff
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=60
+" NERDTree mappings
+nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " " unimpaired bubble mappings
 nmap <A-k> [e
@@ -96,9 +96,7 @@ highlight HighlightedyankRegion ctermbg=237 guibg=#404040
 " match tag jump for html
 nnoremap <leader>% :MtaJumpToOtherTag<CR>
 
-" Bufkill mappings
+" Sayonara mappins
 " delete current buffer and either keep or close pane
-nnoremap <silent> <Leader>w :BD<CR>
-nnoremap <silent> <Leader>W :bd<CR>
-" rebind alternate file edit command
-nnoremap <silent> <Leader>` :BA<CR>
+nnoremap <silent> <Leader>w :Sayonara!<CR>
+nnoremap <silent> <Leader>q :Sayonara<CR>
