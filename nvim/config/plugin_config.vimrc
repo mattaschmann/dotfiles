@@ -100,3 +100,7 @@ nnoremap <leader>% :MtaJumpToOtherTag<CR>
 " delete current buffer and either keep or close pane
 nnoremap <silent> <Leader>w :Sayonara!<CR>
 nnoremap <silent> <Leader>q :Sayonara<CR>
+
+" nvim_typescript stuff
+let g:nvim_typescript#signature_complete = 1
+

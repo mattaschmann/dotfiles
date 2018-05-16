@@ -97,3 +97,9 @@ set virtualedit=block
 
 " Make a permanent sign column to get rid of jumpiness
 set signcolumn=yes
+
+" turn off showmode
+set noshowmode
+
+" don't use the preview menu on completions
+set completeopt-=preview

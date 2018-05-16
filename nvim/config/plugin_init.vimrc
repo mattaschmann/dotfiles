@@ -93,7 +93,6 @@ Plug 'irrationalistic/vim-tasks'
 
 " Completions
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'ervandew/supertab'
 
 " neosnippets
 Plug 'Shougo/neosnippet.vim'
