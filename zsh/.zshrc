@@ -101,13 +101,14 @@ alias n="nvim"
 
 # github specific aliases
 alias gb="git branch"
-alias gpul="git pull"
-alias gpus="git push"
-alias gh="git checkout"
-alias ghm="git checkout master"
-alias gcp="git commit -p"
 alias gc.="git commit ."
 alias gc="git commit"
+alias gcp="git commit -p"
+alias gh="git checkout"
+alias ghm="git checkout master"
+alias gmm="git merge master"
+alias gpul="git pull"
+alias gpus="git push"
 alias gs="git status"
 
 export EDITOR=nvim
