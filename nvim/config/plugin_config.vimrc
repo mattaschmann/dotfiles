@@ -105,3 +105,8 @@ nnoremap <silent> <Leader>q :Sayonara<CR>
 " nvim_typescript stuff
 let g:nvim_typescript#signature_complete = 1
 
+" easyalign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

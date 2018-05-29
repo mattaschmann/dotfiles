@@ -133,5 +133,8 @@ Plug 'valloric/matchtagalways'
 " sane window removal management
 Plug 'mhinz/vim-sayonara'
 
+" alignment
+Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 
