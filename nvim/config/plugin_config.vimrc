@@ -24,6 +24,7 @@ let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],
       \   'html': [ 'trim_whitespace' ],
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
+      \   'json': [ 'jq', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
       \   'python': ['trim_whitespace' ],
       \   'scss': [ 'trim_whitespace' ],
