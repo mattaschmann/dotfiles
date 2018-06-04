@@ -7,7 +7,7 @@ nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 
 " quit out of insert mode in an easier way
-imap jj <Esc>
+inoremap jj <Esc>
 
 " save file
 nnoremap <silent> <Leader>s :update<CR>
