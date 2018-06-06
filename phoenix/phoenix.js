@@ -114,11 +114,9 @@ w.prototype.to = function (dir) {
   if ([E, NE, SE].includes(dir)) frame.x += screen.width() - frame.width
   if ([SE, SW].includes(dir))    frame.y += screen.height() - frame.height
   if (F === dir)                 frame.width = screen.width()
-  if ([F, E, W].includes(dir))   frame.height = screen.height()
+  if ([F, E, W, C].includes(dir))   frame.height = screen.height()
   if (C === dir) {
-    frame.height = screen.height() - 2 * (screen.height() / 8)
     frame.x += (screen.width() / 4)
-    frame.y += (screen.height() / 8)
   }
 
   this.setFrame(frame)
