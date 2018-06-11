@@ -103,6 +103,7 @@ Plug 'Shougo/context_filetype.vim'
 
 " rust
 Plug 'racer-rust/vim-racer'
+Plug 'https://github.com/sebastianmarkow/deoplete-rust'
 
 " Close all buffers but current/specified one
 Plug 'schickling/vim-bufonly'
