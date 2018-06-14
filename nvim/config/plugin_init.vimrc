@@ -48,6 +48,9 @@ Plug 'tpope/vim-unimpaired'
 " directory stuff by tpope
 Plug 'tpope/vim-eunuch'
 
+" smart substitute by tpope
+Plug 'tpope/vim-abolish'
+
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 

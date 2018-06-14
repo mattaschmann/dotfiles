@@ -11,12 +11,13 @@
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.ctags.d: universal_ctags
     ~/.ignore: rg/.ignore
+    ~/.jsbeautifyrc: jsbeautify/.jsbeautifyrc
     ~/.phoenix.js: phoenix/phoenix.js
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.zshrc: zsh/.zshrc
-    ~/.ctags.d: universal_ctags
     # These should be mac only
     ~/Library/Application Support/org.yanex.marta/conf.json:
         path: marta/conf.json
