@@ -17,9 +17,9 @@ imap <expr><TAB>
 nnoremap <silent> <Leader>. :ALEFix<CR>
 nnoremap <silent> <F8> :ALENextWrap<CR>
 nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-" let g:ale_linters = {
-"       \   'text': [ 'vale', 'proselint', 'write good' ]
-"       \}
+let g:ale_linters = {
+      \   'rust': [ 'rls' ]
+      \}
 let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],
       \   'html': [ 'trim_whitespace' ],
@@ -33,6 +33,7 @@ let g:ale_fixers = {
       \   'yaml': [ 'trim_whitespace' ],
       \}
 let g:ale_sign_error = '->'
+let g:ale_rust_rls_toolchain = 'stable'
 
 " NERDTree stuff
 let g:NERDTreeShowHidden=1
