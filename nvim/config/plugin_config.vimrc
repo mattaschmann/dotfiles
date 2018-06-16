@@ -17,13 +17,14 @@ imap <expr><TAB>
 nnoremap <silent> <Leader>. :ALEFix<CR>
 nnoremap <silent> <F8> :ALENextWrap<CR>
 nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-" let g:ale_linters = {
-"       \   'text': [ 'vale', 'proselint', 'write good' ]
-"       \}
+let g:ale_linters = {
+      \   'rust': [ 'rls' ]
+      \}
 let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],
       \   'html': [ 'trim_whitespace' ],
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
+      \   'json': [ 'jq', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
       \   'python': ['trim_whitespace' ],
       \   'scss': [ 'trim_whitespace' ],
@@ -32,6 +33,7 @@ let g:ale_fixers = {
       \   'yaml': [ 'trim_whitespace' ],
       \}
 let g:ale_sign_error = '->'
+let g:ale_rust_rls_toolchain = 'stable'
 
 " NERDTree stuff
 let g:NERDTreeShowHidden=1
@@ -86,7 +88,7 @@ autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gc :Gcommit
 nnoremap <Leader>gp :Gpush<CR>
 
 " vim highlightedyank stuff
@@ -105,3 +107,8 @@ nnoremap <silent> <Leader>q :Sayonara<CR>
 " nvim_typescript stuff
 let g:nvim_typescript#signature_complete = 1
 
+" easyalign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

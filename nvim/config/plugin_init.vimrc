@@ -48,6 +48,9 @@ Plug 'tpope/vim-unimpaired'
 " directory stuff by tpope
 Plug 'tpope/vim-eunuch'
 
+" smart substitute by tpope
+Plug 'tpope/vim-abolish'
+
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 
@@ -65,7 +68,9 @@ Plug 'w0rp/ale'
 
 " typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript'
+" @Matt TODO: figure out why the latest version doesn't work
+" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
 " autoformant, i.e. beautify
 Plug 'Chiel92/vim-autoformat'
@@ -101,6 +106,7 @@ Plug 'Shougo/context_filetype.vim'
 
 " rust
 Plug 'racer-rust/vim-racer'
+Plug 'https://github.com/sebastianmarkow/deoplete-rust'
 
 " Close all buffers but current/specified one
 Plug 'schickling/vim-bufonly'
@@ -132,6 +138,9 @@ Plug 'valloric/matchtagalways'
 
 " sane window removal management
 Plug 'mhinz/vim-sayonara'
+
+" alignment
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 

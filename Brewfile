@@ -26,6 +26,7 @@ brew "ripgrep"
 brew "speedtest-cli"
 brew "tavianator/tap/bfs"
 brew "tig"
+brew "tldr"
 brew "tmux"
 brew "universal-ctags", args: ['HEAD']
 brew "urlview"
