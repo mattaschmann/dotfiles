@@ -112,3 +112,6 @@ let g:nvim_typescript#signature_complete = 1
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" jsx stuff
+let g:jsx_ext_required = 1

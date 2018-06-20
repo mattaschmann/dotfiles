@@ -79,7 +79,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'pangloss/vim-javascript'
 
 " jsx syntax
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'https://github.com/mxw/vim-jsx', { 'for': 'javascript.jsx' }
 
 " markdown previewer
 Plug 'shime/vim-livedown'
