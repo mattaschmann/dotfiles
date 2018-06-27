@@ -27,6 +27,7 @@ let g:ale_fixers = {
       \   'json': [ 'jq', 'trim_whitespace' ],
       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
       \   'python': ['trim_whitespace' ],
+      \   'rust': [ 'rustfmt', 'trim_whitespace' ],
       \   'scss': [ 'trim_whitespace' ],
       \   'typescript': [ 'tslint', 'trim_whitespace' ],
       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
