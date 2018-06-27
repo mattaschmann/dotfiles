@@ -31,7 +31,6 @@ brew "tmux"
 brew "universal-ctags", args: ['HEAD']
 brew "urlview"
 brew "vale"
-brew "vim"
 brew "wget"
 brew "youtube-dl"
 brew "zsh"
