@@ -103,6 +103,3 @@ set noshowmode
 
 " don't use the preview menu on completions
 set completeopt-=preview
-
-" Use system clipboard for yank
-set clipboard+=unnamedplus
