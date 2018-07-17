@@ -142,5 +142,8 @@ Plug 'mhinz/vim-sayonara'
 " alignment
 Plug 'junegunn/vim-easy-align'
 
+" dash
+Plug 'https://github.com/rizzatti/dash.vim'
+
 call plug#end()
 

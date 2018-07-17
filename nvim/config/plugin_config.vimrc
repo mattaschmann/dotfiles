@@ -116,3 +116,6 @@ nmap ga <Plug>(EasyAlign)
 
 " jsx stuff
 let g:jsx_ext_required = 1
+
+" dash binding
+nmap <silent> <LocalLeader>d <Plug>DashSearch
