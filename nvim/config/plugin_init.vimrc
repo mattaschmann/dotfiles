@@ -67,8 +67,9 @@ Plug 'tommcdo/vim-exchange'
 Plug 'w0rp/ale'
 
 " typescript
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'https://github.com/leafgarland/typescript-vim.git'
+" @Matt TODO: fix the <> thing breaking the syntax
+Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'https://github.com/leafgarland/typescript-vim.git'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 " Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
