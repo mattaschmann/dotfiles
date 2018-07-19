@@ -69,8 +69,8 @@ Plug 'w0rp/ale'
 " typescript
 Plug 'HerringtonDarkholme/yats.vim'
 " @Matt TODO: figure out why the latest version doesn't work
-" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
 " autoformant, i.e. beautify
 Plug 'Chiel92/vim-autoformat'
