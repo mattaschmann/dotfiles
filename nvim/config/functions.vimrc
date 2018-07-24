@@ -6,6 +6,7 @@ function! Stab()
     let &l:sts = l:tabstop
     let &l:ts = l:tabstop
     let &l:sw = l:tabstop
+    let &l:et = 1
   endif
   call SummarizeTabs()
 endfunction
