@@ -2,3 +2,13 @@ snippet     todo
 abbr        @Matt TODO
 options     head
     // @Matt TODO: ${0}
+
+snippet     cfgt
+abbr        #[cfg(test)]
+options     head
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        ${0}
+    }
