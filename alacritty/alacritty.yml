@@ -110,6 +110,7 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
+# ported 'Brogrammer' color scheme: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Brogrammer.itermcolors
 # Colors
 colors:
   # Default colors
