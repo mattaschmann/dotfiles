@@ -129,6 +129,7 @@ export PATH="$HOME/bin:$PATH"
 
 # python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -138,5 +139,4 @@ export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
 
 # node
 export PATH="/usr/local/opt/node@8/bin:$PATH"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
