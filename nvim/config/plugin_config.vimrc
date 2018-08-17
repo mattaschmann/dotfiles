@@ -36,12 +36,12 @@ let g:ale_fixers = {
 let g:ale_sign_error = '->'
 let g:ale_rust_rls_toolchain = 'stable'
 
-" NERDTree stuff
-let g:NERDTreeShowHidden=1
-let g:NERDTreeWinSize=60
-" NERDTree mappings
-nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
+" " NERDTree stuff
+" let g:NERDTreeShowHidden=1
+" let g:NERDTreeWinSize=60
+" " NERDTree mappings
+" nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
+" nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
 
 " " unimpaired bubble mappings
 nmap <A-k> [e

@@ -51,11 +51,14 @@ Plug 'tpope/vim-eunuch'
 " smart substitute by tpope
 Plug 'tpope/vim-abolish'
 
+" make netrw easier
+Plug 'https://github.com/tpope/vim-vinegar'
+
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 
 " filetree
-Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+" Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
