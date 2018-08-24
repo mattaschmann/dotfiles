@@ -51,8 +51,8 @@ Plug 'tpope/vim-eunuch'
 " smart substitute by tpope
 Plug 'tpope/vim-abolish'
 
-" make netrw easier
-Plug 'https://github.com/tpope/vim-vinegar'
+" make netrw easier, NOTE: using dirvish now
+" Plug 'https://github.com/tpope/vim-vinegar'
 
 " bottom status bar
 Plug 'vim-airline/vim-airline'
@@ -153,6 +153,13 @@ Plug 'https://github.com/rizzatti/dash.vim'
 
 " quickfix window
 Plug 'https://github.com/fcpg/vim-kickfix'
+
+" A file browser (dirvish)
+Plug 'https://github.com/justinmk/vim-dirvish'
+" for remote ssh viewing
+Plug 'https://github.com/bounceme/remote-viewer'
+" for git status
+Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 
 call plug#end()
 

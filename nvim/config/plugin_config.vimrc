@@ -119,3 +119,6 @@ let g:jsx_ext_required = 1
 
 " dash binding
 nmap <silent> <LocalLeader>d <Plug>DashSearch
+
+" dirvish settings
+let g:dirvish_mode = ':sort ,^.*[\/],'
