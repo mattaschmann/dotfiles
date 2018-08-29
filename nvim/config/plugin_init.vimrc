@@ -161,5 +161,8 @@ Plug 'https://github.com/bounceme/remote-viewer'
 " for git status
 Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 
+" css colors
+Plug 'https://github.com/ap/vim-css-color'
+
 call plug#end()
 
