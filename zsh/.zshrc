@@ -158,3 +158,5 @@ function load_nvm() {
 async_start_worker nvm_worker -n
 async_register_callback nvm_worker load_nvm
 async_job nvm_worker sleep 0.1
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

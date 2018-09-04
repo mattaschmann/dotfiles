@@ -9,6 +9,7 @@ tap "universal-ctags/universal-ctags"
 
 brew "autoconf"
 brew "automake"
+brew "bat"
 brew "cmake"
 brew "coreutils"
 brew "diff-so-fancy"
