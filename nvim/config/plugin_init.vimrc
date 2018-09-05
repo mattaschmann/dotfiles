@@ -152,7 +152,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/rizzatti/dash.vim'
 
 " quickfix window
-Plug 'https://github.com/fcpg/vim-kickfix'
+" Plug 'https://github.com/fcpg/vim-kickfix'
 
 " A file browser (dirvish)
 Plug 'https://github.com/justinmk/vim-dirvish'
