@@ -19,6 +19,8 @@ brew "kubectl"
 brew "libksba"
 brew "libtool"
 brew "neovim"
+brew "node@8", args: ['--without-npm']
+brew "npm"
 brew "openssl@1.1"
 brew "par"
 brew "pcre"
