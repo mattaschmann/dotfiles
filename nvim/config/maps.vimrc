@@ -45,3 +45,6 @@ nnoremap <Leader>; q:
 
 " Remap alternate file
 nnoremap <Leader>` <C-^>
+
+" Shortcut to highlight block
+nnoremap gb V$%
