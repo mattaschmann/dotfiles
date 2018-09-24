@@ -163,5 +163,8 @@ Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 " css colors
 Plug 'https://github.com/ap/vim-css-color'
 
+" Directory diff
+Plug 'https://github.com/vim-scripts/DirDiff.vim'
+
 call plug#end()
 
