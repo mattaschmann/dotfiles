@@ -48,3 +48,6 @@ nnoremap <Leader>` <C-^>
 
 " Shortcut to highlight block
 nnoremap gb V$%
+
+" Shortcut for opening file in vscode
+nnoremap <LocalLeader>c :Code<CR>
