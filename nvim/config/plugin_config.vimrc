@@ -36,6 +36,9 @@ let g:ale_fixers = {
 let g:ale_sign_error = '->'
 let g:ale_rust_rls_toolchain = 'stable'
 
+" nvim-typescript stuff
+nnoremap <F5> :TSGetCodeFix<CR>
+
 " " NERDTree stuff
 " let g:NERDTreeShowHidden=1
 " let g:NERDTreeWinSize=60
