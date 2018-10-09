@@ -57,7 +57,7 @@ nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>f :Rg<Space>
 vnoremap <Leader>f y:Rg <C-R>"
 " Fuzzy search in current file
-nnoremap <Leader>l :Lines<CR>
+nnoremap <Leader>l :BLines<CR>
 " Shortcut for :only
 nnoremap <Leader>o :only<CR>
 " Remove all other buffers
