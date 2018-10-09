@@ -72,7 +72,9 @@ Plug 'w0rp/ale'
 " typescript
 " @Matt TODO: fix the <> thing breaking the syntax
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', { 'commit': '4627276b7d313d82f460c11bda14517604cb49db', 'do': './install.sh' }
+" python version
 " Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
 " autoformant, i.e. beautify
