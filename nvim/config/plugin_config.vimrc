@@ -69,6 +69,7 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#checking_symbol = '✓'
 
 " Emmet stuff
 let g:user_emmet_install_global = 0
