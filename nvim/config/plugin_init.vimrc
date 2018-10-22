@@ -27,8 +27,8 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-Plug 'jreybert/vimagit'
+" Plug 'junegunn/gv.vim' " tree view
+" Plug 'jreybert/vimagit' " in place edit
 
 " smart set shiftwidth
 Plug 'tpope/vim-sleuth'
