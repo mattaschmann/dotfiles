@@ -8,9 +8,19 @@ inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
 imap <expr><TAB>
-  \ neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" :
-  \ pumvisible() ? "\<C-n>" : "\<TAB>"
+      \ neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" :
+      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Edit vim-airline
+" function! AirlineInit()
+"   call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
+"   let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
+" endfunction
+" autocmd VimEnter * call AirlineInit()
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#checking_symbol = '✓'
 
 " ALE stuff
 " Enable completion where available.
@@ -39,14 +49,7 @@ let g:ale_rust_rls_toolchain = 'stable'
 " nvim-typescript stuff
 nnoremap <F5> :TSGetCodeFix<CR>
 
-" " NERDTree stuff
-" let g:NERDTreeShowHidden=1
-" let g:NERDTreeWinSize=60
-" " NERDTree mappings
-" nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
-" nnoremap <silent> <Leader>0 :NERDTreeFind<CR>
-
-" " unimpaired bubble mappings
+" unimpaired bubble mappings
 nmap <A-k> [e
 nmap <A-j> ]e
 vmap <A-k> [egv
@@ -60,16 +63,6 @@ map g/ <Plug>(incsearch-stay)
 " Ferret mappings
 nmap <Leader>a <Plug>(FerretAck)
 nmap <LocalLeader>a <Plug>(FerretAcks)
-
-" Edit vim-airline
-" function! AirlineInit()
-"   call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
-"   let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
-" endfunction
-" autocmd VimEnter * call AirlineInit()
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#ale#checking_symbol = '✓'
 
 " Emmet stuff
 let g:user_emmet_install_global = 0
@@ -123,3 +116,6 @@ nmap <silent> <LocalLeader>d <Plug>DashSearch
 
 " dirvish settings
 let g:dirvish_mode = ':sort ,^.*[\/],'
+
+" Autoformat stuff
+nnoremap <LocalLeader>b :Autoformat<CR>

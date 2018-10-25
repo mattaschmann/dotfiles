@@ -52,5 +52,3 @@ nnoremap gb V$%
 " Shortcut for opening file in vscode
 nnoremap <LocalLeader>c :Code<CR>
 
-" Beautify html
-au FileType html nnoremap <LocalLeader>b :!html-beautify % -r<CR>

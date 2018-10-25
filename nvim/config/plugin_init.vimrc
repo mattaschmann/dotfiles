@@ -3,7 +3,7 @@
 " Auto download vim-plug if it doesn't exist
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -16,10 +16,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
 Plug 'easymotion/vim-easymotion'
 
 " show the yank
-Plug 'machakann/vim-highlightedyank'
-
-" dep for flash
-Plug 'kana/vim-operator-user'
+Plug 'https://github.com/machakann/vim-highlightedyank'
 
 " fuzzy search: is made better with ripgrep
 Plug 'junegunn/fzf', { 'dir': '~/opt/fzf', 'do': './install --all' }
@@ -31,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'jreybert/vimagit' " in place edit
 
 " smart set shiftwidth
-Plug 'tpope/vim-sleuth'
+Plug 'https://github.com/tpope/vim-sleuth'
 
 " make changing surrounds easier
 Plug 'tpope/vim-surround'
@@ -57,9 +54,6 @@ Plug 'tpope/vim-abolish'
 " bottom status bar
 Plug 'vim-airline/vim-airline'
 
-" filetree
-" Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
-
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
 
@@ -77,7 +71,7 @@ Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
 " Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
 " autoformant, i.e. beautify
-Plug 'Chiel92/vim-autoformat'
+Plug 'https://github.com/Chiel92/vim-autoformat'
 
 " javascript syntax
 Plug 'pangloss/vim-javascript'
@@ -150,9 +144,6 @@ Plug 'junegunn/vim-easy-align'
 
 " dash
 Plug 'https://github.com/rizzatti/dash.vim'
-
-" quickfix window
-" Plug 'https://github.com/fcpg/vim-kickfix'
 
 " A file browser (dirvish)
 Plug 'https://github.com/justinmk/vim-dirvish'
