@@ -82,7 +82,8 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'https://github.com/mxw/vim-jsx', { 'for': 'javascript.jsx' }
 
 " markdown previewer
-Plug 'shime/vim-livedown'
+" Plug 'shime/vim-livedown'
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " Undo branching visualization
 Plug 'simnalamburt/vim-mundo'
