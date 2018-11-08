@@ -46,7 +46,7 @@ let g:ale_sign_error = '->'
 let g:ale_rust_rls_toolchain = 'stable'
 
 " nvim-typescript stuff
-nnoremap <F5> :TSGetCodeFix<CR>
+au FileType typescript nnoremap <F5> :TSGetCodeFix<CR>
 
 " unimpaired bubble mappings
 nmap <A-k> [e

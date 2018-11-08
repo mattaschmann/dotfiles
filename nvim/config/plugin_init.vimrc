@@ -162,5 +162,8 @@ Plug 'https://github.com/vim-scripts/DirDiff.vim'
 " Diff in same file
 Plug 'https://github.com/andrewradev/linediff.vim'
 
+" Tabnine
+Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
 call plug#end()
 
