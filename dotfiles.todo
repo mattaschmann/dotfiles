@@ -1,4 +1,6 @@
 Dotfiles tasks:
+  ☐ Get file motions in ferret?
+  ☐ Try and use ncm2?  and neovim lang client
   ☐ Figure out how to get all my git opt libs into dotfiles
   ☐ Deal with slow terminal startup because of zshrc stuff
 

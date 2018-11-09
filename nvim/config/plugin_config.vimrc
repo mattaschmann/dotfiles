@@ -2,7 +2,7 @@
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_case = 1
 let g:deoplete#file#enable_buffer_path = 1
-call deoplete#custom#source('tabnine', 'rank', 50)
+call deoplete#custom#source('tabnine', 'rank', 101)
 inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 
