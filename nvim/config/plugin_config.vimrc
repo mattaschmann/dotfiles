@@ -2,6 +2,7 @@
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_case = 1
 let g:deoplete#file#enable_buffer_path = 1
+call deoplete#custom#source('tabnine', 'rank', 50)
 inoremap <expr><C-y> deoplete#close_popup()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 
@@ -118,3 +119,7 @@ let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " Autoformat stuff
 nnoremap <LocalLeader>b :Autoformat<CR>
+
+" DirDiff
+let g:DirDiffExcludes = "node_modules,.git"
+
