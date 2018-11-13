@@ -123,3 +123,8 @@ nnoremap <LocalLeader>b :Autoformat<CR>
 " DirDiff
 let g:DirDiffExcludes = "node_modules,.git"
 
+" " Lang client
+" let g:LanguageClient_serverCommands = {
+"     \ 'javascript': ['js-langserver', '--stdio'],
+"     \ }
+" au FileType javascript nnoremap <F5> :call LanguageClient_contextMenu()<CR>

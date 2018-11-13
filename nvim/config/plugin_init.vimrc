@@ -165,5 +165,10 @@ Plug 'https://github.com/andrewradev/linediff.vim'
 " Tabnine
 Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+
 call plug#end()
 
