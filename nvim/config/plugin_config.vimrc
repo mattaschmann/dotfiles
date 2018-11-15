@@ -28,7 +28,7 @@ nnoremap <silent> <Leader>. :ALEFix<CR>
 nnoremap <silent> <F8> :ALENextWrap<CR>
 nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
 let g:ale_linters = {
-      \   'rust': [ 'rls' ]
+      \   'rust': [ 'cargo' ]
       \}
 let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],
@@ -128,3 +128,6 @@ let g:DirDiffExcludes = "node_modules,.git"
 "     \ 'javascript': ['js-langserver', '--stdio'],
 "     \ }
 " au FileType javascript nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
+" Gutentags
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0

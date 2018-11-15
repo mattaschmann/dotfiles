@@ -52,7 +52,7 @@ Plug 'tpope/vim-abolish'
 " Plug 'https://github.com/tpope/vim-vinegar'
 
 " bottom status bar
-Plug 'vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline'
 
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
