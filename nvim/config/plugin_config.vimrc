@@ -28,7 +28,7 @@ nnoremap <silent> <Leader>. :ALEFix<CR>
 nnoremap <silent> <F8> :ALENextWrap<CR>
 nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
 let g:ale_linters = {
-      \   'rust': [ 'rls' ]
+      \   'rust': [ 'cargo' ]
       \}
 let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],

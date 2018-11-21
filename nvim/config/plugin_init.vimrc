@@ -170,5 +170,8 @@ Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
 "     \ 'do': 'bash install.sh',
 "     \ }
 
+" Golden ratio window resizing
+Plug 'https://github.com/roman/golden-ratio'
+
 call plug#end()
 
