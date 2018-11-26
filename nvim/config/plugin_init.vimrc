@@ -79,7 +79,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " jsx syntax
-Plug 'https://github.com/mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'https://github.com/mxw/vim-jsx'
 
 " markdown previewer
 " Plug 'shime/vim-livedown'
