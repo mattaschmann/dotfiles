@@ -52,3 +52,7 @@ nnoremap gb V$%
 " Shortcut for opening file in vscode
 nnoremap <LocalLeader>c :Code<CR>
 
+" diff shortcut
+nnoremap <LocalLeader>d :windo diffthis<CR>
+nnoremap <LocalLeader>D :buffdo diffoff<CR>
+

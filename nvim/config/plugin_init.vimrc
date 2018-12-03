@@ -143,9 +143,6 @@ Plug 'mhinz/vim-sayonara'
 " alignment
 Plug 'junegunn/vim-easy-align'
 
-" dash
-Plug 'https://github.com/rizzatti/dash.vim'
-
 " A file browser (dirvish)
 Plug 'https://github.com/justinmk/vim-dirvish'
 " for remote ssh viewing

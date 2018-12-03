@@ -110,9 +110,6 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" dash binding
-nmap <silent> <LocalLeader>d <Plug>DashSearch
-
 " dirvish settings
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
