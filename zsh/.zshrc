@@ -137,9 +137,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mongodb
 export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
 
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-
 #Node/NVM
+declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
 NODE_GLOBALS+=("node")
 NODE_GLOBALS+=("nvm")
 
