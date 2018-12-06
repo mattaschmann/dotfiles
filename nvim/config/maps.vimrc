@@ -53,6 +53,7 @@ nnoremap gb V$%
 nnoremap <LocalLeader>c :Code<CR>
 
 " diff shortcut
-nnoremap <LocalLeader>d :windo diffthis<CR>
-nnoremap <LocalLeader>D :buffdo diffoff<CR>
+nnoremap <LocalLeader>dt :windo diffthis<CR>
+nnoremap <LocalLeader>du :diffupdate<CR>
+nnoremap <LocalLeader>D :bufdo diffoff<CR>
 
