@@ -34,6 +34,7 @@ let g:ale_linters = {
       \}
 let g:ale_fixers = {
       \   'css': [ 'trim_whitespace' ],
+      \   'graphql': [ 'prettier', 'trim_whitespace' ],
       \   'html': [ 'trim_whitespace' ],
       \   'javascript': [ 'eslint', 'trim_whitespace' ],
       \   'json': [ 'jq', 'trim_whitespace' ],

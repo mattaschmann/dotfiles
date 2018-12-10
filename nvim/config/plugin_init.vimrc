@@ -167,5 +167,8 @@ Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
 "     \ 'do': 'bash install.sh',
 "     \ }
 
+" GraphQL
+Plug 'https://github.com/jparise/vim-graphql'
+
 call plug#end()
 
