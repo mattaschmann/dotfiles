@@ -35,18 +35,11 @@ window:
 
   # Window decorations
   #
-  # Available values:
-  # - `full`: Window with title bar and title bar buttons
-  # - `none`: Window without title bar, rounded corners, or drop shadow
-  # - `transparent`: Window with title bar with transparent background and title
-  #   bar buttons
-  # - `buttonless`: Window with title bar with transparent background and no
-  #   title bar buttons
-  # Window decorations
-  #
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
   decorations: none
@@ -120,7 +113,7 @@ font:
     x: 0
     y: 0
 
-  # Thin stroke font rendering (OS X only)
+  # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`
@@ -238,6 +231,7 @@ colors:
 visual_bell:
   animation: EaseOutExpo
   duration: 0
+  color: '0xffffff'
 
 # Background opacity
 #
@@ -248,15 +242,15 @@ background_opacity: 1.0
 # Mouse bindings
 #
 # Available fields:
-# - mouse
-# - action
-# - mods (optional)
+#   - mouse
+#   - action
+#   - mods (optional)
 #
 # Values for `mouse`:
-# - Middle
-# - Left
-# - Right
-# - Numeric identifier such as `5`
+#   - Middle
+#   - Left
+#   - Right
+#   - Numeric identifier such as `5`
 #
 # All available `mods` and `action` values are documented in the key binding
 # section.
@@ -280,6 +274,11 @@ mouse:
     #
     # This program is executed when clicking on a text which is recognized as a URL.
     # The URL is always added to the command as the last parameter.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux) xdg-open
+    #   - (Windows) explorer
     launcher: open
 
     # URL modifiers
@@ -293,6 +292,9 @@ selection:
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
+
+# Allow terminal applications to change Alacritty's window title.
+dynamic_title: true
 
 cursor:
   # Cursor style

@@ -160,7 +160,7 @@ Plug 'https://github.com/vim-scripts/DirDiff.vim'
 Plug 'https://github.com/andrewradev/linediff.vim'
 
 " Tabnine
-Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
+" Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
