@@ -275,6 +275,8 @@ mouse:
     # This program is executed when clicking on a text which is recognized as a URL.
     # The URL is always added to the command as the last parameter.
     #
+    # When set to `None`, URL launching will be disabled completely.
+    #
     # Default:
     #   - (macOS) open
     #   - (Linux) xdg-open
@@ -316,19 +318,41 @@ live_config_reload: true
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
+#
+# Default:
+#   - (Linux/macOS) /bin/bash --login
+#   - (Windows) powershell
 shell:
   program: /bin/zsh
   args:
     - --login
 
+# Windows 10 ConPTY backend (Windows only)
+#
+# This will enable better color support and may resolve other issues,
+# however this API and its implementation is still young and so is
+# disabled by default, as stability may not be as good as the winpty
+# backend.
+#
+# Alacritty will fall back to the WinPTY automatically if the ConPTY
+# backend cannot be initialized.
+# enable_experimental_conpty_backend: false
+
+# Send ESC (\x1b) before characters when alt is pressed.
+# alt_send_esc: true
+
 # Key bindings
 #
-# Key bindings are specified as a list of objects. Each binding will specify
-# a key and modifiers required to trigger it, terminal modes where the binding
-# is applicable, and what should be done when the key binding fires. It can
-# either send a byte sequnce to the running application (`chars`), execute
-# a predefined action (`action`) or fork and execute a specified command plus
+# Key bindings are specified as a list of objects. Each binding will specify a
+# key and modifiers required to trigger it, terminal modes where the binding is
+# applicable, and what should be done when the key binding fires. It can either
+# send a byte sequence to the running application (`chars`), execute a
+# predefined action (`action`) or fork and execute a specified command plus
 # arguments (`command`).
+#
+# Bindings are always filled by default, but will be replaced when a new binding
+# with the same triggers is defined. To unset a default binding, it can be
+# mapped to the `None` action.
 #
 # Example:
 #   `- { key: V, mods: Command, action: Paste }`
@@ -386,6 +410,8 @@ shell:
 #   - Hide
 #   - Quit
 #   - ClearLogNotice
+#   - SpawnNewInstance
+#   - None
 #
 # Values for `command`:
 #   The `command` field must be a map containing a `program` string and
