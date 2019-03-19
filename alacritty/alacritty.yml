@@ -302,7 +302,7 @@ dynamic_title: true
 cursor:
   # Cursor style
   #
-  # Values for 'style':
+  # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
@@ -340,7 +340,6 @@ shell:
 # enable_experimental_conpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
-# @Matt TODO: is this correct?
 alt_send_esc: true
 
 # Key bindings
@@ -357,7 +356,7 @@ alt_send_esc: true
 # mapped to the `None` action.
 #
 # Example:
-#   `- { key: V, mods: Command, action: Paste }`
+#   `- { key: V, mods: Control|Shift, action: Paste }`
 #
 # Available fields:
 #   - key
@@ -435,11 +434,14 @@ key_bindings:
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
   #- { key: Key0,     mods: Control,       action: ResetFontSize    }
   #- { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  #- { key: Add,      mods: Control,       action: IncreaseFontSize }
   #- { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  #- { key: Minus,    mods: Control,       action: DecreaseFontSize }
 
   # (macOS only)
   #- { key: Key0,   mods: Command, action: ResetFontSize    }
   #- { key: Equals, mods: Command, action: IncreaseFontSize }
+  #- { key: Add,    mods: Command, action: IncreaseFontSize }
   #- { key: Minus,  mods: Command, action: DecreaseFontSize }
   #- { key: K,      mods: Command, action: ClearHistory     }
   #- { key: K,      mods: Command, chars: "\x0c"            }

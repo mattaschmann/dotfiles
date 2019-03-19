@@ -37,7 +37,6 @@ brew "universal-ctags", args: ['HEAD']
 brew "urlview"
 brew "vale"
 brew "wget"
-brew "youtube-dl"
 brew "yq"
 brew "zsh"
 cask "docker"
