@@ -1,8 +1,6 @@
 "This unsets the "last search pattern" register
 nnoremap <silent> <Leader>n :noh<CR>
 
-" show settings file
-nnoremap <silent> <Leader>, :e $MYVIMRC<CR>
 " reload settings file
 nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 

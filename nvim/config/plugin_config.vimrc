@@ -1,10 +1,11 @@
+" @Matt TODO: cleanup unused plugins
 " Use deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_case = 1
-let g:deoplete#file#enable_buffer_path = 1
-call deoplete#custom#source('tabnine', 'rank', 101)
-inoremap <expr><C-y> deoplete#close_popup()
-inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#ignore_case = 1
+" let g:deoplete#file#enable_buffer_path = 1
+" call deoplete#custom#source('tabnine', 'rank', 101)
+" inoremap <expr><C-y> deoplete#close_popup()
+" inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
@@ -14,40 +15,36 @@ imap <expr><TAB>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Edit vim-airline
-" function! AirlineInit()
-"   call airline#parts#define_raw('shiftwidth', 'sw:%{&shiftwidth}')
-"   let g:airline_section_y = airline#section#create_right(['ffenc', 'shiftwidth'])
-" endfunction
-" autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " ALE stuff
 " Enable completion where available.
-nnoremap <silent> <Leader>. :ALEFix<CR>
-nnoremap <silent> <F8> :ALENextWrap<CR>
-nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-let g:ale_linters = {
-      \   'javascript': [ 'eslint' ],
-      \   'typescript': [ 'tslint' ],
-      \   'rust': [ 'cargo' ],
-      \}
-let g:ale_fixers = {
-      \   'css': [ 'trim_whitespace' ],
-      \   'graphql': [ 'prettier', 'trim_whitespace' ],
-      \   'html': [ 'trim_whitespace' ],
-      \   'javascript': [ 'eslint', 'trim_whitespace' ],
-      \   'json': [ 'jq', 'trim_whitespace' ],
-      \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
-      \   'python': ['trim_whitespace' ],
-      \   'rust': [ 'rustfmt', 'trim_whitespace' ],
-      \   'scss': [ 'trim_whitespace' ],
-      \   'typescript': [ 'tslint', 'trim_whitespace' ],
-      \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
-      \   'yaml': [ 'trim_whitespace' ],
-      \}
-let g:ale_sign_error = '->'
-let g:ale_rust_rls_toolchain = 'stable'
+" @Matt TODO: make sure coc can do fix
+" nnoremap <silent> <Leader>. :ALEFix<CR>
+" nnoremap <silent> <F8> :ALENextWrap<CR>
+" nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
+" let g:ale_linters = {
+"       \   'javascript': [ 'eslint' ],
+"       \   'typescript': [ 'tslint' ],
+"       \   'rust': [ 'cargo' ],
+"       \}
+" let g:ale_fixers = {
+"       \   'css': [ 'trim_whitespace' ],
+"       \   'graphql': [ 'prettier', 'trim_whitespace' ],
+"       \   'html': [ 'trim_whitespace' ],
+"       \   'javascript': [ 'eslint', 'trim_whitespace' ],
+"       \   'json': [ 'jq', 'trim_whitespace' ],
+"       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
+"       \   'python': ['trim_whitespace' ],
+"       \   'rust': [ 'rustfmt', 'trim_whitespace' ],
+"       \   'scss': [ 'trim_whitespace' ],
+"       \   'typescript': [ 'tslint', 'trim_whitespace' ],
+"       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
+"       \   'yaml': [ 'trim_whitespace' ],
+"       \}
+" let g:ale_sign_error = '->'
+" let g:ale_rust_rls_toolchain = 'stable'
 
 " nvim-typescript stuff
 au FileType typescript nnoremap <F5> :TSGetCodeFix<CR>
@@ -120,11 +117,15 @@ nnoremap <LocalLeader>b :Autoformat<CR>
 " DirDiff
 let g:DirDiffExcludes = "node_modules,.git"
 
-" " Lang client
-" let g:LanguageClient_serverCommands = {
-"     \ 'javascript': ['js-langserver', '--stdio'],
-"     \ }
-" au FileType javascript nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-
 " Gutentags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
+" CoC
+nmap <silent> <F8> <Plug>(coc-diagnostic-next)
+nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
+nmap <silent> <F2> <Plug>(coc-codeaction)
+nnoremap <silent> <Leader>. :CocCommand<CR>
+nnoremap <silent> <F1> :CocList<CR>
+nnoremap <silent> <F7> :CocList diagnostics<CR>
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'

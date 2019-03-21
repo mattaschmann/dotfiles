@@ -24,8 +24,6 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
-" Plug 'junegunn/gv.vim' " tree view
-" Plug 'jreybert/vimagit' " in place edit
 
 " smart set shiftwidth
 Plug 'https://github.com/tpope/vim-sleuth'
@@ -48,25 +46,20 @@ Plug 'tpope/vim-eunuch'
 " smart substitute by tpope
 Plug 'tpope/vim-abolish'
 
-" make netrw easier, NOTE: using dirvish now
-" Plug 'https://github.com/tpope/vim-vinegar'
-
 " bottom status bar
 Plug 'https://github.com/vim-airline/vim-airline'
 
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
 
-" exchange two things
-Plug 'tommcdo/vim-exchange'
-
+" @Matt TODO: remove ale for coc?
 " async linting
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " typescript
-" @Matt TODO: fix the <> thing breaking the syntax
+" @Matt TODO: replace with coc one
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
 " python version
 " Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
@@ -76,7 +69,7 @@ Plug 'https://github.com/Chiel92/vim-autoformat'
 " javascript syntax
 Plug 'pangloss/vim-javascript'
 " javascript intellisense
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " jsx syntax
 Plug 'https://github.com/mxw/vim-jsx'
@@ -98,16 +91,18 @@ Plug 'wincent/ferret'
 Plug 'irrationalistic/vim-tasks'
 
 " Completions
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " neosnippets
+" @Matt TODO: get coc working for snippets
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/context_filetype.vim'
 
 " rust
-Plug 'racer-rust/vim-racer'
-Plug 'https://github.com/sebastianmarkow/deoplete-rust'
+" @Matt TODO: add coc one
+" Plug 'racer-rust/vim-racer'
+" Plug 'https://github.com/sebastianmarkow/deoplete-rust'
 
 " Close all buffers but current/specified one
 Plug 'schickling/vim-bufonly'
@@ -159,16 +154,11 @@ Plug 'https://github.com/vim-scripts/DirDiff.vim'
 " Diff in same file
 Plug 'https://github.com/andrewradev/linediff.vim'
 
-" Tabnine
-" Plug 'https://github.com/tbodt/deoplete-tabnine', { 'do': './install.sh' }
-
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
-
 " GraphQL
 Plug 'https://github.com/jparise/vim-graphql'
+
+" CoC
+Plug 'https://github.com/neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 call plug#end()
 
