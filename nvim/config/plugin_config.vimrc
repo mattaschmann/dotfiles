@@ -149,9 +149,10 @@ highlight CocInfoHighlight guifg=#95ffa4
 highlight CocInfoSign guifg=#95ffa4
 highlight CocHintHighlight guifg=#15aabf
 highlight CocHighlightText gui=underline
-
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
 
 " Mundo (undo tree)
 nnoremap <F5> :MundoToggle<CR>
