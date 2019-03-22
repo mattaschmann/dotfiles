@@ -52,22 +52,21 @@ Plug 'https://github.com/vim-airline/vim-airline'
 " auto make close pairs
 Plug 'jiangmiao/auto-pairs'
 
-" @Matt TODO: remove ale for coc?
 " async linting
 " Plug 'w0rp/ale'
 
 " typescript
-" @Matt TODO: replace with coc one
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
 " python version
 " Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
-" autoformant, i.e. beautify
+" autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
 
 " javascript syntax
 Plug 'pangloss/vim-javascript'
+
 " javascript intellisense
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
@@ -75,11 +74,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'https://github.com/mxw/vim-jsx'
 
 " markdown previewer
-" Plug 'shime/vim-livedown'
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " Undo branching visualization
-Plug 'simnalamburt/vim-mundo'
+Plug 'https://github.com/simnalamburt/vim-mundo'
 
 " Better search highlighting
 Plug 'haya14busa/incsearch.vim'
@@ -94,7 +92,6 @@ Plug 'irrationalistic/vim-tasks'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " neosnippets
-" @Matt TODO: get coc working for snippets
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/context_filetype.vim'

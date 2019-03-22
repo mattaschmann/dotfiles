@@ -1,4 +1,3 @@
-" @Matt TODO: cleanup unused plugins
 " Use deoplete
 " let g:deoplete#enable_at_startup = 1
 " let g:deoplete#ignore_case = 1
@@ -46,7 +45,7 @@ let g:airline_powerline_fonts = 1
 " let g:ale_rust_rls_toolchain = 'stable'
 
 " nvim-typescript stuff
-au FileType typescript nnoremap <F5> :TSGetCodeFix<CR>
+" au FileType typescript nnoremap <F5> :TSGetCodeFix<CR>
 
 " unimpaired bubble mappings
 nmap <A-k> [e
@@ -74,8 +73,9 @@ autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
 
 " Goyo/Limelight (prose) stuff
 nnoremap <silent> <LocalLeader>g :Goyo<CR>
-autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
-autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
+" @Matt TODO: disable coc?
+" autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
+" autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
 
 " git gutter
 nmap <LocalLeader>hp <Plug>GitGutterPreviewHunk
@@ -85,8 +85,6 @@ autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit
-nnoremap <Leader>gp :Gpush<CR>
 
 " vim highlightedyank stuff
 let g:highlightedyank_highlight_duration = 150
@@ -110,7 +108,7 @@ nmap ga <Plug>(EasyAlign)
 " dirvish settings
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
-" Autoformat stuff
+" Autoformat stuff (used mostly for html)
 nnoremap <LocalLeader>b :Autoformat<CR>
 
 " DirDiff
@@ -120,17 +118,40 @@ let g:DirDiffExcludes = "node_modules,.git"
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
 " CoC
+" Use <c-space> to trigger completion
+inoremap <silent><expr> <C-Space> coc#refresh()
+" use enter for completion
+inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
-nmap <silent> <F2> <Plug>(coc-codeaction)
-nnoremap <silent> <Leader>. :CocCommand<CR>
+nmap <silent> <Leader>. <Plug>(coc-codeaction)
+nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>
 nnoremap <silent> <F7> :CocList diagnostics<CR>
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 " color config for coc
 highlight CocErrorHighlight guifg=#ff0000
 highlight CocWarningHighlight guifg=#ff922b
 highlight CocInfoHighlight guifg=#95ffa4
+highlight CocInfoSign guifg=#95ffa4
 highlight CocHintHighlight guifg=#15aabf
+highlight CocHighlightText gui=underline
 
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Mundo (undo tree)
+nnoremap <F5> :MundoToggle<CR>
