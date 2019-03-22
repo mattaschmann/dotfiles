@@ -97,8 +97,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/context_filetype.vim'
 
 " rust
-" @Matt TODO: add coc one
-" Plug 'racer-rust/vim-racer'
+" Plug 'https://github.com/racer-rust/vim-racer'
 " Plug 'https://github.com/sebastianmarkow/deoplete-rust'
 
 " Close all buffers but current/specified one

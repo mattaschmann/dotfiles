@@ -73,7 +73,7 @@ autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
 
 " Goyo/Limelight (prose) stuff
 nnoremap <silent> <LocalLeader>g :Goyo<CR>
-" @Matt TODO: disable coc?
+" TODO: disable coc?
 " autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
 " autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
 
