@@ -106,3 +106,9 @@ set completeopt-=preview
 
 " enable closing of netrw windows
 autocmd FileType netrw setl bufhiden=wipe
+
+" pop up menu
+set wildmode=longest:full
+set wildoptions=pum
+set pumblend=10
+
