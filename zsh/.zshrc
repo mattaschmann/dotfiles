@@ -75,8 +75,9 @@ antigen bundle httpie
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 
-# theme
+# async
 antigen bundle mafredri/zsh-async
+# theme
 antigen bundle sindresorhus/pure
 
 # this one must be the last plugin
@@ -143,21 +144,17 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mongodb
 export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
 
-#Node/NVM
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-NODE_GLOBALS+=("node")
-NODE_GLOBALS+=("nvm")
-
+# NVM
 load_nvm () {
-  # NVM
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
-for cmd in "${NODE_GLOBALS[@]}"; do
-  eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-done
+# Initialize a new worker
+async_init
+async_start_worker nvm_worker -n
+async_register_callback nvm_worker load_nvm
+async_job nvm_worker sleep 0.1
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
