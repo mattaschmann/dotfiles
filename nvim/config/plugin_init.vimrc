@@ -154,7 +154,7 @@ Plug 'https://github.com/andrewradev/linediff.vim'
 Plug 'https://github.com/jparise/vim-graphql'
 
 " CoC
-Plug 'https://github.com/neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install --frozen-lockfile'}
+Plug 'https://github.com/neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 

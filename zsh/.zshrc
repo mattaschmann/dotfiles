@@ -65,6 +65,12 @@ antigen use oh-my-zsh
 
 # antigen bundle tmux
 antigen bundle vi-mode
+antigen bundle ripgrep
+antigen bundle cargo
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle fd
+antigen bundle httpie
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
