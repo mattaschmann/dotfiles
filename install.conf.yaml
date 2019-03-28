@@ -8,6 +8,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/coc/extensions/package.json: coc/package.json
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
@@ -30,11 +31,6 @@
     # Install antigen for zsh
     - [mkdir -p ~/.antigen]
     - [curl -L git.io/antigen > ~/.antigen/antigen.zsh]
-    # Iterm 2 stuff (mac only)
-    -
-      command: bash iterm2/link-iterm2.sh
-      description: Linking iTerm2
-      if: '[ -d "/Applications/iTerm.app" ]'
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
     - [tic terminfo/tmux.terminfo]
