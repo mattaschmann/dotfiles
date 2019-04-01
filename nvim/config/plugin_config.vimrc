@@ -60,6 +60,7 @@ map g/ <Plug>(incsearch-stay)
 
 " Ferret mappings
 nmap <Leader>a <Plug>(FerretAck)
+vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
 
 " Emmet stuff
