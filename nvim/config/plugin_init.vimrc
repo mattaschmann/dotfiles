@@ -156,5 +156,8 @@ Plug 'https://github.com/jparise/vim-graphql'
 " CoC
 Plug 'https://github.com/neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+" Start screen
+Plug 'https://github.com/mhinz/vim-startify'
+
 call plug#end()
 
