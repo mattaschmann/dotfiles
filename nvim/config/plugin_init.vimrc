@@ -86,7 +86,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'wincent/ferret'
 
 " Task plugin
-Plug 'irrationalistic/vim-tasks'
+Plug 'https://github.com/irrationalistic/vim-tasks'
 
 " Completions
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
