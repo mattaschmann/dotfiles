@@ -92,9 +92,6 @@ let g:highlightedyank_highlight_duration = 150
 let g:highlightedyank_max_lines = 1000
 highlight HighlightedyankRegion ctermbg=237 guibg=#404040
 
-" match tag jump for html
-nnoremap <leader>% :MtaJumpToOtherTag<CR>
-
 " Sayonara mappins
 " delete current buffer and either keep or close pane
 nnoremap <silent> <Leader>w :Sayonara!<CR>

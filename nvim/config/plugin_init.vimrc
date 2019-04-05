@@ -125,9 +125,6 @@ Plug 'christoomey/vim-sort-motion'
 " edit macros
 Plug 'dohsimpson/vim-macroeditor'
 
-" html tag matching
-Plug 'valloric/matchtagalways'
-
 " sane window removal management
 Plug 'mhinz/vim-sayonara'
 
@@ -158,6 +155,9 @@ Plug 'https://github.com/neoclide/coc.nvim', {'do': 'yarn install --frozen-lockf
 
 " Start screen
 Plug 'https://github.com/mhinz/vim-startify'
+
+" Better matching
+Plug 'https://github.com/andymass/vim-matchup'
 
 call plug#end()
 
