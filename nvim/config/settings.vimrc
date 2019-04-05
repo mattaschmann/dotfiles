@@ -111,4 +111,3 @@ autocmd FileType netrw setl bufhiden=wipe
 set wildmode=longest:full
 set wildoptions=pum
 set pumblend=10
-

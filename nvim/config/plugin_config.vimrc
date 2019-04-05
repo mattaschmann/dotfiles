@@ -154,3 +154,7 @@ command! -nargs=0 Format :call CocAction('format')
 
 " Mundo (undo tree)
 nnoremap <F5> :MundoToggle<CR>
+
+" startify
+let g:startify_change_to_dir = 0
+
