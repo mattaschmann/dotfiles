@@ -123,6 +123,7 @@ inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>. <Plug>(coc-codeaction)
+vmap <silent> <Leader>. <Plug>(coc-codeaction-selected)
 nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>
 nnoremap <silent> <F7> :CocList diagnostics<CR>
