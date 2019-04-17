@@ -290,6 +290,8 @@ mouse:
     #   - (Linux) xdg-open
     #   - (Windows) explorer
     launcher: open
+    #  program: xdg-open
+    #  args: []
 
     # URL modifiers
     #
@@ -413,6 +415,8 @@ alt_send_esc: true
 #   - ResetFontSize
 #   - ScrollPageUp
 #   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
 #   - ScrollToTop
 #   - ScrollToBottom
 #   - ClearHistory
