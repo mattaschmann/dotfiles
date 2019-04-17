@@ -158,4 +158,5 @@ let g:startify_lists = [
       \ { 'type': 'commands',  'header': ['   Commands']       },
       \ ]
 
-
+" matchup configs
+let g:matchup_matchparen_status_offscreen = 0
