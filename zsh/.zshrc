@@ -164,6 +164,12 @@ async_start_worker nvm_worker -n
 async_register_callback nvm_worker load_nvm
 async_job nvm_worker sleep 0.1
 
+# Ruby stuff
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
 [[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
