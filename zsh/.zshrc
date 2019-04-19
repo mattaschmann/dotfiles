@@ -124,17 +124,19 @@ export EDITOR=nvim
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# NOTE: requires ripgrep: https://github.com/BurntSushi/ripgrep
-# NOTE: use an .ignore file for rg, can be placed anywhere in a parent directory to work
-export FZF_DEFAULT_COMMAND='fd --no-ignore-vcs --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# NOTE: requires fd
-export FZF_ALT_C_COMMAND="fd --type d --no-ignore-vcs --hidden --follow --exclude .git"
+# NOTE: requires fd: https://github.com/sharkdp/fd
+FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
+# Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
+export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f3:execute(bat --style=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo {+} | pbcopy)'"
+# NOTE: use an .ignore file for fd, can be placed anywhere in a parent directory to work
+export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTIONS"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 _fzf_compgen_path() {
-  fd --no-ignore-vcs --hidden --follow --exclude ".git" . "$1"
+  fd ${=FD_OPTIONS} . "$1"
 }
 _fzf_compgen_dir() {
-  fd --type d --no-ignore-vcs --hidden --follow --exclude ".git" . "$1"
+  fd --type d ${=FD_OPTIONS} . "$1"
 }
 
 # home bin
