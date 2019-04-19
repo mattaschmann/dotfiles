@@ -57,9 +57,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " typescript
 Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'https://github.com/mhartington/nvim-typescript', { 'do': './install.sh' }
-" python version
-" Plug 'mhartington/nvim-typescript', { 'commit': '70e36b80113c2d84663b0f86885320022943dd51' }
 
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'

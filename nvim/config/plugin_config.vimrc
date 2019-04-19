@@ -44,9 +44,6 @@ let g:airline_powerline_fonts = 1
 " let g:ale_sign_error = '->'
 " let g:ale_rust_rls_toolchain = 'stable'
 
-" nvim-typescript stuff
-" au FileType typescript nnoremap <F5> :TSGetCodeFix<CR>
-
 " unimpaired bubble mappings
 nmap <A-k> [e
 nmap <A-j> ]e
