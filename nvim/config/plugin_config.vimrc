@@ -160,3 +160,6 @@ let g:startify_lists = [
 
 " matchup configs
 let g:matchup_matchparen_status_offscreen = 0
+
+" Remove all other buffers (BufOnly)
+nnoremap <Leader>O :Bonly<CR>

@@ -55,3 +55,5 @@ nnoremap <LocalLeader>dt :windo diffthis<CR>
 nnoremap <LocalLeader>du :diffupdate<CR>
 nnoremap <LocalLeader>D :bufdo diffoff<CR>
 
+" Shortcut for :only
+nnoremap <Leader>o :only<CR>

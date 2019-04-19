@@ -126,10 +126,16 @@ export EDITOR=nvim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # NOTE: requires ripgrep: https://github.com/BurntSushi/ripgrep
 # NOTE: use an .ignore file for rg, can be placed anywhere in a parent directory to work
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --ignore-case 2> /dev/null'
+export FZF_DEFAULT_COMMAND='fd --no-ignore-vcs --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# NOTE: requires bfs: https://github.com/tavianator/bfs
-export FZF_ALT_C_COMMAND="bfs -type d -nohidden 2> /dev/null"
+# NOTE: requires fd
+export FZF_ALT_C_COMMAND="fd --type d --no-ignore-vcs --hidden --follow --exclude .git"
+_fzf_compgen_path() {
+  fd --no-ignore-vcs --hidden --follow --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d --no-ignore-vcs --hidden --follow --exclude ".git" . "$1"
+}
 
 # home bin
 export PATH="$HOME/bin:$PATH"
