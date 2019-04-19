@@ -54,8 +54,8 @@ nnoremap <Leader>p :Commands<CR>
 " Fuzzy search files in project, ignoring .gitignore files
 nnoremap <Leader>e :Files<CR>
 " Fuzzy search in files
-nnoremap <Leader>f :Rg<Space>
-vnoremap <Leader>f y:Rg <C-R>"
+nnoremap <Leader>f :Rg!<Space>
+vnoremap <Leader>f y:Rg! <C-R>"
 " Fuzzy search in current file
 nnoremap <Leader>l :BLines<CR>
 " Fuzzy search buffers
