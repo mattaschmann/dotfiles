@@ -111,3 +111,7 @@ autocmd FileType netrw setl bufhiden=wipe
 set wildmode=longest:full
 set wildoptions=pum
 set pumblend=10
+
+" diff options
+set diffopt+=iwhiteall
+set diffopt+=internal,algorithm:histogram
