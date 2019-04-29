@@ -194,9 +194,18 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
-  # cursor:
-  #   text: '0x141414'
-  #   cursor: '0xc5c5c5'
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  #selection:
+  #  text: '0xeaeaea'
+  #  background: '0x404040'
 
   # Normal colors
   normal:

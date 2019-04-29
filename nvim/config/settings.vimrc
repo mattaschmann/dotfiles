@@ -113,5 +113,5 @@ set wildoptions=pum
 set pumblend=10
 
 " diff options
-set diffopt+=iwhiteall
+" set diffopt+=iwhiteall
 set diffopt+=internal,algorithm:histogram
