@@ -15,7 +15,8 @@ set -g status-right-length 40
 set -g status-right "#h #[fg=yellow]%H:%M #[fg=green]%b-%d"
 
 # Window status
-set -g window-status-format " #[fg=colour247]#I:#W#F "
+set -g window-status-style fg=colour247
+set -g window-status-format " #I:#W#F "
 set -g window-status-current-format " #I:#W#F "
 
 # Current window status
