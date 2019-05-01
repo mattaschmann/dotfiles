@@ -46,6 +46,9 @@ Plug 'tpope/vim-eunuch'
 " smart substitute by tpope
 Plug 'tpope/vim-abolish'
 
+" tpope's async stuff
+Plug 'https://github.com/tpope/vim-dispatch'
+
 " bottom status bar
 Plug 'https://github.com/vim-airline/vim-airline'
 
