@@ -130,8 +130,6 @@ Plug 'junegunn/vim-easy-align'
 
 " A file browser (dirvish)
 Plug 'https://github.com/justinmk/vim-dirvish'
-" for remote ssh viewing
-Plug 'https://github.com/bounceme/remote-viewer'
 " for git status
 Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 
