@@ -120,6 +120,9 @@ alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
 
+# add term to ssh
+alias ssh="TERM=xterm-256color ssh"
+
 export EDITOR=nvim
 
 # FZF
