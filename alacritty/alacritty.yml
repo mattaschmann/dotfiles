@@ -327,8 +327,8 @@ mouse:
     #   - (macOS) open
     #   - (Linux) xdg-open
     #   - (Windows) explorer
-    launcher: open
-    #  program: xdg-open
+    launcher:
+      program: open
     #  args: []
 
     # URL modifiers
