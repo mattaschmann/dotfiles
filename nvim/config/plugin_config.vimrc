@@ -83,6 +83,7 @@ autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Gpush<CR>
 
 " vim highlightedyank stuff
 let g:highlightedyank_highlight_duration = 150
