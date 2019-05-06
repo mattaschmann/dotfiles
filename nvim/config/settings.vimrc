@@ -115,3 +115,10 @@ set pumblend=10
 " diff options
 " set diffopt+=iwhiteall
 set diffopt+=internal,algorithm:histogram
+
+" pyx stuff
+if has('python3')
+  set pyx=3
+elseif has('python2')
+  set pyx=2
+endif
