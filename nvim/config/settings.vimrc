@@ -47,9 +47,6 @@ set formatprg=par
 " preview window height (i.e. Gstatus window)
 set previewheight=16
 
-" disable python2
-let g:loaded_python_provider = 1
-
 " For conceal markers.
 if has('conceal')
   " set conceallevel=2 concealcursor=niv
