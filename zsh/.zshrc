@@ -107,6 +107,11 @@ alias ssh="TERM=xterm-256color ssh"
 # exa alias (for ls'ing)
 alias e="exa"
 
+# Functions
+
+# add alias to open man in nvim
+nman() { nvim "+Man $1" +BOnly }
+
 export EDITOR=nvim
 
 # FZF
