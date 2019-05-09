@@ -1,3 +1,6 @@
+# # Uncomment this and the bottom one for profiling
+# zmodload zsh/zprof
+
 # tmux stuff, has to be at the top
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_FIXTERM=true
@@ -57,33 +60,9 @@ COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 
-# Let antigen manage plugins: https://github.com/zsh-users/antigen
-source ~/.antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# antigen bundle tmux
-antigen bundle vi-mode
-antigen bundle ripgrep
-antigen bundle cargo
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle fd
-antigen bundle httpie
-
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-
-# async
-antigen bundle mafredri/zsh-async
-# theme
-antigen bundle sindresorhus/pure
-
-# this one must be the last plugin
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
+# Let antibody manage plugins: https://getantibody.github.io/
+# Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
+source ~/.zsh_plugins.sh
 
 # Theme
 ZSH_THEME=""
@@ -155,25 +134,18 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mongodb
 export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
 
-# NVM
-load_nvm () {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-}
-
-# Initialize a new worker
-async_init
-async_start_worker nvm_worker -n
-async_register_callback nvm_worker load_nvm
-async_job nvm_worker sleep 0.1
-
 # Ruby stuff
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
+# fnm
+eval "$(fnm env --multi)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
 [[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# zprof

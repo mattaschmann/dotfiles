@@ -18,6 +18,7 @@
     ~/.phoenix.js: phoenix/phoenix.js
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
+    ~/.zsh_plugins.sh: zsh/.zsh_plugins.sh
     ~/.zshrc: zsh/.zshrc
     # These should be mac only
     ~/Library/Application Support/org.yanex.marta/conf.json:
@@ -28,9 +29,8 @@
         if: '[ -d "/Applications/Karabiner-Elements.app" ]'
 
 - shell:
-    # Install antigen for zsh
-    - [mkdir -p ~/.antigen]
-    - [curl -L git.io/antigen > ~/.antigen/antigen.zsh]
+    # Install antibody for zsh
+    - [curl -sL git.io/antibody | sh -s]
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
     - [tic terminfo/tmux.terminfo]
