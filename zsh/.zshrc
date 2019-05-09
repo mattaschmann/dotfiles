@@ -102,6 +102,9 @@ alias gs="git status"
 # add term to ssh
 alias ssh="TERM=xterm-256color ssh"
 
+# exa alias (for ls'ing)
+alias e="exa"
+
 export EDITOR=nvim
 
 # FZF
