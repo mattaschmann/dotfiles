@@ -109,10 +109,10 @@ alias e="exa"
 
 # Functions
 
-# add alias to open man in nvim
-nman() { nvim "+Man $1" +BOnly }
-
+# make nvim the default editor
 export EDITOR=nvim
+# make nvim the default manpager
+export MANPAGER='nvim +Man!'
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
