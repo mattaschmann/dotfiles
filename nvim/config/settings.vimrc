@@ -119,3 +119,6 @@ if has('python3')
 elseif has('python2')
   set pyx=2
 endif
+
+" turn off modelines until we need them
+set nomodeline
