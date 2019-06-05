@@ -158,7 +158,7 @@ Plug 'https://github.com/mhinz/vim-startify'
 Plug 'https://github.com/andymass/vim-matchup'
 
 " w3m (web browser)
-Plug 'https://github.com/yuratomo/w3m.vim'
+Plug 'git@github.com:mattaschmann/w3m.vim.git'
 
 call plug#end()
 
