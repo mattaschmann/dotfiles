@@ -41,6 +41,7 @@ brew "tldr"
 brew "tmux"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "urlview"
+brew "w3m"
 brew "wget"
 brew "youtube-dl"
 brew "yq"
