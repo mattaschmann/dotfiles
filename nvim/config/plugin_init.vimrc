@@ -160,5 +160,8 @@ Plug 'https://github.com/andymass/vim-matchup'
 " w3m (web browser)
 Plug 'git@github.com:mattaschmann/w3m.vim.git'
 
+" Awk editor
+Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
+
 call plug#end()
 
