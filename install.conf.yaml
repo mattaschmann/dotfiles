@@ -21,19 +21,19 @@
     ~/.zshrc: zsh/.zshrc
     # These should be mac only
     ~/.phoenix.js:
-        path: phoenix/phoenix.js
-        force: true
-        if: '[ "$OSTYPE" == "darwin"* ]'
+      path: phoenix/phoenix.js
+      force: true
+      if: '[ "$OSTYPE" == "darwin"* ]'
     ~/Library/Application Support/org.yanex.marta/conf.json:
-        path: marta/conf.json
-        create: true
-        force: true
-        if: '[ "$OSTYPE" == "darwin"* ]'
+      path: marta/conf.json
+      create: true
+      force: true
+      if: '[ "$OSTYPE" == "darwin"* ]'
     ~/.config/karabiner/karabiner.json:
-        path: karabiner/karabiner.json
-        create: true
-        force: true
-        if: '[ "$OSTYPE" == "darwin"* ]'
+      path: karabiner/karabiner.json
+      create: true
+      force: true
+      if: '[ "$OSTYPE" == "darwin"* ]'
 
 - shell:
     # Install antibody for zsh
