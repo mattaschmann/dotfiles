@@ -60,7 +60,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'https://github.com/leafgarland/typescript-vim'
 
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
