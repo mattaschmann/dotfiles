@@ -3,7 +3,7 @@ let mapleader=" "
 let maplocalleader="\\"
 
 " colorscheme
-colorscheme challenger_deep
+colorscheme tender
 
 " make buffers hide automatically instead of needing to be asked
 set hidden

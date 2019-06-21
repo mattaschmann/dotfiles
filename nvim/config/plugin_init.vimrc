@@ -11,6 +11,9 @@ call plug#begin()
 
 " theme
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
+Plug 'https://github.com/tyrannicaltoucan/vim-deep-space'
+Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/jacoborus/tender.vim'
 
 " easily move around
 Plug 'easymotion/vim-easymotion'
@@ -146,7 +149,7 @@ Plug 'https://github.com/andrewradev/linediff.vim'
 Plug 'https://github.com/jparise/vim-graphql'
 
 " CoC
-Plug 'https://github.com/neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
 " Start screen
 Plug 'https://github.com/mhinz/vim-startify'
