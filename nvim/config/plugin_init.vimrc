@@ -67,9 +67,6 @@ Plug 'https://github.com/Chiel92/vim-autoformat'
 " javascript syntax
 Plug 'pangloss/vim-javascript'
 
-" javascript intellisense
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
 " jsx syntax
 Plug 'https://github.com/mxw/vim-jsx'
 
