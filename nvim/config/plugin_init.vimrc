@@ -163,5 +163,8 @@ Plug 'git@github.com:mattaschmann/w3m.vim.git'
 " Awk editor
 Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
 
+" Whitespace trimmer
+Plug 'https://github.com/KorySchneider/vim-trim'
+
 call plug#end()
 

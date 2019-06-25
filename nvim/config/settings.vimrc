@@ -3,13 +3,16 @@ let mapleader=" "
 let maplocalleader="\\"
 
 " colorscheme
+syntax enable
 colorscheme tender
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
 
 " tab stuff
-set tabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " wrap and linebreak
 set linebreak

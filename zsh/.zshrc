@@ -153,6 +153,9 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 # fnm
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
 
+# pipenv
+eval "$(pipenv --completion)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
 [[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
