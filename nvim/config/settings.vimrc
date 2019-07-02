@@ -4,7 +4,7 @@ let maplocalleader="\\"
 
 " colorscheme
 syntax enable
-colorscheme tender
+colorscheme gruvbox
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
