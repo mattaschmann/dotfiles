@@ -135,8 +135,9 @@ _fzf_compgen_dir() {
 export PATH="$HOME/bin:$PATH"
 
 # python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+eval "$(pyenv init -)"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -152,9 +153,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 # fnm
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
-
-# pipenv
-eval "$(pipenv --completion)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
