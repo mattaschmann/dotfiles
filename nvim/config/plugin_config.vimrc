@@ -76,9 +76,9 @@ nnoremap <silent> <LocalLeader>g :Goyo<CR>
 " autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
 
 " git gutter
-nmap <LocalLeader>hp <Plug>GitGutterPreviewHunk
-nmap <LocalLeader>hs <Plug>GitGutterStageHunk
-nmap <LocalLeader>hu <Plug>GitGutterUndoHunk
+nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
+nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
+nmap <LocalLeader>hu <Plug>(GitGutterUndoHunk)
 autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
