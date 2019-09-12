@@ -9,6 +9,7 @@
     ~/.dotfiles: ''
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/coc/extensions/package.json: coc/package.json
+    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
