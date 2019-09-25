@@ -6,8 +6,6 @@
   "diagnostic.maxWindowHeight": 20,
   "diagnostic.warningSign": "->",
   "eslint.trace.server": "verbose",
-  "javascript.preferences.noSemicolons": true,
   "python.formatting.provider": "black",
-  "python.jediEnabled": false,
-  "typescript.preferences.noSemicolons": true
+  "python.jediEnabled": false
 }
