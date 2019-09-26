@@ -38,7 +38,7 @@
 
 - shell:
     # Install antibody for zsh
-    - [curl -sL git.io/antibody | sh -s]
+    - [curl -sL git.io/antibody | sh -s - -b /usr/local/bin]
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
     - [tic terminfo/tmux.terminfo]
