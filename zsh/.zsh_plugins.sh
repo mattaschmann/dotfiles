@@ -1,3 +1,5 @@
+source /Users/maschmann/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
+fpath+=( /Users/maschmann/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh/plugins/vi-mode )
 
 
 
