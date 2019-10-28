@@ -157,11 +157,5 @@ Plug 'https://github.com/mhinz/vim-startify'
 " Better matching
 Plug 'https://github.com/andymass/vim-matchup'
 
-" Awk editor
-Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
-
-" Whitespace trimmer
-Plug 'https://github.com/KorySchneider/vim-trim'
-
 call plug#end()
 
