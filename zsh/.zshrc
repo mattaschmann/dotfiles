@@ -164,6 +164,9 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 # fnm
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
 
+# added by Nix installer
+if [ -e /Users/maschmann/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/maschmann/.nix-profile/etc/profile.d/nix.sh; fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/maschmann/.sdkman"
 [[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
