@@ -153,5 +153,8 @@ Plug 'https://github.com/mhinz/vim-startify'
 " Better matching
 Plug 'https://github.com/andymass/vim-matchup'
 
+" gdiff branches
+Plug 'https://github.com/oguzbilgic/vim-gdiff'
+
 call plug#end()
 
