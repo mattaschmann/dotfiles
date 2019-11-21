@@ -159,3 +159,7 @@ let g:matchup_matchparen_status_offscreen = 0
 
 " Remove all other buffers (BufOnly)
 nnoremap <Leader>O :Bonly<CR>
+
+" turn off unused providers
+let g:loaded_ruby_provider = 0
+let g:loaded_python_provider = 0
