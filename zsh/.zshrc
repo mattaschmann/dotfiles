@@ -150,7 +150,8 @@ export PATH="$HOME/bin:$PATH"
 eval "$(pyenv init -)"
 
 # rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export CARGO_HOME="$HOME/.cargo-custom"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # mongodb
 export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
