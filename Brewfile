@@ -17,6 +17,7 @@ brew "dnsmasq", restart_service: true
 brew "dos2unix"
 brew "exa"
 brew "fd"
+brew "gnupg"
 brew "htop"
 brew "httpie"
 brew "hyperfine"
