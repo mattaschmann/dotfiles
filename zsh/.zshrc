@@ -145,19 +145,14 @@ _fzf_compgen_dir() {
 export PATH="$HOME/bin:$PATH"
 
 # python
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 eval "$(pyenv init -)"
 
 # rust
 export CARGO_HOME="$HOME/.cargo-custom"
 export PATH="$CARGO_HOME/bin:$PATH"
 
-# mongodb
-export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
-
 # Ruby stuff
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/current/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
