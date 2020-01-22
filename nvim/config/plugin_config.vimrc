@@ -67,7 +67,7 @@ function! CustomEmmetInit()
   :EmmetInstall
   imap <C-e> <Plug>(emmet-expand-abbr)
 endfunction
-autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
+autocmd FileType html,css,jsx,javascript,javascript.jsx,typescriptreact call CustomEmmetInit()
 
 " Goyo/Limelight (prose) stuff
 nnoremap <silent> <LocalLeader>g :Goyo<CR>
