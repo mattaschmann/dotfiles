@@ -8,7 +8,7 @@
   "eslint.trace.server": "verbose",
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
+  "python.linting.pylintEnabled": true,
   "python.linting.pep8Enabled": false,
   "python.jediEnabled": false
 }
