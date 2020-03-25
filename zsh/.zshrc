@@ -152,6 +152,7 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 # fnm
+export PATH=/home/ma7hatter/.fnm:$PATH
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
