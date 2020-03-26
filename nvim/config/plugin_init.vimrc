@@ -62,7 +62,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'w0rp/ale'
 
 " typescript
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
@@ -155,6 +155,9 @@ Plug 'https://github.com/andymass/vim-matchup'
 
 " gdiff branches
 Plug 'https://github.com/oguzbilgic/vim-gdiff'
+
+" whitespace
+Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
 call plug#end()
 
