@@ -159,5 +159,8 @@ Plug 'https://github.com/oguzbilgic/vim-gdiff'
 " whitespace
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
+" rust
+Plug 'https://github.com/arzg/vim-rust-syntax-ext'
+
 call plug#end()
 
