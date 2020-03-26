@@ -6,6 +6,8 @@ robbyrussell/oh-my-zsh path:plugins/docker-compose
 robbyrussell/oh-my-zsh path:plugins/fd
 robbyrussell/oh-my-zsh path:plugins/httpie
 
+mafredri/zsh-async
+
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
