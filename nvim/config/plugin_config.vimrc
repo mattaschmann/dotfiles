@@ -83,7 +83,7 @@ autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 let g:gitgutter_preview_win_floating = 0
 
 " Fugitive stuff
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gp :Gpush<CR>
 
 " vim highlightedyank stuff
