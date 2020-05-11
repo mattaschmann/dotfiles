@@ -5,10 +5,10 @@
     "coc-eslint": ">=1.2.6",
     "coc-json": ">=1.2.5",
     "coc-neosnippet": ">=1.2.2",
-    "coc-python": ">=1.2.9",
-    "coc-rls": ">=1.1.4",
-    "coc-snippets": ">=2.1.25",
-    "coc-sql": ">=0.2.8",
+    "coc-python": ">=1.2.12",
+    "coc-rls": ">=1.1.5",
+    "coc-snippets": ">=2.1.26",
+    "coc-sql": ">=0.2.18",
     "coc-tslint": ">=1.0.17",
     "coc-tsserver": ">=1.5.1"
   }
