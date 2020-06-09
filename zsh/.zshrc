@@ -84,6 +84,7 @@ bindkey '^f' autosuggest-accept
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
+alias open="xdg-open"
 
 # github specific aliases
 alias gb="git branch"
@@ -141,15 +142,6 @@ eval "$(pyenv init -)"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# mongodb
-export PATH="$HOME/opt/mongodb-osx-x86_64-3.6.4/bin:$PATH"
-
-# Ruby stuff
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 # fnm
 export PATH=/home/ma7hatter/.fnm:$PATH
