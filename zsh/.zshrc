@@ -136,8 +136,8 @@ _fzf_compgen_dir() {
 export PATH="$HOME/bin:$PATH"
 
 # python
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # rust
