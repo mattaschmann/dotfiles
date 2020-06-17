@@ -145,12 +145,5 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-export PATH=/home/ma7hatter/.fnm:$PATH
+export PATH=/home/maschmann/.fnm:$PATH
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/maschmann/.sdkman"
-[[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-# zprof
