@@ -1,5 +1,3 @@
-source /home/maschmann/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh
-fpath+=( /home/maschmann/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh/plugins/vi-mode )
 
 
 

@@ -60,20 +60,17 @@ COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 
+# Theme
+ZSH_THEME=""
+
 # Let antibody manage plugins: https://getantibody.github.io/
 # Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
 source ~/.zsh_plugins.sh
 
-# Theme
-ZSH_THEME=""
-
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
-autoload -U promptinit; promptinit
-prompt pure
-
-# vi mode
+# vi mode (for pure)
 bindkey -v
 # autosuggest
 bindkey '^f' autosuggest-accept
