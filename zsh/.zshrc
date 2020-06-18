@@ -87,14 +87,10 @@ alias open="xdg-open"
 alias gb="git branch"
 alias gc.="git commit ."
 alias gc="git commit"
-alias gcp="git commit -p"
 alias gd="git diff"
 alias gdom="git diff master origin/master --histogram -w"
 alias gf="git fetch --prune"
 alias gh="git checkout"
-alias ghm="git checkout master"
-alias gmm="git merge master"
-alias gmom="git merge origin/master"
 alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
@@ -104,6 +100,9 @@ alias ssh="TERM=xterm-256color ssh"
 
 # exa alias (for ls'ing)
 alias e="exa"
+
+# shortcut for finding process
+alias psr="ps -A | rg"
 
 # Functions
 
