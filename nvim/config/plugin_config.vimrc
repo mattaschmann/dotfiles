@@ -55,7 +55,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" Ferret mappings
+" Ferret
+let g:FerretExecutableArguments = {
+  \   'rg': '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'
+  \ }
 nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
