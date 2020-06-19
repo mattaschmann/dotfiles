@@ -74,6 +74,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 bindkey -v
 # autosuggest
 bindkey '^f' autosuggest-accept
+# up-down history
+bindkey '^n' down-line-or-history
+bindkey '^p' up-line-or-history
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
