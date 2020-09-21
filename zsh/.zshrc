@@ -144,5 +144,5 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-export PATH=/home/maschmann/.fnm:$PATH
+export PATH="$HOME/.fnm:$PATH"
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
