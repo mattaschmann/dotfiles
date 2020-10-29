@@ -443,7 +443,7 @@ mouse:
     #   - (Linux) xdg-open
     #   - (Windows) explorer
     launcher:
-      program: open
+      program: xdg-open
     #  args: []
 
     # URL modifiers

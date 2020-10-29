@@ -1,1 +1,1 @@
-COMMAND explorer.exe
+COMMAND xdg-open
