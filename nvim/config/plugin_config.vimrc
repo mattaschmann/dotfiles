@@ -123,7 +123,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>. <Plug>(coc-codeaction)
+nmap <silent> <Leader>. <Plug>(coc-codeaction-line)
 vmap <silent> <Leader>. <Plug>(coc-codeaction-selected)
 nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>
