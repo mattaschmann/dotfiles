@@ -11,7 +11,7 @@ zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
 # theme
-sindresorhus/pure
+sindresorhus/pure branch:main
 
 # this one must be the last plugin
 zsh-users/zsh-syntax-highlighting
