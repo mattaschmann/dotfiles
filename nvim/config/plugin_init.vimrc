@@ -117,7 +117,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'airblade/vim-gitgutter'
 
 " ctag generation
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " sort motion
 Plug 'christoomey/vim-sort-motion'

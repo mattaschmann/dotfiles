@@ -55,7 +55,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" Ferret mappings
+" Ferret
+let g:FerretExecutableArguments = {
+  \   'rg': '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'
+  \ }
 nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
@@ -83,7 +86,7 @@ autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
 
 " Fugitive stuff
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gp :Git push<CR>
 
 " vim highlightedyank stuff
 let g:highlightedyank_highlight_duration = 150
@@ -120,7 +123,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>. <Plug>(coc-codeaction)
+nmap <silent> <Leader>. <Plug>(coc-codeaction-line)
 vmap <silent> <Leader>. <Plug>(coc-codeaction-selected)
 nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>

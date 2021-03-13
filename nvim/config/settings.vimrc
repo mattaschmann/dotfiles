@@ -125,3 +125,6 @@ endif
 
 " turn off modelines until we need them
 set nomodeline
+
+" specify gx bin
+" let g:netrw_browsex_viewer = "explorer.exe"

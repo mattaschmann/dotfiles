@@ -60,23 +60,23 @@ COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 
+# Theme
+ZSH_THEME=""
+
 # Let antibody manage plugins: https://getantibody.github.io/
 # Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
 source ~/.zsh_plugins.sh
 
-# Theme
-ZSH_THEME=""
-
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
-autoload -U promptinit; promptinit
-prompt pure
-
-# vi mode
+# vi mode (for pure)
 bindkey -v
 # autosuggest
 bindkey '^f' autosuggest-accept
+# up-down history
+bindkey '^n' down-line-or-history
+bindkey '^p' up-line-or-history
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -90,13 +90,11 @@ alias open="xdg-open"
 alias gb="git branch"
 alias gc.="git commit ."
 alias gc="git commit"
-alias gcp="git commit -p"
 alias gd="git diff"
 alias gdom="git diff master origin/master --histogram -w"
 alias gf="git fetch --prune"
 alias gh="git checkout"
-alias ghm="git checkout master"
-alias gmm="git merge master"
+alias gm="git merge"
 alias gmom="git merge origin/master"
 alias gpul="git pull"
 alias gpus="git push"
@@ -107,6 +105,9 @@ alias ssh="TERM=xterm-256color ssh"
 
 # exa alias (for ls'ing)
 alias e="exa"
+
+# shortcut for finding process
+alias psr="ps -A | rg"
 
 # Functions
 
@@ -145,12 +146,5 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-export PATH=/home/ma7hatter/.fnm:$PATH
+export PATH="$HOME/.fnm:$PATH"
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/maschmann/.sdkman"
-[[ -s "/Users/maschmann/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maschmann/.sdkman/bin/sdkman-init.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-# zprof
