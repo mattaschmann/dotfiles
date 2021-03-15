@@ -163,5 +163,8 @@ Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
 " Whitespace trimmer
 Plug 'https://github.com/KorySchneider/vim-trim'
 
+" todo.txt support
+Plug 'https://github.com/freitass/todo.txt-vim.git'
+
 call plug#end()
 
