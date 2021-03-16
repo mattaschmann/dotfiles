@@ -1,0 +1,11 @@
+snippet     today
+abbr        Insert today's date
+alias       tod
+options     word
+     `strftime("%F")`
+
+snippet     tomorrow
+abbr        Insert tomorrow's date
+alias       tom
+options     word
+     `system('date +%F -d "+1 day"')`
