@@ -162,3 +162,10 @@ let g:matchup_matchparen_status_offscreen = 0
 
 " Remove all other buffers (BufOnly)
 nnoremap <Leader>O :Bonly<CR>
+
+" todo.txt configs
+au BufNewFile,BufRead *.todo.txt set filetype=todo
+au filetype todo setlocal omnifunc=todo#Complete
+au filetype todo imap <buffer> + +<C-X><C-O>
+au filetype todo imap <buffer> @ @<C-X><C-O>
+let g:TodoTxtUseAbbrevInsertMode=1
