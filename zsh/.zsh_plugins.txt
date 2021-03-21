@@ -10,9 +10,6 @@ mafredri/zsh-async
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
-# translator https://github.com/soimort/translate-shell
-soimort/translate-shell
-
 # theme
 sindresorhus/pure branch:main
 
