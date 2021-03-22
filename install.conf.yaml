@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/.Xmodmap: xmodmap/.Xmodmap
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/coc/extensions/package.json: coc/package.json
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
