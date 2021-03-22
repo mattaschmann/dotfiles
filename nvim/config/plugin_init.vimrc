@@ -164,8 +164,10 @@ Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
 Plug 'https://github.com/KorySchneider/vim-trim'
 
 " todo.txt support
-" Plug 'https://github.com/freitass/todo.txt-vim.git'
 Plug 'https://github.com/dbeniamine/todo.txt-vim'
+
+" which key shortcut helper
+Plug 'https://github.com/liuchengxu/vim-which-key'
 
 call plug#end()
 

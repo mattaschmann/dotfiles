@@ -57,8 +57,8 @@ map g/ <Plug>(incsearch-stay)
 
 " Ferret
 let g:FerretExecutableArguments = {
-  \   'rg': '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'
-  \ }
+      \   'rg': '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'
+      \ }
 nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
@@ -169,3 +169,8 @@ au filetype todo setlocal omnifunc=todo#Complete
 au filetype todo imap <buffer> + +<C-X><C-O>
 au filetype todo imap <buffer> @ @<C-X><C-O>
 let g:TodoTxtUseAbbrevInsertMode=1
+
+" which key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :WhichKey '\'<CR>
+nnoremap <silent> g :WhichKey 'g'<CR>
