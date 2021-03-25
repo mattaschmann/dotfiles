@@ -15,6 +15,7 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
+    ~/.gdfuse/default/config: gdrive-ocamlfuse/config
     ~/.ignore: rg/.ignore
     ~/.jsbeautifyrc: jsbeautify/.jsbeautifyrc
     ~/.tigrc: tig/.tigrc
