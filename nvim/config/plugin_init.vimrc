@@ -169,8 +169,5 @@ Plug 'https://github.com/dbeniamine/todo.txt-vim'
 " which key shortcut helper
 Plug 'https://github.com/liuchengxu/vim-which-key'
 
-" translate shell
-Plug 'https://github.com/echuraev/translate-shell.vim'
-
 call plug#end()
 
