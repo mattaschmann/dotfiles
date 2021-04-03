@@ -173,4 +173,3 @@ let g:TodoTxtUseAbbrevInsertMode=1
 " which key
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :WhichKey '\'<CR>
-nnoremap <silent> g :WhichKey 'g'<CR>
