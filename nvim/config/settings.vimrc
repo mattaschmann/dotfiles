@@ -128,3 +128,6 @@ set nomodeline
 
 " specify gx bin
 " let g:netrw_browsex_viewer = "explorer.exe"
+
+" sbt filetype to scala
+au BufRead,BufNewFile *.sbt set filetype=scala

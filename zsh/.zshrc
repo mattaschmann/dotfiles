@@ -148,3 +148,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # fnm
 export PATH="$HOME/.fnm:$PATH"
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
+
+# spark
+export PATH="$HOME/opt/spark/bin:$PATH"
+export SPARK_HOME="$HOME/opt/spark"
+
+# scala
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
