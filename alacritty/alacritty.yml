@@ -109,7 +109,7 @@ font:
     #   - (Windows) Consolas
     #family: monospace
   normal:
-    family: Source Code Variable
+    family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Semibold
 
@@ -121,7 +121,7 @@ font:
     # value specified for the normal font.
     #family: monospace
   bold:
-    family: Source Code Variable
+    family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -133,7 +133,7 @@ font:
     # value specified for the normal font.
     #family: monospace
   italic:
-    family: Source Code Variable
+    family: SauceCodePro Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -595,8 +595,8 @@ key_bindings:
   #- { key: H,      mods: Command, action: Hide             }
   #- { key: Q,      mods: Command, action: Quit             }
   #- { key: W,      mods: Command, action: Quit             }
-  - { key: N,       mods: Command,  action: SpawnNewInstance                 }
-  - { key: F,       mods: Command,  action: ToggleFullscreen                 }
+  - { key: N,       mods: Control|Shift,  action: SpawnNewInstance                 }
+  - { key: F,       mods: Control|Shift,  action: ToggleFullscreen                 }
 
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
