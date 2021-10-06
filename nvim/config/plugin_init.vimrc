@@ -26,28 +26,28 @@ Plug 'junegunn/fzf', { 'dir': '~/opt/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " git integration
-Plug 'tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-fugitive'
 
 " smart set shiftwidth
 Plug 'https://github.com/tpope/vim-sleuth'
 
 " make changing surrounds easier
-Plug 'tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-surround'
 
 " make comments easier
-Plug 'tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-commentary'
 
 " use repeat with plugins
-Plug 'tpope/vim-repeat'
+Plug 'https://github.com/tpope/vim-repeat'
 
 " some nice keyboard mappings (including bubbling)
 Plug 'https://github.com/tpope/vim-unimpaired'
 
 " directory stuff by tpope
-Plug 'tpope/vim-eunuch'
+Plug 'https://github.com/tpope/vim-eunuch'
 
 " smart substitute by tpope
-Plug 'tpope/vim-abolish'
+Plug 'https://github.com/tpope/vim-abolish'
 
 " tpope's async stuff
 Plug 'https://github.com/tpope/vim-dispatch'
@@ -56,19 +56,16 @@ Plug 'https://github.com/tpope/vim-dispatch'
 Plug 'https://github.com/vim-airline/vim-airline'
 
 " auto make close pairs
-Plug 'jiangmiao/auto-pairs'
-
-" async linting
-" Plug 'w0rp/ale'
+Plug 'https://github.com/jiangmiao/auto-pairs'
 
 " typescript
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
 
 " javascript syntax
-Plug 'pangloss/vim-javascript'
+Plug 'https://github.com/pangloss/vim-javascript'
 
 " jsx syntax
 Plug 'https://github.com/mxw/vim-jsx'
@@ -80,56 +77,46 @@ Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn i
 Plug 'https://github.com/simnalamburt/vim-mundo'
 
 " Better search highlighting
-Plug 'haya14busa/incsearch.vim'
+Plug 'https://github.com/haya14busa/incsearch.vim'
 
 " Better project searching
-Plug 'wincent/ferret'
+Plug 'https://github.com/wincent/ferret'
 
 " Task plugin
 Plug 'https://github.com/irrationalistic/vim-tasks'
 
-" Completions
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " neosnippets
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/context_filetype.vim'
+Plug 'https://github.com/Shougo/neosnippet.vim'
+Plug 'https://github.com/Shougo/neosnippet-snippets'
+Plug 'https://github.com/Shougo/context_filetype.vim'
 
 " rust
 " Plug 'https://github.com/racer-rust/vim-racer'
 " Plug 'https://github.com/sebastianmarkow/deoplete-rust'
 
 " Close all buffers but current/specified one
-Plug 'schickling/vim-bufonly'
+Plug 'https://github.com/schickling/vim-bufonly'
 
 " Visual star
-Plug 'bronson/vim-visual-star-search'
+Plug 'https://github.com/bronson/vim-visual-star-search'
 
-" emmet
-Plug 'mattn/emmet-vim'
-
-" for prose
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" emmet (html abbrev expander)
+" Plug 'https://github.com/mattn/emmet-vim'
 
 " git gutter
-Plug 'airblade/vim-gitgutter'
-
-" ctag generation
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'https://github.com/airblade/vim-gitgutter'
 
 " sort motion
-Plug 'christoomey/vim-sort-motion'
+Plug 'https://github.com/christoomey/vim-sort-motion'
 
 " edit macros
-Plug 'dohsimpson/vim-macroeditor'
+Plug 'https://github.com/dohsimpson/vim-macroeditor'
 
 " sane window removal management
-Plug 'mhinz/vim-sayonara'
+Plug 'https://github.com/mhinz/vim-sayonara'
 
 " alignment
-Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-easy-align'
 
 " " A file browser (dirvish)
 " Plug 'https://github.com/justinmk/vim-dirvish'
@@ -145,9 +132,6 @@ Plug 'https://github.com/vim-scripts/DirDiff.vim'
 " Diff in same file
 Plug 'https://github.com/andrewradev/linediff.vim'
 
-" GraphQL
-Plug 'https://github.com/jparise/vim-graphql'
-
 " CoC
 Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
@@ -156,9 +140,6 @@ Plug 'https://github.com/mhinz/vim-startify'
 
 " Better matching
 Plug 'https://github.com/andymass/vim-matchup'
-
-" Awk editor
-Plug 'https://gitlab.com/HiPhish/awk-ward.nvim'
 
 " Whitespace trimmer
 Plug 'https://github.com/KorySchneider/vim-trim'
