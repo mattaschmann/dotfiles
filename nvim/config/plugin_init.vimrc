@@ -131,10 +131,10 @@ Plug 'mhinz/vim-sayonara'
 " alignment
 Plug 'junegunn/vim-easy-align'
 
-" A file browser (dirvish)
-Plug 'https://github.com/justinmk/vim-dirvish'
-" for git status
-Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
+" " A file browser (dirvish)
+" Plug 'https://github.com/justinmk/vim-dirvish'
+" " for git status
+" Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 
 " css colors
 Plug 'https://github.com/ap/vim-css-color'
@@ -168,6 +168,10 @@ Plug 'https://github.com/dbeniamine/todo.txt-vim'
 
 " which key shortcut helper
 Plug 'https://github.com/liuchengxu/vim-which-key'
+
+" file tree
+Plug 'https://github.com/kyazdani42/nvim-web-devicons'
+Plug 'https://github.com/kyazdani42/nvim-tree.lua'
 
 call plug#end()
 

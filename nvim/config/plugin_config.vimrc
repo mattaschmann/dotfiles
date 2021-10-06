@@ -1,11 +1,3 @@
-" Use deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#ignore_case = 1
-" let g:deoplete#file#enable_buffer_path = 1
-" call deoplete#custom#source('tabnine', 'rank', 101)
-" inoremap <expr><C-y> deoplete#close_popup()
-" inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
-
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
 imap <expr><TAB>
@@ -16,33 +8,6 @@ imap <expr><TAB>
 " Edit vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" ALE stuff
-" Enable completion where available.
-" nnoremap <silent> <Leader>. :ALEFix<CR>
-" nnoremap <silent> <F8> :ALENextWrap<CR>
-" nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-" let g:ale_linters = {
-"       \   'javascript': [ 'eslint' ],
-"       \   'typescript': [ 'tslint' ],
-"       \   'rust': [ 'cargo' ],
-"       \}
-" let g:ale_fixers = {
-"       \   'css': [ 'trim_whitespace' ],
-"       \   'graphql': [ 'prettier', 'trim_whitespace' ],
-"       \   'html': [ 'trim_whitespace' ],
-"       \   'javascript': [ 'eslint', 'trim_whitespace' ],
-"       \   'json': [ 'jq', 'trim_whitespace' ],
-"       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
-"       \   'python': ['trim_whitespace' ],
-"       \   'rust': [ 'rustfmt', 'trim_whitespace' ],
-"       \   'scss': [ 'trim_whitespace' ],
-"       \   'typescript': [ 'tslint', 'trim_whitespace' ],
-"       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
-"       \   'yaml': [ 'trim_whitespace' ],
-"       \}
-" let g:ale_sign_error = '->'
-" let g:ale_rust_rls_toolchain = 'stable'
 
 " unimpaired bubble mappings
 nmap <A-k> [e
@@ -105,7 +70,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " dirvish settings
-let g:dirvish_mode = ':sort ,^.*[\/],'
+" let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " Autoformat stuff (used mostly for html)
 nnoremap <LocalLeader>b :Autoformat<CR>
@@ -171,3 +136,18 @@ let g:TodoTxtUseAbbrevInsertMode=1
 " which key
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :WhichKey '\'<CR>
+
+" nvim-tree
+lua << EOF
+require'nvim-tree'.setup {
+  disable_netrw = false,
+  hijack_netrw = false,
+}
+EOF
+nnoremap - :NvimTreeFindFile<CR>
+nnoremap <LocalLeader>f :NvimTreeToggle<CR>
+
+" nvim-web-icons
+lua << EOF
+require'nvim-web-devicons'.setup()
+EOF

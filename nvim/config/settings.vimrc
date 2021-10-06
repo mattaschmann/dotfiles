@@ -104,9 +104,6 @@ set noshowmode
 " don't use the preview menu on completions
 set completeopt-=preview
 
-" enable closing of netrw windows
-autocmd FileType netrw setl bufhiden=wipe
-
 " pop up menu
 set wildmode=longest:full
 set wildoptions=pum
