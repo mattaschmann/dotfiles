@@ -16,8 +16,8 @@ Plug 'https://github.com/jacoborus/tender.vim'
 Plug 'https://github.com/morhetz/gruvbox'
 
 " easily move around
-" Plug 'easymotion/vim-easymotion'
-Plug 'https://github.com/ggandor/lightspeed.nvim'
+Plug 'easymotion/vim-easymotion'
+" Plug 'https://github.com/ggandor/lightspeed.nvim'
 
 " show the yank
 Plug 'https://github.com/machakann/vim-highlightedyank'
