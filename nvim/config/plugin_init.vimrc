@@ -155,5 +155,9 @@ Plug 'https://github.com/liuchengxu/vim-which-key'
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/kyazdani42/nvim-tree.lua'
 
+" neovim lsp stuff
+Plug 'https://github.com/nvim-lua/plenary.nvim' " A dep for null-ls.nvim
+Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
+
 call plug#end()
 
