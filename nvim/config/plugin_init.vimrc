@@ -151,13 +151,16 @@ Plug 'https://github.com/dbeniamine/todo.txt-vim'
 " which key shortcut helper
 Plug 'https://github.com/liuchengxu/vim-which-key'
 
-" file tree
+" dev icons
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
+
+" file tree
 Plug 'https://github.com/kyazdani42/nvim-tree.lua'
 
 " neovim lsp stuff
 Plug 'https://github.com/nvim-lua/plenary.nvim' " A dep for null-ls.nvim
 Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
+Plug 'https://github.com/folke/trouble.nvim' " diagnostic window
 
 call plug#end()
 
