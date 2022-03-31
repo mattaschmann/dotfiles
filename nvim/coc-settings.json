@@ -10,6 +10,7 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pep8Enabled": false,
   "python.jediEnabled": false,
+  "Lua.diagnostics.globals": ["vim"],
   "yaml.customTags": [
     "!And",
     "!And sequence",
