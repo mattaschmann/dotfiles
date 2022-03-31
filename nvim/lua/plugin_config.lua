@@ -9,13 +9,20 @@ local cfn_lint = {
   filetypes = {'yaml'},
   generator = null_helpers.generator_factory({
     command = "cfn-lint",
+    runtime_condition = function(params)
+      -- Only run this if we have a "Resources:" at the root
+      for _, v in ipairs(params.content) do
+        if v == "Resources:" then return true end
+      end
+      return false
+    end,
     to_stdin = true,
     from_stderr = true,
     args = { "--format", "parseable", "-" },
     format = "line",
     check_exit_code = function(code) return code == 0 or code == 255 end,
-    on_output = function(line, params)
-      local row, col, end_row, end_col, code, message = line:match(":(%d+):(%d+):(%d+):(%d+):(%w+):(%w+)")
+    on_output = function(line)
+      local row, col, end_row, end_col, code, message = line:match(":(%d+):(%d+):(%d+):(%d+):(%w+):(.+)$")
       local severity = null_helpers.diagnostics.severities['error']
       if message == nil then return nil end
 
@@ -42,7 +49,9 @@ local cfn_lint = {
 }
 
 null_ls.register(cfn_lint)
-null_ls.setup({})
+null_ls.setup({
+  debug = true,
+})
 
 --------------------------------------------------------------------------------
 -- trouble
