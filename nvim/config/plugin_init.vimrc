@@ -163,5 +163,8 @@ Plug 'https://github.com/nvim-lua/plenary.nvim' " A dep for null-ls.nvim
 Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
 Plug 'https://github.com/folke/trouble.nvim' " diagnostic window
 
+" docs
+Plug 'https://github.com/kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
 call plug#end()
 
