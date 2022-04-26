@@ -166,5 +166,11 @@ Plug 'https://github.com/folke/trouble.nvim' " diagnostic window
 " docs
 Plug 'https://github.com/kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
+" testing
+Plug 'https://github.com/vim-test/vim-test'
+
+" vimux
+Plug 'https://github.com/preservim/vimux'
+
 call plug#end()
 

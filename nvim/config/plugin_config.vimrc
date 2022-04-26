@@ -148,3 +148,9 @@ EOF
 
 " doge
 let g:doge_doc_standard_python = 'google'
+
+" vim-test
+nmap <silent> <LocalLeader>t :TestNearest<CR>
+let test#python#runner = 'pytest'
+let test#strategy = "vimux"
+
