@@ -145,3 +145,6 @@ nnoremap <LocalLeader>f :NvimTreeToggle<CR>
 lua << EOF
 require'nvim-web-devicons'.setup()
 EOF
+
+" doge
+let g:doge_doc_standard_python = 'google'
