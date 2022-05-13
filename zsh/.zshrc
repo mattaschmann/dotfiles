@@ -100,6 +100,17 @@ alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
 
+# adds an empty git branch, useful for reviewing full repo's
+gempty() {
+  if [ -n "$1" ]; then
+    tree=`git hash-object -wt tree --stdin < /dev/null`
+    commit=`git commit-tree -m 'root commit' $tree`
+    git branch $1 $commit
+  else
+    echo "Need the name of the branch as an argument"
+  fi
+}
+
 # add term to ssh
 alias ssh="TERM=xterm-256color ssh"
 
