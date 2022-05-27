@@ -154,3 +154,8 @@ nmap <silent> <LocalLeader>t :TestNearest<CR>
 let test#python#runner = 'pytest'
 let test#strategy = "vimux"
 
+" lightspeed
+map <Leader>j <Plug>Lightspeed_s
+map <Leader>k <Plug>Lightspeed_S
+map <Leader><space>j <Plug>Lightspeed_gs
+map <Leader><space>k <Plug>Lightspeed_Gs
