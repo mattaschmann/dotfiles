@@ -127,10 +127,6 @@ au BufNewFile,BufRead *.todo.txt set filetype=todo
 au filetype todo setlocal omnifunc=todo#Complete
 let g:TodoTxtUseAbbrevInsertMode=1
 
-" which key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :WhichKey '\'<CR>
-
 " nvim-tree
 lua << EOF
 require'nvim-tree'.setup {
