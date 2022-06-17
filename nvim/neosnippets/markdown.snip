@@ -2,3 +2,9 @@ snippet     todo
 abbr        @Matt TODO
 options     head
     @Matt TODO: ${0}
+
+snippet     time
+abbr        Insert timestamp
+alias       ti
+options     word
+    _`strftime("%H:%M %d-%m-%y")`:_

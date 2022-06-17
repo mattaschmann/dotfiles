@@ -70,23 +70,23 @@ setopt HIST_BEEP
 
 source $ZSH/oh-my-zsh.sh
 
+# Theme
+ZSH_THEME=""
+
 # Let antibody manage plugins: https://getantibody.github.io/
 # Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
 source ~/.zsh_plugins.sh
 
-# Theme
-ZSH_THEME=""
-
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
-autoload -U promptinit; promptinit
-prompt pure
-
-# vi mode
+# vi mode (for pure)
 bindkey -v
 # autosuggest
 bindkey '^f' autosuggest-accept
+# up-down history
+bindkey '^n' down-line-or-history
+bindkey '^p' up-line-or-history
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -94,28 +94,41 @@ bindkey '^f' autosuggest-accept
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
+alias open="xdg-open"
 
 # github specific aliases
 alias gb="git branch"
 alias gc.="git commit ."
 alias gc="git commit"
-alias gcp="git commit -p"
 alias gd="git diff"
 alias gdom="git diff master origin/master --histogram -w"
 alias gf="git fetch --prune"
 alias gh="git checkout"
-alias ghm="git checkout master"
-alias gmm="git merge master"
+alias gm="git merge"
 alias gmom="git merge origin/master"
 alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
+
+# adds an empty git branch, useful for reviewing full repo's
+gempty() {
+  if [ -n "$1" ]; then
+    tree=`git hash-object -wt tree --stdin < /dev/null`
+    commit=`git commit-tree -m 'root commit' $tree`
+    git branch $1 $commit
+  else
+    echo "Need the name of the branch as an argument"
+  fi
+}
 
 # add term to ssh
 alias ssh="TERM=xterm-256color ssh"
 
 # exa alias (for ls'ing)
 alias e="exa"
+
+# shortcut for finding process
+alias psr="ps -A | rg"
 
 # Functions
 
@@ -144,25 +157,23 @@ _fzf_compgen_dir() {
 # home bin
 export PATH="$HOME/bin:$PATH"
 
-# python
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
 # rust
-export CARGO_HOME="$HOME/.cargo-custom"
-export PATH="$CARGO_HOME/bin:$PATH"
-
-# Ruby stuff
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/current/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
+export PATH="$HOME/.fnm:$PATH"
 eval "$(fnm env --shell=zsh --use-on-cd --multi)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+# spark
+export PATH="$HOME/opt/spark/bin:$PATH"
+export SPARK_HOME="$HOME/opt/spark"
 
-# zprof
+# scala
+export PATH="$PATH:$HOME/.local/share/coursier/bin"

@@ -82,9 +82,6 @@ set formatoptions+=r
 " Smart format inside of numbered lists
 set formatoptions+=n
 
-" Catch focus events and refresh file
-autocmd BufEnter,FocusGained * checktime
-
 " Edit some of the short message settings
 set shortmess+=A        " Dont show the ATTENTION message
 set shortmess+=I        " Don't show the intro message, as it disappears anyway
@@ -104,9 +101,6 @@ set noshowmode
 " don't use the preview menu on completions
 set completeopt-=preview
 
-" enable closing of netrw windows
-autocmd FileType netrw setl bufhiden=wipe
-
 " pop up menu
 set wildmode=longest:full
 set wildoptions=pum
@@ -125,3 +119,9 @@ endif
 
 " turn off modelines until we need them
 set nomodeline
+
+" specify gx bin
+" let g:netrw_browsex_viewer = "explorer.exe"
+
+" sbt filetype to scala
+au BufRead,BufNewFile *.sbt set filetype=scala

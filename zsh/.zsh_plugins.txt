@@ -1,17 +1,16 @@
-robbyrussell/oh-my-zsh path:plugins/vi-mode
 robbyrussell/oh-my-zsh path:plugins/ripgrep
-robbyrussell/oh-my-zsh path:plugins/cargo
+robbyrussell/oh-my-zsh path:plugins/rust
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/docker-compose
 robbyrussell/oh-my-zsh path:plugins/fd
-robbyrussell/oh-my-zsh path:plugins/httpie
+
+mafredri/zsh-async
 
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
 # theme
-mafredri/zsh-async
-sindresorhus/pure
+sindresorhus/pure branch:main
 
 # this one must be the last plugin
 zsh-users/zsh-syntax-highlighting

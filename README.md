@@ -10,6 +10,9 @@ cd dotfiles
 1. [urlview](https://github.com/sigpipe/urlview)
 1. [antibody for zsh](https://getantibody.github.io/)
 1. [oh-my-zsh](https://ohmyz.sh/)
+1. [fnm](https://github.com/Schniz/fnm)
+1. [pyenv](https://github.com/pyenv/pyenv)
+1. [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
 ### Run the install script
 The installation is provided by [DotBot](https://github.com/anishathalye/dotbot).

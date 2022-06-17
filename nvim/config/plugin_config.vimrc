@@ -1,11 +1,3 @@
-" Use deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#ignore_case = 1
-" let g:deoplete#file#enable_buffer_path = 1
-" call deoplete#custom#source('tabnine', 'rank', 101)
-" inoremap <expr><C-y> deoplete#close_popup()
-" inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
-
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
 imap <expr><TAB>
@@ -16,33 +8,6 @@ imap <expr><TAB>
 " Edit vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" ALE stuff
-" Enable completion where available.
-" nnoremap <silent> <Leader>. :ALEFix<CR>
-" nnoremap <silent> <F8> :ALENextWrap<CR>
-" nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-" let g:ale_linters = {
-"       \   'javascript': [ 'eslint' ],
-"       \   'typescript': [ 'tslint' ],
-"       \   'rust': [ 'cargo' ],
-"       \}
-" let g:ale_fixers = {
-"       \   'css': [ 'trim_whitespace' ],
-"       \   'graphql': [ 'prettier', 'trim_whitespace' ],
-"       \   'html': [ 'trim_whitespace' ],
-"       \   'javascript': [ 'eslint', 'trim_whitespace' ],
-"       \   'json': [ 'jq', 'trim_whitespace' ],
-"       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
-"       \   'python': ['trim_whitespace' ],
-"       \   'rust': [ 'rustfmt', 'trim_whitespace' ],
-"       \   'scss': [ 'trim_whitespace' ],
-"       \   'typescript': [ 'tslint', 'trim_whitespace' ],
-"       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
-"       \   'yaml': [ 'trim_whitespace' ],
-"       \}
-" let g:ale_sign_error = '->'
-" let g:ale_rust_rls_toolchain = 'stable'
 
 " unimpaired bubble mappings
 nmap <A-k> [e
@@ -55,7 +20,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" Ferret mappings
+" Ferret
+let g:FerretExecutableArguments = {
+      \   'rg': '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'
+      \ }
 nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
@@ -69,12 +37,6 @@ function! CustomEmmetInit()
 endfunction
 autocmd FileType html,css,jsx,javascript,javascript.jsx,typescriptreact call CustomEmmetInit()
 
-" Goyo/Limelight (prose) stuff
-nnoremap <silent> <LocalLeader>g :Goyo<CR>
-" TODO: disable coc?
-" autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
-" autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
-
 " git gutter
 nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
 nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
@@ -84,7 +46,7 @@ let g:gitgutter_preview_win_floating = 0
 
 " Fugitive stuff
 nnoremap <Leader>gs :Git<CR>
-nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gp :Git push<CR>
 
 " vim highlightedyank stuff
 let g:highlightedyank_highlight_duration = 150
@@ -103,7 +65,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " dirvish settings
-let g:dirvish_mode = ':sort ,^.*[\/],'
+" let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " Autoformat stuff (used mostly for html)
 nnoremap <LocalLeader>b :Autoformat<CR>
@@ -121,7 +83,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>. <Plug>(coc-codeaction)
+nmap <silent> <Leader>. <Plug>(coc-codeaction-line)
 vmap <silent> <Leader>. <Plug>(coc-codeaction-selected)
 nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>
@@ -161,6 +123,36 @@ let g:matchup_matchparen_status_offscreen = 0
 " Remove all other buffers (BufOnly)
 nnoremap <Leader>O :Bonly<CR>
 
-" turn off unused providers
-let g:loaded_ruby_provider = 0
-let g:loaded_python_provider = 0
+" todo.txt configs
+au BufNewFile,BufRead *.todo.txt set filetype=todo
+au filetype todo setlocal omnifunc=todo#Complete
+let g:TodoTxtUseAbbrevInsertMode=1
+
+" nvim-tree
+lua << EOF
+require'nvim-tree'.setup {
+  disable_netrw = false,
+  hijack_netrw = false,
+}
+EOF
+nnoremap - :NvimTreeFindFile<CR>
+nnoremap <LocalLeader>f :NvimTreeToggle<CR>
+
+" nvim-web-icons
+lua << EOF
+require'nvim-web-devicons'.setup()
+EOF
+
+" doge
+let g:doge_doc_standard_python = 'google'
+
+" vim-test
+nmap <silent> <LocalLeader>t :TestNearest<CR>
+let test#python#runner = 'pytest'
+let test#strategy = "vimux"
+
+" lightspeed
+map <Leader>j <Plug>Lightspeed_s
+map <Leader>k <Plug>Lightspeed_S
+map <Leader><space>j <Plug>Lightspeed_gs
+map <Leader><space>k <Plug>Lightspeed_Gs
