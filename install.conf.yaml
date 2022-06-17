@@ -6,39 +6,24 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/coc/extensions/package.json: coc/package.json
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.config/nvim/config: nvim/config
+    ~/.config/nvim/lua: nvim/lua
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.ctags.d: universal_ctags
+    ~/.dotfiles: ''
     ~/.ignore: rg/.ignore
     ~/.jsbeautifyrc: jsbeautify/.jsbeautifyrc
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
+    ~/.zprofile: zsh/.zprofile
     ~/.zsh_plugins.sh: zsh/.zsh_plugins.sh
     ~/.zshrc: zsh/.zshrc
-    # These should be mac only
-    ~/.phoenix.js:
-      path: phoenix/phoenix.js
-      force: true
-      if: '[ "$OSTYPE" == "darwin"* ]'
-    ~/Library/Application Support/org.yanex.marta/conf.json:
-      path: marta/conf.json
-      create: true
-      force: true
-      if: '[ "$OSTYPE" == "darwin"* ]'
-    ~/.config/karabiner/karabiner.json:
-      path: karabiner/karabiner.json
-      create: true
-      force: true
-      if: '[ "$OSTYPE" == "darwin"* ]'
 
 - shell:
-    # Install antibody for zsh
-    - [curl -sL git.io/antibody | sh -s - -b /usr/local/bin]
     # Add special terminfos so we can use italics
     - [tic terminfo/xterm-256color.terminfo]
     - [tic terminfo/tmux.terminfo]
