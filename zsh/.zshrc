@@ -169,7 +169,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
 export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --shell=zsh --use-on-cd --multi)"
+eval "$(fnm env --use-on-cd)"
 
 # spark
 export PATH="$HOME/opt/spark/bin:$PATH"
