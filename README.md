@@ -8,6 +8,7 @@ cd dotfiles
 
 ### Install depandancy programs
 1. [urlview](https://github.com/sigpipe/urlview)
+1. [tpm for tmux plugins](https://github.com/tmux-plugins/tpm)
 1. [antibody for zsh](https://getantibody.github.io/)
 1. [oh-my-zsh](https://ohmyz.sh/)
 1. [fnm](https://github.com/Schniz/fnm)
