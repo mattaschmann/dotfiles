@@ -94,7 +94,8 @@ bindkey '^p' up-line-or-history
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
-alias open="xdg-open"
+# only for linux-based
+# alias open="xdg-open"
 
 # github specific aliases
 alias gb="git branch"
