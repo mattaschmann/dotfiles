@@ -50,6 +50,9 @@ nnoremap gb V$%
 " Shortcut for opening file in vscode
 nnoremap <LocalLeader>c :Code<CR>
 
+" Shortcut for opening file in intellij
+nnoremap <LocalLeader>i :Idea<CR>
+
 " diff shortcut
 nnoremap <LocalLeader>dt :windo diffthis<CR>
 nnoremap <LocalLeader>du :diffupdate<CR>
