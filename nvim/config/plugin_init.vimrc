@@ -15,7 +15,7 @@ Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 Plug 'https://github.com/jacoborus/tender.vim'
 Plug 'https://github.com/morhetz/gruvbox'
 
-" easily move around
+" easily move around (motion)
 " Plug 'easymotion/vim-easymotion'
 Plug 'https://github.com/ggandor/lightspeed.nvim'
 
