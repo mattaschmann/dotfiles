@@ -132,8 +132,6 @@ nnoremap <silent> gh :call ShowDocumentation()<CR>
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-CursorHold
-
 " color config for coc
 highlight CocErrorHighlight guifg=#ff0000
 highlight CocWarningHighlight guifg=#ff922b
