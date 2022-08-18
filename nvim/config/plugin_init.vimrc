@@ -72,7 +72,7 @@ Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/mxw/vim-jsx'
 
 " markdown previewer
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Undo branching visualization
 Plug 'https://github.com/simnalamburt/vim-mundo'
