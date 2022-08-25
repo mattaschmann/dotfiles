@@ -97,9 +97,6 @@ Plug 'https://github.com/schickling/vim-bufonly'
 " Visual star
 Plug 'https://github.com/bronson/vim-visual-star-search'
 
-" emmet (html abbrev expander)
-" Plug 'https://github.com/mattn/emmet-vim'
-
 " git gutter
 Plug 'https://github.com/airblade/vim-gitgutter'
 
