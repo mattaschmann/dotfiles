@@ -121,10 +121,14 @@ Plug 'https://github.com/junegunn/vim-easy-align'
 Plug 'https://github.com/ap/vim-css-color'
 
 " Directory diff
-Plug 'https://github.com/vim-scripts/DirDiff.vim'
+" Plug 'https://github.com/vim-scripts/DirDiff.vim'
 
 " Diff in same file
-Plug 'https://github.com/andrewradev/linediff.vim'
+" Plug 'https://github.com/andrewradev/linediff.vim'
+
+" Diff stuff
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'https://github.com/sindrets/diffview.nvim'
 
 " CoC
 Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }

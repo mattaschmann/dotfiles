@@ -1,18 +1,13 @@
 {
+  "Lua.diagnostics.globals": ["vim"],
   "coc.preferences.extensionUpdateCheck": "weekly",
   "diagnostic.errorSign": "->",
   "diagnostic.hintSign": "->",
   "diagnostic.infoSign": "->",
   "diagnostic.warningSign": "->",
   "eslint.trace.server": "verbose",
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-  "Lua.diagnostics.globals": ["vim"]
+  "typescript.preferences.quoteStyle": "single"
 }
