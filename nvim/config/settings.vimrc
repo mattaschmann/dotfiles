@@ -6,6 +6,13 @@ let maplocalleader="\\"
 syntax enable
 colorscheme palenight
 
+" palenight
+let g:palenight_terminal_italics=1
+hi DiffAdd    gui=none guifg=NONE    guibg=#2e4730
+hi DiffChange gui=none guifg=NONE    guibg=#47452e
+hi DiffDelete gui=bold guifg=#a02e2e guibg=#472e2e
+hi DiffText   gui=none guifg=NONE    guibg=#2e4047
+
 " make buffers hide automatically instead of needing to be asked
 set hidden
 
@@ -72,18 +79,12 @@ set inccommand=split
 " Set textwidth automatically for certain files
 au FileType markdown,text setlocal textwidth=80
 
-" Term cursor
-hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
-
 " Remove comment leader when joining comment lines
 set formatoptions+=j
 " Insert the comment leader after hitting <Enter> in insert mode
 set formatoptions+=r
 " Smart format inside of numbered lists
 set formatoptions+=n
-
-" Catch focus events and refresh file
-autocmd BufEnter,FocusGained * checktime
 
 " Edit some of the short message settings
 set shortmess+=A        " Dont show the ATTENTION message
@@ -103,9 +104,6 @@ set noshowmode
 
 " don't use the preview menu on completions
 set completeopt-=preview
-
-" enable closing of netrw windows
-autocmd FileType netrw setl bufhiden=wipe
 
 " pop up menu
 set wildmode=longest:full
@@ -128,3 +126,6 @@ set nomodeline
 
 " specify gx bin
 " let g:netrw_browsex_viewer = "explorer.exe"
+
+" sbt filetype to scala
+au BufRead,BufNewFile *.sbt set filetype=scala

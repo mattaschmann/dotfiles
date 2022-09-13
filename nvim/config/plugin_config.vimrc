@@ -1,48 +1,13 @@
-" Use deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#ignore_case = 1
-" let g:deoplete#file#enable_buffer_path = 1
-" call deoplete#custom#source('tabnine', 'rank', 101)
-" inoremap <expr><C-y> deoplete#close_popup()
-" inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
-
 " neosnippets config
 let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
-imap <expr><TAB>
-      \ neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" :
-      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+" imap <expr><TAB>
+"       \ neosnippet#expandable_or_jumpable() ?
+"       \ "\<Plug>(neosnippet_expand_or_jump)" :
+"       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Edit vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" ALE stuff
-" Enable completion where available.
-" nnoremap <silent> <Leader>. :ALEFix<CR>
-" nnoremap <silent> <F8> :ALENextWrap<CR>
-" nnoremap <silent> <S-F8> :ALEPreviousWrap<CR>
-" let g:ale_linters = {
-"       \   'javascript': [ 'eslint' ],
-"       \   'typescript': [ 'tslint' ],
-"       \   'rust': [ 'cargo' ],
-"       \}
-" let g:ale_fixers = {
-"       \   'css': [ 'trim_whitespace' ],
-"       \   'graphql': [ 'prettier', 'trim_whitespace' ],
-"       \   'html': [ 'trim_whitespace' ],
-"       \   'javascript': [ 'eslint', 'trim_whitespace' ],
-"       \   'json': [ 'jq', 'trim_whitespace' ],
-"       \   'markdown': ['prettier', 'trim_whitespace', 'remove_trailing_lines' ],
-"       \   'python': ['trim_whitespace' ],
-"       \   'rust': [ 'rustfmt', 'trim_whitespace' ],
-"       \   'scss': [ 'trim_whitespace' ],
-"       \   'typescript': [ 'tslint', 'trim_whitespace' ],
-"       \   'vim': [ 'remove_trailing_lines', 'trim_whitespace' ],
-"       \   'yaml': [ 'trim_whitespace' ],
-"       \}
-" let g:ale_sign_error = '->'
-" let g:ale_rust_rls_toolchain = 'stable'
 
 " unimpaired bubble mappings
 nmap <A-k> [e
@@ -63,29 +28,15 @@ nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
 
-" Emmet stuff
-let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key = '<A-y>'
-function! CustomEmmetInit()
-  :EmmetInstall
-  imap <C-e> <Plug>(emmet-expand-abbr)
-endfunction
-autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
-
-" Goyo/Limelight (prose) stuff
-nnoremap <silent> <LocalLeader>g :Goyo<CR>
-" TODO: disable coc?
-" autocmd! User GoyoEnter Limelight | ALEDisableBuffer | let g:deoplete#disable_auto_complete = 1
-" autocmd! User GoyoLeave Limelight! | ALEEnableBuffer | let g:deoplete#disable_auto_complete = 0
-
 " git gutter
 nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
 nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
 nmap <LocalLeader>hu <Plug>(GitGutterUndoHunk)
 autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
+let g:gitgutter_preview_win_floating = 0
 
 " Fugitive stuff
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gp :Git push<CR>
 
 " vim highlightedyank stuff
@@ -105,7 +56,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " dirvish settings
-let g:dirvish_mode = ':sort ,^.*[\/],'
+" let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " Autoformat stuff (used mostly for html)
 nnoremap <LocalLeader>b :Autoformat<CR>
@@ -116,11 +67,37 @@ let g:DirDiffExcludes = "node_modules,.git"
 " Gutentags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
+"================================================================================
 " CoC
-" Use <c-space> to trigger completion
-inoremap <silent><expr> <C-Space> coc#refresh()
-" use enter for completion
-inoremap <expr><CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
+"================================================================================
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
 nmap <silent> <S-F8> <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>. <Plug>(coc-codeaction-line)
@@ -128,10 +105,25 @@ vmap <silent> <Leader>. <Plug>(coc-codeaction-selected)
 nnoremap <silent> <F2> :CocCommand<CR>
 nnoremap <silent> <F1> :CocList<CR>
 nnoremap <silent> <F7> :CocList diagnostics<CR>
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> gh :call CocAction('doHover')<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+nnoremap <silent> gh :call ShowDocumentation()<CR>
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " color config for coc
 highlight CocErrorHighlight guifg=#ff0000
 highlight CocWarningHighlight guifg=#ff922b
@@ -139,8 +131,6 @@ highlight CocInfoHighlight guifg=#95ffa4
 highlight CocInfoSign guifg=#95ffa4
 highlight CocHintHighlight guifg=#15aabf
 highlight CocHighlightText gui=underline
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 " Use `:Format` for format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
@@ -168,6 +158,35 @@ au BufNewFile,BufRead *.todo.txt set filetype=todo
 au filetype todo setlocal omnifunc=todo#Complete
 let g:TodoTxtUseAbbrevInsertMode=1
 
-" which key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :WhichKey '\'<CR>
+" nvim-tree
+lua << EOF
+require'nvim-tree'.setup {
+  disable_netrw = false,
+  hijack_netrw = false,
+}
+EOF
+nnoremap - :NvimTreeFindFile<CR>
+nnoremap <LocalLeader>f :NvimTreeToggle<CR>
+
+" nvim-web-icons
+lua << EOF
+require'nvim-web-devicons'.setup()
+EOF
+
+" doge
+let g:doge_doc_standard_python = 'google'
+
+" vim-test
+nmap <silent> <LocalLeader>t :TestNearest<CR>
+let test#python#runner = 'pytest'
+let test#strategy = "vimux"
+
+" lightspeed
+map <Leader>j <Plug>Lightspeed_s
+map <Leader>k <Plug>Lightspeed_S
+map <Leader><space>j <Plug>Lightspeed_gs
+map <Leader><space>k <Plug>Lightspeed_Gs
+
+" diffview
+nmap <Leader>do :DiffviewOpen<CR>
+nmap <Leader>dh :DiffviewFileHistory %<CR>

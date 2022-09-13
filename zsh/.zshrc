@@ -36,6 +36,16 @@ export UPDATE_ZSH_DAYS=13
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+# to disable duplicates in zsh history
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
@@ -84,6 +94,7 @@ bindkey '^p' up-line-or-history
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
+# only for linux-based
 alias open="xdg-open"
 
 # github specific aliases
@@ -91,11 +102,9 @@ alias gb="git branch"
 alias gc.="git commit ."
 alias gc="git commit"
 alias gd="git diff"
-alias gdom="git diff master origin/master --histogram -w"
 alias gf="git fetch --prune"
 alias gh="git checkout"
 alias gm="git merge"
-alias gmom="git merge origin/master"
 alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
@@ -136,10 +145,11 @@ _fzf_compgen_dir() {
 # home bin
 export PATH="$HOME/bin:$PATH"
 
-# python
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
 # rust
@@ -147,4 +157,15 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
 export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --shell=zsh --use-on-cd --multi)"
+eval "$(fnm env --use-on-cd)"
+
+# spark
+export PATH="$HOME/opt/spark/bin:$PATH"
+export SPARK_HOME="$HOME/opt/spark"
+
+# scala
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

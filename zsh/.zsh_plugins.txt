@@ -1,9 +1,8 @@
 robbyrussell/oh-my-zsh path:plugins/ripgrep
-robbyrussell/oh-my-zsh path:plugins/cargo
+robbyrussell/oh-my-zsh path:plugins/rust
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/docker-compose
 robbyrussell/oh-my-zsh path:plugins/fd
-robbyrussell/oh-my-zsh path:plugins/httpie
 
 mafredri/zsh-async
 
