@@ -120,9 +120,6 @@ Plug 'https://github.com/junegunn/vim-easy-align'
 " css colors
 Plug 'https://github.com/ap/vim-css-color'
 
-" Directory diff
-" Plug 'https://github.com/vim-scripts/DirDiff.vim'
-
 " Diff in same file
 " Plug 'https://github.com/andrewradev/linediff.vim'
 
