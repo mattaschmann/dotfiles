@@ -10,10 +10,10 @@ endif
 call plug#begin()
 
 " theme
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
 Plug 'https://github.com/drewtempelmeyer/palenight.vim'
-Plug 'https://github.com/jacoborus/tender.vim'
-Plug 'https://github.com/morhetz/gruvbox'
+" Plug 'https://github.com/jacoborus/tender.vim'
+" Plug 'https://github.com/morhetz/gruvbox'
 
 " easily move around
 " Plug 'easymotion/vim-easymotion'
