@@ -12,7 +12,7 @@ hi DiffAdd    gui=none guifg=NONE    guibg=#2e4730
 hi DiffChange gui=none guifg=NONE    guibg=#47452e
 hi DiffDelete gui=bold guifg=#a02e2e guibg=#472e2e
 hi DiffText   gui=none guifg=NONE    guibg=#2e4047
-hi Search     gui=none guifg=black   guibg=#8489a3
+hi Search     gui=none guifg=black   guibg=#61ceec
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
