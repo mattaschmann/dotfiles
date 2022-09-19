@@ -112,19 +112,13 @@ Plug 'https://github.com/mhinz/vim-sayonara'
 " alignment
 Plug 'https://github.com/junegunn/vim-easy-align'
 
-" " A file browser (dirvish)
-" Plug 'https://github.com/justinmk/vim-dirvish'
-" " for git status
-" Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
-
 " css colors
 Plug 'https://github.com/ap/vim-css-color'
 
-" Diff in same file
-" Plug 'https://github.com/andrewradev/linediff.vim'
+" A dep for diff and lsp
+Plug 'https://github.com/nvim-lua/plenary.nvim'
 
 " Diff stuff
-Plug 'https://github.com/nvim-lua/plenary.nvim'
 Plug 'https://github.com/sindrets/diffview.nvim'
 
 " CoC
@@ -150,7 +144,6 @@ Plug 'https://github.com/kyazdani42/nvim-tree.lua'
 
 " neovim lsp stuff
 Plug 'https://github.com/neovim/nvim-lspconfig' " the main lsp module
-Plug 'https://github.com/nvim-lua/plenary.nvim' " A dep for null-ls.nvim
 Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
 Plug 'https://github.com/folke/trouble.nvim' " diagnostic window
 
