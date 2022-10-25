@@ -112,6 +112,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" mapping for trouble.nvim
+nmap <silent> gL <cmd>call coc#rpc#request('fillDiagnostics', [bufnr('%')])<CR><cmd>Trouble loclist<CR>`
+
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
@@ -159,19 +162,8 @@ au filetype todo setlocal omnifunc=todo#Complete
 let g:TodoTxtUseAbbrevInsertMode=1
 
 " nvim-tree
-lua << EOF
-require'nvim-tree'.setup {
-  disable_netrw = false,
-  hijack_netrw = false,
-}
-EOF
 nnoremap - :NvimTreeFindFile<CR>
 nnoremap <LocalLeader>f :NvimTreeToggle<CR>
-
-" nvim-web-icons
-lua << EOF
-require'nvim-web-devicons'.setup()
-EOF
 
 " doge
 let g:doge_doc_standard_python = 'google'

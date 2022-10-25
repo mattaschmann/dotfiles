@@ -8,11 +8,12 @@ colorscheme palenight
 
 " palenight
 let g:palenight_terminal_italics=1
-hi DiffAdd    gui=none guifg=NONE    guibg=#2e4730
-hi DiffChange gui=none guifg=NONE    guibg=#47452e
-hi DiffDelete gui=bold guifg=#a02e2e guibg=#472e2e
-hi DiffText   gui=none guifg=NONE    guibg=#2e4047
-hi Search     gui=none guifg=black   guibg=#61ceec
+hi DiffAdd      gui=none guifg=NONE    guibg=#2e4730
+hi DiffChange   gui=none guifg=NONE    guibg=#47452e
+hi DiffDelete   gui=bold guifg=#a02e2e guibg=#472e2e
+hi DiffText     gui=none guifg=NONE    guibg=#2e4047
+hi Search       gui=none guifg=black   guibg=#61ceec
+hi CocInlayHint gui=none guifg=#474d6c guibg=NONE
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
