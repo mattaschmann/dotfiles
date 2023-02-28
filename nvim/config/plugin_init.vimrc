@@ -86,11 +86,6 @@ Plug 'https://github.com/wincent/ferret'
 " Task plugin
 Plug 'https://github.com/irrationalistic/vim-tasks'
 
-" neosnippets
-Plug 'https://github.com/Shougo/neosnippet.vim'
-Plug 'https://github.com/Shougo/neosnippet-snippets'
-Plug 'https://github.com/Shougo/context_filetype.vim'
-
 " Close all buffers but current/specified one
 Plug 'https://github.com/schickling/vim-bufonly'
 

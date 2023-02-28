@@ -46,6 +46,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
+# disable auto correct
+unsetopt correct
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 

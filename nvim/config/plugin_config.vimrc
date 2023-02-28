@@ -1,10 +1,3 @@
-" neosnippets config
-let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
-" imap <expr><TAB>
-"       \ neosnippet#expandable_or_jumpable() ?
-"       \ "\<Plug>(neosnippet_expand_or_jump)" :
-"       \ pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Edit vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
