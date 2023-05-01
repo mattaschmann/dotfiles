@@ -176,13 +176,13 @@ export SPARK_HOME="$HOME/opt/spark"
 # scala
 export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
-source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-
 # NNN stuff
 # run to install all plugins:
 # sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-export NNN_PLUG='c:fzcd;o:fzopen'
+export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
