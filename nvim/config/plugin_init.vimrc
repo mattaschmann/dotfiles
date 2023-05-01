@@ -68,9 +68,6 @@ Plug 'https://github.com/Chiel92/vim-autoformat'
 " javascript syntax
 Plug 'https://github.com/pangloss/vim-javascript'
 
-" jsx syntax
-Plug 'https://github.com/mxw/vim-jsx'
-
 " markdown previewer
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
@@ -82,9 +79,6 @@ Plug 'https://github.com/haya14busa/incsearch.vim'
 
 " Better project searching
 Plug 'https://github.com/wincent/ferret'
-
-" Task plugin
-Plug 'https://github.com/irrationalistic/vim-tasks'
 
 " Close all buffers but current/specified one
 Plug 'https://github.com/schickling/vim-bufonly'
