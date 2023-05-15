@@ -190,5 +190,9 @@ if [ -f "$HOME/opt/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/opt/google-cl
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/completion.zsh.inc"; fi
 
+# terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
 source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

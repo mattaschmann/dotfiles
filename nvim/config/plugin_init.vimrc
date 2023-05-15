@@ -145,5 +145,8 @@ Plug 'https://github.com/vim-test/vim-test'
 " vimux
 Plug 'https://github.com/preservim/vimux'
 
+" terraform
+Plug 'https://github.com/hashivim/vim-terraform'
+
 call plug#end()
 
