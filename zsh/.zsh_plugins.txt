@@ -10,7 +10,8 @@ zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
 # theme
-sindresorhus/pure branch:main
+# sindresorhus/pure branch:main
+spaceship-prompt/spaceship-prompt
 
 # this one must be the last plugin
 zsh-users/zsh-syntax-highlighting
