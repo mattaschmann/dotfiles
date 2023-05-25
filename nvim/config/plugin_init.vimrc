@@ -148,5 +148,8 @@ Plug 'https://github.com/preservim/vimux'
 " terraform
 Plug 'https://github.com/hashivim/vim-terraform'
 
+" helm
+Plug 'https://github.com/towolf/vim-helm'
+
 call plug#end()
 
