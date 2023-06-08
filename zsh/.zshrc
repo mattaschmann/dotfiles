@@ -66,7 +66,7 @@ setopt HIST_BEEP
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(tmux vi-mode fzf-zsh)
+plugins=(kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,10 @@ alias gm="git merge"
 alias gpul="git pull"
 alias gpus="git push"
 alias gs="git status"
+
+# kubectl aliases
+alias k="kubectl"
+alias ktx="kubectx"
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
