@@ -17,7 +17,9 @@ Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 
 " easily move around
 " Plug 'easymotion/vim-easymotion'
-Plug 'https://github.com/ggandor/lightspeed.nvim'
+" Plug 'https://github.com/ggandor/lightspeed.nvim'
+Plug 'https://github.com/ggandor/leap.nvim'
+
 
 " show the yank
 Plug 'https://github.com/machakann/vim-highlightedyank'

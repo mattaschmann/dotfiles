@@ -131,3 +131,6 @@ set nomodeline
 
 " sbt filetype to scala
 au BufRead,BufNewFile *.sbt set filetype=scala
+
+" smart case search
+set smartcase

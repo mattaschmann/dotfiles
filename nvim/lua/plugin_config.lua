@@ -77,3 +77,8 @@ require('nvim-tree').setup {
   disable_netrw = false,
   hijack_netrw = false,
 }
+
+--------------------------------------------------------------------------------
+-- leap.nvim
+--------------------------------------------------------------------------------
+require('leap').create_default_mappings()
