@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1712249827120,
+  "lastUpdate": 1714407790666,
   "dependencies": {
     "coc-xml": ">=1.14.1",
     "coc-tsserver": ">=2.1.4",
@@ -7,6 +7,7 @@
     "coc-yaml": ">=1.9.0",
     "coc-json": ">=1.9.2",
     "coc-java": ">=1.15.2",
-    "coc-lua": ">=2.0.6"
+    "coc-lua": ">=2.0.6",
+    "coc-python": ">=1.2.13"
   }
 }
