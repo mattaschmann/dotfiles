@@ -60,3 +60,8 @@ nnoremap <LocalLeader>D :bufdo diffoff<CR>
 
 " Shortcut for :only
 nnoremap <Leader>o :only<CR>
+
+" copy into aws credential file, have new profile in clipboad, then search for
+" profile, then execute this
+nnoremap <Leader>[ c}+Ndd
+
