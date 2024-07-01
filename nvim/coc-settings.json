@@ -1,4 +1,7 @@
 {
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
   "coc.preferences.extensionUpdateCheck": "weekly",
   "diagnostic.errorSign": "->",
   "diagnostic.hintSign": "->",
@@ -8,5 +11,20 @@
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-  "Lua.diagnostics.globals": ["vim"]
+  "typescript.preferences.quoteStyle": "single",
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": [
+        "serve"
+      ],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }

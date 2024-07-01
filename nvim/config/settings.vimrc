@@ -6,6 +6,15 @@ let maplocalleader="\\"
 syntax enable
 colorscheme palenight
 
+" palenight
+let g:palenight_terminal_italics=1
+hi DiffAdd      gui=none guifg=NONE    guibg=#2e4730
+hi DiffChange   gui=none guifg=NONE    guibg=#47452e
+hi DiffDelete   gui=bold guifg=#a02e2e guibg=#472e2e
+hi DiffText     gui=none guifg=NONE    guibg=#2e4047
+hi Search       gui=none guifg=black   guibg=#61ceec
+hi CocInlayHint gui=none guifg=#474d6c guibg=NONE
+
 " make buffers hide automatically instead of needing to be asked
 set hidden
 
@@ -72,9 +81,6 @@ set inccommand=split
 " Set textwidth automatically for certain files
 au FileType markdown,text setlocal textwidth=80
 
-" Term cursor
-hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
-
 " Remove comment leader when joining comment lines
 set formatoptions+=j
 " Insert the comment leader after hitting <Enter> in insert mode
@@ -125,3 +131,6 @@ set nomodeline
 
 " sbt filetype to scala
 au BufRead,BufNewFile *.sbt set filetype=scala
+
+" smart case search
+set smartcase

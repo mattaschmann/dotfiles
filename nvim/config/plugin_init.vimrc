@@ -10,14 +10,16 @@ endif
 call plug#begin()
 
 " theme
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
 Plug 'https://github.com/drewtempelmeyer/palenight.vim'
-Plug 'https://github.com/jacoborus/tender.vim'
-Plug 'https://github.com/morhetz/gruvbox'
+" Plug 'https://github.com/jacoborus/tender.vim'
+" Plug 'https://github.com/morhetz/gruvbox'
 
-" easily move around (motion)
+" easily move around
 " Plug 'easymotion/vim-easymotion'
-Plug 'https://github.com/ggandor/lightspeed.nvim'
+" Plug 'https://github.com/ggandor/lightspeed.nvim'
+Plug 'https://github.com/ggandor/leap.nvim'
+
 
 " show the yank
 Plug 'https://github.com/machakann/vim-highlightedyank'
@@ -68,11 +70,8 @@ Plug 'https://github.com/Chiel92/vim-autoformat'
 " javascript syntax
 Plug 'https://github.com/pangloss/vim-javascript'
 
-" jsx syntax
-Plug 'https://github.com/mxw/vim-jsx'
-
 " markdown previewer
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Undo branching visualization
 Plug 'https://github.com/simnalamburt/vim-mundo'
@@ -83,26 +82,11 @@ Plug 'https://github.com/haya14busa/incsearch.vim'
 " Better project searching
 Plug 'https://github.com/wincent/ferret'
 
-" Task plugin
-Plug 'https://github.com/irrationalistic/vim-tasks'
-
-" neosnippets
-Plug 'https://github.com/Shougo/neosnippet.vim'
-Plug 'https://github.com/Shougo/neosnippet-snippets'
-Plug 'https://github.com/Shougo/context_filetype.vim'
-
-" rust
-" Plug 'https://github.com/racer-rust/vim-racer'
-" Plug 'https://github.com/sebastianmarkow/deoplete-rust'
-
 " Close all buffers but current/specified one
 Plug 'https://github.com/schickling/vim-bufonly'
 
 " Visual star
 Plug 'https://github.com/bronson/vim-visual-star-search'
-
-" emmet (html abbrev expander)
-" Plug 'https://github.com/mattn/emmet-vim'
 
 " git gutter
 Plug 'https://github.com/airblade/vim-gitgutter'
@@ -119,19 +103,14 @@ Plug 'https://github.com/mhinz/vim-sayonara'
 " alignment
 Plug 'https://github.com/junegunn/vim-easy-align'
 
-" " A file browser (dirvish)
-" Plug 'https://github.com/justinmk/vim-dirvish'
-" " for git status
-" Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
-
 " css colors
 Plug 'https://github.com/ap/vim-css-color'
 
-" Directory diff
-Plug 'https://github.com/vim-scripts/DirDiff.vim'
+" A dep for diff and lsp
+Plug 'https://github.com/nvim-lua/plenary.nvim'
 
-" Diff in same file
-Plug 'https://github.com/andrewradev/linediff.vim'
+" Diff stuff
+Plug 'https://github.com/sindrets/diffview.nvim'
 
 " CoC
 Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
@@ -156,7 +135,6 @@ Plug 'https://github.com/kyazdani42/nvim-tree.lua'
 
 " neovim lsp stuff
 Plug 'https://github.com/neovim/nvim-lspconfig' " the main lsp module
-Plug 'https://github.com/nvim-lua/plenary.nvim' " A dep for null-ls.nvim
 Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
 Plug 'https://github.com/folke/trouble.nvim' " diagnostic window
 
@@ -168,6 +146,12 @@ Plug 'https://github.com/vim-test/vim-test'
 
 " vimux
 Plug 'https://github.com/preservim/vimux'
+
+" terraform
+Plug 'https://github.com/hashivim/vim-terraform'
+
+" helm
+Plug 'https://github.com/towolf/vim-helm'
 
 call plug#end()
 

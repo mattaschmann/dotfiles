@@ -59,3 +59,12 @@ endfunction
 " open file and directory in code
 command! Code
   \ :!code . %
+
+" open file and directory in intellij
+" NOTE: this requires a custom launcher, see: https://www.jetbrains.com/help/idea/opening-files-from-command-line.html
+command! Idea
+  \ :!idea . %
+
+" yank current buffers filename
+command! YankFilePath
+  \ :let @" = expand("%")

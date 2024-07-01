@@ -1,10 +1,3 @@
-" neosnippets config
-let g:neosnippet#snippets_directory = "~/.dotfiles/nvim/neosnippets"
-" imap <expr><TAB>
-"       \ neosnippet#expandable_or_jumpable() ?
-"       \ "\<Plug>(neosnippet_expand_or_jump)" :
-"       \ pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Edit vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -28,20 +21,12 @@ nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
 
-" Emmet stuff
-let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key = '<A-y>'
-function! CustomEmmetInit()
-  :EmmetInstall
-  imap <C-e> <Plug>(emmet-expand-abbr)
-endfunction
-autocmd FileType html,css,jsx,javascript,javascript.jsx call CustomEmmetInit()
-
 " git gutter
 nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
 nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
 nmap <LocalLeader>hu <Plug>(GitGutterUndoHunk)
 autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
+let g:gitgutter_preview_win_floating = 0
 
 " Fugitive stuff
 nnoremap <Leader>gs :Git<CR>
@@ -97,7 +82,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -119,6 +104,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" mapping for trouble.nvim
+nmap <silent> gL <cmd>call coc#rpc#request('fillDiagnostics', [bufnr('%')])<CR><cmd>Trouble loclist<CR>`
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -167,19 +155,8 @@ au filetype todo setlocal omnifunc=todo#Complete
 let g:TodoTxtUseAbbrevInsertMode=1
 
 " nvim-tree
-lua << EOF
-require'nvim-tree'.setup {
-  disable_netrw = false,
-  hijack_netrw = false,
-}
-EOF
 nnoremap - :NvimTreeFindFile<CR>
 nnoremap <LocalLeader>f :NvimTreeToggle<CR>
-
-" nvim-web-icons
-lua << EOF
-require'nvim-web-devicons'.setup()
-EOF
 
 " doge
 let g:doge_doc_standard_python = 'google'
@@ -190,7 +167,11 @@ let test#python#runner = 'pytest'
 let test#strategy = "vimux"
 
 " lightspeed
-map <Leader>j <Plug>Lightspeed_s
-map <Leader>k <Plug>Lightspeed_S
-map <Leader><space>j <Plug>Lightspeed_gs
-map <Leader><space>k <Plug>Lightspeed_Gs
+" map <Leader>j <Plug>Lightspeed_s
+" map <Leader>k <Plug>Lightspeed_S
+" map <Leader><space>j <Plug>Lightspeed_gs
+" map <Leader><space>k <Plug>Lightspeed_Gs
+
+" diffview
+nmap <Leader>do :DiffviewOpen<CR>
+nmap <Leader>dh :DiffviewFileHistory %<CR>

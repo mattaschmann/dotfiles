@@ -6,17 +6,17 @@
 - clean: ['~']
 
 - link:
-    ~/.Xmodmap: xmodmap/.Xmodmap
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/coc/extensions/package.json: coc/package.json
+    ~/.config/coc/ultisnips: coc/ultisnips
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.config/nvim/config: nvim/config
-    ~/.config/nvim/lua: nvim/lua
     ~/.config/nvim/ginit.vim: nvim/ginit.vim
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/lua: nvim/lua
+    ~/.config/spaceship.zsh: spaceship/spaceship.zsh
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
-    ~/.gdfuse/default/config: gdrive-ocamlfuse/config
     ~/.ignore: rg/.ignore
     ~/.jsbeautifyrc: jsbeautify/.jsbeautifyrc
     ~/.tigrc: tig/.tigrc
