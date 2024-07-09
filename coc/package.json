@@ -1,8 +1,8 @@
 {
-  "lastUpdate": 1719336606464,
+  "lastUpdate": 1720024007047,
   "dependencies": {
     "coc-xml": ">=1.14.1",
-    "coc-tsserver": ">=2.1.4",
+    "coc-tsserver": ">=2.2.0",
     "coc-snippets": ">=3.1.10",
     "coc-yaml": ">=1.9.0",
     "coc-json": ">=1.9.2",

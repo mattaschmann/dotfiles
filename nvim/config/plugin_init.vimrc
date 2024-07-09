@@ -113,7 +113,7 @@ Plug 'https://github.com/nvim-lua/plenary.nvim'
 Plug 'https://github.com/sindrets/diffview.nvim'
 
 " CoC
-Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'npm ci' }
 
 " Start screen
 Plug 'https://github.com/mhinz/vim-startify'

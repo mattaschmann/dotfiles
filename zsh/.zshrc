@@ -95,6 +95,7 @@ alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
 alias open="xdg-open"
+alias dirsize="du -h -d 1 | sort -rh"
 
 # github specific aliases
 alias gb="git branch"
@@ -157,7 +158,7 @@ _fzf_compgen_dir() {
 }
 
 # home bin
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -169,8 +170,11 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 # spark
 export PATH="$HOME/opt/spark/bin:$PATH"
@@ -186,4 +190,3 @@ export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
