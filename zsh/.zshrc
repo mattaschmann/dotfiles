@@ -198,3 +198,6 @@ export PATH="/snap/bin:$PATH"
 # see: https://starship.rs/
 # ~/.zshrc
 eval "$(starship init zsh)"
+
+# keychain
+eval "$(keychain --quiet --eval github gitlab)"
