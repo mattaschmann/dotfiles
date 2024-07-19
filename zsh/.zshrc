@@ -190,3 +190,6 @@ export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# snap
+export PATH="/snap/bin:$PATH"
