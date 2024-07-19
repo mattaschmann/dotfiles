@@ -193,3 +193,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # snap
 export PATH="/snap/bin:$PATH"
+
+# starship prompt
+# see: https://starship.rs/
+# ~/.zshrc
+eval "$(starship init zsh)"
