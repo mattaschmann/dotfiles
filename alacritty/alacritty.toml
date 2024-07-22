@@ -39,7 +39,7 @@ foreground = "0xdee2ea"
 TERM = "xterm-256color"
 
 [font]
-size = 13
+size = 12
 
 [font.bold]
 family = "SauceCodePro Nerd Font"
@@ -47,7 +47,7 @@ style = "Bold"
 
 [font.glyph_offset]
 x = 0
-y = 0
+y = 1
 
 [font.italic]
 family = "SauceCodePro Nerd Font"
@@ -55,7 +55,7 @@ style = "Italic"
 
 [font.normal]
 family = "SauceCodePro Nerd Font"
-style = "Semibold"
+style = "SemiBold"
 
 [font.offset]
 x = 0
@@ -957,8 +957,8 @@ history = 10000
 multiplier = 3
 
 [shell]
-args = ["--login"]
-program = "/bin/zsh"
+# args = ["--login"]
+program = "ubuntu2404"
 
 [window]
 decorations = "none"
@@ -975,5 +975,5 @@ columns = 0
 lines = 0
 
 [window.padding]
-x = 2
+x = 0
 y = 0
