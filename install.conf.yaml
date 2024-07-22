@@ -6,7 +6,8 @@
 - clean: ['~']
 
 - link:
-    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    # in wsl, file needs to exist in %AppData%/alacritty/alacritty.toml and be linked to wsl for editing
+    # ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/coc/extensions/package.json: coc/package.json
     ~/.config/coc/ultisnips: coc/ultisnips
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
