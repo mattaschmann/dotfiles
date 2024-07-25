@@ -1,3 +1,4 @@
 .git
 tags
 node_modules
+.venv

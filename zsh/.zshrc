@@ -113,6 +113,9 @@ alias gs="git status"
 alias k="kubectl"
 alias ktx="kubectx"
 
+# pdm aliases
+alias pdac="eval \"$(pdm venv activate)\""
+
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
   if [ -n "$1" ]; then

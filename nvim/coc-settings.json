@@ -16,5 +16,7 @@
       "initializationOptions": {},
       "settings": {}
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "python.linting.ruffEnabled": true
 }
