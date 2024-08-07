@@ -143,6 +143,7 @@ Plug 'https://github.com/kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " testing
 Plug 'https://github.com/vim-test/vim-test'
+Plug 'https://github.com/andythigpen/nvim-coverage'
 
 " vimux
 Plug 'https://github.com/preservim/vimux'

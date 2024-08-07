@@ -114,7 +114,7 @@ alias k="kubectl"
 alias ktx="kubectx"
 
 # pdm aliases
-alias pdac="eval \"$(pdm venv activate)\""
+alias pdac="eval `pdm venv activate`"
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -135,6 +135,9 @@ alias e="exa"
 
 # shortcut for finding process
 alias psr="ps -A | rg"
+
+# docker compose
+alias c="docker compose"
 
 # Functions
 
