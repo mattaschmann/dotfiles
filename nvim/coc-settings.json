@@ -18,5 +18,8 @@
     }
   },
   "snippets.ultisnips.pythonPrompt": false,
-  "python.linting.ruffEnabled": true
+  "python.linting.ruffEnabled": true,
+  "yaml.customTags": [
+    "!reference sequence"
+  ]
 }

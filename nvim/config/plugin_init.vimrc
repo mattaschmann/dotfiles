@@ -67,8 +67,10 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
 
+" syntax (polyglot)
+" Plug 'https://github.com/sheerun/vim-polyglot'
 " javascript syntax
-Plug 'https://github.com/pangloss/vim-javascript'
+" Plug 'https://github.com/pangloss/vim-javascript'
 
 " markdown previewer
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -153,6 +155,9 @@ Plug 'https://github.com/hashivim/vim-terraform'
 
 " helm
 Plug 'https://github.com/towolf/vim-helm'
+
+" local config safety
+Plug 'https://github.com/klen/nvim-config-local'
 
 call plug#end()
 
