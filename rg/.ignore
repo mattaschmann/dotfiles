@@ -3,3 +3,4 @@ tags
 node_modules
 .venv
 __pycache__
+cdk.out/
