@@ -1,13 +1,14 @@
 {
-  "lastUpdate": 1719336606464,
+  "lastUpdate": 1721401074759,
   "dependencies": {
     "coc-xml": ">=1.14.1",
-    "coc-tsserver": ">=2.1.4",
+    "coc-tsserver": ">=2.2.0",
     "coc-snippets": ">=3.1.10",
     "coc-yaml": ">=1.9.0",
     "coc-json": ">=1.9.2",
     "coc-java": ">=1.15.2",
     "coc-lua": ">=2.0.6",
-    "coc-python": ">=1.2.13"
+    "@yaegassy/coc-ruff": ">=0.7.3",
+    "coc-pyright": ">=1.1.371"
   }
 }

@@ -98,6 +98,7 @@ alias ta="tmux attach"
 alias n="nvim"
 # only for linux-based
 # alias open="xdg-open"
+alias dirsize="du -h -d 1 | sort -rh"
 
 # github specific aliases
 alias gb="git branch"
@@ -114,6 +115,9 @@ alias gs="git status"
 # kubectl aliases
 alias k="kubectl"
 alias ktx="kubectx"
+
+# pdm aliases
+alias pdac="eval `pdm venv activate`"
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -135,6 +139,9 @@ alias e="exa"
 # shortcut for finding process
 alias psr="ps -A | rg"
 
+# docker compose
+alias c="docker compose"
+
 # Functions
 
 # make nvim the default editor
@@ -143,7 +150,8 @@ export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
 # Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
@@ -160,7 +168,7 @@ _fzf_compgen_dir() {
 }
 
 # home bin
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -172,8 +180,11 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 # spark
 export PATH="$HOME/opt/spark/bin:$PATH"
@@ -187,16 +198,16 @@ export PATH="$PATH:$HOME/.local/share/coursier/bin"
 # sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/opt/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/completion.zsh.inc"; fi
-
-# terraform
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+
+# snap
+export PATH="/snap/bin:$PATH"
+
+# starship prompt
+# see: https://starship.rs/
+# ~/.zshrc
+eval "$(starship init zsh)"
+
+# keychain
+eval "$(keychain --quiet --eval github gitlab)"

@@ -67,8 +67,10 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 " autoformant, i.e. beautify (used mostly for html)
 Plug 'https://github.com/Chiel92/vim-autoformat'
 
+" syntax (polyglot)
+" Plug 'https://github.com/sheerun/vim-polyglot'
 " javascript syntax
-Plug 'https://github.com/pangloss/vim-javascript'
+" Plug 'https://github.com/pangloss/vim-javascript'
 
 " markdown previewer
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -113,7 +115,7 @@ Plug 'https://github.com/nvim-lua/plenary.nvim'
 Plug 'https://github.com/sindrets/diffview.nvim'
 
 " CoC
-Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'https://github.com/neoclide/coc.nvim', { 'do': 'npm ci' }
 
 " Start screen
 Plug 'https://github.com/mhinz/vim-startify'
@@ -143,6 +145,7 @@ Plug 'https://github.com/kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " testing
 Plug 'https://github.com/vim-test/vim-test'
+Plug 'https://github.com/andythigpen/nvim-coverage'
 
 " vimux
 Plug 'https://github.com/preservim/vimux'
@@ -152,6 +155,9 @@ Plug 'https://github.com/hashivim/vim-terraform'
 
 " helm
 Plug 'https://github.com/towolf/vim-helm'
+
+" local config safety
+Plug 'https://github.com/klen/nvim-config-local'
 
 call plug#end()
 

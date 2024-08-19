@@ -1,0 +1,105 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0xdee2ea"
+blue = "0x0095de"
+cyan = "0x0092e2"
+green = "0x07d774"
+magenta = "0x6668c6"
+red = "0xe74c3c"
+white = "0xffffff"
+yellow = "0xf6c700"
+
+[colors.dim]
+black = "0x333333"
+blue = "0x6699cc"
+cyan = "0x66cccc"
+green = "0x99cc99"
+magenta = "0xcc99cc"
+red = "0xf2777a"
+white = "0xdddddd"
+yellow = "0xffcc66"
+
+[colors.normal]
+black = "0x2a2a2a"
+blue = "0x3398db"
+cyan = "0x0095de"
+green = "0x2fcc71"
+magenta = "0x6171c4"
+red = "0xfc2d1e"
+white = "0xdee2ea"
+yellow = "0xf1c40d"
+
+[colors.primary]
+background = "0x191919"
+foreground = "0xdee2ea"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "SauceCodePro Nerd Font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 1
+
+[font.italic]
+family = "SauceCodePro Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+style = "SemiBold"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["--login"]
+
+[window]
+decorations = "none"
+dynamic_padding = true
+dynamic_title = true
+startup_mode = "Windowed"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0

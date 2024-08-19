@@ -2,15 +2,6 @@
   "Lua.diagnostics.globals": [
     "vim"
   ],
-  "coc.preferences.extensionUpdateCheck": "weekly",
-  "diagnostic.errorSign": "->",
-  "diagnostic.hintSign": "->",
-  "diagnostic.infoSign": "->",
-  "diagnostic.warningSign": "->",
-  "eslint.trace.server": "verbose",
-  "python.formatting.provider": "black",
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
   "typescript.preferences.quoteStyle": "single",
   "languageserver": {
     "terraform": {
@@ -26,5 +17,9 @@
       "settings": {}
     }
   },
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "python.linting.ruffEnabled": true,
+  "yaml.customTags": [
+    "!reference sequence"
+  ]
 }
