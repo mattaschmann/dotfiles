@@ -2,6 +2,10 @@
     link:
       create: true
       relink: true
+    shell:
+      stdout: true
+      stderr: true
+      quiet: true
 
 - clean: ['~']
 
@@ -23,11 +27,55 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.urlview: urlview/.urlview
     ~/.zprofile: zsh/.zprofile
-    ~/.zsh_plugins.sh: zsh/.zsh_plugins.sh
-    ~/.zshrc: zsh/.zshrc
+    ~/.zsh_plugins.txt: zsh/.zsh_plugins.txt
+    ~/.zshrc:
+      path: zsh/.zshrc
+      force: true
+
+- create:
+    - ~/bin
+    - ~/opt
+    - ~/.ssh
 
 - shell:
-    # Add special terminfos so we can use italics
-    - [tic terminfo/xterm-256color.terminfo]
-    - [tic terminfo/tmux.terminfo]
-    - [tic terminfo/tmux-256color.terminfo]
+    -
+      description: Installing submodules
+      command: git submodule update --init --recursive
+    -
+      description: Add special terminfos so we can use italics
+      command: |
+        tic terminfo/xterm-256color.terminfo
+        tic terminfo/tmux.terminfo
+        tic terminfo/xterm-256color.terminfo
+    -
+      description: Install brew packages (osx only)
+      command: |
+        if ! command -v cargo &> /dev/null
+        then
+          echo "cargo not found"
+          echo "see: https://www.rust-lang.org/learn/get-started"
+          exit 1
+        else
+          brew bundle
+        fi
+    - description: Install rust packages
+      command: |
+        if ! command -v cargo &> /dev/null
+        then
+          echo "cargo not found"
+          echo "see: https://www.rust-lang.org/learn/get-started"
+          exit 1
+        else
+          cargo install cargo-update
+          cargo install ripgrep
+          cargo install bat
+          cargo install exa
+          cargo install fd-find
+        fi
+    - description: Install Tmux Plugin Manager
+      command: |
+        if ! test -d ~/.tmux/plugins/tpm; then
+          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        else
+          echo "TPM already installed"
+        fi

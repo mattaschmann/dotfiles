@@ -73,9 +73,11 @@ source $ZSH/oh-my-zsh.sh
 # Theme
 ZSH_THEME=""
 
-# Let antibody manage plugins: https://getantibody.github.io/
-# Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
-source ~/.zsh_plugins.sh
+# switched from antibody to antidote
+# see: https://github.com/mattmc3/antidote
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load $HOME/.zsh_plugins.txt
+
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
@@ -185,9 +187,6 @@ export PATH="$PATH:$HOME/.local/share/coursier/bin"
 # sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
 
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/opt/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -198,5 +197,6 @@ if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/goo
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
