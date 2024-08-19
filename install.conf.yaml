@@ -78,33 +78,10 @@
         else
           echo "TPM already installed"
         fi
-    - description: Install FNM (for nodejs)
+    - description: Check for existence of desired commands
       command: |
-        if ! command -v fnm &> /dev/null
-        then
-          echo "fnm not found"
-          echo "see: https://github.com/Schniz/fnm"
-          exit 1
-        else
-          echo "fnm already installed"
-        fi
-    - description: Install Starship CLI
-      command: |
-        if ! command -v starship &> /dev/null
-        then
-          echo "starship not found"
-          echo "see: https://starship.rs/"
-          exit 1
-        else
-          echo "starship already installed"
-        fi
-    - description: Install fzf
-      command: |
-        if ! command -v fzf &> /dev/null
-        then
-          echo "fzf not found"
-          echo "see: https://github.com/junegunn/fzf"
-          exit 1
-        else
-          echo "starship already installed"
-        fi
+        /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
+        /bin/bash check_cmd.sh starship "https://starship.rs/"
+        /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
+        /bin/bash check_cmd.sh pyenv "https://github.com/pyenv/pyenv"
+        /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"

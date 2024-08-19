@@ -210,4 +210,5 @@ export PATH="/snap/bin:$PATH"
 eval "$(starship init zsh)"
 
 # keychain
-eval "$(keychain --quiet --eval github gitlab)"
+# wsl only
+# eval "$(keychain --quiet --eval github gitlab)"
