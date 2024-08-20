@@ -85,3 +85,4 @@
         /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
         /bin/bash check_cmd.sh pyenv "https://github.com/pyenv/pyenv"
         /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
+        /bin/bash check_cmd.sh nnn "https://github.com/jarun/nnn"
