@@ -222,7 +222,8 @@ eval "$(starship init zsh)"
 # keychain
 # wsl only
 # eval "$(keychain --quiet --eval github gitlab)"
-#
+# osx only
+ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # for profiling, should be at bottom
 # zprof
