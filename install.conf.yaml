@@ -46,17 +46,24 @@
         tic terminfo/xterm-256color.terminfo
         tic terminfo/tmux.terminfo
         tic terminfo/xterm-256color.terminfo
-    -
-      description: Install brew packages (osx only)
+    - description: Install apt packages
       command: |
-        if ! command -v brew &> /dev/null
-        then
-          echo "brew not found"
-          echo "see: https://brew.sh/"
-          exit 1
-        else
-          brew bundle
-        fi
+        sudo apt update
+        sudo apt install -y \
+          build-essential \
+          ca-certificates \
+          cmake \
+          fzf \
+          htop \
+          libssl-dev \
+          neovim \
+          nnn \
+          pkg-config \
+          tmux \
+          wget \
+          zsh \
+          unzip \
+        && echo "Done"
     - description: Install rust packages
       command: |
         if ! command -v cargo &> /dev/null
@@ -70,6 +77,7 @@
           cargo install bat
           cargo install exa
           cargo install fd-find
+          cargo install starship --locked
         fi
     - description: Install Tmux Plugin Manager
       command: |
@@ -80,6 +88,11 @@
         fi
     - description: Check for existence of desired commands
       command: |
+        /bin/bash check_cmd.sh docker "https://docs.docker.com/engine/install/ubuntu/"
+        /bin/bash check_cmd.sh pyenv "https://github.com/pyenv/pyenv"
+        /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
+        /bin/bash check_cmd.sh antidote-main "https://github.com/mattmc3/antidote"
+        /bin/bash check_cmd.sh omz "https://ohmyz.sh/"
         /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
         /bin/bash check_cmd.sh starship "https://starship.rs/"
         /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"

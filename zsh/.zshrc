@@ -75,7 +75,9 @@ ZSH_THEME=""
 
 # switched from antibody to antidote
 # see: https://github.com/mattmc3/antidote
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+# osx (brew) only
+# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+source $HOME/.antidote/antidote.zsh
 # antidote load $HOME/.zsh_plugins.txt
 # .zshrc
 # Lazy-load antidote and generate the static load file only when needed
@@ -226,3 +228,9 @@ eval "$(keychain --quiet --eval github gitlab)"
 
 # for profiling, should be at bottom
 # zprof
+# fnm
+FNM_PATH="/home/ma7hatter/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/ma7hatter/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
