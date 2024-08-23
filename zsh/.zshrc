@@ -159,7 +159,8 @@ export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
 # Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
@@ -218,4 +219,10 @@ export PATH="/snap/bin:$PATH"
 eval "$(starship init zsh)"
 
 # keychain
+# wsl only
 eval "$(keychain --quiet --eval github gitlab)"
+# osx only
+# ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+
+# for profiling, should be at bottom
+# zprof
