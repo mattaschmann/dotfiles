@@ -47,7 +47,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -73,9 +73,21 @@ source $ZSH/oh-my-zsh.sh
 # Theme
 ZSH_THEME=""
 
-# Let antibody manage plugins: https://getantibody.github.io/
-# Note: need to re-run 'gen_antibody_sh.sh' in the dotfiles if you add a plugin
-source ~/.zsh_plugins.sh
+# switched from antibody to antidote
+# see: https://github.com/mattmc3/antidote
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+# antidote load $HOME/.zsh_plugins.txt
+# .zshrc
+# Lazy-load antidote and generate the static load file only when needed
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  (
+    source /path-to-antidote/antidote.zsh
+    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+  )
+fi
+source ${zsh_plugins}.zsh
+
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'

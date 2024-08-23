@@ -1,17 +1,12 @@
-robbyrussell/oh-my-zsh path:plugins/ripgrep
 robbyrussell/oh-my-zsh path:plugins/rust
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/docker-compose
-robbyrussell/oh-my-zsh path:plugins/fd
+robbyrussell/oh-my-zsh path:plugins/kubectl
 
 mafredri/zsh-async branch:main
 
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-
-# theme
-# spaceship-prompt/spaceship-prompt
-# using starship.rs now
 
 # this one must be the last plugin
 zsh-users/zsh-syntax-highlighting

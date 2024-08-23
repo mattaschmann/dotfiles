@@ -88,7 +88,7 @@ multiplier = 3
 program = "ubuntu2404"
 
 [window]
-decorations = "none"
+decorations = "None"
 dynamic_padding = true
 dynamic_title = true
 startup_mode = "Windowed"

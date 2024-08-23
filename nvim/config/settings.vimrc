@@ -42,6 +42,7 @@ set number
 
 " line highlight
 set cursorline
+set cursorcolumn
 
 " whitespace
 set list
