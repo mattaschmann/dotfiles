@@ -11,7 +11,7 @@ call plug#begin()
 
 " theme
 " Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep-theme' }
-Plug 'https://github.com/drewtempelmeyer/palenight.vim'
+" Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 " Plug 'https://github.com/jacoborus/tender.vim'
 " Plug 'https://github.com/morhetz/gruvbox'
 
@@ -25,8 +25,8 @@ Plug 'https://github.com/ggandor/leap.nvim'
 Plug 'https://github.com/machakann/vim-highlightedyank'
 
 " fuzzy search: is made better with ripgrep
-Plug 'junegunn/fzf', { 'dir': '~/opt/fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/opt/fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'https://github.com/tpope/vim-fugitive'

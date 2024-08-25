@@ -108,7 +108,7 @@ bindkey '^p' up-line-or-history
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
-alias open="xdg-open"
+alias open="explorer.exe"
 alias dirsize="du -h -d 1 | sort -rh"
 
 # github specific aliases
@@ -158,11 +158,12 @@ alias c="docker compose"
 # make nvim the default editor
 export EDITOR=nvim
 # make nvim the default manpager
-export MANPAGER='nvim +Man!'
+export MANPAGER='nvim --clean +Man!'
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
 # Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
@@ -222,7 +223,7 @@ eval "$(starship init zsh)"
 
 # keychain
 # wsl only
-eval "$(keychain --quiet --eval github gitlab)"
+eval "$(keychain --quiet --eval github)"
 # osx only
 # ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
