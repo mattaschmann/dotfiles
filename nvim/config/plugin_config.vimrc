@@ -2,16 +2,16 @@
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" unimpaired bubble mappings
-nmap <A-k> [e
-nmap <A-j> ]e
-vmap <A-k> [egv
-vmap <A-j> ]egv
+" " unimpaired bubble mappings
+" nmap <A-k> [e
+" nmap <A-j> ]e
+" vmap <A-k> [egv
+" vmap <A-j> ]egv
 
-" incsearch plugin mappings
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" " incsearch plugin mappings
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
 
 " Ferret
 let g:FerretExecutableArguments = {
@@ -37,10 +37,10 @@ let g:highlightedyank_highlight_duration = 150
 let g:highlightedyank_max_lines = 1000
 highlight HighlightedyankRegion ctermbg=237 guibg=#404040
 
-" Sayonara mappins
-" delete current buffer and either keep or close pane
-nnoremap <silent> <Leader>w :Sayonara!<CR>
-nnoremap <silent> <Leader>q :Sayonara<CR>
+" " Sayonara mappins
+" " delete current buffer and either keep or close pane
+" nnoremap <silent> <Leader>w :Sayonara!<CR>
+" nnoremap <silent> <Leader>q :Sayonara<CR>
 
 " easyalign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -106,8 +106,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " mapping for trouble.nvim
-nmap <silent> gL <cmd>call coc#rpc#request('fillDiagnostics', [bufnr('%')])<CR><cmd>Trouble loclist<CR>`
+" nmap <silent> gL <cmd>call coc#rpc#request('fillDiagnostics', [bufnr('%')])<CR><cmd>Trouble loclist<CR>`
 
+" docs stuff
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
@@ -161,10 +162,10 @@ nnoremap <LocalLeader>f :NvimTreeToggle<CR>
 " doge
 let g:doge_doc_standard_python = 'google'
 
-" vim-test
-nmap <silent> <LocalLeader>t :TestNearest<CR>
-let test#python#runner = 'pytest'
-let test#strategy = "vimux"
+" " vim-test
+" nmap <silent> <LocalLeader>t :TestNearest<CR>
+" let test#python#runner = 'pytest'
+" let test#strategy = "vimux"
 
 " lightspeed
 " map <Leader>j <Plug>Lightspeed_s

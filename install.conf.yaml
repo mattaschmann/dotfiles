@@ -18,6 +18,7 @@
     # ~/.config/nvim/config: nvim/config
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
+    ~/.config/nvim/vimscripts: nvim/vimscripts
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
     ~/.ignore: rg/.ignore

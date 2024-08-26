@@ -12,7 +12,7 @@ nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 nnoremap <silent> <Leader>s :update<CR>
 
 " toggle relative numbers
-nnoremap <silent> <Leader>r :set relativenumber!<CR>
+nnoremap <silent> <localleader>r :set relativenumber!<CR>
 
 " easier window movement
 nnoremap <C-h> <C-w>h

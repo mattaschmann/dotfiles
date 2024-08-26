@@ -21,7 +21,19 @@ return {
   {'https://github.com/tpope/vim-repeat'},
 
   -- some nice keyboard mappings (including bubbling)
-  {'https://github.com/tpope/vim-unimpaired'},
+  {
+    'https://github.com/tpope/vim-unimpaired',
+    -- unimpaired bubble mappings
+    config = function()
+      vim.cmd([[
+        nmap <A-k> [e
+        nmap <A-j> ]e
+        vmap <A-k> [egv
+        vmap <A-j> ]egv
+      ]])
+    end
+
+  },
 
   -- directory stuff by tpope
   {'https://github.com/tpope/vim-eunuch'},

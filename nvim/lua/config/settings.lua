@@ -1,15 +1,6 @@
 vim.cmd([[
 " colorscheme
 " @Matt TODO refactor
-syntax enable
-colorscheme palenight
-let g:palenight_terminal_italics=1
-hi DiffAdd      gui=none guifg=NONE    guibg=#2e4730
-hi DiffChange   gui=none guifg=NONE    guibg=#47452e
-hi DiffDelete   gui=bold guifg=#a02e2e guibg=#472e2e
-hi DiffText     gui=none guifg=NONE    guibg=#2e4047
-hi Search       gui=none guifg=black   guibg=#61ceec
-hi CocInlayHint gui=none guifg=#474d6c guibg=NONE
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
@@ -23,10 +14,6 @@ set shiftwidth=2
 set linebreak
 set showbreak=…
 set breakindent
-
-" undo stuff, for mundo
-set undofile
-set undodir=~/.config/nvim/undo
 
 " For true color support
 if has('nvim') || has('termguicolors')
