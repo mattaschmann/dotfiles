@@ -9,6 +9,11 @@
 
 - clean: ['~']
 
+- create:
+    - ~/.local/bin
+    - ~/opt
+    - ~/.ssh
+
 - link:
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/coc/extensions/package.json: coc/package.json
@@ -31,11 +36,8 @@
     ~/.zshrc:
       path: zsh/.zshrc
       force: true
-
-- create:
-    - ~/bin
-    - ~/opt
-    - ~/.ssh
+    ~/.local/bin/xclip: /mnt/c/Windows/system32/clip.exe
+    ~/scripts: scripts/
 
 - shell:
     -
@@ -76,6 +78,9 @@
           zlib1g-dev \
           zsh \
           keychain \
+          7zip \
+          jq \
+          imagemagick \
         && echo "Done"
     - description: Install rust packages
       command: |
@@ -91,6 +96,7 @@
           cargo install exa
           cargo install fd-find
           cargo install starship --locked
+          cargo install zoxide --locked
         fi
     - description: Check for existence of desired commands
       command: |
@@ -102,6 +108,7 @@
         /bin/bash check_cmd.sh pyenv "https://github.com/pyenv/pyenv"
         /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
         /bin/bash check_cmd.sh nnn "https://github.com/jarun/nnn"
+        /bin/bash check_cmd.sh wsl-open "https://github.com/4U6U57/wsl-open"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
         /bin/bash check_dir.sh ~/.tmux/plugins/tpm "https://github.com/tmux-plugins/tpm"
