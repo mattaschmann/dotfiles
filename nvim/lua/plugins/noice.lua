@@ -1,3 +1,4 @@
+-- https://gitub.com/folke/noice.nvim
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
