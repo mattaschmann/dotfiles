@@ -13,7 +13,7 @@ return {
 			hi DiffChange   gui=none guifg=NONE    guibg=#47452e
 			hi DiffDelete   gui=bold guifg=#a02e2e guibg=#472e2e
 			hi DiffText     gui=none guifg=NONE    guibg=#2e4047
-			hi Search       gui=none guifg=black   guibg=#61ceec
+			hi Search       gui=none guifg=#262626 guibg=#77839e
 			hi CocInlayHint gui=none guifg=#474d6c guibg=NONE
 			hi HighlightedyankRegion ctermbg=237 guibg=#404040
 		]])
