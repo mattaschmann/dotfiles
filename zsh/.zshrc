@@ -97,7 +97,6 @@ bindkey '^p' up-line-or-history
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
-alias open="explorer.exe"
 alias dirsize="du -h -d 1 | sort -rh"
 
 # github specific aliases
@@ -194,11 +193,6 @@ export SPARK_HOME="$HOME/opt/spark"
 # scala
 export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
-# NNN stuff
-# run to install all plugins:
-# sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
-
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
@@ -222,6 +216,22 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/ma7hatter/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# remember cd's
+eval "$(zoxide init zsh)"
+
+# brew
+# (ubuntu wsl)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # for profiling, should be at bottom
 # zprof
