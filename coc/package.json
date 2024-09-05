@@ -9,6 +9,6 @@
     "coc-java": ">=1.15.2",
     "coc-lua": ">=2.0.6",
     "@yaegassy/coc-ruff": ">=0.7.4",
-    "coc-pyright": ">=1.1.375"
+    "coc-pyright": ">=1.1.377"
   }
 }

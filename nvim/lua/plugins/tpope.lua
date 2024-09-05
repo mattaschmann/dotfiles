@@ -12,7 +12,8 @@ return {
   {'https://github.com/tpope/vim-sleuth'},
 
   -- make changing surrounds easier
-  {'https://github.com/tpope/vim-surround'},
+  -- trying out nvim-surround
+  -- {'https://github.com/tpope/vim-surround'},
 
   -- make comments easier
   {'https://github.com/tpope/vim-commentary'},

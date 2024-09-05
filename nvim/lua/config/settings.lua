@@ -1,4 +1,12 @@
+-- set hide command window
+vim.opt.cmdheight = 0
+
+-- use pyenv virtualenv for neovim
+-- see *g:python3_host_prog*
+vim.g.python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
+
 vim.cmd([[
+
 " colorscheme
 " @Matt TODO refactor
 
@@ -111,7 +119,7 @@ endif
 set nomodeline
 
 " specify gx bin
-let g:netrw_browsex_viewer = "explorer.exe"
+let g:netrw_browsex_viewer = "xdg-open"
 
 " sbt filetype to scala
 au BufRead,BufNewFile *.sbt set filetype=scala

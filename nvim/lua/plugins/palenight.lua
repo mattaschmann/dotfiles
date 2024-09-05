@@ -4,6 +4,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
+		-- @Matt TODO: convert?
 		vim.cmd([[
 			syntax enable
 			colorscheme palenight
