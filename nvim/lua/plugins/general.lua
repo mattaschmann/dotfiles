@@ -29,7 +29,10 @@ return {
   },
 
   -- css colors
-  'https://github.com/ap/vim-css-color',
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
+  },
 
   -- alignment
   'https://github.com/junegunn/vim-easy-align',
