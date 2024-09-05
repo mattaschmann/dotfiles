@@ -1,10 +1,12 @@
--- https://gitub.com/folke/noice.nvim
 return {
-  "folke/noice.nvim",
+  "https://github.com/folke/noice.nvim",
   event = "VeryLazy",
   opts = {
     cmdline = {
       view = "cmdline",
+      format = {
+        input = { view = "cmdline"},
+      },
     },
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
