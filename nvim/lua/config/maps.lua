@@ -5,9 +5,6 @@ nnoremap <silent> <Leader>n :noh<CR>
 " reload settings file
 nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
 
-" quit out of insert mode in an easier way
-" inoremap jj <Esc>
-
 " save file
 nnoremap <silent> <Leader>s :update<CR>
 
@@ -31,7 +28,7 @@ nnoremap <Leader>K :call MoveBufferTopSplit()<CR>
 
 " Make current word uppercase in insert mode, since I have caps lock remapped
 " to ctrl
-imap <C-U> <Esc>mzgUiw`za
+imap <C-U> <Esc>
 
 " Make Y yank till end of line
 nnoremap Y y$
@@ -41,9 +38,6 @@ nnoremap <Leader>c :let @+ = @0<CR>
 
 " Add a map to more easily open the command history
 nnoremap <Leader>; q:
-
-" Remap alternate file
-nnoremap <Leader>` <C-^>
 
 " Shortcut to highlight block
 nnoremap gb V$%

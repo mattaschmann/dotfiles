@@ -21,32 +21,32 @@ nmap <Leader>a <Plug>(FerretAck)
 vmap <Leader>a y:Ack <C-R>"
 nmap <LocalLeader>a <Plug>(FerretAcks)
 
-" git gutter
-nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
-nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
-nmap <LocalLeader>hu <Plug>(GitGutterUndoHunk)
-autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
-let g:gitgutter_preview_win_floating = 0
+" " git gutter
+" nmap <LocalLeader>hp <Plug>(GitGutterPreviewHunk)
+" nmap <LocalLeader>hs <Plug>(GitGutterStageHunk)
+" nmap <LocalLeader>hu <Plug>(GitGutterUndoHunk)
+" autocmd BufEnter,FocusGained * GitGutter " reload gitgutter on focus
+" let g:gitgutter_preview_win_floating = 0
 
-" Fugitive stuff
-nnoremap <Leader>gs :Git<CR>
-nnoremap <Leader>gp :Git push<CR>
+" " Fugitive stuff
+" nnoremap <Leader>gs :Git<CR>
+" nnoremap <Leader>gp :Git push<CR>
 
-" vim highlightedyank stuff
-let g:highlightedyank_highlight_duration = 150
-let g:highlightedyank_max_lines = 1000
-highlight HighlightedyankRegion ctermbg=237 guibg=#404040
+" " vim highlightedyank stuff
+" let g:highlightedyank_highlight_duration = 150
+" let g:highlightedyank_max_lines = 1000
+" highlight HighlightedyankRegion ctermbg=237 guibg=#404040
 
 " " Sayonara mappins
 " " delete current buffer and either keep or close pane
 " nnoremap <silent> <Leader>w :Sayonara!<CR>
 " nnoremap <silent> <Leader>q :Sayonara<CR>
 
-" easyalign
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+" " easyalign
+" " Start interactive EasyAlign in visual mode (e.g. vipga)
+" xmap ga <Plug>(EasyAlign)
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" nmap ga <Plug>(EasyAlign)
 
 " dirvish settings
 " let g:dirvish_mode = ':sort ,^.*[\/],'

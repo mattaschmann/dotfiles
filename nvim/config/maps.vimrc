@@ -30,7 +30,7 @@ nnoremap <Leader>K :call MoveBufferTopSplit()<CR>
 
 " Make current word uppercase in insert mode, since I have caps lock remapped
 " to ctrl
-imap <C-U> <Esc>mzgUiw`za
+imap <C-U> <Esc>
 
 " Make Y yank till end of line
 nnoremap Y y$

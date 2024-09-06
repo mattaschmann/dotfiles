@@ -1,14 +1,11 @@
 -- set hide command window
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 1
 
 -- use pyenv virtualenv for neovim
 -- see *g:python3_host_prog*
 vim.g.python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
 
 vim.cmd([[
-
-" colorscheme
-" @Matt TODO refactor
 
 " make buffers hide automatically instead of needing to be asked
 set hidden

@@ -21,6 +21,7 @@ function! SummarizeTabs()
     else
       echon ' noexpandtab'
     endif
+    normal! gg=G
   finally
     echohl None
   endtry
@@ -58,13 +59,18 @@ endfunction
 
 " open file and directory in code
 command! Code
-  \ :!code . %
+      \ :!code . %
 
 " open file and directory in intellij
 " NOTE: this requires a custom launcher, see: https://www.jetbrains.com/help/idea/opening-files-from-command-line.html
 command! Idea
-  \ :!idea . %
+      \ :!idea . %
 
 " yank current buffers filename
 command! YankFilePath
-  \ :let @" = expand("%")
+      \ :let @" = expand("%")
+
+" reload config
+command! ReloadVimConfig
+      \ :so $MYVIMRC<CR>
+
