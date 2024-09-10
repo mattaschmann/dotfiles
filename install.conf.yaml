@@ -16,14 +16,14 @@
 
 - link:
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-    ~/.config/coc/extensions/package.json: coc/package.json
-    ~/.config/coc/ultisnips: coc/ultisnips
-    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     # ~/.config/nvim/init.vim: nvim/init.vim
     # ~/.config/nvim/config: nvim/config
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
     ~/.config/nvim/vimscripts: nvim/vimscripts
+    ~/.config/nvim/snippets:
+      path: nvim/snippets
+      force: true
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
     ~/.ignore: rg/.ignore

@@ -19,6 +19,7 @@ vim.keymap.set('n', '<f7>', function() vim.diagnostic.goto_prev() end)
 
 -- lsp
 vim.keymap.set('n', 'gh', function() vim.lsp.buf.hover() end)
+vim.keymap.set('n', 'gf', '<cmd>Format<cr>', { desc = 'Format current buffer' })
 
 
 vim.cmd([[

@@ -2,6 +2,7 @@
 -- @Matt TODO: ghost text?
 -- @Matt TODO: snippets
 -- @Matt TODO: remove scrollbar
+-- @Matt TODO: change error markers in left sidebar
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -11,9 +12,9 @@ return {
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
 
-    -- For vsnip users.
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
+    -- snippets
+    'dcampos/nvim-snippy',
+    'dcampos/cmp-snippy',
 
     -- icons
     'onsails/lspkind.nvim',
@@ -21,14 +22,15 @@ return {
   config = function()
     local cmp = require('cmp')
     local lspkind = require('lspkind')
+
     cmp.setup({
       snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
           -- @Matt TODO: figure out good snippet engine
-          vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+          -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
           -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-          -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+          require('snippy').expand_snippet(args.body) -- For `snippy` users.
           -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
           -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
         end,
@@ -48,19 +50,20 @@ return {
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
+
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
+        { name = 'snippy' }, -- For snippy users.
       }, {
         { name = 'buffer' },
       }),
       formatting = {
         format = lspkind.cmp_format({
-          mode = 'symbol', -- show only symbol annotations
-          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          mode = 'symbol_text', -- show only symbol annotations
+          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           -- can also be a function to dynamically calculate max width such as
           -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
           ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
