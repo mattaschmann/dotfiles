@@ -6,5 +6,4 @@ return {
   keys = {
     { '<f9>', '<cmd>Trouble diagnostics toggle<cr>' },
   },
-  -- @Matt TODO: setup keymaps
 }

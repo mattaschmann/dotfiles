@@ -2,7 +2,7 @@
 vim.keymap.set('n', '<leader>n', '<cmd>noh<cr>', { silent = true })
 
 -- Open current file in yazi in a tmux split
-vim.keymap.set('n', '<localleader>-', '<cmd>!tmux split-window "yazi %"<cr><cr>', { silent = true })
+vim.keymap.set('n', '<localleader>y', '<cmd>!tmux split-window "yazi %"<cr><cr>', { silent = true })
 
 -- save file
 vim.keymap.set('n', '<leader>s', '<cmd>update<cr>', { silent = true })
@@ -16,6 +16,10 @@ vim.keymap.set({ 'n', 'v' }, '<leader>;', 'q:')
 -- diagnostic navigation
 vim.keymap.set('n', '<f8>', function() vim.diagnostic.goto_next() end)
 vim.keymap.set('n', '<f7>', function() vim.diagnostic.goto_prev() end)
+
+-- lsp
+vim.keymap.set('n', 'gh', function() vim.lsp.buf.hover() end)
+
 
 vim.cmd([[
 

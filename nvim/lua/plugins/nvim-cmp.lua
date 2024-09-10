@@ -1,4 +1,3 @@
--- @Matt TODO: get file icons in popup
 -- @Matt TODO: turn off popup when typing
 -- @Matt TODO: ghost text?
 -- @Matt TODO: snippets
@@ -15,9 +14,13 @@ return {
     -- For vsnip users.
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
+
+    -- icons
+    'onsails/lspkind.nvim',
   },
   config = function()
     local cmp = require('cmp')
+    local lspkind = require('lspkind')
     cmp.setup({
       snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -32,10 +35,10 @@ return {
       },
       window = {
         completion = {
-          winblend = 10
+          winblend = 10,
         },
         documentation = {
-          winblend = 10
+          winblend = 10,
         }
       },
       mapping = cmp.mapping.preset.insert({
@@ -53,7 +56,24 @@ return {
         -- { name = 'snippy' }, -- For snippy users.
       }, {
         { name = 'buffer' },
-      })
+      }),
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = 'symbol', -- show only symbol annotations
+          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          -- can also be a function to dynamically calculate max width such as
+          -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          -- before = function (entry, vim_item)
+          --   ...
+          --   return vim_item
+          -- end
+        })
+      },
     })
 
     -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
@@ -65,7 +85,7 @@ return {
         { name = 'buffer' },
       })
    })
-   require("cmp_git").setup() ]]-- 
+   require("cmp_git").setup() ]] --
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
@@ -89,11 +109,12 @@ return {
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-    require('lspconfig').lua_ls.setup {
+    local lsp_config = require('lspconfig')
+    lsp_config.lua_ls.setup {
       capabilities = capabilities,
       on_init = function(client)
         local path = client.workspace_folders[1].name
-        if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+        if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
           return
         end
 
