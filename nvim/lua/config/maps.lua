@@ -15,8 +15,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>;', 'q:')
 
 -- diagnostic navigation
 vim.keymap.set('n', '<f8>', function() vim.diagnostic.goto_next() end)
--- @Matt TODO: #current shift isn't working
-vim.keymap.set('n', '<s-f8>', function() vim.diagnostic.goto_prev() end)
+vim.keymap.set('n', '<f7>', function() vim.diagnostic.goto_prev() end)
 
 vim.cmd([[
 

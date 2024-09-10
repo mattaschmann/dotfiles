@@ -4,7 +4,7 @@ return {
   event = 'VeryLazy',
   opts = {},
   keys = {
-    { '<f7>', '<cmd>Trouble diagnostics<cr>' },
+    { '<f9>', '<cmd>Trouble diagnostics toggle<cr>' },
   },
   -- @Matt TODO: setup keymaps
 }
