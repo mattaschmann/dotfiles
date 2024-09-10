@@ -1,11 +1,9 @@
--- set hide command window
--- vim.opt.cmdheight = 1
+" set hide command window
+" set cmdheight=1
 
--- use pyenv virtualenv for neovim
--- see *g:python3_host_prog*
-vim.g.python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
-
-vim.cmd([[
+" use pyenv virtualenv for neovim
+" see *g:python3_host_prog*
+let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
@@ -100,6 +98,7 @@ set completeopt-=preview
 set wildmode=longest:full
 set wildoptions=pum
 set pumblend=10
+" set winblend=10
 
 " diff options
 " set diffopt+=iwhiteall
@@ -118,9 +117,5 @@ set nomodeline
 " specify gx bin
 let g:netrw_browsex_viewer = "xdg-open"
 
-" sbt filetype to scala
-au BufRead,BufNewFile *.sbt set filetype=scala
-
 " smart case search
 set smartcase
-]])

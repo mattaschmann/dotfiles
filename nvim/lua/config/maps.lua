@@ -1,15 +1,24 @@
+-- This unsets the "last search pattern" register
+vim.keymap.set('n', '<leader>n', '<cmd>noh<cr>', { silent = true })
+
+-- Open current file in yazi in a tmux split
+vim.keymap.set('n', '<localleader>-', '<cmd>!tmux split-window "yazi %"<cr><cr>', { silent = true })
+
+-- save file
+vim.keymap.set('n', '<leader>s', '<cmd>update<cr>', { silent = true })
+
+-- toggle relative numbers
+vim.keymap.set('n', '<localleader>r', '<cmd>set relativenumber!<cr>', { silent = true })
+
+-- Add a map to more easily open the command history
+vim.keymap.set({ 'n', 'v' }, '<leader>;', 'q:')
+
+-- diagnostic navigation
+vim.keymap.set('n', '<f8>', function() vim.diagnostic.goto_next() end)
+-- @Matt TODO: #current shift isn't working
+vim.keymap.set('n', '<s-f8>', function() vim.diagnostic.goto_prev() end)
+
 vim.cmd([[
-"This unsets the "last search pattern" register
-nnoremap <silent> <Leader>n :noh<CR>
-
-" reload settings file
-nnoremap <silent> <LocalLeader>r :so $MYVIMRC<CR>
-
-" save file
-nnoremap <silent> <Leader>s :update<CR>
-
-" toggle relative numbers
-nnoremap <silent> <localleader>r :set relativenumber!<CR>
 
 " easier window movement
 nnoremap <C-h> <C-w>h
@@ -35,9 +44,6 @@ nnoremap Y y$
 
 " Copy current @0 register to @+ for use in system clipboard
 nnoremap <Leader>c :let @+ = @0<CR>
-
-" Add a map to more easily open the command history
-nnoremap <Leader>; q:
 
 " Shortcut to highlight block
 nnoremap gb V$%

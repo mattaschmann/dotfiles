@@ -13,6 +13,7 @@ return {
     {'<Leader>b', '<cmd>FzfLua buffers<CR>', desc = 'Fuzzy search buffers'},
     {'<leader>?', '<cmd>FzfLua keymaps<cr>', desc = 'Search keymaps'},
     {'<leader>r', '<cmd>FzfLua resume<cr>', desc = 'Resume last  operation'},
+    {'<leader>"', '<cmd>FzfLua registers<cr>', desc = 'Use fzf to select register'},
   },
   config = function()
     local fzf_lua = require('fzf-lua')
@@ -44,7 +45,6 @@ return {
 
       fzf_lua.fzf_exec('rg --column --color=always @Matt', opts)
     end
-
     vim.keymap.set('n', '<leader>m', _G.fzf_Matt)
   end,
 }

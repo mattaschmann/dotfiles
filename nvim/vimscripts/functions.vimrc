@@ -73,4 +73,3 @@ command! YankFilePath
 " reload config
 command! ReloadVimConfig
       \ :so $MYVIMRC<CR>
-

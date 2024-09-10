@@ -15,6 +15,11 @@ return {
         return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
+      local function open_in_yazi()
+        local node = api.tree.get_node_under_cursor()
+        vim.fn.system { 'tmux', 'split-window', 'yazi', node['absolute_path'] }
+      end
+
       -- default mappings
       api.config.mappings.default_on_attach(bufnr)
 
@@ -23,13 +28,8 @@ return {
       vim.keymap.del('n', 's', { buffer = bufnr })
       vim.keymap.set('n', '<C-s>', api.tree.search_node, opts('Search'))
       vim.keymap.set('n', '<C-o>', api.node.run.system, opts('Run System'))
+      vim.keymap.set('n', 'y', open_in_yazi, opts('Open in yazi'))
     end
-
-    require('nvim-tree').setup {
-      disable_netrw = true,
-      hijack_netrw = true,
-      on_attach = my_on_attach,
-    }
 
     -- This is used to close the tree window if it's the only one left
     -- see: https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close
@@ -68,5 +68,12 @@ return {
       end,
       nested = true
     })
+
+    require('nvim-tree').setup {
+      disable_netrw = true,
+      hijack_netrw = true,
+      on_attach = my_on_attach,
+    }
+
   end
 }

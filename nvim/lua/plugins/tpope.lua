@@ -43,5 +43,5 @@ return {
   {'https://github.com/tpope/vim-abolish'},
 
   -- tpope's async stuff
-  {'https://github.com/tpope/vim-dispatch'},
+  -- {'https://github.com/tpope/vim-dispatch'},
 }

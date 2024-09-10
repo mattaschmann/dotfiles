@@ -2,11 +2,9 @@
 require("config.lazy")
 
 -- General settings and functions
-require("config.settings")
+vim.cmd('source $HOME/.config/nvim/vimscripts/options.vimrc')
 vim.cmd('source $HOME/.config/nvim/vimscripts/functions.vimrc')
--- require("config.functions")
-
-
+require('config.commands')
 
 -- Maps, last
 require("config.maps")
