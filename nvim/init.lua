@@ -1,3 +1,6 @@
+-- Options that have to be first
+vim.o.pumblend = 10
+
 -- Plugins, see: https://lazy.folke.io/
 require("config.lazy")
 

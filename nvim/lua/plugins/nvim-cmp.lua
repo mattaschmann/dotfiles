@@ -1,7 +1,6 @@
 -- @Matt TODO: turn off popup when typing
 -- @Matt TODO: ghost text?
 -- @Matt TODO: snippets
--- @Matt TODO: remove scrollbar
 -- @Matt TODO: change error markers in left sidebar
 return {
   'neovim/nvim-lspconfig',
@@ -20,6 +19,15 @@ return {
     'onsails/lspkind.nvim',
   },
   config = function()
+    require('snippy').setup({
+      mappings = {
+        is = {
+          ['<tab>'] = 'expand_or_advance',
+          ['<s-tab>'] = 'previous',
+        }
+      }
+    })
+
     local cmp = require('cmp')
     local lspkind = require('lspkind')
 
@@ -37,11 +45,12 @@ return {
       },
       window = {
         completion = {
-          winblend = 10,
+          scrollbar = false,
         },
-        documentation = {
-          winblend = 10,
-        }
+        -- documentation = {
+        --   winblend = 50,
+        --   border = { '', '', '', '', '', '', '', '' },
+        -- },
       },
       mapping = cmp.mapping.preset.insert({
         -- ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -57,16 +66,16 @@ return {
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         { name = 'snippy' }, -- For snippy users.
-      }, {
         { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
       }),
       formatting = {
         format = lspkind.cmp_format({
           mode = 'symbol_text', -- show only symbol annotations
-          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          maxwidth = 80,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           -- can also be a function to dynamically calculate max width such as
           -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
           show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
           -- The function below will be called before any actual modifications from lspkind

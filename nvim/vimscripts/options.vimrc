@@ -97,8 +97,8 @@ set completeopt-=preview
 " pop up menu
 set wildmode=longest:full
 set wildoptions=pum
-set pumblend=10
-set winblend=10
+" set pumblend=10
+" set winblend=10
 
 " diff options
 " set diffopt+=iwhiteall
