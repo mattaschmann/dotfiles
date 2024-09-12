@@ -19,6 +19,7 @@ return {
   -- sane window removal management
   {
     'https://github.com/mhinz/vim-sayonara',
+    events = 'VeryLazy',
     keys = {
       { '<Leader>w,', ':Sayonara!<CR>', silent = true },
       { '<Leader>q',  ':Sayonara<CR>',  silent = true },

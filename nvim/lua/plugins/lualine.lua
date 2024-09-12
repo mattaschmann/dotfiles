@@ -51,9 +51,9 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
-    options = {
-      theme = custom_theme
-    },
+    -- options = {
+    --   theme = custom_theme
+    -- },
     extensions = {
       'quickfix',
       'lazy',

@@ -71,5 +71,4 @@ command! YankFilePath
       \ :let @" = expand("%")
 
 " reload config
-command! ReloadVimConfig
-      \ :so $MYVIMRC<CR>
+command! ReloadVimConfig :so $MYVIMRC<CR>

@@ -8,6 +8,7 @@ require("config.lazy")
 vim.cmd('source $HOME/.config/nvim/vimscripts/options.vimrc')
 vim.cmd('source $HOME/.config/nvim/vimscripts/functions.vimrc')
 require('config.commands')
+require('config.nvim_lsp')
 
 -- Maps, last
 require("config.maps")

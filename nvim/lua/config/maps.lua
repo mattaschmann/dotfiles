@@ -17,11 +17,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>;', 'q:')
 vim.keymap.set('n', '<f8>', function() vim.diagnostic.goto_next() end)
 vim.keymap.set('n', '<f7>', function() vim.diagnostic.goto_prev() end)
 
--- lsp
-vim.keymap.set('n', 'gs', function() vim.lsp.buf.hover() end)
-vim.keymap.set('n', 'gh', function() vim.lsp.buf.signature_help() end)
-vim.keymap.set('n', 'gf', '<cmd>Format<cr>', { desc = 'Format current buffer' })
-
 vim.cmd([[
 
 " easier window movement

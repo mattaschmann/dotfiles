@@ -36,7 +36,6 @@
     ~/.zshrc:
       path: zsh/.zshrc
       force: true
-    ~/.local/bin/xclip: /mnt/c/Windows/system32/clip.exe
     ~/scripts: scripts/
     # WSL only
     ~/.local/bin/xdg-open: ~/.local/bin/wsl-open

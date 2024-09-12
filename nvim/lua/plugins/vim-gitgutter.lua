@@ -1,5 +1,4 @@
 return {
-
   -- git gutter
   'https://github.com/airblade/vim-gitgutter',
   config = function()
@@ -11,6 +10,4 @@ return {
       let g:gitgutter_preview_win_floating = 0
     ]])
   end
-
-
 }
