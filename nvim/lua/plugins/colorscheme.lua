@@ -27,7 +27,7 @@ return {
       vim.cmd.colorscheme 'catppuccin'
 
       vim.cmd([[
-        hi MsgArea gui=none guifg=NONE    guibg=#1e2030
+        hi MsgArea gui=none guifg=NONE    guibg=#22232B
       ]])
     end
   }

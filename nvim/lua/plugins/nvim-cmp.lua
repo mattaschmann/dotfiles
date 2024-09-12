@@ -1,5 +1,3 @@
--- @Matt TODO: turn off popup when typing
--- @Matt TODO: ghost text?
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
