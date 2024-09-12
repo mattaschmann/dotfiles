@@ -17,6 +17,7 @@ return {
     -- { '<c-r>',     '<cmd>FzfLua registers<cr>',        mode = 'i'},
     { '<leader>.', '<cmd>FzfLua lsp_code_actions<cr>', desc = 'Code Actions' },
     { 'gr',        '<cmd>FzfLua lsp_references<cr>',   desc = 'Code References' },
+    { '<f1>',      '<cmd>FzfLua<cr>' },
   },
   config = function()
     local fzf_lua = require('fzf-lua')
