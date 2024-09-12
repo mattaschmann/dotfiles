@@ -25,6 +25,10 @@ return {
       })
       vim.opt.background = 'dark'
       vim.cmd.colorscheme 'catppuccin'
+
+      vim.cmd([[
+        hi MsgArea gui=none guifg=NONE    guibg=#1e2030
+      ]])
     end
   }
 }

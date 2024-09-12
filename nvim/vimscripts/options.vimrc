@@ -1,5 +1,5 @@
 " set hide command window
-" set cmdheight=1
+" set cmdheight=0
 
 " use pyenv virtualenv for neovim
 " see *g:python3_host_prog*

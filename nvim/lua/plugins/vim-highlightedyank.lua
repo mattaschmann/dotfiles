@@ -1,4 +1,3 @@
--- @Matt TODO: fix the windows yank to clipboard error
 return {
   'https://github.com/machakann/vim-highlightedyank',
   config = function()
