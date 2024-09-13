@@ -1,5 +1,5 @@
 return {
-  'neovim/nvim-lspconfig',
+  'https://github.com/neovim/nvim-lspconfig',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
