@@ -1,5 +1,6 @@
+-- notifications
 return {
-  'j-hui/fidget.nvim',
+  'https://github.com/j-hui/fidget.nvim',
   opts = {
     notification = {
       override_vim_notify = true,

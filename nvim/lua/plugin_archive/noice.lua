@@ -4,6 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     cmdline = {
+      enabled = true,
       view = "cmdline",
       format = {
         input = { view = "cmdline"},
