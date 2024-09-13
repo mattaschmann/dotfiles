@@ -14,7 +14,7 @@ return {
     { '<leader>?', '<cmd>FzfLua keymaps<cr>',          desc = 'Search keymaps' },
     { '<leader>r', '<cmd>FzfLua resume<cr>',           desc = 'Resume last  operation' },
     { '"',         '<cmd>FzfLua registers<cr>',        desc = 'Use fzf to select register' },
-    -- { '<c-r>',     '<cmd>FzfLua registers<cr>',        mode = 'i'},
+    { '<c-r>',     '<cmd>FzfLua registers<cr>',        mode = 'i'},
     { '<leader>.', '<cmd>FzfLua lsp_code_actions<cr>', desc = 'Code Actions' },
     { 'gr',        '<cmd>FzfLua lsp_references<cr>',   desc = 'Code References' },
     { '<f1>',      '<cmd>FzfLua<cr>' },
