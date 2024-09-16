@@ -66,7 +66,7 @@ setopt HIST_BEEP
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kubectl)
+plugins=(kubectl pdm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,7 +116,7 @@ alias k="kubectl"
 alias ktx="kubectx"
 
 # pdm aliases
-alias pdac="pdm venv activate"
+alias pdac='eval $(pdm venv activate)'
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {

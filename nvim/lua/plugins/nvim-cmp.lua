@@ -142,5 +142,7 @@ return {
         Lua = {}
       },
     }
+
+    lsp_config.pyright.setup{}
   end,
 }
