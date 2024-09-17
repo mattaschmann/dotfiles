@@ -41,14 +41,5 @@ return {
         previewer = false
       }
     })
-
-    _G.fzf_Matt = function(opts)
-      opts = opts or {}
-      opts.previewer = 'builtin'
-      opts.actions = fzf_lua.defaults.actions.files
-
-      fzf_lua.fzf_exec('rg --column --color=always @Matt', opts)
-    end
-    vim.keymap.set('n', '<leader>m', _G.fzf_Matt)
   end,
 }
