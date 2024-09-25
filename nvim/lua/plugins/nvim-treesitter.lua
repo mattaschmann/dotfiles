@@ -8,6 +8,7 @@ return {
       ensure_installed = {
         'bash',
         'javascript',
+        'json',
         'lua',
         'markdown',
         'markdown_inline',
@@ -23,5 +24,5 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
     })
-  end
+  end,
 }
