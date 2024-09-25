@@ -28,6 +28,7 @@ return {
 
       vim.cmd([[
         hi MsgArea gui=none guifg=NONE    guibg=#22232B
+        hi SpellBad cterm=undercurl gui=undercurl ctermfg=204 guifg=#ff5370
       ]])
     end
   }
