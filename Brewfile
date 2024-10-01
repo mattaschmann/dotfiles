@@ -1,4 +1,5 @@
 brew "antidote"
+brew "cmake"
 brew "docker"
 brew "fnm"
 brew "fzf"
@@ -8,7 +9,6 @@ brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
 brew "pyenv"
-brew "starship"
 brew "tmux"
 brew "wget"
 

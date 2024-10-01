@@ -35,8 +35,6 @@
       path: zsh/.zshrc
       force: true
     ~/scripts: scripts/
-    # WSL only
-    # ~/.local/bin/xdg-open: ~/.local/bin/wsl-open
 
 - shell:
     - description: Installing submodules
@@ -74,6 +72,8 @@
           cargo install zoxide --locked
           cargo install --locked yazi-fm yazi-cli
           cargo install tree-sitter-cli
+          cargo install stylua
+          cargo install taplo-cli --locked
         fi
     - description: Check for existence of desired commands
       command: |
@@ -84,7 +84,6 @@
         /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
         /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
         /bin/bash check_cmd.sh yazi "https://yazi-rs.github.io/"
-        /bin/bash check_cmd.sh wsl-open "https://github.com/4U6U57/wsl-open"
         /bin/bash check_cmd.sh brew "https://brew.sh/"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
