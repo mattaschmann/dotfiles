@@ -66,7 +66,7 @@ setopt HIST_BEEP
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kubectl)
+plugins=(kubectl pdm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,9 +75,9 @@ ZSH_THEME=""
 
 # switched from antibody to antidote
 # see: https://github.com/mattmc3/antidote
+# osx (brew) only
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
-
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
@@ -117,7 +117,7 @@ alias k="kubectl"
 alias ktx="kubectx"
 
 # pdm aliases
-alias pdac="pdm venv activate"
+alias pdac='eval $(pdm venv activate)'
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -147,11 +147,12 @@ alias c="docker compose"
 # make nvim the default editor
 export EDITOR=nvim
 # make nvim the default manpager
-export MANPAGER='nvim +Man!'
+export MANPAGER='nvim --clean +Man!'
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
 # Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
@@ -193,11 +194,6 @@ export SPARK_HOME="$HOME/opt/spark"
 # scala
 export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
-# NNN stuff
-# run to install all plugins:
-# sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-export NNN_PLUG='c:fzcd;o:fzopen;b:!bat "$nnn"'
-
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
@@ -214,6 +210,22 @@ eval "$(starship init zsh)"
 # eval "$(keychain --quiet --eval github gitlab)"
 # osx only
 ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+
+# remember cd's
+eval "$(zoxide init zsh)"
+
+# brew
+# (ubuntu wsl)
+# eval "$(/home/.linuxbrew/bin/brew shellenv)"
+
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # for profiling, should be at bottom
 # zprof

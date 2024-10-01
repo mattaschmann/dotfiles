@@ -1,0 +1,2 @@
+-- Run format on current buffer (now being handled by conform.lua)
+-- vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format() end, {desc='Run lsp format on current buffer'})
