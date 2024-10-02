@@ -19,7 +19,7 @@ return {
   -- sane window removal management
   {
     'https://github.com/mhinz/vim-sayonara',
-    events = 'VeryLazy',
+    event = 'VeryLazy',
     keys = {
       { '<Leader>w,', ':Sayonara!<CR>', silent = true },
       { '<Leader>q',  ':Sayonara<CR>',  silent = true },
@@ -46,6 +46,7 @@ return {
   -- diff stuff
   {
     'https://github.com/sindrets/diffview.nvim',
+    event = 'VeryLazy',
     keys = {
       { '<Leader>do', ':DiffviewOpen<CR>' },
       { '<Leader>dh', ':DiffviewFileHistory %<CR>' },

@@ -97,6 +97,8 @@
           cargo install zoxide --locked
           cargo install --locked yazi-fm yazi-cli
           cargo install tree-sitter-cli
+          cargo install stylua
+          cargo install taplo-cli --locked
         fi
     - description: Check for existence of desired commands
       command: |
