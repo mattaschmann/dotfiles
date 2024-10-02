@@ -210,13 +210,6 @@ eval "$(keychain --quiet --eval github)"
 # osx only
 # ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
-# fnm
-FNM_PATH="/home/ma7hatter/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/ma7hatter/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
-
 # remember cd's
 eval "$(zoxide init zsh)"
 
