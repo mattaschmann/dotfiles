@@ -1,5 +1,5 @@
 return {
-  'nvim-lualine/lualine.nvim',
+  'https://github.com/nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     local function spellstatus()
@@ -22,9 +22,12 @@ return {
         'trouble',
       },
       sections = {
-        lualine_b = {
-          { spellstatus },
-        },
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { spellstatus, 'filename' },
+        lualine_x = { 'filetype' },
+        lualine_y = { 'encoding', 'fileformat' },
+        lualine_z = { '%l/%L:%c' },
       },
       tabline = {
         lualine_a = { 'buffers' },
