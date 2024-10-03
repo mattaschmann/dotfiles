@@ -16,8 +16,6 @@
 
 - link:
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-    # ~/.config/nvim/init.vim: nvim/init.vim
-    # ~/.config/nvim/config: nvim/config
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
     ~/.config/nvim/vimscripts: nvim/vimscripts

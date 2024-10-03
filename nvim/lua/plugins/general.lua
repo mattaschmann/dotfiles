@@ -43,16 +43,6 @@ return {
     ]])
   end,
 
-  -- diff stuff
-  {
-    'https://github.com/sindrets/diffview.nvim',
-    event = 'VeryLazy',
-    keys = {
-      { '<Leader>do', ':DiffviewOpen<CR>' },
-      { '<Leader>dh', ':DiffviewFileHistory %<CR>' },
-    }
-  },
-
   -- Start screen
   {
     'https://github.com/mhinz/vim-startify',
