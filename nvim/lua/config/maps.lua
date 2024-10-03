@@ -61,4 +61,7 @@ nnoremap <LocalLeader>D :bufdo diffoff<CR>
 " Shortcut for :only
 nnoremap <Leader>o :only<CR>
 
+" Remap alternate file
+nnoremap <Leader>` <C-^>
+
 ]])
