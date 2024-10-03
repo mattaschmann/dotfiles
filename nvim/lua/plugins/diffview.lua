@@ -4,6 +4,7 @@
     event = 'VeryLazy',
     keys = {
       { '<Leader>do', ':DiffviewOpen<CR>' },
+      { '<Leader>dc', ':DiffviewClose<CR>' },
       { '<Leader>dh', ':DiffviewFileHistory %<CR>' },
     }
   }
