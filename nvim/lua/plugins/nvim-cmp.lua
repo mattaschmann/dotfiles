@@ -20,8 +20,8 @@ return {
         is = {
           ['<tab>'] = 'expand_or_advance',
           ['<s-tab>'] = 'previous',
-        }
-      }
+        },
+      },
     })
 
     local cmp = require('cmp')
@@ -60,10 +60,10 @@ return {
       formatting = {
         format = lspkind.cmp_format({
           mode = 'symbol_text', -- show only symbol annotations
-          maxwidth = 80,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           -- can also be a function to dynamically calculate max width such as
           -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-          ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
           show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
           -- The function below will be called before any actual modifications from lspkind
@@ -72,7 +72,7 @@ return {
           --   ...
           --   return vim_item
           -- end
-        })
+        }),
       },
     })
 
@@ -85,32 +85,33 @@ return {
         { name = 'buffer' },
       })
    })
-   require("cmp_git").setup() ]] --
+   require("cmp_git").setup() ]]
+    --
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer' }
-      }
+        { name = 'buffer' },
+      },
     })
 
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = 'path' }
+        { name = 'path' },
       }, {
-        { name = 'cmdline' }
+        { name = 'cmdline' },
       }),
-      matching = { disallow_symbol_nonprefix_matching = false }
+      matching = { disallow_symbol_nonprefix_matching = false },
     })
 
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
     local lsp_config = require('lspconfig')
-    lsp_config.lua_ls.setup {
+    lsp_config.lua_ls.setup({
       capabilities = capabilities,
       on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -122,30 +123,29 @@ return {
           runtime = {
             -- Tell the language server which version of Lua you're using
             -- (most likely LuaJIT in the case of Neovim)
-            version = 'LuaJIT'
+            version = 'LuaJIT',
           },
           -- Make the server aware of Neovim runtime files
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
+              vim.env.VIMRUNTIME,
               -- Depending on the usage, you might want to add additional paths here.
               -- "${3rd}/luv/library"
               -- "${3rd}/busted/library",
-            }
+            },
             -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
             -- library = vim.api.nvim_get_runtime_file("", true)
-          }
+          },
         })
       end,
       settings = {
-        Lua = {}
+        Lua = {},
       },
-    }
+    })
 
-    lsp_config.pyright.setup {
+    lsp_config.pyright.setup({
       capabilities = capabilities,
-    }
-
+    })
   end,
 }
