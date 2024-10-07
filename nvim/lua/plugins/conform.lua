@@ -11,7 +11,9 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         toml = { 'taplo' },
-        json = { 'fixjson' },
+        json = { 'prettier' },
+        markdown = { 'prettier' },
+        yaml = { 'prettier' },
       },
     })
 
