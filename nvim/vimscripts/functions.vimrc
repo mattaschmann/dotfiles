@@ -65,6 +65,8 @@ command! Code
 " NOTE: this requires a custom launcher, see: https://www.jetbrains.com/help/idea/opening-files-from-command-line.html
 command! Idea
       \ :!idea . %
+command! Pycharm
+      \ :!pycharm . %
 
 " yank current buffers filename
 command! YankFilePath
