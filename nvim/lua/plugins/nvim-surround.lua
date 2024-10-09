@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     keymaps = {
-      visual = "ys",
+      visual = "gs",
     },
   },
   -- config = function()
