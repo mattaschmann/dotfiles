@@ -14,8 +14,6 @@ return {
         json = { 'fixjson' },
         markdown = { 'prettier' },
         yaml = { 'prettier' },
-        typescript = { 'prettier' },
-        javascript = { 'prettier' },
       },
     })
 
