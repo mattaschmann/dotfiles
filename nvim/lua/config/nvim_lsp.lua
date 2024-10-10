@@ -25,6 +25,9 @@ vim.diagnostic.config({
 vim.keymap.set('n', 'gh', function()
   vim.lsp.buf.hover()
 end)
+vim.keymap.set('n', 'gd', function()
+  vim.lsp.buf.definition()
+end)
 
 -- vim.keymap.set('n', 'gh', function() vim.lsp.buf.signature_help() end)
 vim.keymap.set('n', 'gF', '<cmd>Format<cr>', { desc = 'Format current buffer' })

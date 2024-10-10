@@ -8,11 +8,12 @@ return {
         lsp_format = 'fallback',
       },
       formatters_by_ft = {
+        json = { 'fixjson' },
         lua = { 'stylua' },
+        markdown = { 'prettier' },
         python = { 'isort', 'black' },
         toml = { 'taplo' },
-        json = { 'fixjson' },
-        markdown = { 'prettier' },
+        typescript = { 'prettier' },
         yaml = { 'prettier' },
       },
     })

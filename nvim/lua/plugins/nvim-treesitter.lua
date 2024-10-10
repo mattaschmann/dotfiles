@@ -7,6 +7,7 @@ return {
     configs.setup({
       ensure_installed = {
         'bash',
+        'editorconfig',
         'java',
         'javascript',
         'json',
