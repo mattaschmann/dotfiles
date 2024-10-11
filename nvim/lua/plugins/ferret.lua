@@ -13,6 +13,6 @@ return {
       {rg = '--vimgrep --no-heading --no-config --max-columns 4096 --hidden'}
     }
 
-    vim.keymap.set('n', '<leader>m', '<cmd>Ack @Matt<cr>')
+    vim.keymap.set('n', '<leader>m', '<cmd>Ack -. @Matt<cr>')
   end
 }
