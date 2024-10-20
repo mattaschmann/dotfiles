@@ -14,6 +14,3 @@ fi
 
 # cargo
 cargo install-update -a
-
-# antidote
-antidote update
