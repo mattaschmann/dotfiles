@@ -35,26 +35,49 @@
       path: zsh/.zshrc
       force: true
     ~/scripts: scripts/
+    # WSL only
+    ~/.local/bin/xdg-open: ~/.local/bin/wsl-open
 
 - shell:
-    - description: Installing submodules
+    -
+      description: Installing submodules
       command: git submodule update --init --recursive
-    - description: Add special terminfos so we can use italics
+    -
+      description: Add special terminfos so we can use italics
       command: |
         tic terminfo/xterm-256color.terminfo
         tic terminfo/tmux.terminfo
         tic terminfo/xterm-256color.terminfo
-
-    - description: Install brew packages (osx only)
+    - description: Install apt packages
       command: |
-        if ! command -v brew &> /dev/null
-        then
-          echo "brew not found"
-          echo "see: https://brew.sh/"
-          exit 1
-        else
-          brew bundle
-        fi
+        sudo apt update
+        sudo apt install -y \
+          build-essential \
+          ca-certificates \
+          cmake \
+          curl \
+          htop \
+          libbz2-dev \
+          liblzma-dev \
+          libncurses5-dev \
+          libncursesw5-dev \
+          libreadline-dev \
+          libsqlite3-dev \
+          libssl-dev \
+          llvm \
+          make \
+          pkg-config \
+          tk-dev \
+          tmux \
+          unzip \
+          wget \
+          xz-utils \
+          zlib1g-dev \
+          zsh \
+          keychain \
+          7zip \
+          jq \
+        && echo "Done"
     - description: Install rust packages
       command: |
         if ! command -v cargo &> /dev/null
@@ -74,6 +97,7 @@
           cargo install tree-sitter-cli
           cargo install stylua
           cargo install taplo-cli --locked
+          cargo install --git https://github.com/errata-ai/vale-ls
         fi
     - description: Check for existence of desired commands
       command: |
@@ -84,6 +108,7 @@
         /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
         /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
         /bin/bash check_cmd.sh yazi "https://yazi-rs.github.io/"
+        /bin/bash check_cmd.sh wsl-open "https://github.com/4U6U57/wsl-open"
         /bin/bash check_cmd.sh brew "https://brew.sh/"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
