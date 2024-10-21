@@ -97,6 +97,7 @@
           cargo install tree-sitter-cli
           cargo install stylua
           cargo install taplo-cli --locked
+          cargo install --git https://github.com/errata-ai/vale-ls
         fi
     - description: Check for existence of desired commands
       command: |

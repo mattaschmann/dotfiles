@@ -115,6 +115,7 @@ return {
       capabilities = capabilities,
       on_init = function(client)
         local path = client.workspace_folders[1].name
+        ---@diagnostic disable-next-line: undefined-field
         if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
           return
         end
@@ -145,6 +146,10 @@ return {
     })
 
     lsp_config.pyright.setup({
+      capabilities = capabilities,
+    })
+
+    lsp_config.vale_ls.setup({
       capabilities = capabilities,
     })
   end,
