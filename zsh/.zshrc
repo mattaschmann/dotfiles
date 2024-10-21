@@ -209,6 +209,7 @@ eval "$(starship init zsh)"
 # wsl only
 # eval "$(keychain --quiet --eval github gitlab)"
 # osx only
+eval "$(ssh-agent)" > /dev/null
 ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # remember cd's
