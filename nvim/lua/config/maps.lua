@@ -14,8 +14,15 @@ vim.keymap.set('n', '<localleader>r', '<cmd>set relativenumber!<cr>', { silent =
 vim.keymap.set({ 'n', 'v' }, '<leader>;', 'q:')
 
 -- diagnostic navigation
-vim.keymap.set('n', '<f8>', function() vim.diagnostic.goto_next() end)
-vim.keymap.set('n', '<f7>', function() vim.diagnostic.goto_prev() end)
+vim.keymap.set('n', '<f8>', function()
+  vim.diagnostic.goto_next()
+end)
+vim.keymap.set('n', '<f7>', function()
+  vim.diagnostic.goto_prev()
+end)
+
+-- for easy ellipsis
+vim.keymap.set('i', '<c-v>.', '…', { noremap = true, silent = true })
 
 vim.cmd([[
 
