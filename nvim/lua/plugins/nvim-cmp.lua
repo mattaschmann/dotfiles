@@ -149,8 +149,8 @@ return {
       capabilities = capabilities,
     })
 
-    lsp_config.vale_ls.setup({
-      capabilities = capabilities,
-    })
+    -- lsp_config.vale_ls.setup({
+    --   capabilities = capabilities,
+    -- })
   end,
 }
