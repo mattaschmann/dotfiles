@@ -171,12 +171,6 @@ _fzf_compgen_dir() {
 # home bin
 export PATH="$HOME/.local/bin:$PATH"
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -219,6 +213,7 @@ eval "$(zoxide init zsh)"
 # (ubuntu wsl)
 # eval "$(/home/.linuxbrew/bin/brew shellenv)"
 
+# yazi
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
   yazi "$@" --cwd-file="$tmp"
@@ -227,6 +222,9 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
+
+# uv
+source "$HOME/.dotfiles/uv/uv_shell.sh"
 
 # for profiling, should be at bottom
 # zprof

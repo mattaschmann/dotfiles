@@ -8,7 +8,6 @@ brew "imagemagick"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
-brew "pyenv"
 brew "tmux"
 brew "wget"
 

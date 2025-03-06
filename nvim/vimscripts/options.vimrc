@@ -3,7 +3,7 @@
 
 " use pyenv virtualenv for neovim
 " see *g:python3_host_prog*
-let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
+let g:python3_host_prog = '$HOME/.config/nvim/.venv/bin/python'
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
