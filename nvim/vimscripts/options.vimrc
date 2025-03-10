@@ -46,11 +46,11 @@ set formatprg=par
 " preview window height (i.e. Gstatus window)
 set previewheight=16
 
-" For conceal markers.
-if has('conceal')
-  " set conceallevel=2 concealcursor=niv
-  set conceallevel=2
-endif
+" " For conceal markers.
+" if has('conceal')
+"   " set conceallevel=2 concealcursor=niv
+"   set conceallevel=2
+" endif
 
 " Don't add the comment prefix automatically in certain files
 au FileType vim setlocal fo-=r fo-=o
