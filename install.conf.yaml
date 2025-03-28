@@ -22,6 +22,7 @@
     ~/.config/nvim/snippets:
       path: nvim/snippets
       force: true
+    ~/.config/starship.toml: starship/starship.toml
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
     ~/.ignore: rg/.ignore
@@ -36,7 +37,7 @@
       force: true
     ~/scripts: scripts/
     # WSL only
-    ~/.local/bin/xdg-open: ~/.local/bin/wsl-open
+    # ~/.local/bin/xdg-open: ~/.local/bin/wsl-open
 
 - shell:
     -
