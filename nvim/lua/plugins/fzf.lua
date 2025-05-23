@@ -37,6 +37,9 @@ return {
       },
       files = {
         previewer = false,
+        actions = {
+          ['ctrl-r'] = { actions.toggle_ignore },
+        },
       },
       lines = {
         previewer = false,
