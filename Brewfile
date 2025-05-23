@@ -1,5 +1,6 @@
 brew "antidote"
 brew "cmake"
+brew "ctop"
 brew "docker"
 brew "fnm"
 brew "fzf"
