@@ -1,3 +1,4 @@
+-- see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 return {
   'https://github.com/neovim/nvim-lspconfig',
   dependencies = {
@@ -146,6 +147,10 @@ return {
     })
 
     lsp_config.pyright.setup({
+      capabilities = capabilities,
+    })
+
+    lsp_config.dockerls.setup({
       capabilities = capabilities,
     })
 
