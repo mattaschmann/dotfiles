@@ -6,7 +6,7 @@ va () {
     source .venv/bin/activate 2>/dev/null || source ../.venv/bin/activate 2>/dev/null || echo 'no .env found in this or parent directory' && false
 }
 
-va! () { 
+va! () {
     va || vc && va
 }
 

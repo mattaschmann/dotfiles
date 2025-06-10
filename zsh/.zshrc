@@ -119,6 +119,9 @@ alias ktx="kubectx"
 # pdm aliases
 alias pdac='eval $(pdm venv activate)'
 
+# for "activating" a .env file
+alias ve='export $(grep -v '^#' .env | xargs)'
+
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
   if [ -n "$1" ]; then
