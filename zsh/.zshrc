@@ -66,7 +66,7 @@ setopt HIST_BEEP
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kubectl pdm)
+plugins=(kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,8 +76,7 @@ ZSH_THEME=""
 # switched from antibody to antidote
 # see: https://github.com/mattmc3/antidote
 # osx (brew) only
-# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-source $HOME/.antidote/antidote.zsh
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
 # autosuggestions stuff, for some reason only worked when I put it after the plugins
@@ -97,6 +96,8 @@ bindkey '^p' up-line-or-history
 alias tm="tmux -2 new -s"
 alias ta="tmux attach"
 alias n="nvim"
+# only for linux-based
+# alias open="xdg-open"
 alias dirsize="du -h -d 1 | sort -rh"
 
 # github specific aliases
@@ -117,6 +118,9 @@ alias ktx="kubectx"
 
 # pdm aliases
 alias pdac='eval $(pdm venv activate)'
+
+# for "activating" a .env file
+alias ve='export $(grep -v '^#' .env | xargs)'
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -150,8 +154,8 @@ export MANPAGER='nvim --clean +Man!'
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
-# source <(fzf --zsh)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
+
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
 # Change behavior of fzf dialogue: taken from https://medium.com/@alexeysamoshkin/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff
@@ -169,12 +173,6 @@ _fzf_compgen_dir() {
 
 # home bin
 export PATH="$HOME/.local/bin:$PATH"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -206,17 +204,19 @@ eval "$(starship init zsh)"
 
 # keychain
 # wsl only
-eval "$(keychain --quiet --eval github)"
+# eval "$(keychain --quiet --eval github gitlab)"
 # osx only
-# ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+eval "$(ssh-agent)" > /dev/null
+ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # remember cd's
 eval "$(zoxide init zsh)"
 
 # brew
 # (ubuntu wsl)
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/.linuxbrew/bin/brew shellenv)"
 
+# yazi
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
   yazi "$@" --cwd-file="$tmp"
@@ -225,6 +225,9 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
+
+# uv
+source "$HOME/.dotfiles/uv/uv_shell.sh"
 
 # for profiling, should be at bottom
 # zprof

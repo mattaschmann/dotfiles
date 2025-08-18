@@ -14,3 +14,6 @@ fi
 
 # cargo
 cargo install-update -a
+
+# uv
+uv self update
