@@ -73,6 +73,10 @@ source $ZSH/oh-my-zsh.sh
 # Theme
 ZSH_THEME=""
 
+# brew
+# (ubuntu wsl)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # switched from antibody to antidote
 # see: https://github.com/mattmc3/antidote
 # osx (brew) only
@@ -154,7 +158,7 @@ export MANPAGER='nvim --clean +Man!'
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
@@ -206,15 +210,11 @@ eval "$(starship init zsh)"
 # wsl only
 # eval "$(keychain --quiet --eval github gitlab)"
 # osx only
-eval "$(ssh-agent)" > /dev/null
-ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+# eval "$(ssh-agent)" > /dev/null
+# ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # remember cd's
 eval "$(zoxide init zsh)"
-
-# brew
-# (ubuntu wsl)
-# eval "$(/home/.linuxbrew/bin/brew shellenv)"
 
 # yazi
 function yy() {
