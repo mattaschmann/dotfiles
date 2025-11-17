@@ -120,7 +120,7 @@ alias ktx="kubectx"
 alias pdac='eval $(pdm venv activate)'
 
 # for "activating" a .env file
-alias ve='export $(grep -v '^#' .env | xargs)'
+alias ve="export $(grep -v '^#' .env | xargs)"
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -178,11 +178,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$HOME/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # spark
 export PATH="$HOME/opt/spark/bin:$PATH"
@@ -207,7 +203,7 @@ eval "$(starship init zsh)"
 # eval "$(keychain --quiet --eval github gitlab)"
 # osx only
 eval "$(ssh-agent)" > /dev/null
-ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+# ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # remember cd's
 eval "$(zoxide init zsh)"
