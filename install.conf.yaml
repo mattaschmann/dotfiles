@@ -94,7 +94,7 @@
           cargo install fd-find
           cargo install starship --locked
           cargo install zoxide --locked
-          cargo install --locked yazi-fm yazi-cli
+          cargo install yazi-build
           cargo install tree-sitter-cli
           cargo install stylua
           cargo install taplo-cli --locked

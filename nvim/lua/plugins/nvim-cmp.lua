@@ -146,10 +146,10 @@ return {
     })
     vim.lsp.enable('lua_ls')
 
-    vim.lsp.config('pyright', {
+    vim.lsp.config('ty', {
       capabilities = capabilities,
     })
-    vim.lsp.enable('pyright')
+    vim.lsp.enable('ty')
 
     vim.lsp.config('dockerls', {
       capabilities = capabilities,
