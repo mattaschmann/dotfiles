@@ -160,5 +160,13 @@ return {
       capabilities = capabilities,
     })
     vim.lsp.enable('dockerls')
+
+    vim.lsp.config('tombi', {
+      cmd = { 'tombi', 'lsp' },
+      filetypes = { 'toml' },
+      root_markers = { 'tombi.toml', 'pyproject.toml', '.git' },
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('tombi')
   end,
 }
