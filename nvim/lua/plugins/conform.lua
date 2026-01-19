@@ -13,7 +13,7 @@ return {
         lua = { 'stylua' },
         markdown = { 'prettier' },
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
-        toml = { 'taplo' },
+        toml = { 'tombi' },
         typescript = { 'prettier' },
         yaml = { 'prettier' },
       },

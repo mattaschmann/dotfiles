@@ -116,11 +116,8 @@ alias gs="git status"
 alias k="kubectl"
 alias ktx="kubectx"
 
-# pdm aliases
-alias pdac='eval $(pdm venv activate)'
-
 # for "activating" a .env file
-alias ve="export $(grep -v '^#' .env | xargs)"
+alias ve='export $(grep -v '^#' .env | xargs)'
 
 # adds an empty git branch, useful for reviewing full repo's
 gempty() {
@@ -203,7 +200,7 @@ eval "$(starship init zsh)"
 # eval "$(keychain --quiet --eval github gitlab)"
 # osx only
 eval "$(ssh-agent)" > /dev/null
-# ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
 
 # remember cd's
 eval "$(zoxide init zsh)"

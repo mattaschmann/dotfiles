@@ -146,14 +146,27 @@ return {
     })
     vim.lsp.enable('lua_ls')
 
-    vim.lsp.config('pyright', {
+    vim.lsp.config('ruff', {
       capabilities = capabilities,
     })
-    vim.lsp.enable('pyright')
+    vim.lsp.enable('ruff')
+
+    vim.lsp.config('ty', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('ty')
 
     vim.lsp.config('dockerls', {
       capabilities = capabilities,
     })
     vim.lsp.enable('dockerls')
+
+    vim.lsp.config('tombi', {
+      cmd = { 'tombi', 'lsp' },
+      filetypes = { 'toml' },
+      root_markers = { 'tombi.toml', 'pyproject.toml', '.git' },
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('tombi')
   end,
 }
