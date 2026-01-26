@@ -87,17 +87,18 @@
           echo "see: https://www.rust-lang.org/learn/get-started"
           exit 1
         else
-          cargo install cargo-update
-          cargo install ripgrep
+          cargo install --git https://github.com/errata-ai/vale-ls
           cargo install bat
+          cargo install cargo-update
           cargo install exa
           cargo install fd-find
+          cargo install ripgrep
           cargo install starship --locked
-          cargo install zoxide --locked
-          cargo install yazi-build
-          cargo install tree-sitter-cli
           cargo install stylua
-          cargo install --git https://github.com/errata-ai/vale-ls
+          cargo install taplo-cli --locked
+          cargo install tree-sitter-cli
+          cargo install yazi-build
+          cargo install zoxide --locked
         fi
     - description: Check for existence of desired commands
       command: |
@@ -113,5 +114,4 @@
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
         /bin/bash check_dir.sh ~/.tmux/plugins/tpm "https://github.com/tmux-plugins/tpm"
-        /bin/bash check_dir.sh ~/.antidote "https://github.com/mattmc3/antidote"
         /bin/bash check_dir.sh ~/.oh-my-zsh "https://ohmyz.sh/"
