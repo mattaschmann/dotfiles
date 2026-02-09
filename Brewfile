@@ -11,5 +11,6 @@ brew "luarocks"
 brew "neovim"
 brew "tmux"
 brew "wget"
+brew "urlview"
 
 cask "alacritty", args: { no_quarantine: true }

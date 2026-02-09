@@ -49,36 +49,6 @@
         tic terminfo/xterm-256color.terminfo
         tic terminfo/tmux.terminfo
         tic terminfo/xterm-256color.terminfo
-    - description: Install apt packages
-      command: |
-        sudo apt update
-        sudo apt install -y \
-          build-essential \
-          ca-certificates \
-          cmake \
-          curl \
-          htop \
-          libbz2-dev \
-          liblzma-dev \
-          libncurses5-dev \
-          libncursesw5-dev \
-          libreadline-dev \
-          libsqlite3-dev \
-          libssl-dev \
-          llvm \
-          make \
-          pkg-config \
-          tk-dev \
-          tmux \
-          unzip \
-          wget \
-          xz-utils \
-          zlib1g-dev \
-          zsh \
-          keychain \
-          7zip \
-          jq \
-        && echo "Done"
     - description: Install rust packages
       command: |
         if ! command -v cargo &> /dev/null
@@ -103,13 +73,11 @@
     - description: Check for existence of desired commands
       command: |
         /bin/bash check_cmd.sh docker "https://docs.docker.com/engine/install/ubuntu/"
-        /bin/bash check_cmd.sh uv "https://github.com/astral-sh/uv
+        /bin/bash check_cmd.sh uv "https://github.com/astral-sh/uv"
         /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
         /bin/bash check_cmd.sh starship "https://starship.rs/"
         /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
-        /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
         /bin/bash check_cmd.sh yazi "https://yazi-rs.github.io/"
-        /bin/bash check_cmd.sh wsl-open "https://github.com/4U6U57/wsl-open"
         /bin/bash check_cmd.sh brew "https://brew.sh/"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
