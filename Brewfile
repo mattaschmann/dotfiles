@@ -1,7 +1,6 @@
 brew "antidote"
 brew "cmake"
 brew "ctop"
-brew "docker"
 brew "fnm"
 brew "fzf"
 brew "htop"
@@ -9,8 +8,9 @@ brew "imagemagick"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
+brew "podman"
 brew "tmux"
-brew "wget"
 brew "urlview"
+brew "wget"
 
 cask "alacritty", args: { no_quarantine: true }
