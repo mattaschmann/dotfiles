@@ -1,6 +1,5 @@
 tap "derailed/k9s"
 tap "hashicorp/tap"
-tap "homebrew/bundle"
 tap "scalacenter/bloop"
 brew "antidote"
 brew "cmake"

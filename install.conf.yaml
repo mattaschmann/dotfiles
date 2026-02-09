@@ -62,9 +62,6 @@
       command: |
         /bin/bash check_dir.sh ~/.tmux/plugins/tpm "https://github.com/tmux-plugins/tpm"
         /bin/bash check_dir.sh ~/.oh-my-zsh "https://ohmyz.sh/"
-    - description: Execute brew bundle install
-      command: |
-        /bin/bash brew_install.sh
     - description: Run update script
       command: |
         /bin/bash scripts/update.sh
