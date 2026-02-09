@@ -6,5 +6,5 @@ then
 	echo "see: https://brew.sh/"
 	exit 1
 else
-	brew bundle
+	brew bundle check || brew bundle install
 fi
