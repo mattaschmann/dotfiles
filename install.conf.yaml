@@ -51,13 +51,9 @@
         tic terminfo/xterm-256color.terminfo
     - description: Check for existence of desired commands
       command: |
+        /bin/bash check_cmd.sh brew "https://brew.sh/"
         /bin/bash check_cmd.sh uv "https://github.com/astral-sh/uv"
         /bin/bash check_cmd.sh cargo "https://doc.rust-lang.org/cargo/getting-started/installation.html"
-        /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
-        /bin/bash check_cmd.sh starship "https://starship.rs/"
-        /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
-        /bin/bash check_cmd.sh yazi "https://yazi-rs.github.io/"
-        /bin/bash check_cmd.sh brew "https://brew.sh/"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
         /bin/bash check_dir.sh ~/.tmux/plugins/tpm "https://github.com/tmux-plugins/tpm"

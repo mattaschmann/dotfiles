@@ -6,12 +6,6 @@ if command -v apt &> /dev/null; then
   sudo apt upgrade
 fi
 
-# cargo
-cargo install-update -a
-
-# uv
-uv self update
-
 # brew
 if command -v brew &> /dev/null; then
 	brew bundle check || brew bundle install
@@ -21,3 +15,12 @@ if command -v brew &> /dev/null; then
   brew bundle cleanup
 fi
 
+# cargo
+if command -v cargo &> /dev/null; then
+  cargo install-update -a
+fi
+
+# uv
+if command -v uv &> /dev/null; then
+  uv self update
+fi
