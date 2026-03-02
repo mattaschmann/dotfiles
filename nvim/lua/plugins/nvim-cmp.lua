@@ -161,9 +161,15 @@ return {
     })
     vim.lsp.enable('dockerls')
 
+    -- for toml
     vim.lsp.config('taplo', {
       capabilities = capabilities,
     })
     vim.lsp.enable('taplo')
+
+    vim.lsp.config('yamlls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('yamlls')
   end,
 }

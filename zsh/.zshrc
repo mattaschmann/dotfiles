@@ -222,5 +222,8 @@ function yy() {
 # uv
 source "$HOME/.dotfiles/uv/uv_shell.sh"
 
+# certs
+export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
+
 # for profiling, should be at bottom
 # zprof
