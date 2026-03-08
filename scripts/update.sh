@@ -3,12 +3,13 @@
 # apt
 if command -v apt &> /dev/null; then
   sudo apt update
-  sudo apt upgrade
+  sudo apt -y upgrade
+  sudo apt autoremove
 fi
 
 # brew
 if command -v brew &> /dev/null; then
-	brew bundle check || brew bundle install
+  brew bundle check || brew bundle install
   brew update
   brew upgrade
   # check for differences
@@ -17,6 +18,7 @@ fi
 
 # cargo
 if command -v cargo &> /dev/null; then
+  rustup update
   cargo install-update -a
 fi
 
