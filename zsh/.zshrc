@@ -201,6 +201,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # snap
 export PATH="/snap/bin:$PATH"
 
+# wsl only, for viewing
+export BROWSER="wslview"
+
 # starship prompt
 # see: https://starship.rs/
 # ~/.zshrc
