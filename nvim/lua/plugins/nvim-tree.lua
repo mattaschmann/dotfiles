@@ -31,6 +31,7 @@ return {
       vim.keymap.set('n', 'y', open_in_yazi, opts('Open in yazi'))
     end
 
+    -- Closes the tree window if it's the only one left
     vim.o.confirm = true
     vim.api.nvim_create_autocmd('BufEnter', {
       group = vim.api.nvim_create_augroup('NvimTreeClose', { clear = true }),

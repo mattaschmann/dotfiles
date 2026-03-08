@@ -155,7 +155,7 @@ export MANPAGER='nvim --clean +Man!'
 
 # FZF
 # Set up fzf key bindings and fuzzy completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # NOTE: requires fd: https://github.com/sharkdp/fd
 FD_OPTIONS="--no-ignore-vcs --hidden --follow --exclude .git --exclude node_modules"
@@ -205,6 +205,7 @@ eval "$(starship init zsh)"
 # keychain
 # wsl only
 eval "$(keychain --quiet --eval github)"
+
 # osx only
 # eval "$(ssh-agent)" > /dev/null
 # ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github

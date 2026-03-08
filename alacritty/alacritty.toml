@@ -84,7 +84,6 @@ history = 10000
 multiplier = 3
 
 [shell]
-# args = ["--login"]
 program = "ubuntu2404"
 
 [window]
