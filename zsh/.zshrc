@@ -120,9 +120,6 @@ alias gs="git status"
 alias k="kubectl"
 alias ktx="kubectx"
 
-# pdm aliases
-alias pdac='eval $(pdm venv activate)'
-
 # for "activating" a .env file
 alias ve='export $(grep -v '^#' .env | xargs)'
 
@@ -182,11 +179,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$HOME/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # spark
 export PATH="$HOME/opt/spark/bin:$PATH"
@@ -231,6 +224,9 @@ function yy() {
 
 # uv
 source "$HOME/.dotfiles/uv/uv_shell.sh"
+
+# certs
+export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
 
 # for profiling, should be at bottom
 # zprof

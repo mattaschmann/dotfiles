@@ -49,70 +49,15 @@
         tic terminfo/xterm-256color.terminfo
         tic terminfo/tmux.terminfo
         tic terminfo/xterm-256color.terminfo
-    - description: Install apt packages
-      command: |
-        sudo apt update
-        sudo apt install -y \
-          build-essential \
-          ca-certificates \
-          cmake \
-          curl \
-          htop \
-          libbz2-dev \
-          liblzma-dev \
-          libncurses5-dev \
-          libncursesw5-dev \
-          libreadline-dev \
-          libsqlite3-dev \
-          libssl-dev \
-          llvm \
-          make \
-          pkg-config \
-          tk-dev \
-          tmux \
-          unzip \
-          wget \
-          xz-utils \
-          zlib1g-dev \
-          zsh \
-          keychain \
-          7zip \
-          jq \
-        && echo "Done"
-    - description: Install rust packages
-      command: |
-        if ! command -v cargo &> /dev/null
-        then
-          echo "cargo not found"
-          echo "see: https://www.rust-lang.org/learn/get-started"
-          exit 1
-        else
-          cargo install cargo-update
-          cargo install ripgrep
-          cargo install bat
-          cargo install exa
-          cargo install fd-find
-          cargo install starship --locked
-          cargo install zoxide --locked
-          cargo install --locked yazi-fm yazi-cli
-          cargo install tree-sitter-cli
-          cargo install stylua
-          cargo install taplo-cli --locked
-          cargo install --git https://github.com/errata-ai/vale-ls
-        fi
     - description: Check for existence of desired commands
       command: |
-        /bin/bash check_cmd.sh docker "https://docs.docker.com/engine/install/ubuntu/"
-        /bin/bash check_cmd.sh uv "https://github.com/astral-sh/uv"
-        /bin/bash check_cmd.sh fnm "https://github.com/Schniz/fnm"
-        /bin/bash check_cmd.sh starship "https://starship.rs/"
-        /bin/bash check_cmd.sh fzf "https://github.com/junegunn/fzf"
-        /bin/bash check_cmd.sh pdm "https://pdm-project.org/en/latest/"
-        /bin/bash check_cmd.sh yazi "https://yazi-rs.github.io/"
-        /bin/bash check_cmd.sh wsl-open "https://github.com/4U6U57/wsl-open"
         /bin/bash check_cmd.sh brew "https://brew.sh/"
+        /bin/bash check_cmd.sh uv "https://github.com/astral-sh/uv"
+        /bin/bash check_cmd.sh cargo "https://doc.rust-lang.org/cargo/getting-started/installation.html"
     - description: Check for existence of desired directories, in the case we can't check the command
       command: |
         /bin/bash check_dir.sh ~/.tmux/plugins/tpm "https://github.com/tmux-plugins/tpm"
-        /bin/bash check_dir.sh ~/.antidote "https://github.com/mattmc3/antidote"
         /bin/bash check_dir.sh ~/.oh-my-zsh "https://ohmyz.sh/"
+    - description: Run update script
+      command: |
+        /bin/bash scripts/update.sh

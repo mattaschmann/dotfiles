@@ -120,8 +120,7 @@ return {
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-    local lsp_config = require('lspconfig')
-    lsp_config.lua_ls.setup({
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -154,17 +153,32 @@ return {
         Lua = {},
       },
     })
+    vim.lsp.enable('lua_ls')
 
-    lsp_config.pyright.setup({
+    vim.lsp.config('ruff', {
       capabilities = capabilities,
     })
+    vim.lsp.enable('ruff')
 
-    lsp_config.dockerls.setup({
+    vim.lsp.config('ty', {
       capabilities = capabilities,
     })
+    vim.lsp.enable('ty')
 
-    -- lsp_config.vale_ls.setup({
-    --   capabilities = capabilities,
-    -- })
+    vim.lsp.config('dockerls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('dockerls')
+
+    -- for toml
+    vim.lsp.config('taplo', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('taplo')
+
+    vim.lsp.config('yamlls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('yamlls')
   end,
 }

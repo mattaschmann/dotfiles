@@ -1,19 +1,26 @@
 #!/usr/bin/env sh
 
-# brew
-if command -v brew &> /dev/null; then
-  brew update
-  brew upgrade
-fi
-
 # apt
 if command -v apt &> /dev/null; then
   sudo apt update
   sudo apt upgrade
 fi
 
+# brew
+if command -v brew &> /dev/null; then
+	brew bundle check || brew bundle install
+  brew update
+  brew upgrade
+  # check for differences
+  brew bundle cleanup
+fi
+
 # cargo
-cargo install-update -a
+if command -v cargo &> /dev/null; then
+  cargo install-update -a
+fi
 
 # uv
-uv self update
+if command -v uv &> /dev/null; then
+  uv self update
+fi
