@@ -4,6 +4,7 @@
 if command -v apt &> /dev/null; then
   sudo apt update
   sudo apt upgrade
+  sudo apt autoremove
 fi
 
 # brew
@@ -17,6 +18,7 @@ fi
 
 # cargo
 if command -v cargo &> /dev/null; then
+  rustup update
   cargo install-update -a
 fi
 

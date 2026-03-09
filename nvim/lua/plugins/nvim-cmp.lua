@@ -14,6 +14,9 @@ return {
 
     -- icons
     'onsails/lspkind.nvim',
+
+    -- dictionary
+    'https://github.com/uga-rosa/cmp-dictionary',
   },
   config = function()
     require('snippy').setup({
@@ -57,6 +60,7 @@ return {
         { name = 'snippy' }, -- For snippy users.
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'dictionary', keyword_length = 2 },
       }),
       formatting = {
         format = lspkind.cmp_format({
@@ -75,6 +79,11 @@ return {
           -- end
         }),
       },
+    })
+
+    require('cmp_dictionary').setup({
+      paths = { '/usr/share/dict/words' },
+      exact_length = 2,
     })
 
     -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
