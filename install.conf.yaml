@@ -15,7 +15,6 @@
     - ~/.ssh
 
 - link:
-    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua
     ~/.config/nvim/vimscripts: nvim/vimscripts
@@ -42,6 +41,9 @@
 
 
 - shell:
+    -
+      description: OS specific links
+      command: /bin/bash os_specific_links.sh
     -
       description: Installing submodules
       command: git submodule update --init --recursive
