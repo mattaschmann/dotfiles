@@ -36,8 +36,10 @@
       path: zsh/.zshrc
       force: true
     ~/scripts: scripts/
-    # WSL only
-    # ~/.local/bin/xdg-open: ~/.local/bin/wsl-open
+    ~/.local/bin/xdg-open:
+      if: '[[ "$(uname -r)" == *"WSL2" ]]'
+      path: ~/.local/bin/wsl-open
+
 
 - shell:
     -

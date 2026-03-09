@@ -1,40 +1,14 @@
 # # Uncomment this and the bottom one for profiling
 # zmodload zsh/zprof
 
-# tmux stuff, has to be at the top
-# ZSH_TMUX_AUTOSTART=true
-# ZSH_TMUX_FIXTERM=true
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
 
 # to disable duplicates in zsh history
 setopt EXTENDED_HISTORY
@@ -45,22 +19,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -73,9 +31,7 @@ source $ZSH/oh-my-zsh.sh
 # Theme
 ZSH_THEME=""
 
-# switched from antibody to antidote
-# see: https://github.com/mattmc3/antidote
-# osx (brew) only
+# antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
@@ -119,17 +75,6 @@ alias ktx="kubectx"
 # for "activating" a .env file
 alias ve='export $(grep -v '^#' .env | xargs)'
 
-# adds an empty git branch, useful for reviewing full repo's
-gempty() {
-  if [ -n "$1" ]; then
-    tree=`git hash-object -wt tree --stdin < /dev/null`
-    commit=`git commit-tree -m 'root commit' $tree`
-    git branch $1 $commit
-  else
-    echo "Need the name of the branch as an argument"
-  fi
-}
-
 # add term to ssh
 alias ssh="TERM=xterm-256color ssh"
 
@@ -141,8 +86,6 @@ alias psr="ps -A | rg"
 
 # docker compose
 alias c="docker compose"
-
-# Functions
 
 # make nvim the default editor
 export EDITOR=nvim
@@ -177,37 +120,21 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-# spark
-export PATH="$HOME/opt/spark/bin:$PATH"
-export SPARK_HOME="$HOME/opt/spark"
-
-# scala
-export PATH="$PATH:$HOME/.local/share/coursier/bin"
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# snap
-export PATH="/snap/bin:$PATH"
-
 # starship prompt
 # see: https://starship.rs/
-# ~/.zshrc
 eval "$(starship init zsh)"
 
-# keychain
-# wsl only
-# eval "$(keychain --quiet --eval github gitlab)"
-# osx only
-eval "$(ssh-agent)" > /dev/null
-ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+# os specific stuff
+if [[ "$(uname)" == "Darwin" ]]; then # osx
+  eval "$(ssh-agent)" > /dev/null
+  ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+if [[ "$(uname -r)" == *"WSL2" ]]; then # wsl2
+  eval "$(keychain --quiet --eval github gitlab)"
+  eval "$(/home/linuxbrew/bin/brew shellenv)"
+fi
 
 # remember cd's
 eval "$(zoxide init zsh)"
-
-# brew
-# (ubuntu wsl)
-# eval "$(/home/.linuxbrew/bin/brew shellenv)"
 
 # yazi
 function yy() {
