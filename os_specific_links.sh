@@ -9,3 +9,4 @@ elif [[ "$(uname -r)" == *"WSL2" ]]; then #wsl
 fi
 
 ln -fs $(pwd)/alacritty/alacritty.${OS_NAME}.toml ~/.config/alacritty/alacritty.toml
+ln -fs $(pwd)/urlview/${OS_NAME}.urlview ~/.urlview
