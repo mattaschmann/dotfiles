@@ -75,6 +75,17 @@ alias ktx="kubectx"
 # for "activating" a .env file
 alias ve='export $(grep -v '^#' .env | xargs)'
 
+# adds an empty git branch, useful for reviewing full repo's
+gempty() {
+  if [ -n "$1" ]; then
+    tree=`git hash-object -wt tree --stdin < /dev/null`
+    commit=`git commit-tree -m 'root commit' $tree`
+    git branch $1 $commit
+  else
+    echo "Need the name of the branch as an argument"
+  fi
+}
+
 # add term to ssh
 alias ssh="TERM=xterm-256color ssh"
 
@@ -128,7 +139,7 @@ eval "$(starship init zsh)"
 if [[ "$(uname)" == "Darwin" ]]; then # osx
   eval "$(ssh-agent)" > /dev/null
   ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
-if [[ "$(uname -r)" == *"WSL2" ]]; then # wsl2
+elif [[ "$(uname -r)" == *"WSL2" ]]; then # wsl2
   eval "$(keychain --quiet --eval github gitlab)"
   eval "$(/home/linuxbrew/bin/brew shellenv)"
 fi
