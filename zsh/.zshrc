@@ -31,6 +31,15 @@ source $ZSH/oh-my-zsh.sh
 # Theme
 ZSH_THEME=""
 
+# os specific stuff
+if [[ "$(uname)" == "Darwin" ]]; then # osx
+  eval "$(ssh-agent)" > /dev/null
+  ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
+elif [[ "$(uname -r)" == *"WSL2" ]]; then # wsl2
+  eval "$(keychain --quiet --eval github)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
+
 # antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
@@ -134,15 +143,6 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # starship prompt
 # see: https://starship.rs/
 eval "$(starship init zsh)"
-
-# os specific stuff
-if [[ "$(uname)" == "Darwin" ]]; then # osx
-  eval "$(ssh-agent)" > /dev/null
-  ssh-add --apple-use-keychain -q ~/.ssh/gitlab ~/.ssh/github
-elif [[ "$(uname -r)" == *"WSL2" ]]; then # wsl2
-  eval "$(keychain --quiet --eval github gitlab)"
-  eval "$(/home/linuxbrew/bin/brew shellenv)"
-fi
 
 # remember cd's
 eval "$(zoxide init zsh)"
