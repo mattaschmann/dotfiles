@@ -180,5 +180,10 @@ return {
       capabilities = capabilities,
     })
     vim.lsp.enable('yamlls')
+
+    vim.lsp.config('jsonls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('jsonls')
   end,
 }

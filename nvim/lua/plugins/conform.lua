@@ -9,7 +9,7 @@ return {
       },
       formatters_by_ft = {
         javascript = { 'prettier' },
-        json = { 'fixjson' },
+        json = { 'prettier' },
         lua = { 'stylua' },
         markdown = { 'prettier' },
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
