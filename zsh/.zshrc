@@ -161,7 +161,11 @@ function yy() {
 source "$HOME/.dotfiles/uv/uv_shell.sh"
 
 # certs
-[[ -f "$HOME/org-ca-bundle.pem" ]] && export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
+if [[ -f "$HOME/org-ca-bundle.pem" ]]; then
+  export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
+else
+  export NODE_EXTRA_CA_CERTS=""
+fi
 
 # for profiling, should be at bottom
 # zprof
