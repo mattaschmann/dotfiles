@@ -34,10 +34,10 @@ return {
 
     vim.o.autoread = true -- Required for `opts.events.reload`
 
-    vim.keymap.set({ 'n', 'x' }, '<Leader>xt', function()
+    vim.keymap.set({ 'n', 'x' }, '<C-a>', function()
       require('opencode').ask('@this: ', { submit = true })
     end, { desc = 'Ask opencode…' })
-    vim.keymap.set({ 'n', 'x' }, '<Leader>xx', function()
+    vim.keymap.set({ 'n', 'x' }, '<C-x>', function()
       require('opencode').select()
     end, { desc = 'Execute opencode action…' })
   end,

@@ -21,6 +21,7 @@
     ~/.config/nvim/snippets:
       path: nvim/snippets
       force: true
+    ~/.config/opencode/AGENTS.md: opencode/AGENTS.md
     ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
     ~/.config/starship.toml: starship/starship.toml
     ~/.ctags.d: universal_ctags
