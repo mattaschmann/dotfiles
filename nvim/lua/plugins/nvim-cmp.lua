@@ -185,5 +185,10 @@ return {
       capabilities = capabilities,
     })
     vim.lsp.enable('jsonls')
+
+    vim.lsp.config('bashls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable('bashls')
   end,
 }

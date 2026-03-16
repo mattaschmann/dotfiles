@@ -24,9 +24,6 @@ return {
           },
         },
       },
-      lsp = {
-        enabled = true,
-      },
     },
   },
   config = function()
@@ -40,5 +37,8 @@ return {
     vim.keymap.set({ 'n', 'x' }, '<C-x>', function()
       require('opencode').select()
     end, { desc = 'Execute opencode action…' })
+    vim.keymap.set({ 'n', 'x' }, '<LocalLeader><Tab>', function()
+      require('opencode').command('agent.cycle')
+    end, { desc = 'Cycle agents' })
   end,
 }
