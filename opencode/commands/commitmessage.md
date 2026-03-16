@@ -6,5 +6,4 @@ agent: plan
 Generate a commit message using the currently staged commits.  Use git commit
 message best practices.
 
-Get verification from the user to make the actual commit with the generated
-message.
+Copy the commit message to the clipboard.
