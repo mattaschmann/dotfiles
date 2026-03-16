@@ -23,6 +23,7 @@
       force: true
     ~/.config/opencode/AGENTS.md: opencode/AGENTS.md
     ~/.config/opencode/agent: opencode/agent
+    ~/.config/opencode/commands: opencode/commands
     ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
     ~/.config/starship.toml: starship/starship.toml
     ~/.ctags.d: universal_ctags
