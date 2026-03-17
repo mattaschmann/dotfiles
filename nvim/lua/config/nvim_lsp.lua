@@ -29,5 +29,6 @@ vim.keymap.set('n', 'gd', function()
   vim.lsp.buf.definition()
 end)
 
--- vim.keymap.set('n', 'gh', function() vim.lsp.buf.signature_help() end)
+vim.keymap.set('n', 'gf', 'gF')
 vim.keymap.set('n', 'gF', '<cmd>Format<cr>', { desc = 'Format current buffer' })
+-- if above set, remap what used to  be gF to gf

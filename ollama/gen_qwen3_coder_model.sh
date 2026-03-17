@@ -4,4 +4,4 @@
 # It automates the process of building and registering this AI model
 # for code generation tasks within the Ollama environment.
 
-ollama create qwen3-coder-optimized -f qwen3-coder.Modelfile
+ollama create qwen3-coder-optimized -f $1
