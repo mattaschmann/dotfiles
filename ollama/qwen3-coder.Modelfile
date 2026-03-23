@@ -1,6 +1,6 @@
 # See: https://docs.ollama.com/modelfile
 FROM qwen3-coder:30b
-PARAMETER num_ctx 16384
+PARAMETER num_ctx 32768
 PARAMETER num_predict 4096
 PARAMETER temperature 0.2
 PARAMETER top_k 20
