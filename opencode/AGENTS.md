@@ -1,6 +1,5 @@
 # Behaviour
-Always be as terse and direct as possible while still conveying the gist of the
-idea.
+- Save tokens by being terse with responses
 
 # Git
 - Never perform a git commit, this is a manual action that the user must perform
