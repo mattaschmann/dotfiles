@@ -13,6 +13,22 @@
           "name": "qwen3-coder-optimized"
         }
       }
+    },
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama.cpp (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9090/v1"
+      },
+      "models": {
+        "Qwen 3 Coder": {
+          "name": "Qwen3 Coder (llama.cpp)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        }
+      }
     }
   },
   "plugin": [
