@@ -167,5 +167,9 @@ else
   export NODE_EXTRA_CA_CERTS=""
 fi
 
+# opencode settings
+export OPENCODE_ENABLE_EXA=1 # for websearch
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+
 # for profiling, should be at bottom
 # zprof
