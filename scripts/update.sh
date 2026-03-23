@@ -24,6 +24,7 @@ fi
 # uv
 if command -v uv &> /dev/null; then
   uv self update
+  uv tool upgrade --all
 fi
 
 # ollama

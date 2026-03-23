@@ -3,7 +3,8 @@
 
 " use pyenv virtualenv for neovim
 " see *g:python3_host_prog*
-let g:python3_host_prog = '$HOME/.config/nvim/.venv/bin/python'
+" let g:python3_host_prog = '$HOME/.config/nvim/.venv/bin/python'
+" NOTE: now using uv tool, to install do: `uv tool install pynvim
 
 " make buffers hide automatically instead of needing to be asked
 set hidden
