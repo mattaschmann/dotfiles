@@ -28,3 +28,6 @@ fi
 
 # ollama
 $HOME/.dotfiles/ollama/update_ollama_images.sh
+
+# global npm
+npm update -g
