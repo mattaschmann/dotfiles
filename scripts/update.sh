@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 # apt
 if command -v apt &> /dev/null; then
   sudo apt update
@@ -26,3 +25,6 @@ fi
 if command -v uv &> /dev/null; then
   uv self update
 fi
+
+# ollama
+$HOME/.dotfiles/ollama/update_ollama_images.sh

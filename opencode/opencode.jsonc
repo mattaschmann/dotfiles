@@ -16,7 +16,6 @@
     }
   },
   "plugin": [
-    "openrtk",
-    "@tarquinen/opencode-dcp@latest"
+    "openrtk"
   ]
 }
