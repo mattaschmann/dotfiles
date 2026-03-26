@@ -1,6 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
+  "permission": {
+    "bash": {
+      "git *": "ask",
+      "git diff *": "allow",
+      "git status *": "allow",
+      "git log *": "allow",
+      "rm *": "ask"
+    }
+  },
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
