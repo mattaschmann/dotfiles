@@ -7,6 +7,7 @@
       "git diff *": "allow",
       "git status *": "allow",
       "git log *": "allow",
+      "git show *": "allow",
       "rm *": "ask"
     }
   },
