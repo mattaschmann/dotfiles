@@ -11,6 +11,16 @@
       "rm *": "ask"
     }
   },
+  "agent": {
+    "build": {
+      "temperature": 0.15,
+      // not sure about this
+      "steps": 30
+    },
+    "plan": {
+      "temperature": 0.4
+    }
+  },
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -42,6 +52,7 @@
     }
   },
   "plugin": [
-    // "openrtk"
+    "openrtk",
+    "superpowers@git+https://github.com/obra/superpowers.git"
   ]
 }
