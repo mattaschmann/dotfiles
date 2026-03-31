@@ -24,9 +24,6 @@
           ".tasks/**": "ask"
         }
       }
-    },
-    "commit-message": {
-      "model": "llama.cpp/local-coder"
     }
   },
   "provider": {

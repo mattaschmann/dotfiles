@@ -1,6 +1,7 @@
 ---
 description: It will look at the currently staged changes in git, and generate a commit message based on best practices.
-mode: subagent
+agent: plan
+model: "llama.cpp/local-coder"
 temperature: 0.5
 ---
 Steps:
