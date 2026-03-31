@@ -18,7 +18,12 @@
       // "steps": 40
     },
     "plan": {
-      "temperature": 0.4
+      "temperature": 0.4,
+      "permission": {
+        "edit": {
+          ".tasks/**": "ask"
+        }
+      }
     },
     "commit-message": {
       "model": "llama.cpp/local-coder"
