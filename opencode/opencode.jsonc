@@ -15,23 +15,17 @@
     "build": {
       "temperature": 0.15,
       // not sure about this
-      "steps": 30
+      // "steps": 40
     },
     "plan": {
       "temperature": 0.4
     }
   },
   "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
+    "amazon-bedrock": {
       "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {
-        "qwen3-coder-optimized": {
-          "name": "qwen3-coder-optimized"
-        }
+        "region": "us-west-2",
+        "profile": "bedrock"
       }
     },
     "llama.cpp": {
@@ -52,7 +46,6 @@
     }
   },
   "plugin": [
-    "openrtk",
-    "superpowers@git+https://github.com/obra/superpowers.git"
+    "openrtk"
   ]
 }
