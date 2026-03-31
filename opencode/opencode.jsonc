@@ -42,6 +42,7 @@
     }
   },
   "plugin": [
-    // "openrtk"
+    "openrtk",
+    "@toninho09/opencode-usage@latest"
   ]
 }
