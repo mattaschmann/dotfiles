@@ -15,5 +15,8 @@ return {
     vim.keymap.set({ 'n', 'x' }, '<LocalLeader><Tab>', function()
       require('opencode').command('agent.cycle')
     end, { desc = 'Cycle agents' })
+    vim.keymap.set('n', 'goo', function()
+      return require('opencode').operator('@this ') .. '_'
+    end, { desc = 'Add line to opencode', expr = true })
   end,
 }

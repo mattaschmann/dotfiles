@@ -11,17 +11,26 @@
       "rm *": "ask"
     }
   },
-  "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {
-        "qwen3-coder-optimized": {
-          "name": "qwen3-coder-optimized"
+  "agent": {
+    "build": {
+      "temperature": 0.15,
+      // not sure about this
+      // "steps": 40
+    },
+    "plan": {
+      "temperature": 0.4,
+      "permission": {
+        "edit": {
+          ".tasks/**": "ask"
         }
+      }
+    }
+  },
+  "provider": {
+    "amazon-bedrock": {
+      "options": {
+        "region": "us-west-2",
+        "profile": "bedrock"
       }
     },
     "llama.cpp": {
@@ -31,8 +40,8 @@
         "baseURL": "http://127.0.0.1:9090/v1"
       },
       "models": {
-        "Qwen 3 Coder": {
-          "name": "Qwen3 Coder",
+        "local-coder": {
+          "name": "local-coder",
           "limit": {
             "context": 262144,
             "output": 32768
