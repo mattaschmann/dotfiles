@@ -19,6 +19,9 @@
     },
     "plan": {
       "temperature": 0.4
+    },
+    "commit-message": {
+      "model": "llama.cpp/local-coder"
     }
   },
   "provider": {
@@ -35,8 +38,8 @@
         "baseURL": "http://127.0.0.1:9090/v1"
       },
       "models": {
-        "Qwen 3 Coder": {
-          "name": "Qwen3 Coder",
+        "local-coder": {
+          "name": "local-coder",
           "limit": {
             "context": 262144,
             "output": 32768
