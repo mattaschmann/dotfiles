@@ -50,6 +50,9 @@
       }
     }
   },
+  "plugin": [
+    "@toninho09/opencode-usage@latest"
+  ],
   "disabled_providers": [
     "opencode"
   ]

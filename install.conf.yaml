@@ -32,7 +32,6 @@
     ~/.jsbeautifyrc: jsbeautify/.jsbeautifyrc
     ~/.tigrc: tig/.tigrc
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.zprofile: zsh/.zprofile
     ~/.zsh_plugins.txt: zsh/.zsh_plugins.txt
     ~/.zshrc:
       path: zsh/.zshrc
