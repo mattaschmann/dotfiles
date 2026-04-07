@@ -24,7 +24,6 @@ Use this skill whenever the user wants help understanding items inside the `.tas
 
 ## Notes & Tips
 
-- Prefer `exa`, `rg`, `Read`, and other repo-standard tools when inspecting files, matching the workspace instructions.
 - Keep communication lightweight: summarize results, highlight blockers, and request input only when necessary to proceed safely.
 - When the user approves moving forward, mark completed checkboxes in the task file as you progress.
 - If the task file already contains a plan or checklist, reference it before drafting a new one; extend rather than duplicate when possible.
