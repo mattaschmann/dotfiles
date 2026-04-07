@@ -11,4 +11,8 @@ Steps:
 - Generate a high level overview, ask any questions from the user to clarify
   things that are unclear.
 - Once the user is happy with the overview, generate an implementation plan.
+- The implementation plan should be checkboxes so we can check them off as we
+  implement.
 - Append the implementation plan to the task file.
+- When implementing the plan, only run one step at a time, do not run next steps
+  without confirmation

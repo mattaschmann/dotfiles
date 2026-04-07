@@ -21,7 +21,7 @@
       "temperature": 0.4,
       "permission": {
         "edit": {
-          ".tasks/**": "ask"
+          ".tasks/**": "allow"
         }
       }
     }
@@ -33,14 +33,14 @@
         "profile": "bedrock"
       }
     },
-    "llama.cpp": {
+    "local": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "llama.cpp",
+      "name": "local",
       "options": {
         "baseURL": "http://127.0.0.1:9090/v1"
       },
       "models": {
-        "local-coder": {
+        "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4": {
           "name": "local-coder",
           "limit": {
             "context": 262144,
