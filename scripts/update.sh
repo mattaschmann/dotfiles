@@ -8,10 +8,11 @@ fi
 
 # brew
 if command -v brew &> /dev/null; then
-	brew bundle check || brew bundle install
+  brew bundle check || brew bundle install
   brew update
   brew upgrade
   # check for differences
+  brew cleanup
   brew bundle cleanup
 fi
 
