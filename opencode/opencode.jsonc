@@ -47,10 +47,10 @@
     }
   },
   "plugin": [
-    // "@toninho09/opencode-usage@latest",
+    "@toninho09/opencode-usage@latest",
     "opencode-model-alias"
   ],
   "disabled_providers": [
-    "opencode"
+    // "opencode"
   ]
 }
