@@ -33,19 +33,15 @@
         "profile": "bedrock"
       }
     },
-    "local": {
+    "llama.cpp": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "local",
+      "name": "llama.cpp",
       "options": {
         "baseURL": "http://127.0.0.1:9090/v1"
       },
       "models": {
-        "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4": {
-          "name": "local-coder",
-          "limit": {
-            "context": 262144,
-            "output": 32768
-          }
+        "local-coder": {
+          "name": "local-coder"
         }
       }
     }
