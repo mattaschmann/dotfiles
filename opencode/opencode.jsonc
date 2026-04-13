@@ -8,7 +8,9 @@
       "git status *": "allow",
       "git log *": "allow",
       "git show *": "allow",
-      "rm *": "ask"
+      "rm *": "ask",
+      "cdk *": "ask",
+      "npx cdk *": "ask"
     }
   },
   "agent": {
@@ -47,10 +49,10 @@
     }
   },
   "plugin": [
-    "@toninho09/opencode-usage@latest",
+    // "@toninho09/opencode-usage@latest",
     "opencode-model-alias"
   ],
   "disabled_providers": [
-    // "opencode"
+    "opencode"
   ]
 }
