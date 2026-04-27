@@ -170,6 +170,7 @@ fi
 # opencode settings
 export OPENCODE_ENABLE_EXA=1 # for websearch
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+export OPENCODE_CONFIG=$HOME/.config/shared-defalts/opencode.jsonc
 
 # for profiling, should be at bottom
 # zprof
