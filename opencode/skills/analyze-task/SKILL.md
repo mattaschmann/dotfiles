@@ -1,6 +1,7 @@
 ---
 name: analyze-task
-description: Identify available `.tasks/` files, summarize the chosen task, then grill the user one question at a time to reach shared understanding before producing and appending a checkbox implementation plan and executing one confirmed step at a time.
+description: Analyzes `.tasks/` files, interviews the user one question at a time to reach shared understanding, appends a checkbox implementation plan, and executes steps one at a time with confirmation. Use when the user asks to plan, break down, or work through a task file.
+allowed-tools: Bash(exa:*) Read Edit Write TodoWrite
 ---
 
 ## Purpose
@@ -9,27 +10,36 @@ Use this skill whenever the user wants help understanding items inside the `.tas
 
 ## Workflow
 
-1. **Discover tasks** – List with `ls .tasks`. If nothing exists, report that back.
+1. **Discover tasks** – Run `exa -l --sort=modified .tasks/`. Eligible files are any `*.md` directly under `.tasks/`; ignore subdirectories unless the user names one. If `exa` is unavailable, fall back to `ls -lt .tasks/`. If `.tasks/` is absent, report and stop. If present but empty, report and ask whether to scaffold a new task file.
 2. **Select focus** –
    - If exactly one task file exists, read it directly.
-   - If multiple files exist, summarize their names and ask the user which file to open. Default selections only when the user explicitly defers.
+   - If multiple files exist, summarize their names (ISO-8601 date + filename, newest first) and ask which to open. If the user explicitly defers, default to the most recently modified.
 3. **Absorb context** – Read the chosen task file in full. Capture goals, constraints, assets, and any embedded checklists.
-4. **Share overview & grill for clarity** – Present a concise, high-level summary of the task, then interview the user to reach shared understanding:
-   - Ask one clarifying question at a time
-   - For each question, offer your recommended answer so the user can accept or override
-   - Walk down branches of the decision tree, resolving dependencies between decisions as you go
-   - If a question is answerable by exploring the codebase, investigate first instead of asking
-   - Continue until the user says "proceed" or "go", then move to planning
-5. **Author the plan** –
+4. **Share overview** – Present a concise, high-level summary of goals, constraints, and open questions.
+5. **Grill for clarity** – Interview the user to reach shared understanding:
+   - Ask exactly one clarifying question at a time.
+   - Offer a recommended answer with each question so the user can accept or override.
+   - Walk down the decision tree, resolving dependencies between decisions as you go.
+   - If a question is answerable by exploring the codebase, investigate first instead of asking.
+   - Exit the loop on any explicit affirmative signal (e.g., "proceed", "go", "ship it", "lgtm", "continue").
+   - If the interview exceeds 5 exchanges, summarize all open decisions and ask the user to approve them as a batch.
+6. **Author the plan** –
    - Draft a checkbox list (`- [ ] action`) showing the minimal, ordered steps required to complete the task.
-   - Ensure each item is concrete and testable.
+   - Each item names a concrete artifact, file, or observable outcome.
    - Keep the list short enough to stay actionable; split large efforts.
-6. **Persist the plan** – Append the checkbox plan to the bottom of the task file (include a heading such as `## Implementation Plan`). Avoid overwriting prior content.
-7. **Execute deliberately** – When carrying out the plan, run exactly one checkbox item at a time. After finishing a step, return for confirmation before moving on. Never run additional steps in `.tasks/**` work without the user's explicit go-ahead.
+   - Mirror the checkbox plan into `TodoWrite` for session visibility only; the task file is always the source of truth and `TodoWrite` need not be kept in sync after the session ends.
+7. **Persist the plan** – Append under a `## Implementation Plan` heading at the bottom of the task file. Never overwrite prior content. If the heading already exists and contains any unchecked `- [ ]` items, create a new dated sibling heading (e.g., `## Implementation Plan (2026-04-29)`). Otherwise, append new items beneath the existing heading.
+8. **Execute deliberately** – For each step:
+   - Run exactly one checkbox item at a time.
+   - On success: wait for an explicit acknowledgement (e.g., "done", "next", "ok") before changing `- [ ]` to `- [x]` in the task file and proceeding to the next item.
+   - On failure: leave the item as `- [ ]`, append an indented note beneath it describing the error, report to the user, and pause.
+   - Never batch `.tasks/**` steps.
 
 ## Notes & Tips
 
 - Keep communication lightweight: summarize results, highlight blockers, and request input only when necessary to proceed safely.
-- When the user approves moving forward, mark completed checkboxes in the task file as you progress.
 - If the task file already contains a plan or checklist, reference it before drafting a new one; extend rather than duplicate when possible.
-
+- **Empty task file**: report it and ask whether to scaffold content before proceeding.
+- **Completed plan present**: ask whether to extend the existing plan or start a new dated sibling heading.
+- **Non-markdown task file**: ask the user how to interpret it before reading.
+- **User names multiple tasks**: process the first one fully; queue the rest and confirm order before starting each.
