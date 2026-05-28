@@ -8,6 +8,7 @@
 
 ## Don't
 - Run extra steps in a `.tasks/**` task without user confirmation
+- Run `git add` — the user stages files themselves; only run `git commit` when asked
 
 # Skills
 

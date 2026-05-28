@@ -37,7 +37,8 @@
   },
   "plugin": [
     // "@toninho09/opencode-usage@latest",
-    "opencode-model-alias"
+    "opencode-model-alias",
+    "~/workspace/opencode-kirocli-bridge"
   ],
   "disabled_providers": [
     "opencode"
