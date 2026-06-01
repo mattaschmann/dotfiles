@@ -1,0 +1,95 @@
+[brew]
+formulae = [
+  "antidote",
+  "awscli",
+  "cmake",
+  "ctop",
+  "derailed/k9s/k9s",
+  "docker-compose",
+  "fnm",
+  "fzf",
+  "git-filter-repo",
+  "git-lfs",
+  "htop",
+  "imagemagick",
+  "lua-language-server",
+  "luarocks",
+  "neovim",
+  "podman",
+  "postgresql@14",
+  "resvg",
+  "sevenzip",
+  "tig",
+  "tmux",
+  "urlview",
+  "wget",
+]
+casks = [
+  "alacritty",
+  "font-sauce-code-pro-nerd-font",
+]
+taps = [
+  "anomalyco/tap",
+  "derailed/k9s",
+  "scalacenter/bloop",
+]
+ignore = [
+  "duckdb",
+  "ggml",
+  "libomp",
+  "llama.cpp",
+  "llmfit",
+]
+
+[cargo]
+install = [
+  "bat",
+  "cargo-binstall",
+  "cargo-update",
+  "exa",
+  "fd-find",
+  "ripgrep",
+  "starship",
+  "stylua",
+  "taplo-cli",
+  "tree-sitter-cli",
+  "yazi-cli",
+  "yazi-fm",
+  "zoxide",
+]
+git = [
+  "https://github.com/errata-ai/vale-ls",
+]
+ignore = []
+
+[uv]
+install = [
+  "opencode-monitor[charts,export]",
+  "pynvim",
+  "skillcheck",
+]
+ignore = []
+
+[npm]
+install = [
+  "bash-language-server",
+  "codeburn",
+  "fixjson",
+  "neovim",
+  "npm-check",
+  "opencode-ai",
+  "openrtk",
+  "prettier",
+  "vscode-langservers-extracted",
+  "yaml-language-server",
+]
+ignore = [
+  "corepack",
+  "npm",
+]
+
+[vscode]
+extensions = [
+  "tyriar.sort-lines",
+  "vscodevim.vim",
+]
