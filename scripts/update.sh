@@ -23,10 +23,21 @@ parse_toml_list() {
 
 # --- apt (Linux) ---
 if command -v apt &> /dev/null; then
-  echo "==> Updating apt packages..."
-  sudo apt update
-  sudo apt upgrade -y
-  sudo apt autoremove -y
+  if sudo -n true 2>/dev/null; then
+    echo "==> Updating apt packages..."
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+
+    echo "==> Ensuring apt packages from packages.toml..."
+    apt_packages=$(parse_toml_list "apt" "install")
+    if [ -n "$apt_packages" ]; then
+      echo "$apt_packages" | xargs sudo apt install -y
+    fi
+  else
+    echo "==> Skipping apt (sudo not available without password prompt)"
+    echo "    Run 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y' manually."
+  fi
 fi
 
 # --- brew (macOS) ---

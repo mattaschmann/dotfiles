@@ -10,7 +10,10 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
 
 ## Workflow
 
-1. **Detect platform** – Determine if running on macOS (brew) or Linux (apt).
+1. **Detect platform & handle sudo** – Determine if running on macOS (brew) or Linux (apt). If on Linux, check if `sudo -n true` succeeds. If it does NOT:
+   - STOP immediately. Tell the user to run this in their terminal: `sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt install -y build-essential cmake libssl-dev pkg-config` (check packages.toml for the current list)
+   - Use the Question tool to wait for the user to confirm they've done it (or want to skip apt).
+   - Only proceed to the next step after they confirm.
 
 2. **Check prerequisites** – Verify the following are available. If any are missing, stop and tell the user what to install:
    - `brew` (macOS) or `apt` (Linux)
@@ -26,6 +29,8 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - Installs/updates uv tools
    - Installs/updates global npm packages
    - Installs VS Code extensions (if `code` is available)
+
+   IMPORTANT: Use a long timeout (900000ms+) for this step — brew upgrades can take a while.
 
    If this step fails, capture the error output, diagnose the issue, and present the user with:
    - What went wrong (parse the error)
