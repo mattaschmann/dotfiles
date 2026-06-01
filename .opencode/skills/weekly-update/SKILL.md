@@ -11,7 +11,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
 ## Workflow
 
 1. **Detect platform & handle sudo** – Determine if running on macOS (brew) or Linux (apt). If on Linux, check if `sudo -n true` succeeds. If it does NOT:
-   - STOP immediately. Tell the user to run this in their terminal: `sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt install -y build-essential cmake libssl-dev pkg-config` (check packages.toml for the current list)
+   - STOP immediately. Read the `[apt] install` list from `packages.toml` and tell the user to run: `sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt install -y <packages from packages.toml>`
    - Use the Question tool to wait for the user to confirm they've done it (or want to skip apt).
    - Only proceed to the next step after they confirm.
 

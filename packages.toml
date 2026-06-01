@@ -2,6 +2,7 @@
 install = [
   "build-essential",
   "cmake",
+  "keychain",
   "libssl-dev",
   "pkg-config",
 ]
@@ -86,13 +87,13 @@ ignore = []
 install = [
   "bash-language-server",
   "codeburn",
-  "fixjson",
   "neovim",
   "npm-check",
   "opencode-ai",
   "openrtk",
   "prettier",
   "vscode-langservers-extracted",
+  "wsl-open",
   "yaml-language-server",
 ]
 ignore = [
