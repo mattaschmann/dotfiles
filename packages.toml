@@ -45,6 +45,7 @@ ignore = [
 install = [
   "bat",
   "cargo-binstall",
+  "cargo-cache",
   "cargo-update",
   "exa",
   "fd-find",
@@ -60,7 +61,10 @@ install = [
 git = [
   "https://github.com/errata-ai/vale-ls",
 ]
-ignore = []
+ignore = [
+  "wlog",
+  "yazi-build",
+]
 
 [uv]
 install = [

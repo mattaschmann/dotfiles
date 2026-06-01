@@ -39,6 +39,7 @@ if command -v brew &> /dev/null; then
   brew update
   brew upgrade
   brew cleanup
+  brew autoremove
 fi
 
 # --- cargo ---
@@ -67,6 +68,9 @@ if command -v cargo &> /dev/null; then
 
   echo "==> Checking for cargo updates..."
   cargo install-update -a
+
+  echo "==> Cleaning cargo cache..."
+  cargo cache --autoclean
 fi
 
 # --- uv ---
@@ -82,6 +86,7 @@ if command -v uv &> /dev/null; then
     done <<< "$uv_packages"
   fi
   uv tool upgrade --all
+  uv cache prune
 fi
 
 # --- npm ---
