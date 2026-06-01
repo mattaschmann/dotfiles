@@ -161,16 +161,16 @@ function yy() {
 source "$HOME/.dotfiles/uv/uv_shell.sh"
 
 # certs
-if [[ -f "$HOME/org-ca-bundle.pem" ]]; then
-  export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
-else
-  export NODE_EXTRA_CA_CERTS=""
-fi
+# if [[ -f "$HOME/org-ca-bundle.pem" ]]; then
+#   export NODE_EXTRA_CA_CERTS="$HOME/org-ca-bundle.pem"
+# else
+#   export NODE_EXTRA_CA_CERTS=""
+# fi
 
 # opencode settings
 export OPENCODE_ENABLE_EXA=1 # for websearch
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
-export OPENCODE_CONFIG=$HOME/.config/shared-defalts/opencode.jsonc
+export OPENCODE_CONFIG=$HOME/.config/shared-defaults/opencode.jsonc
 
 # for profiling, should be at bottom
 # zprof
