@@ -56,11 +56,30 @@ filter_known() {
 # --- Brew ---
 echo "=== Brew Drift ==="
 if command -v brew &> /dev/null; then
+  if [[ "$(uname)" == "Darwin" ]]; then
+    BREW_OS="osx"
+  else
+    BREW_OS="linux"
+  fi
+
   installed_formulae=$(brew leaves 2>/dev/null)
   installed_casks=$(brew list --cask -1 2>/dev/null)
 
+  os_formulae=$(parse_toml_list "brew.${BREW_OS}" "formulae")
+  os_casks=$(parse_toml_list "brew.${BREW_OS}" "casks")
+
   new_formulae=$(echo "$installed_formulae" | filter_known "brew" "formulae")
+  if [ -n "$os_formulae" ]; then
+    new_formulae=$(echo "$new_formulae" | while IFS= read -r line; do
+      echo "$os_formulae" | grep -qxF "$line" || [ -z "$line" ] || echo "$line"
+    done)
+  fi
   new_casks=$(echo "$installed_casks" | filter_known "brew" "casks")
+  if [ -n "$os_casks" ]; then
+    new_casks=$(echo "$new_casks" | while IFS= read -r line; do
+      echo "$os_casks" | grep -qxF "$line" || [ -z "$line" ] || echo "$line"
+    done)
+  fi
 
   if [ -n "$new_formulae" ]; then
     echo "Formulae installed but not in packages.toml:"

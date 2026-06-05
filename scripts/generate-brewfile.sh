@@ -5,6 +5,12 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PACKAGES_FILE="$BASEDIR/packages.toml"
 BREWFILE="$BASEDIR/Brewfile"
 
+if [[ "$(uname)" == "Darwin" ]]; then
+  OS_NAME="osx"
+else
+  OS_NAME="linux"
+fi
+
 parse_toml_list() {
   local section="$1"
   local key="$2"
@@ -25,24 +31,30 @@ parse_toml_list() {
 : > "$BREWFILE"
 
 taps=$(parse_toml_list "brew" "taps")
-if [ -n "$taps" ]; then
+os_taps=$(parse_toml_list "brew.${OS_NAME}" "taps")
+all_taps=$(printf '%s\n%s' "$taps" "$os_taps" | sort -u | grep -v '^$')
+if [ -n "$all_taps" ]; then
   while IFS= read -r tap; do
     echo "tap \"$tap\"" >> "$BREWFILE"
-  done <<< "$taps"
+  done <<< "$all_taps"
 fi
 
 formulae=$(parse_toml_list "brew" "formulae")
-if [ -n "$formulae" ]; then
+os_formulae=$(parse_toml_list "brew.${OS_NAME}" "formulae")
+all_formulae=$(printf '%s\n%s' "$formulae" "$os_formulae" | sort -u | grep -v '^$')
+if [ -n "$all_formulae" ]; then
   while IFS= read -r pkg; do
     echo "brew \"$pkg\"" >> "$BREWFILE"
-  done <<< "$formulae"
+  done <<< "$all_formulae"
 fi
 
 casks=$(parse_toml_list "brew" "casks")
-if [ -n "$casks" ]; then
+os_casks=$(parse_toml_list "brew.${OS_NAME}" "casks")
+all_casks=$(printf '%s\n%s' "$casks" "$os_casks" | sort -u | grep -v '^$')
+if [ -n "$all_casks" ]; then
   while IFS= read -r pkg; do
     echo "cask \"$pkg\"" >> "$BREWFILE"
-  done <<< "$casks"
+  done <<< "$all_casks"
 fi
 
 echo "Brewfile generated at $BREWFILE"

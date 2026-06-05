@@ -5,6 +5,7 @@ install = [
   "keychain",
   "libssl-dev",
   "pkg-config",
+  "tmux",
 ]
 
 [brew]
@@ -29,18 +30,11 @@ formulae = [
   "resvg",
   "sevenzip",
   "tig",
-  "tmux",
   "urlview",
   "wget",
 ]
-casks = [
-  "alacritty",
-  "font-sauce-code-pro-nerd-font",
-]
 taps = [
   "anomalyco/tap",
-  "derailed/k9s",
-  "scalacenter/bloop",
 ]
 ignore = [
   "duckdb",
@@ -48,6 +42,19 @@ ignore = [
   "libomp",
   "llama.cpp",
   "llmfit",
+]
+
+[brew.osx]
+formulae = [
+  "tmux",
+]
+casks = [
+  "alacritty",
+  "font-sauce-code-pro-nerd-font",
+]
+taps = [
+  "derailed/k9s",
+  "scalacenter/bloop",
 ]
 
 [cargo]
