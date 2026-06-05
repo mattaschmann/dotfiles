@@ -42,6 +42,7 @@ Use this skill after completing work on a task to perform a code review, validat
      - Report any findings with file paths and line numbers
    - **e. Documentation check** –
      - Identify which READMEs and documentation files are relevant to the changed code (check for READMEs in the same directory or parent directories of changed files)
+     - **Always check the root `README.md`** for stale references to removed/renamed tools, APIs, commands, or architecture that the task changed
      - Check if `AGENTS.md` needs updating (new commands, changed architecture, new key files, changed workflows)
      - Flag any public API changes, new middleware, new configuration, or new commands that lack documentation
      - Report documentation gaps as actionable findings
