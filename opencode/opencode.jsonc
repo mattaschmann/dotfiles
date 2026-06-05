@@ -50,7 +50,8 @@
   "plugin": [
     // "@toninho09/opencode-usage@latest",
     "opencode-model-alias",
-    "~/workspace/opencode-kirocli-bridge"
+    "~/workspace/opencode-kirocli-bridge",
+    "~/workspace/opencode-ping"
   ],
   "disabled_providers": [
     "opencode"
