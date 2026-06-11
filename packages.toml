@@ -6,6 +6,7 @@ install = [
   "libssl-dev",
   "pkg-config",
   "tmux",
+  "wamerican",
 ]
 
 [brew]
@@ -33,29 +34,13 @@ formulae = [
   "urlview",
   "wget",
 ]
-taps = [
-  "anomalyco/tap",
-]
-ignore = [
-  "duckdb",
-  "ggml",
-  "libomp",
-  "llama.cpp",
-  "llmfit",
-]
+taps = ["anomalyco/tap"]
+ignore = ["duckdb", "ggml", "libomp", "llama.cpp", "llmfit"]
 
 [brew.osx]
-formulae = [
-  "tmux",
-]
-casks = [
-  "alacritty",
-  "font-sauce-code-pro-nerd-font",
-]
-taps = [
-  "derailed/k9s",
-  "scalacenter/bloop",
-]
+formulae = ["tmux"]
+casks = ["alacritty", "font-sauce-code-pro-nerd-font"]
+taps = ["derailed/k9s", "scalacenter/bloop"]
 
 [cargo]
 install = [
@@ -74,20 +59,11 @@ install = [
   "yazi-fm",
   "zoxide",
 ]
-git = [
-  "https://github.com/errata-ai/vale-ls",
-]
-ignore = [
-  "wlog",
-  "yazi-build",
-]
+git = ["https://github.com/errata-ai/vale-ls"]
+ignore = ["wlog", "yazi-build"]
 
 [uv]
-install = [
-  "opencode-monitor[charts,export]",
-  "pynvim",
-  "skillcheck",
-]
+install = ["opencode-monitor[charts,export]", "pynvim", "skillcheck"]
 ignore = []
 
 [npm]
@@ -103,13 +79,7 @@ install = [
   "wsl-open",
   "yaml-language-server",
 ]
-ignore = [
-  "corepack",
-  "npm",
-]
+ignore = ["corepack", "npm"]
 
 [vscode]
-extensions = [
-  "tyriar.sort-lines",
-  "vscodevim.vim",
-]
+extensions = ["tyriar.sort-lines", "vscodevim.vim"]
