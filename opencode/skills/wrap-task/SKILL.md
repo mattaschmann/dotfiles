@@ -40,12 +40,16 @@ Use this skill after completing work on a task to perform a code review, validat
        - Large blocks of commented-out code (3+ consecutive commented lines)
        - Unused imports (if a linter already caught these, skip)
      - Report any findings with file paths and line numbers
-   - **e. Documentation check** –
-     - Identify which READMEs and documentation files are relevant to the changed code (check for READMEs in the same directory or parent directories of changed files)
-     - **Always check the root `README.md`** for stale references to removed/renamed tools, APIs, commands, or architecture that the task changed
-     - Check if `AGENTS.md` needs updating (new commands, changed architecture, new key files, changed workflows)
-     - Flag any public API changes, new middleware, new configuration, or new commands that lack documentation
-     - Report documentation gaps as actionable findings
+    - **e. Documentation check** –
+      - Identify which READMEs and documentation files are relevant to the changed code (check for READMEs in the same directory or parent directories of changed files)
+      - **Always check the root `README.md`** for stale references to removed/renamed tools, APIs, commands, or architecture that the task changed
+      - Check if `AGENTS.md` needs updating (new commands, changed architecture, new key files, changed workflows)
+      - Flag any public API changes, new middleware, new configuration, or new commands that lack documentation
+      - Report documentation gaps as actionable findings
+    - **f. Coding-practices review** –
+      - Read the Code Practices and Code Documentation guidance from the global `~/.config/opencode/AGENTS.md` and any repo-root `AGENTS.md`
+      - Review the diff against those practices and report actionable findings — e.g. duplicated logic/constants (DRY), homespun infrastructure where an established library exists, raw `console`/`print` logging instead of the project logger, oversized or mixed-concern modules, hardcoded magic strings, and doc-comment placement (missing high-value docs or low-value noise)
+      - Advisory only: fold findings into the step 5 report and step 6 resolution flow. Do not block
 5. **Present findings report** –
    - Summarize the code review as a short report with sections for each sub-step
    - Clearly label each finding as informational (no action needed) or actionable
