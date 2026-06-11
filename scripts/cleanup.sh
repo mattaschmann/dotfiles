@@ -9,15 +9,28 @@ parse_toml_list() {
   local key="$2"
   [ -f "$PACKAGES_FILE" ] || return
   awk -v section="$section" -v key="$key" '
+    function extract_values(line) {
+      while (match(line, /"[^"]*"/)) {
+        val = substr(line, RSTART + 1, RLENGTH - 2)
+        if (val != "") print val
+        line = substr(line, RSTART + RLENGTH)
+      }
+    }
     /^\[/ { in_section = ($0 == "[" section "]"); next }
-    in_section && $0 ~ "^"key" *=" { reading = 1; next }
+    in_section && $0 ~ "^"key" *=" {
+      line = $0
+      sub("^"key" *= *", "", line)
+      if (match(line, /^\[.*\]$/)) {
+        extract_values(line)
+      } else {
+        extract_values(line)
+        reading = 1
+      }
+      next
+    }
     reading && /^]/ { reading = 0; next }
     reading && /^\[/ { exit }
-    reading && /"/ {
-      gsub(/^[^"]*"/, "")
-      gsub(/"[^"]*$/, "")
-      if ($0 != "") print
-    }
+    reading && /"/ { extract_values($0) }
   ' "$PACKAGES_FILE"
 }
 
@@ -25,7 +38,7 @@ filter_known() {
   local section="$1"
   local key="$2"
   local known
-  known=$(parse_toml_list "$section" "$key" | sed 's/\[.*\]//')
+  known=$(parse_toml_list "$section" "$key" | sed 's/\[.*$//')
   local ignored
   ignored=$(parse_toml_list "$section" "ignore")
   while IFS= read -r line; do
