@@ -84,7 +84,7 @@ history = 10000
 multiplier = 3
 
 [terminal.shell]
-program = "ubuntu2404"
+program = "wsl.exe"
 
 [window]
 decorations = "None"
