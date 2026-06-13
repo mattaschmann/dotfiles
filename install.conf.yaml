@@ -26,6 +26,10 @@
     ~/.config/opencode/commands: opencode/commands
     ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
     ~/.config/opencode/skills: opencode/skills
+    ~/.claude/CLAUDE.md:
+      path: opencode/AGENTS.md
+      force: true
+    ~/.claude/skills: opencode/skills
     ~/.config/starship.toml: starship/starship.toml
     ~/.ctags.d: universal_ctags
     ~/.dotfiles: ''
