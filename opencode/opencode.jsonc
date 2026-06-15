@@ -49,11 +49,10 @@
     }
   },
   "plugin": [
-    // "@toninho09/opencode-usage@latest",
     "opencode-model-alias",
-    "~/workspace/opencode-kirocli-bridge",
-    "~/workspace/opencode-ping",
-    "~/workspace/opencode-keepalive"
+    "~/workspace/opencode-plugins/opencode-kirocli-bridge",
+    "~/workspace/opencode-plugins/opencode-ping",
+    "~/workspace/opencode-plugins/opencode-keepalive"
   ],
   "disabled_providers": [
     "opencode"

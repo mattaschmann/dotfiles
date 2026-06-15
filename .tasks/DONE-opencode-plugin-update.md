@@ -33,3 +33,28 @@ The weekly-update skill (`opencode/skills/weekly-update/SKILL.md`) and its deleg
 - **Security review scope**: What should the AI review look for — new `dependencies`/`devDependencies` in `package.json`, new shell scripts, changed `src/` files, or all of the above? Should unknown new dependencies block the pull or just warn?
 - **Post-pull rebuild**: After `git pull`, should the skill run `npm install && npm run build` (or similar) in each plugin directory, or is there a build step already?
 - **Branch convention**: Are all plugin repos on `main`? (Assumed yes, but worth confirming before scripting `git pull origin main`.)
+
+## Decisions
+
+- **Consolidate the three local plugins into `~/workspace/opencode-plugins/`.** *Why:* gives the update loop one parent dir to target, keeps `~/workspace/` tidy, matches the user's stated preference. Requires repointing the three tilde paths in `opencode/opencode.jsonc`.
+- **Split logic: `update.sh` fetches, the weekly-update skill reviews + pulls.** *Why:* `update.sh` is non-interactive and cannot do AI security review; restricting it to a safe `git fetch` + report preserves the gate. The skill owns the interactive, AI-mediated pull. Consistent with the existing division (`update.sh` owns `packages.toml`-driven side-effects; the skill owns interactive review).
+- **Security gate blocks by default.** *Why:* any flagged change (new deps, new/changed shell scripts, suspicious `src/` edits) must get explicit user approval before pulling. Safety over speed.
+- **Source of truth is a new `[opencode] plugins` section in `packages.toml`.** *Why:* consistent with every other manager, reuses the existing `parse_toml_list` awk parser, and avoids JSONC parsing in bash.
+- **No build step; conditional `npm install`.** *Why:* every plugin's `package.json` `main` points at `src/index.ts` (opencode loads TS source directly), so there is no build. Only `opencode-kirocli-bridge` has a runtime dependency (`@aws/codewhisperer-streaming-client`), so run `npm install` in a plugin only when its `package-lock.json` changed.
+- **Branch is `main` for all three.** *Why:* confirmed via `git rev-parse --abbrev-ref HEAD`.
+- **`opencode-model-alias` stays out of scope.** *Why:* resolved by opencode by name (not a local clone), already self-updating.
+
+## Implementation Plan
+
+- [x] Consolidate clones: `mkdir -p ~/workspace/opencode-plugins` and `mv` the three repos (`opencode-keepalive`, `opencode-kirocli-bridge`, `opencode-ping`) into it.
+  - 2025-06-15: done — moved all three repos to ~/workspace/opencode-plugins/
+- [x] Repoint the three tilde paths in `opencode/opencode.jsonc` (`plugin` array) to `~/workspace/opencode-plugins/<name>`; leave `"opencode-model-alias"` untouched.
+  - 2025-06-15: done — updated all three paths in plugin array
+- [x] Add an `[opencode] plugins` list to `packages.toml` with the three new paths.
+  - 2025-06-15: done — added [opencode] section with 3 plugin paths
+- [x] Add a `# --- opencode plugins ---` fetch+report block to `scripts/update.sh` (after the npm block, modeled on the cargo-git loop): read `parse_toml_list "opencode" "plugins"`, expand leading `~`, `git -C "$dir" fetch origin main` (never pull), compare `HEAD` vs `origin/main`, print a grep-able "update available" / "up-to-date" line, wrap each in `|| true`.
+  - 2025-06-15: done — block added after npm section, tested fetch+report with no local mutation
+- [x] Update `.opencode/skills/weekly-update/SKILL.md`: add `git:*` to the `allowed-tools` Bash allowlist; note in step 3 that `update.sh` now fetches+reports plugin updates; insert a new "Review & update opencode plugins" step (fetch → diff `HEAD..origin/main` → AI security review → block until approval → `pull --ff-only` → conditional `npm install` when `package-lock.json` changed → error-handling), renumbering subsequent steps; record plugin location/no-build/model-alias-out-of-scope in Notes.
+  - 2025-06-15: done — added git:* permission, new step 6 with full review flow, renumbered steps 7-9, added notes
+- [x] Verify: `bash -n scripts/update.sh`; `parse_toml_list "opencode" "plugins"` returns 3 paths; run the new block and confirm fetch+report with no local mutation (`git status` clean); start `opencode` and confirm plugins load from new paths; dry-run the skill gate against `opencode-kirocli-bridge`.
+  - 2025-06-15: done — bash -n passes, parser returns 3 paths, fetch+report runs clean; skipped JSONC validation (opencode validates its own config at startup)

@@ -111,6 +111,30 @@ if command -v npm &> /dev/null; then
   fi
 fi
 
+# --- opencode plugins ---
+if command -v git &> /dev/null; then
+  opencode_plugins=$(parse_toml_list "opencode" "plugins")
+  if [ -n "$opencode_plugins" ]; then
+    echo "==> Fetching opencode plugin updates..."
+    while IFS= read -r dir; do
+      dir="${dir/#\~/$HOME}"
+      if [ ! -d "$dir/.git" ]; then
+        echo "    WARN: $dir is not a git repo, skipping"
+        continue
+      fi
+      name=$(basename "$dir")
+      git -C "$dir" fetch origin main 2>/dev/null || true
+      local_head=$(git -C "$dir" rev-parse HEAD 2>/dev/null)
+      remote_head=$(git -C "$dir" rev-parse origin/main 2>/dev/null)
+      if [ "$local_head" != "$remote_head" ]; then
+        echo "    UPDATE AVAILABLE: $name"
+      else
+        echo "    up-to-date: $name"
+      fi
+    done <<< "$opencode_plugins"
+  fi
+fi
+
 # --- vscode ---
 if command -v code &> /dev/null; then
   echo "==> Installing VS Code extensions..."

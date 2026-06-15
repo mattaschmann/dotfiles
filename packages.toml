@@ -81,5 +81,12 @@ install = [
 ]
 ignore = ["corepack", "npm"]
 
+[opencode]
+plugins = [
+  "~/workspace/opencode-plugins/opencode-keepalive",
+  "~/workspace/opencode-plugins/opencode-kirocli-bridge",
+  "~/workspace/opencode-plugins/opencode-ping",
+]
+
 [vscode]
 extensions = ["tyriar.sort-lines", "vscodevim.vim"]
