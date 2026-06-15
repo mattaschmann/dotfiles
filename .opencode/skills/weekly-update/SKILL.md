@@ -54,13 +54,19 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
     - If `package-lock.json` changed in the diff, run `npm install` in that plugin directory.
     - On failure: report the error, offer retry/skip/abort.
 
-7. **Detect drift** – Run `scripts/cleanup.sh` from the dotfiles repo root. This compares what's installed against `packages.toml` and shows packages that are:
-   - Installed but not tracked in `packages.toml` (for each manager: brew, cargo, uv, npm)
+7. **Detect drift** – Run `scripts/cleanup.sh` from the dotfiles repo root. This reports two kinds of drift:
 
+   **Package drift** (installed but not tracked, per manager: brew, cargo, uv, npm):
    For each drifted package, ask the user:
    - Add it to `packages.toml` (track it)
    - Add it to the ignore list in `packages.toml`
    - Remove it
+
+   **Opencode plugin drift** (tracked in `packages.toml` but directory missing or not a git repo):
+   For each drifted plugin, ask the user:
+   - Clone it (user must supply the repo URL, then run `git clone <url> <dir>`)
+   - Remove it from `packages.toml`
+   - Skip / handle manually
 
 8. **Execute decisions** – Based on user input:
    - Add packages to the appropriate section in `packages.toml` via Edit tool
@@ -68,6 +74,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - `npm uninstall -g <pkg>`
    - `uv tool uninstall <tool>`
    - `cargo uninstall <crate>`
+   - For opencode plugins: `git clone <url> <dir>` or remove the entry from `packages.toml` via Edit tool
 
 9. **Summary** – Report what was updated, what drift was found, what was added/removed/ignored, and any errors that were skipped.
 

@@ -170,3 +170,25 @@ if command -v npm &> /dev/null; then
 else
   echo "(npm not available)"
 fi
+
+# --- opencode plugins ---
+echo ""
+echo "=== Opencode Plugin Drift ==="
+opencode_plugins=$(parse_toml_list "opencode" "plugins")
+if [ -n "$opencode_plugins" ]; then
+  plugin_drift=0
+  while IFS= read -r dir; do
+    dir="${dir/#\~/$HOME}"
+    name=$(basename "$dir")
+    if [ ! -d "$dir" ]; then
+      echo "MISSING (directory does not exist): $name  [$dir]"
+      plugin_drift=1
+    elif [ ! -d "$dir/.git" ]; then
+      echo "NOT A GIT REPO: $name  [$dir]"
+      plugin_drift=1
+    fi
+  done <<< "$opencode_plugins"
+  [ "$plugin_drift" -eq 0 ] && echo "(none)"
+else
+  echo "(no plugins configured)"
+fi
