@@ -35,10 +35,10 @@ formulae = [
   "wget",
 ]
 taps = ["anomalyco/tap"]
-ignore = ["duckdb", "ggml", "libomp", "llama.cpp", "llmfit"]
+ignore = ["duckdb", "ggml", "glab", "libomp", "llama.cpp", "llmfit"]
 
 [brew.osx]
-formulae = ["tmux"]
+formulae = ["tmux", "watch"]
 casks = ["alacritty", "font-sauce-code-pro-nerd-font"]
 taps = ["derailed/k9s", "scalacenter/bloop"]
 
@@ -70,6 +70,7 @@ ignore = []
 install = [
   "bash-language-server",
   "codeburn",
+  "fixjson",
   "neovim",
   "npm-check",
   "opencode-ai",
