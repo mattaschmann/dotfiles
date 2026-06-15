@@ -66,6 +66,9 @@ ignore = ["wlog", "yazi-build"]
 install = ["opencode-monitor[charts,export]", "pynvim", "skillcheck"]
 ignore = []
 
+[uv.wsl]
+install = ["ntfy-wsl-toast"]
+
 [npm]
 install = [
   "bash-language-server",

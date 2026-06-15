@@ -91,6 +91,14 @@ if command -v uv &> /dev/null; then
 
   echo "==> Installing/updating uv tools..."
   uv_packages=$(parse_toml_list "uv" "install")
+  if grep -qi microsoft /proc/version 2>/dev/null; then
+    uv_os_packages=$(parse_toml_list "uv.wsl" "install")
+  elif [[ "$(uname)" == "Darwin" ]]; then
+    uv_os_packages=$(parse_toml_list "uv.osx" "install")
+  else
+    uv_os_packages=""
+  fi
+  uv_packages=$(printf '%s\n%s' "$uv_packages" "$uv_os_packages" | sed '/^$/d')
   if [ -n "$uv_packages" ]; then
     while IFS= read -r pkg; do
       uv tool install "$pkg" 2>/dev/null || true
