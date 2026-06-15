@@ -49,7 +49,7 @@
     }
   },
   "plugin": [
-    "opencode-model-alias",
+    "~/workspace/opencode-plugins/opencode-model-alias",
     "~/workspace/opencode-plugins/opencode-kirocli-bridge",
     "~/workspace/opencode-plugins/opencode-ping",
     "~/workspace/opencode-plugins/opencode-keepalive"

@@ -87,6 +87,7 @@ ignore = ["corepack", "npm"]
 
 [opencode]
 plugins = [
+  "~/workspace/opencode-plugins/opencode-model-alias",
   "~/workspace/opencode-plugins/opencode-keepalive",
   "~/workspace/opencode-plugins/opencode-kirocli-bridge",
   "~/workspace/opencode-plugins/opencode-ping",
