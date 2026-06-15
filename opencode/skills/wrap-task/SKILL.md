@@ -10,20 +10,28 @@ Use this skill after completing work on a task to perform a code review, validat
 ## Workflow
 
 1. **Identify the task** –
-   - Check if `TodoWrite` contains a task file path from a prior `analyze-task` session
-   - If not found in context, run `exa -lt .tasks/` (or `ls -lt .tasks/`) to list task files
-   - Present the list and ask the user which task to wrap
-2. **Read the task file** – Open the selected `.tasks/` file and locate the implementation plan section
+   - Run `exa -l --sort=modified .tasks/` to list task files (ignore `DONE-` prefixed files)
+   - If exactly one eligible file exists, use it
+   - If multiple exist, present the list and ask the user which task to wrap
+   - If the user named a specific file, use that one
+2. **Read the task file** – Open the selected `.tasks/` file and locate:
+   - `## Decisions` (the rationale and constraints from `analyze-task`)
+   - `## Implementation Plan` (checkbox items with inline progress notes from `implement-task`)
+   - `## Checkpoint` (latest state snapshot, if present)
+   - `## Blockers` (unresolved issues, if present)
 3. **Validate completion** –
    - Find all checkbox items in the implementation plan
    - Verify every item is marked done (`- [x]`)
    - If any unchecked items remain (`- [ ]`), report them to the user and stop
 4. **Code review** (advisory — findings do not block completion) –
-   - **a. Diff review** –
-     - Run `git log --oneline main..HEAD` (or the appropriate base branch) to identify commits on this branch
-     - Run `git diff main...HEAD --stat` to see changed files
-     - For each plan item, verify there are corresponding code changes in the diff
-     - Flag any plan items that lack matching changes (may indicate incomplete or reverted work)
+    - **a. Diff review** –
+      - Run `git log --oneline main..HEAD` (or the appropriate base branch) to identify commits on this branch
+      - Run `git diff main...HEAD --stat` to see changed files
+      - For each plan item, verify there are corresponding code changes in the diff
+      - Cross-reference changes against `## Decisions` — flag any deviations where the implementation contradicts a documented decision
+      - Check inline journal notes from `implement-task` for logged choices or failures that need attention
+      - Surface any `## Blockers` that were never resolved
+      - Flag any plan items that lack matching changes (may indicate incomplete or reverted work)
    - **b. Test verification** –
      - Discover the test command by checking (in order): `AGENTS.md`, `pyproject.toml` (poe tasks, scripts), `package.json` (scripts), `Makefile`, `Cargo.toml`
      - If found, run the test command and report pass/fail
@@ -85,4 +93,4 @@ If none are found, suggest but do not run. Never block the wrap process on missi
 - **Base branch detection**: Try `main` first, fall back to `master`, then ask the user
 - **No git history**: If there are no commits on the branch (or it's a single-branch workflow), diff against the last N commits or skip the diff review
 - **Large diffs**: If the diff is very large (50+ files), summarize by directory rather than reviewing every file
-- This skill assumes it runs in the same session as analyze-task; if no context exists, falls back to asking the user
+- This skill treats cross-client handoff as the norm: always rediscover the task file from `.tasks/` and reconstruct state from the file, not session memory or `TodoWrite`.
