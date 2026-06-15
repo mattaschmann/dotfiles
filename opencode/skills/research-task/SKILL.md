@@ -1,12 +1,16 @@
 ---
 name: research-task
-description: Performs autonomous, high-level investigation on a `.tasks/` file — explores the codebase, maps relevant files, surfaces candidate approaches, and writes findings under `## Investigation`. Designed as a cheap-model precursor to `analyze-task`. Use when the user wants a recon pass before detailed planning.
+description: Performs autonomous, high-level investigation on a `.tasks/` file — explores the codebase, maps relevant files, surfaces possible directions, and writes findings under `## Investigation`. Designed as a cheap-model precursor to `analyze-task`. Use when the user wants a recon pass before detailed planning.
 allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Grep Glob Task Write Edit TodoWrite
 ---
 
 ## Purpose
 
-Lightweight, breadth-first recon pass on a task file. Runs autonomously on a cheaper model to front-load exploration and research, then hands off to `analyze-task` (on a stronger model) for the interview, detailed plan, and execution.
+Lightweight, breadth-first recon pass on a task file. Runs autonomously on a cheaper model to front-load exploration and research, then hands off to `analyze-task` (on a stronger model) for the interview, plan, and execution.
+
+## Output contract
+
+Your **only** output is a `## Investigation` section appended to the task file using the template below. You do **not** plan, recommend a single approach, order implementation steps, or write checkboxes (`- [ ]`). If you find yourself writing an ordered list of actions to take, stop — that is a plan, not research. Planning and execution belong exclusively to `analyze-task`.
 
 ## Workflow
 
@@ -23,22 +27,37 @@ Lightweight, breadth-first recon pass on a task file. Runs autonomously on a che
    - Use `file:line` references so the next agent can jump straight to relevant code.
 5. **Research** –
    - Note external libraries, APIs, or frameworks involved.
-   - Surface 1–2 candidate high-level approaches without committing to one (tradeoff decisions belong to `analyze-task`).
+   - Surface 1–2 **possible directions** as short, neutral observations (1–2 sentences each, no steps, no ordering, no recommendation). Choosing between them is `analyze-task`'s job.
    - List open questions that need a human decision or deeper investigation.
-6. **Write findings** – Append a `## Investigation` section to the task file containing:
-   - **Overview** — 2–3 sentence summary of what was found.
-   - **Relevant files** — bulleted list of `path:line` refs with one-line descriptions.
-   - **Existing patterns to follow** — conventions, utilities, or structures the implementation should reuse.
-   - **Candidate approaches** — 1–2 high-level options (pros/cons optional, keep brief).
-   - **Open questions** — things that need human input or deeper exploration during `analyze-task`.
+6. **Write findings** – Append the following template to the task file, filled in with your findings. Do not add any content outside this template.
 
-   Append-only: never overwrite prior content. If `## Investigation` already exists, create a dated sibling heading (e.g., `## Investigation (2026-06-11)`).
-7. **Stop and hand off** – Report that recon is complete and suggest running `analyze-task` with a stronger model to plan and execute.
+   ```markdown
+   ## Investigation
+
+   ### Overview
+   <!-- 2–3 sentence summary of what was found. -->
+
+   ### Relevant files
+   <!-- Bulleted list of `path:line` refs with one-line descriptions. -->
+
+   ### Existing patterns to follow
+   <!-- Conventions, utilities, or structures the implementation should reuse. -->
+
+   ### Possible directions
+   <!-- 1–2 descriptive observations of what could be relevant. No steps, no ordering, no recommendation. -->
+
+   ### Open questions
+   <!-- Things that need human input or deeper exploration during analyze-task. -->
+   ```
+
+   Append-only: never overwrite prior content. If `## Investigation` already exists, create a dated sibling heading (e.g., `## Investigation (2026-06-11)`) and use that as the top-level heading inside the block.
+
+7. **Stop and hand off** – Report that recon is complete and suggest running `analyze-task` with a stronger model.
 
 ## Boundaries
 
 - **No implementation** — do not write or modify application code.
-- **No plan checkboxes** — `## Implementation Plan` belongs to `analyze-task`.
+- **No checkboxes, no implementation plan** — never emit `- [ ]` / `- [x]` lines or an `## Implementation Plan` heading. Those belong exclusively to `analyze-task`.
 - **No interview** — run fully autonomously; save clarifying questions for the open-questions list.
 - **Breadth over depth** — map the surface area, don't trace every call chain.
 - **Cheap-model friendly** — keep reasoning lightweight; delegate fanned-out searching to explore subagents via the Task tool.

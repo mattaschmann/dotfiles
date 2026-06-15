@@ -14,7 +14,7 @@ Use this skill whenever the user wants help understanding items inside the `.tas
 2. **Select focus** –
    - If exactly one task file exists, read it directly.
    - If multiple files exist, summarize their names (ISO-8601 date + filename, newest first) and ask which to open. If the user explicitly defers, default to the most recently modified.
-3. **Absorb context** – Read the chosen task file in full. Capture goals, constraints, assets, and any embedded checklists. If a `## Investigation` section exists (written by a prior `research-task` pass), treat it as pre-validated recon: use its relevant-files list, existing-patterns notes, and candidate approaches as starting context rather than re-discovering them.
+3. **Absorb context** – Read the chosen task file in full. Capture goals, constraints, assets, and any embedded checklists. If a `## Investigation` section exists (written by a prior `research-task` pass), treat it as pre-validated recon: use its relevant-files list, existing-patterns notes, and possible-directions as starting context rather than re-discovering them.
 4. **Share overview** – Present a concise, high-level summary of goals, constraints, and open questions. If an Investigation section exists, incorporate its findings and flag its open questions as priority topics for the interview.
 5. **Grill for clarity** – Interview the user to reach shared understanding:
    - Ask exactly one clarifying question at a time.
@@ -44,5 +44,5 @@ Use this skill whenever the user wants help understanding items inside the `.tas
 - **Completed plan present**: ask whether to extend the existing plan or start a new dated sibling heading.
 - **Non-markdown task file**: ask the user how to interpret it before reading.
 - **User names multiple tasks**: process the first one fully; queue the rest and confirm order before starting each.
-- **Prior `research-task` pass**: If `## Investigation` exists, leverage it fully — don't re-explore files it already mapped. Focus the interview on resolving its open questions and choosing between its candidate approaches.
+- **Prior `research-task` pass**: If `## Investigation` exists, leverage it fully — don't re-explore files it already mapped. Focus the interview on resolving its open questions and choosing between its possible directions.
 - Prefer `exa`, `rg`, and `fd` over `ls`, `grep`, and `find` per global conventions.
