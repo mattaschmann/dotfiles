@@ -3,7 +3,7 @@ name = "pkgctl"
 version = "0.1.0"
 description = "Declarative cross-platform package manager for dotfiles"
 requires-python = ">=3.13"
-dependencies = ["click>=8.1"]
+dependencies = ["click>=8.1", "dotbot>=1.24"]
 
 [project.scripts]
 pkgctl = "pkgctl.cli:main"

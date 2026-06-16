@@ -7,7 +7,6 @@ from typing import TYPE_CHECKING
 from pkgctl.managers.apt import Apt
 from pkgctl.managers.brew import Brew
 from pkgctl.managers.cargo import Cargo
-from pkgctl.managers.dotbot import Dotbot
 from pkgctl.managers.npm import Npm
 from pkgctl.managers.opencode import Opencode
 from pkgctl.managers.uv_mgr import Uv
@@ -18,7 +17,7 @@ if TYPE_CHECKING:
     from pkgctl.managers.base import Manager
     from pkgctl.output import Output
 
-ALL_MANAGERS: list[type[Manager]] = [Apt, Brew, Cargo, Uv, Npm, Opencode, Vscode, Dotbot]
+ALL_MANAGERS: list[type[Manager]] = [Apt, Brew, Cargo, Uv, Npm, Opencode, Vscode]
 
 MANAGER_MAP: dict[str, type[Manager]] = {m.name: m for m in ALL_MANAGERS}
 

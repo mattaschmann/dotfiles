@@ -1,27 +1,31 @@
 # Dotfiles
 
-Personal dotfiles managed by [DotBot](https://github.com/anishathalye/dotbot) and `pkgctl`. Cross-platform: macOS and WSL2/Linux.
+Personal dotfiles managed by `pkgctl`. Cross-platform: macOS and WSL2/Linux.
 
 ## Quick Start
 
 ```bash
-# New machine — installs uv, then runs all package managers
-./bootstrap.sh update
+# New machine — full setup (prerequisites, symlinks, packages)
+./bootstrap.sh install
 
-# Set up symlinks + run updates
-./install
+# Just update packages
+./bootstrap.sh update
 ```
 
 ## Package Management
 
-All packages are declared in [`packages.toml`](packages.toml) — the single source of truth across apt, brew, cargo, uv, npm, vscode, and opencode plugins.
+All configuration lives in [`packages.toml`](packages.toml) — the single source of truth for packages, symlinks, shell steps, and prerequisites.
 
 `pkgctl` is the CLI that operates on this manifest:
 
 ```bash
+pkgctl install                 # full setup: doctor + links + shell + copies + update
 pkgctl update [MANAGER...]     # upgrade + ensure declared packages installed
 pkgctl drift [MANAGER...]      # report untracked/missing packages
-pkgctl diff [MANAGER...]       # show pending upstream changes (opencode, dotbot)
+pkgctl diff [MANAGER...]       # show pending upstream changes (opencode plugins)
+pkgctl link                    # apply symlinks only
+pkgctl clean                   # remove dead symlinks
+pkgctl doctor                  # check prerequisites
 pkgctl list [MANAGER]          # print what's in packages.toml
 pkgctl brewfile                # generate Brewfile from packages.toml
 ```
@@ -30,28 +34,33 @@ Run it via `uv run pkgctl <command>` or `./bootstrap.sh <command>`.
 
 Flags: `--json` (structured output for agents), `--dry-run`, `--packages-file PATH`.
 
-Managers: `apt`, `brew`, `cargo`, `uv`, `npm`, `opencode`, `vscode`, `dotbot`.
+Managers: `apt`, `brew`, `cargo`, `uv`, `npm`, `opencode`, `vscode`.
+
+## OS-variant file convention
+
+Files with `{os}` in their path are resolved by platform. pkgctl detects the current OS (`osx`/`wsl`/`linux`), checks if a matching variant file exists on disk, and links it. No per-platform config repetition needed:
+
+```toml
+"~/.urlview" = { path = "urlview/{os}.urlview" }
+```
 
 ## Weekly Update
 
-Run the weekly system update routine (packages, zsh plugins via `antidote`, tmux plugins via TPM) through the `weekly-update` opencode skill. It wraps `pkgctl` with interactive drift cleanup, opencode plugin security review, and error debugging.
+Run the weekly system update routine through the `weekly-update` opencode skill. It wraps `pkgctl` with interactive drift cleanup, opencode plugin security review, and error debugging.
 
 ## Bootstrap (new machine)
 
 1. Clone this repo
-2. `./bootstrap.sh update` — installs uv if missing, then runs all package managers
-3. `./install` — sets up symlinks and triggers the update
+2. `./bootstrap.sh install` — installs uv if missing, then runs full setup
 
 ## Layout
 
 | Path | Purpose |
 |------|---------|
-| `src/pkgctl/` | Package management CLI (Python 3.13 + click) |
-| `packages.toml` | Declarative package manifest |
+| `src/pkgctl/` | CLI tool (Python 3.13 + click + dotbot) |
+| `packages.toml` | Declarative manifest (packages, links, shell, doctor) |
 | `pyproject.toml` | uv project definition |
 | `bootstrap.sh` | Ensures uv, proxies to pkgctl |
-| `install.conf.yaml` | DotBot config (symlinks + shell hooks) |
-| `dotbot/` | DotBot submodule |
 | `nvim/`, `zsh/`, `tmux/`, `alacritty/`, `starship/`, `tig/`, `rg/` | App configs |
 | `opencode/` | opencode global config (symlinked to `~/.config/opencode/`) |
 | `scripts/` | Legacy helpers (deprecated) |

@@ -91,3 +91,52 @@ plugins = [
 
 [vscode]
 extensions = ["tyriar.sort-lines", "vscodevim.vim"]
+
+[install]
+create = ["~/.local/bin", "~/opt", "~/.ssh"]
+clean = ["~"]
+
+[install.defaults]
+link = { create = true, relink = true }
+shell = { quiet = true }
+
+[install.links]
+"~/.config/nvim/init.lua" = "nvim/init.lua"
+"~/.config/nvim/lua" = "nvim/lua"
+"~/.config/nvim/vimscripts" = "nvim/vimscripts"
+"~/.config/nvim/snippets" = { path = "nvim/snippets", force = true }
+"~/.config/opencode/AGENTS.md" = "opencode/AGENTS.md"
+"~/.config/opencode/agents" = "opencode/agents"
+"~/.config/opencode/commands" = "opencode/commands"
+"~/.config/opencode/opencode.jsonc" = "opencode/opencode.jsonc"
+"~/.config/opencode/skills" = "opencode/skills"
+"~/.claude/CLAUDE.md" = { path = "opencode/AGENTS.md", force = true }
+"~/.claude/skills" = "opencode/skills"
+"~/.config/starship.toml" = "starship/starship.toml"
+"~/.ctags.d" = "universal_ctags"
+"~/.dotfiles" = ""
+"~/.ignore" = "rg/.ignore"
+"~/.jsbeautifyrc" = "jsbeautify/.jsbeautifyrc"
+"~/.tigrc" = "tig/.tigrc"
+"~/.tmux.conf" = "tmux/.tmux.conf"
+"~/.zsh_plugins.txt" = "zsh/.zsh_plugins.txt"
+"~/.zshrc" = { path = "zsh/.zshrc", force = true }
+"~/scripts" = "scripts/"
+"~/.urlview" = { path = "urlview/{os}.urlview" }
+"~/.config/alacritty/alacritty.toml" = { path = "alacritty/alacritty.{os}.toml" }
+
+[install.links.wsl]
+"~/.local/bin/xdg-open" = "~/.local/bin/wsl-open"
+
+[[install.copies]]
+source = "alacritty/alacritty.{os}.toml"
+target = "${WIN_APPDATA}/alacritty/alacritty.toml"
+os = ["wsl"]
+
+[[install.shell]]
+description = "Add terminfos for italics"
+command = "tic terminfo/xterm-256color.terminfo && tic terminfo/tmux.terminfo"
+
+[install.doctor]
+commands = { brew = "https://brew.sh/", uv = "https://github.com/astral-sh/uv", cargo = "https://doc.rust-lang.org/cargo/getting-started/installation.html" }
+dirs = { "~/.tmux/plugins/tpm" = "https://github.com/tmux-plugins/tpm", "~/.oh-my-zsh" = "https://ohmyz.sh/" }

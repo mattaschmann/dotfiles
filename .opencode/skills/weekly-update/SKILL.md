@@ -22,12 +22,14 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - `uv` (Python tool manager)
    - `cargo` and `rustup` (Rust toolchain) — optional, skip if missing
 
-3. **Run dotbot install** – Execute `./install` from the dotfiles repo root. This triggers symlinks and runs `bootstrap.sh update` which calls `pkgctl update` — handling all package managers:
+3. **Run pkgctl install** – Execute `uv run pkgctl install` from the dotfiles repo root. This runs the full setup:
+    - Checks prerequisites (`pkgctl doctor`)
+    - Applies symlinks via dotbot (reads `[install.links]` from packages.toml)
+    - Runs shell steps (terminfo compilation)
     - Generates the Brewfile from `packages.toml`, then runs brew bundle/update/upgrade
     - Bootstraps `cargo-binstall` if missing, installs/updates all cargo crates
     - Installs/updates uv tools
     - Installs/updates global npm packages
-    - Updates dotbot submodule to latest upstream
     - Installs VS Code extensions (if `code` is available)
     - Note: opencode plugins are handled separately in step 6 for security review
 
