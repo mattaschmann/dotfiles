@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# DEPRECATED: Use `pkgctl update` instead. This script will be removed in a future cleanup.
 set -uo pipefail
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
