@@ -146,6 +146,21 @@ echo "=== uv Drift ==="
 if command -v uv &> /dev/null; then
   installed_uv=$(uv tool list 2>/dev/null | grep -v '^-' | sed 's/ .*//')
   new_uv=$(echo "$installed_uv" | filter_known "uv" "install")
+  if grep -qi microsoft /proc/version 2>/dev/null; then
+    UV_OS="wsl"
+  elif [[ "$(uname)" == "Darwin" ]]; then
+    UV_OS="osx"
+  else
+    UV_OS=""
+  fi
+  if [ -n "$UV_OS" ]; then
+    os_uv=$(parse_toml_list "uv.${UV_OS}" "install" | sed 's/\[.*$//')
+    if [ -n "$os_uv" ]; then
+      new_uv=$(echo "$new_uv" | while IFS= read -r line; do
+        echo "$os_uv" | grep -qxF "$line" || [ -z "$line" ] || echo "$line"
+      done)
+    fi
+  fi
   if [ -n "$new_uv" ]; then
     echo "Tools installed but not in packages.toml:"
     echo "$new_uv"

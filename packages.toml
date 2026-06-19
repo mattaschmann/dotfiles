@@ -66,6 +66,9 @@ ignore = ["wlog", "yazi-build"]
 install = ["opencode-monitor[charts,export]", "pynvim", "skillcheck"]
 ignore = []
 
+[uv.wsl]
+install = ["ntfy-wsl-toast"]
+
 [npm]
 install = [
   "bash-language-server",
@@ -84,6 +87,7 @@ ignore = ["corepack", "npm"]
 
 [opencode]
 plugins = [
+  "~/workspace/opencode-plugins/opencode-model-alias",
   "~/workspace/opencode-plugins/opencode-keepalive",
   "~/workspace/opencode-plugins/opencode-kirocli-bridge",
   "~/workspace/opencode-plugins/opencode-ping",
