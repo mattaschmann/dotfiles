@@ -53,3 +53,15 @@ set -g message-command-style fg=default,bg=default
 
 # Mode
 set -g mode-style fg=default,bg=magenta
+
+# Dim inactive panes
+# set -g window-active-style 'bg=terminal,fg=terminal'
+# set -g window-style 'bg=#1a1a1a,fg=#888888'
+# set -g window-active-style 'bg=terminal,fg=terminal'
+# set -g window-style 'bg=#0a0a0a,fg=#555555'
+
+# Colored border on active pane
+set -g pane-border-style 'fg=#444444'
+set -g pane-active-border-style 'fg=yellow,bold'
+set -g pane-border-lines heavy   # or 'double'
+set -g pane-border-indicators colour
