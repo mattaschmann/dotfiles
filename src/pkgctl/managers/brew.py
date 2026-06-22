@@ -50,6 +50,9 @@ class Brew(Manager):
         if not self.dry_run:
             brewfile_path.write_text(self.generate_brewfile())
 
+        for tap in self._all_taps():
+            run(["brew", "trust", tap], dry_run=self.dry_run)
+
         self.output.info("==> Installing/updating brew packages...")
         check_result = run(
             ["brew", "bundle", "check", f"--file={brewfile_path}"],
