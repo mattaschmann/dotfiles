@@ -42,7 +42,7 @@ class Uv(Manager):
 
         declared_raw = self.config.get_list("uv", "install")
         declared = {pkg.split("[")[0] for pkg in declared_raw}
-        ignored = set(self.config.get_list("uv", "ignore"))
+        ignored = set(self.config.get_ignore_list("uv"))
 
         untracked = sorted(installed - declared - ignored)
         missing = sorted(declared - installed)

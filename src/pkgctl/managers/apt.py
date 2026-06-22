@@ -48,7 +48,7 @@ class Apt(Manager):
 
         installed = set(installed_result.stdout.strip().splitlines())
         declared = set(self.config.get_list("apt", "install"))
-        ignored = set(self.config.get_list("apt", "ignore"))
+        ignored = set(self.config.get_ignore_list("apt"))
 
         missing = sorted(declared - installed)
         if missing:

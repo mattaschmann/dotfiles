@@ -53,7 +53,7 @@ class Cargo(Manager):
                 installed.add(line.split()[0].rstrip(":"))
 
         declared = set(self.config.get_list("cargo", "install"))
-        ignored = set(self.config.get_list("cargo", "ignore"))
+        ignored = set(self.config.get_ignore_list("cargo"))
 
         git_repos = self.config.get_list("cargo", "git")
         git_names = {repo.rstrip("/").split("/")[-1] for repo in git_repos}

@@ -51,7 +51,7 @@ class Brew(Manager):
             brewfile_path.write_text(self.generate_brewfile())
 
         for tap in self._all_taps():
-            run(["brew", "trust", tap], dry_run=self.dry_run)
+            run(["brew", "trust", "--tap", tap], dry_run=self.dry_run)
 
         self.output.info("==> Installing/updating brew packages...")
         check_result = run(
@@ -76,7 +76,7 @@ class Brew(Manager):
 
         declared_formulae = set(self._all_formulae())
         declared_casks = set(self._all_casks())
-        ignored = set(self.config.get_list("brew", "ignore"))
+        ignored = set(self.config.get_ignore_list("brew"))
 
         untracked_formulae = sorted(installed_formulae - declared_formulae - ignored)
         untracked_casks = sorted(installed_casks - declared_casks - ignored)
