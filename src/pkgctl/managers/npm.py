@@ -41,7 +41,7 @@ class Npm(Manager):
             return
 
         declared = set(self.config.get_list("npm", "install"))
-        ignored = set(self.config.get_list("npm", "ignore"))
+        ignored = set(self.config.get_ignore_list("npm"))
 
         untracked = sorted(installed - declared - ignored)
         missing = sorted(declared - installed)

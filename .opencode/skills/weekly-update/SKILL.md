@@ -17,7 +17,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
 
 2. **Check prerequisites** – Verify the following are available. If any are missing, stop and tell the user what to install:
    - `brew` (macOS) or `apt` (Linux)
-   - `antidote` (zsh plugin manager)
+   - `antidote` (zsh plugin manager) — NOTE: antidote is a shell function, not a binary. Check with `brew --prefix antidote` (or look for `/home/linuxbrew/.linuxbrew/opt/antidote` on Linux). Do NOT use `which antidote`.
    - TPM at `~/.tmux/plugins/tpm/bin/update_plugins` (tmux plugin manager)
    - `uv` (Python tool manager)
    - `cargo` and `rustup` (Rust toolchain) — optional, skip if missing
@@ -40,7 +40,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - Suggested fix
    - Option to retry or skip
 
-4. **Update zsh plugins** – Run `antidote update`. On failure, report the error and suggest fixes (e.g. network issues, missing repos).
+4. **Update zsh plugins** – Run antidote update. Since `antidote` is a shell function (not a binary), invoke it via: `source $(brew --prefix antidote)/share/antidote/antidote.zsh && antidote update`. On failure, report the error and suggest fixes (e.g. network issues, missing repos).
 
 5. **Update tmux plugins** – Run `~/.tmux/plugins/tpm/bin/update_plugins all`. On failure, report the error.
 
@@ -65,7 +65,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    **Package drift** (per manager: brew, cargo, uv, npm):
    For each drifted package, ask the user:
    - Add it to `packages.toml` (track it)
-   - Add it to the ignore list in `packages.toml`
+   - Add it to `packages.ignore.toml` (local, gitignored)
    - Remove it
 
    **Opencode plugin drift** (tracked in `packages.toml` but directory missing or not a git repo):

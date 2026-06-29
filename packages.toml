@@ -37,7 +37,6 @@ formulae = [
   "wget",
 ]
 taps = ["anomalyco/tap"]
-ignore = ["duckdb", "ggml", "glab", "libomp", "llama.cpp", "llmfit"]
 
 [brew.osx]
 formulae = ["tmux", "watch"]
@@ -57,16 +56,15 @@ install = [
   "stylua",
   "taplo-cli",
   "tree-sitter-cli",
+  "yazi-build",
   "yazi-cli",
   "yazi-fm",
   "zoxide",
 ]
 git = ["https://github.com/errata-ai/vale-ls"]
-ignore = ["wlog", "yazi-build"]
 
 [uv]
 install = ["opencode-monitor[charts,export]", "pynvim", "skillcheck"]
-ignore = []
 
 [uv.wsl]
 install = ["ntfy-wsl-toast"]
@@ -85,7 +83,6 @@ install = [
   "wsl-open",
   "yaml-language-server",
 ]
-ignore = ["corepack", "npm"]
 
 [opencode]
 plugins = [
