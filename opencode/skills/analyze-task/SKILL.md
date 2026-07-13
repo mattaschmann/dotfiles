@@ -6,6 +6,11 @@ allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Edit Write Grep Glob Task 
 
 ## Purpose
 
+> **Plan → Build.** Run the read + interview phases in plan mode, then switch
+> to the Build agent before step 6 (persisting `## Decisions` / `## Implementation
+> Plan`). Plan mode is read-only and blocks all file writes before permissions
+> are even checked, so the task file can't be written until you Tab to Build.
+
 Use this skill whenever the user wants help understanding items inside the `.tasks/` directory and converting that understanding into an actionable implementation plan. The flow yields a shared mental model before any coding begins and keeps the user in control of execution order.
 
 ## Workflow

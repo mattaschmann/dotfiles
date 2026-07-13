@@ -6,6 +6,10 @@ allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Edit Write Grep Glob
 
 ## Purpose
 
+> **Run in Build mode.** This skill edits both code and the task file. Plan mode
+> is read-only and blocks all writes before permissions are checked — Tab to
+> Build before running.
+
 Execute an implementation plan that was authored by `analyze-task`. This skill picks up from the task file alone — no prior session context required. It walks the checkbox plan, makes code changes, and journals progress inline so `wrap-task` can verify later.
 
 ## Workflow

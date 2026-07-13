@@ -21,12 +21,7 @@
       // "steps": 40
     },
     "plan": {
-      "temperature": 0.4,
-      "permission": {
-        "edit": {
-          ".tasks/**": "allow"
-        }
-      }
+      "temperature": 0.4
     }
   },
   "provider": {

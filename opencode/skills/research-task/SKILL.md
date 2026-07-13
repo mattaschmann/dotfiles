@@ -6,6 +6,10 @@ allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Grep Glob Task Write Edit 
 
 ## Purpose
 
+> **Run in Build mode.** This skill writes an `## Investigation` section to the
+> task file. Plan mode is read-only and blocks all writes before permissions are
+> checked, so run it under the Build agent.
+
 Lightweight, breadth-first recon pass on a task file. Runs autonomously on a cheaper model to front-load exploration and research, then hands off to `analyze-task` (on a stronger model) for the interview, plan, and execution.
 
 ## Output contract

@@ -5,6 +5,11 @@ description: Validates task implementation plan completion, performs advisory co
 
 ## Purpose
 
+> **Plan → Build.** The code review (step 4) is read-only and fine in plan mode,
+> but validating, applying inline fixes, and renaming the file (`DONE-` prefix)
+> require writes. Switch to the Build agent before step 6/7. Plan mode blocks all
+> writes before permissions are checked.
+
 Use this skill after completing work on a task to perform a code review, validate the implementation matches the plan, and mark the task file as complete.
 
 ## Workflow
