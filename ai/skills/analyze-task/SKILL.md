@@ -6,10 +6,10 @@ allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Edit Write Grep Glob Task 
 
 ## Purpose
 
-> **Plan → Build.** Run the read + interview phases in plan mode, then switch
-> to the Build agent before step 6 (persisting `## Decisions` / `## Implementation
-> Plan`). Plan mode is read-only and blocks all file writes before permissions
-> are even checked, so the task file can't be written until you Tab to Build.
+> **Read-only → Write.** Run the read + interview phases in a read-only context,
+> then switch to a mode with file-write permission before step 6 (persisting
+> `## Decisions` / `## Implementation Plan`). File writes will fail if the
+> current context is read-only.
 
 Use this skill whenever the user wants help understanding items inside the `.tasks/` directory and converting that understanding into an actionable implementation plan. The flow yields a shared mental model before any coding begins and keeps the user in control of execution order.
 
@@ -40,7 +40,7 @@ Use this skill whenever the user wants help understanding items inside the `.tas
    - Keep the list short enough to stay actionable; split large efforts.
    - Mirror the checkbox plan into `TodoWrite` for session visibility only; the task file is always the source of truth and `TodoWrite` need not be kept in sync after the session ends.
 8. **Persist the plan** – Append under a `## Implementation Plan` heading at the bottom of the task file. Never overwrite prior content. If the heading already exists and contains any unchecked `- [ ]` items, create a new dated sibling heading (e.g., `## Implementation Plan (2026-04-29)`). Otherwise, append new items beneath the existing heading.
-9. **Hand off** – Report that the plan is complete and suggest running `implement-task` (in OpenCode or the appropriate client) to begin execution.
+9. **Hand off** – Report that the plan is complete and suggest running `implement-task` to begin execution.
 
 ## Notes & Tips
 

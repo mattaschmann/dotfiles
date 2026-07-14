@@ -36,9 +36,10 @@ Managers: apt, brew, cargo, uv, npm, opencode, vscode.
 ## Layout
 
 - Config dirs: `nvim/`, `zsh/`, `tmux/`, `alacritty/`, `starship/`, `tig/`, `rg/`.
+- `ai/` — shared cross-client AI configuration (global instructions + Agent Skills), symlinked to `~/.config/opencode/`, `~/.claude/`, and `~/.kiro/`.
+- `opencode/` — OpenCode-specific config (agents, commands, opencode.jsonc), symlinked to `~/.config/opencode/`.
 - `src/pkgctl/` — Python package (3.13 + click + dotbot), the CLI.
 - `scripts/` — legacy helpers (deprecated, use pkgctl instead).
-- `opencode/` — opencode global config, symlinked to `~/.config/opencode/`.
 - `.tasks/` — task files.
 - `bootstrap.sh` — ensures uv is installed, then proxies to pkgctl.
 - `pyproject.toml` — uv project definition for pkgctl.

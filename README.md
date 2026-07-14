@@ -62,5 +62,6 @@ Run the weekly system update routine through the `weekly-update` opencode skill.
 | `pyproject.toml` | uv project definition |
 | `bootstrap.sh` | Ensures uv, proxies to pkgctl |
 | `nvim/`, `zsh/`, `tmux/`, `alacritty/`, `starship/`, `tig/`, `rg/` | App configs |
-| `opencode/` | opencode global config (symlinked to `~/.config/opencode/`) |
+| `ai/` | Shared cross-client AI config (global instructions + Agent Skills) |
+| `opencode/` | OpenCode-specific config (agents, commands, opencode.jsonc) |
 | `scripts/` | Legacy helpers (deprecated) |

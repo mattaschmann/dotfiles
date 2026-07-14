@@ -6,9 +6,8 @@ allowed-tools: Bash(exa:*) Bash(rg:*) Bash(fd:*) Read Edit Write Grep Glob
 
 ## Purpose
 
-> **Run in Build mode.** This skill edits both code and the task file. Plan mode
-> is read-only and blocks all writes before permissions are checked — Tab to
-> Build before running.
+> **Requires file-write permission.** This skill edits both code and the task
+> file. It will fail in a read-only context.
 
 Execute an implementation plan that was authored by `analyze-task`. This skill picks up from the task file alone — no prior session context required. It walks the checkbox plan, makes code changes, and journals progress inline so `wrap-task` can verify later.
 
@@ -61,7 +60,7 @@ Execute an implementation plan that was authored by `analyze-task`. This skill p
 
 - **No interview** — the analyst model is not present. Do not ask clarifying questions; use `## Decisions` as the authority.
 - **Read-only on Investigation and Decisions** — never modify those sections.
-- **No `Task`/`TodoWrite`/`Question`** — those tools are unavailable in OpenCode.
+- **No `Task`/`TodoWrite`/`Question`** — avoid tools that may not be available across all clients.
 - **Append-only journaling** — never delete or rewrite prior inline notes.
 
 ## Notes & Tips

@@ -5,10 +5,10 @@ description: Validates task implementation plan completion, performs advisory co
 
 ## Purpose
 
-> **Plan → Build.** The code review (step 4) is read-only and fine in plan mode,
-> but validating, applying inline fixes, and renaming the file (`DONE-` prefix)
-> require writes. Switch to the Build agent before step 6/7. Plan mode blocks all
-> writes before permissions are checked.
+> **Read-only → Write.** The code review (step 4) is read-only and safe
+> without write permission, but validating, applying inline fixes, and renaming
+> the file (`DONE-` prefix) require writes. Switch to a context with file-write
+> permission before step 6/7.
 
 Use this skill after completing work on a task to perform a code review, validate the implementation matches the plan, and mark the task file as complete.
 
@@ -60,7 +60,7 @@ Use this skill after completing work on a task to perform a code review, validat
       - Flag any public API changes, new middleware, new configuration, or new commands that lack documentation
       - Report documentation gaps as actionable findings
     - **f. Coding-practices review** –
-      - Read the Code Practices and Code Documentation guidance from the global `~/.config/opencode/AGENTS.md` and any repo-root `AGENTS.md`
+      - Read the Code Practices and Code Documentation guidance from the applicable global and repo-root `AGENTS.md`
       - Review the diff against those practices and report actionable findings — e.g. duplicated logic/constants (DRY), homespun infrastructure where an established library exists, raw `console`/`print` logging instead of the project logger, oversized or mixed-concern modules, hardcoded magic strings, and doc-comment placement (missing high-value docs or low-value noise)
       - Advisory only: fold findings into the step 5 report and step 6 resolution flow. Do not block
 5. **Present findings report** –

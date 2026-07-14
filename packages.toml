@@ -108,13 +108,15 @@ shell = { quiet = true }
 "~/.config/nvim/lua" = "nvim/lua"
 "~/.config/nvim/vimscripts" = "nvim/vimscripts"
 "~/.config/nvim/snippets" = { path = "nvim/snippets", force = true }
-"~/.config/opencode/AGENTS.md" = "opencode/AGENTS.md"
+"~/.config/opencode/AGENTS.md" = "ai/AGENTS.md"
 "~/.config/opencode/agents" = "opencode/agents"
 "~/.config/opencode/commands" = "opencode/commands"
 "~/.config/opencode/opencode.jsonc" = "opencode/opencode.jsonc"
-"~/.config/opencode/skills" = "opencode/skills"
-"~/.claude/CLAUDE.md" = { path = "opencode/AGENTS.md", force = true }
-"~/.claude/skills" = "opencode/skills"
+"~/.config/opencode/skills" = "ai/skills"
+"~/.claude/CLAUDE.md" = { path = "ai/AGENTS.md", force = true }
+"~/.claude/skills" = "ai/skills"
+"~/.kiro/steering/AGENTS.md" = "ai/AGENTS.md"
+"~/.kiro/skills" = { path = "ai/skills", force = true }
 "~/.config/starship.toml" = "starship/starship.toml"
 "~/.ctags.d" = "universal_ctags"
 "~/.dotfiles" = ""

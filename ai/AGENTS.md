@@ -78,3 +78,25 @@ proposed for) a local `AGENTS.md` — something that would apply to any codebase
 not just the current one — stop and recommend promoting it to the global config
 instead. Confirm with the user before moving it. Keep local files for
 project-specific rules only.
+
+# Project Steering Discovery
+
+When working in a project, look for additional steering from these recognized
+sources. Only read files not already supplied by your client's native discovery:
+
+- Root and nested `AGENTS.md` files
+- `.kiro/steering/**/*.md`
+- `.claude/rules/**/*.md`
+- `.github/instructions/**/*.instructions.md`
+
+**Rules:**
+- If a file has frontmatter with `paths`, `applyTo`, or `inclusion` metadata,
+  apply it only when working on files that match those patterns.
+- Project-local guidance takes precedence over this global file when they
+  conflict.
+- Do NOT ingest as steering: skills (`**/SKILL.md`), agent profiles, commands,
+  settings/config files, hooks, generated state, lock files, or arbitrary
+  Markdown that is not in a recognized steering location.
+- Do NOT duplicate content your client already loads natively (e.g., OpenCode
+  reads `AGENTS.md` automatically; Claude reads `CLAUDE.md` and `.claude/rules/`
+  automatically; Kiro reads `.kiro/steering/` and `AGENTS.md` automatically).
