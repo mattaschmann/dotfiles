@@ -44,7 +44,7 @@ return {
       lines = {
         previewer = false,
       },
-      ui_select = true,
+      ui_select = {},
     })
   end,
 }
