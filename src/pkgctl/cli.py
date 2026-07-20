@@ -160,6 +160,7 @@ def install(ctx: click.Context) -> None:
     from pkgctl.installer.copies import run_copies
     from pkgctl.installer.runner import run_dotbot
     from pkgctl.installer.translate import build_directives
+    from pkgctl.managers.opencode import Opencode
     from pkgctl.shell import run_doctor, run_shell_steps
 
     config: Config = ctx.obj["config"]
@@ -205,6 +206,9 @@ def install(ctx: click.Context) -> None:
 
     output.info("==> Running package updates...")
     for mgr in get_managers((), config, output, dry_run=dry_run):
+        if mgr.name == Opencode.name:
+            output.info("    Skipping opencode plugins (review + 'pkgctl update opencode')")
+            continue
         if not mgr.is_available():
             output.info(f"    Skipping {mgr.name} (not available)")
             continue

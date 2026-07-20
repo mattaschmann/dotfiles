@@ -19,7 +19,7 @@ All configuration lives in [`packages.toml`](packages.toml) — the single sourc
 `pkgctl` is the CLI that operates on this manifest:
 
 ```bash
-pkgctl install                 # full setup: doctor + links + shell + copies + update
+pkgctl install                 # full setup: doctor + links + shell + copies + update (opencode plugins excluded, see below)
 pkgctl update [MANAGER...]     # upgrade + ensure declared packages installed
 pkgctl drift [MANAGER...]      # report untracked/missing packages
 pkgctl diff [MANAGER...]       # show pending upstream changes (opencode plugins)
@@ -35,6 +35,8 @@ Run it via `uv run pkgctl <command>` or `./bootstrap.sh <command>`.
 Flags: `--json` (structured output for agents), `--dry-run`, `--packages-file PATH`.
 
 Managers: `apt`, `brew`, `cargo`, `uv`, `npm`, `opencode`, `vscode`.
+
+`pkgctl install` deliberately skips the `opencode` manager — plugin updates require a security review before pulling, so they're only ever updated explicitly via `pkgctl update opencode` (see the `weekly-update` skill).
 
 ## OS-variant file convention
 
