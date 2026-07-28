@@ -10,19 +10,30 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
 
 ## Workflow
 
-1. **Detect platform & handle sudo** – Determine if running on macOS (brew) or Linux (apt). If on Linux, check if `sudo -n true` succeeds. If it does NOT:
+1. **Verify dotfiles repo is up to date** – Do this before anything else; `packages.toml` is the source of truth and is commonly edited on other machines.
+   - Resolve repo root: `git rev-parse --show-toplevel`.
+   - `git fetch origin` (read-only, safe to run unattended).
+   - Resolve the tracking branch dynamically: `git rev-parse --abbrev-ref --symbolic-full-name @{u}`. Never hardcode `master`/`main`. If there's no upstream configured, warn the user and ask whether to continue anyway.
+   - Check divergence: `git rev-list --left-right --count HEAD...@{u}` (ahead/behind counts).
+   - Check working tree state: `git status --porcelain`.
+   - Branch on the result:
+     - **Clean and up to date** – report it, proceed to step 2.
+     - **Behind only** – show `git log --oneline HEAD..@{u}` and `git diff --stat HEAD..@{u}`. Before prompting, check `git diff --name-only HEAD..@{u}` for `.opencode/skills/weekly-update/SKILL.md`. If it's in the list, tell the user this skill's own instructions changed, ask them to run `git pull --ff-only` themselves, then **STOP the run** — do not continue on the stale in-context instructions; the user must re-invoke `weekly-update` to load the new version. Otherwise, tell the user to run `git pull --ff-only`, use Question to wait for confirm-done / skip-anyway / abort, and re-check divergence after they confirm.
+     - **Dirty, and/or ahead (unpushed commits), and/or diverged** – show `git status -sb`. Use Question with options: continue anyway (note the risk of running against a stale `packages.toml`), stop, or `git stash push -u` (only if the user picks it — never auto-stash). A diverged branch (ahead and behind) means a fast-forward pull isn't possible and needs a manual rebase/merge; say so explicitly.
+
+2. **Detect platform & handle sudo** – Determine if running on macOS (brew) or Linux (apt). If on Linux, check if `sudo -n true` succeeds. If it does NOT:
    - STOP immediately. Read the `[apt] install` list from `packages.toml` and tell the user to run: `sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt install -y <packages from packages.toml>`
    - Use the Question tool to wait for the user to confirm they've done it (or want to skip apt).
    - Only proceed to the next step after they confirm.
 
-2. **Check prerequisites** – Verify the following are available. If any are missing, stop and tell the user what to install:
+3. **Check prerequisites** – Verify the following are available. If any are missing, stop and tell the user what to install:
    - `brew` (macOS) or `apt` (Linux)
    - `antidote` (zsh plugin manager) — NOTE: antidote is a shell function, not a binary. Check with `brew --prefix antidote` (or look for `/home/linuxbrew/.linuxbrew/opt/antidote` on Linux). Do NOT use `which antidote`.
    - TPM at `~/.tmux/plugins/tpm/bin/update_plugins` (tmux plugin manager)
    - `uv` (Python tool manager)
    - `cargo` and `rustup` (Rust toolchain) — optional, skip if missing
 
-3. **Run pkgctl install** – Execute `uv run pkgctl install` from the dotfiles repo root. This runs the full setup:
+4. **Run pkgctl install** – Execute `uv run pkgctl install` from the dotfiles repo root. This runs the full setup:
     - Checks prerequisites (`pkgctl doctor`)
     - Applies symlinks via dotbot (reads `[install.links]` from packages.toml)
     - Runs shell steps (terminfo compilation)
@@ -31,7 +42,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
     - Installs/updates uv tools
     - Installs/updates global npm packages
     - Installs VS Code extensions (if `code` is available)
-    - Note: opencode plugins are intentionally NOT updated here — `pkgctl install` skips the `opencode` manager in code; plugins are only ever reviewed and updated in step 6.
+    - Note: opencode plugins are intentionally NOT updated here — `pkgctl install` skips the `opencode` manager in code; plugins are only ever reviewed and updated in step 7.
 
    IMPORTANT: Use a long timeout (900000ms+) for this step — brew upgrades can take a while.
 
@@ -40,11 +51,11 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - Suggested fix
    - Option to retry or skip
 
-4. **Update zsh plugins** – Run antidote update. Since `antidote` is a shell function (not a binary), invoke it via: `source $(brew --prefix antidote)/share/antidote/antidote.zsh && antidote update`. On failure, report the error and suggest fixes (e.g. network issues, missing repos).
+5. **Update zsh plugins** – Run antidote update. Since `antidote` is a shell function (not a binary), invoke it via: `source $(brew --prefix antidote)/share/antidote/antidote.zsh && antidote update`. On failure, report the error and suggest fixes (e.g. network issues, missing repos).
 
-5. **Update tmux plugins** – Run `~/.tmux/plugins/tpm/bin/update_plugins all`. On failure, report the error.
+6. **Update tmux plugins** – Run `~/.tmux/plugins/tpm/bin/update_plugins all`. On failure, report the error.
 
-6. **Review & update opencode plugins** – Use `pkgctl` for structured plugin review:
+7. **Review & update opencode plugins** – Use `pkgctl` for structured plugin review:
 
    a. Run `uv run pkgctl --json diff opencode` to get structured diff data.
    b. For each plugin with `"status": "behind"`:
@@ -60,7 +71,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    d. For any plugin where `has_dependency_changes` was true, run `npm install` in that plugin directory.
    e. On failure: report the error, offer retry/skip/abort.
 
-7. **Detect drift** – Run `uv run pkgctl --json drift` from the dotfiles repo root. Parse the JSON output:
+8. **Detect drift** – Run `uv run pkgctl --json drift` from the dotfiles repo root. Parse the JSON output:
 
    **Package drift** (per manager: brew, cargo, uv, npm):
    For each drifted package, ask the user:
@@ -74,7 +85,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - Remove it from `packages.toml`
    - Skip / handle manually
 
-8. **Execute decisions** – Based on user input:
+9. **Execute decisions** – Based on user input:
    - Add packages to the appropriate section in `packages.toml` via Edit tool
    - `brew uninstall <pkg>`
    - `npm uninstall -g <pkg>`
@@ -82,7 +93,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
    - `cargo uninstall <crate>`
    - For opencode plugins: `git clone <url> <dir>` or remove the entry from `packages.toml` via Edit tool
 
-9. **Summary** – Report what was updated, what drift was found, what was added/removed/ignored, and any errors that were skipped.
+10. **Summary** – Report what was updated, what drift was found, what was added/removed/ignored, and any errors that were skipped.
 
 ## Error Handling
 
@@ -95,8 +106,10 @@ At every step, if a command fails:
 
 ## Notes & Tips
 
+- The skill never pulls the dotfiles repo on the user's behalf — pulls, rebases, and stashes are always initiated by the user, confirmed via Question.
+- `packages.toml` is commonly edited on other machines (macOS ↔ WSL2/Linux); running `pkgctl install` against a stale checkout silently installs the wrong package set, which is why step 1 checks sync before anything else.
 - On Linux, `apt` commands require sudo. Prompt the user before running privileged commands.
-- The `./install` script must be run from the dotfiles repo root.
+- `pkgctl install` (or `./bootstrap.sh install`) must be run from the dotfiles repo root.
 - `packages.toml` is the single source of truth for all packages across all managers.
 - The `Brewfile` is auto-generated by `pkgctl brewfile` — do not edit it directly.
 - Cargo crates are installed via `cargo binstall` (downloads pre-built binaries when available, compiles as fallback).
