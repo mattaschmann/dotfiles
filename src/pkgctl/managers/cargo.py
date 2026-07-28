@@ -8,6 +8,8 @@ from pkgctl.managers.base import Manager
 from pkgctl.output import Result
 from pkgctl.runner import run
 
+BINSTALL_FEATURES = "static,rustls,fancy-no-backtrace,zstd-thin,git"
+
 
 class Cargo(Manager):
     name = "cargo"
@@ -15,15 +17,26 @@ class Cargo(Manager):
     def is_available(self) -> bool:
         return shutil.which("cargo") is not None
 
+    def _ensure_binstall(self) -> None:
+        if not shutil.which("cargo-binstall"):
+            self.output.info("    Installing cargo-binstall (from source, no trust-dns)...")
+            run(
+                [
+                    "cargo", "install", "--locked",
+                    "--no-default-features", "--features", BINSTALL_FEATURES,
+                    "cargo-binstall",
+                ],
+                dry_run=self.dry_run,
+                check=True,
+            )
+
     def update(self) -> None:
         self.output.info("==> Updating Rust toolchain...")
         run(["rustup", "update"], dry_run=self.dry_run, check=True)
 
-        if not shutil.which("cargo-binstall"):
-            self.output.info("    Installing cargo-binstall...")
-            run(["cargo", "install", "cargo-binstall"], dry_run=self.dry_run, check=True)
+        self._ensure_binstall()
 
-        packages = self.config.get_list("cargo", "install")
+        packages = [p for p in self.config.get_list("cargo", "install") if p != "cargo-binstall"]
         if packages:
             self.output.info("==> Installing/updating cargo packages...")
             run(["cargo", "binstall", "-y", *packages], dry_run=self.dry_run, check=True)
