@@ -31,7 +31,7 @@ Automate the weekly dotfiles update routine. Run package updates, plugin updates
     - Installs/updates uv tools
     - Installs/updates global npm packages
     - Installs VS Code extensions (if `code` is available)
-    - Note: opencode plugins are handled separately in step 6 for security review
+    - Note: opencode plugins are intentionally NOT updated here — `pkgctl install` skips the `opencode` manager in code; plugins are only ever reviewed and updated in step 6.
 
    IMPORTANT: Use a long timeout (900000ms+) for this step — brew upgrades can take a while.
 
