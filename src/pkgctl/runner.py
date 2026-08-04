@@ -39,7 +39,8 @@ def run(
     )
 
     if check and result.returncode != 0:
-        msg = f"Command failed: {' '.join(cmd)}\n{result.stderr.strip()}"
+        detail = "\n".join(p for p in (result.stdout.strip(), result.stderr.strip()) if p)
+        msg = f"Command failed: {' '.join(cmd)}\n{detail}"
         raise RuntimeError(msg)
 
     return RunResult(
